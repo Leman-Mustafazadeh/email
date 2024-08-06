@@ -1,0 +1,15 @@
+.brands {
+    .brands-logo {
+        .logo {
+            @extend .p-3;
+            @extend .flex-container;
+            @extend .flex-align-center;
+            @extend .flex-justify-center;
+
+            img {
+                max-width: 200px;
+                object-fit: cover;
+            }
+        }
+    }
+}

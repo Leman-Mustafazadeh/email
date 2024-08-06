@@ -1,0 +1,14 @@
+// import core variables and mixins
+@import "core/reset";
+@import "core/variables";
+@import "core/paddings";
+@import "core/margins";
+@import "core/grid";
+@import "core/flex";
+@import "core/colors";
+@import "core/typography";
+@import "core/responsive";
+
+// import main components
+@import "components/button";
+@import "components/input";

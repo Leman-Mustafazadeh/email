@@ -1,0 +1,54 @@
+.generator {
+
+    width: 100%;
+
+    .generator_title {
+        background-color: red;
+
+
+        .left {
+            background-color: #fff;
+
+            .text {
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                border-radius: 25px;
+            }
+
+            .templateX {
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                border-radius: 25px;
+
+            }
+
+            .temp_wrap {
+                width: 47%;
+                border-radius: 25px;
+                height: 30px;
+            }
+        }
+
+        .right {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 25px;
+            padding: 50px 40px;
+            height: fit-content;
+
+            .right-img {
+                width: 20%;
+                height: 20%;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .btn_email {
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+    }
+
+}

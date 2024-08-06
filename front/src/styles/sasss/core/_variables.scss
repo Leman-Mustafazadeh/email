@@ -1,0 +1,89 @@
+// colums quantity
+$grid-columns: 12;
+
+// width varaibles
+$widths: 0%, 25%, 50%, 75%, 100%;
+
+// breakpoints for responsive 
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+);
+
+// spacers margins and padding
+$spacer: 5px;
+$spacers: (
+  0: ($spacer * 0,
+  ),
+  1: ($spacer * 1,
+  ),
+  2: ($spacer * 2,
+  ),
+  3: ($spacer * 3,
+  ),
+  4: ($spacer * 4,
+  ),
+  5: ($spacer * 5,
+  ),
+  6: ($spacer * 6,
+  ),
+  7: ($spacer * 7,
+  ),
+  8: ($spacer * 8,
+  ),
+  9: ($spacer * 9,
+  ),
+  10: ($spacer * 10,
+  ),
+);
+
+// page main colors
+$colors: (
+  "primary": #1A73E8,
+  "primary60": #8ab5f2,
+  "primary30": #CDE0FA,
+  "primary90": #6da4f8,
+  "access": #34A853,
+  "secondary": #FB7701,
+  "danger": #d9534f,
+  "silvery": #EFF5FD,
+  "light": #ADADAD,
+  "light10": #F1F1F1,
+  "light30": #9C9C9C,
+  "light60": #DDDDDD,
+  "dark": #292b2c,
+  "natural": #fff,
+  "inky": #000000,
+  "text": #3C3C3C,
+  "text30": #838383,
+  "overlay": rgba(255, 255, 255, 0.7),
+);
+
+$offset-values: 1, 2, 3, 4, 5;
+
+// generate font varaibles from 10 till 100
+$font-sizes: (
+);
+
+@for $i from 10 through 100 {
+  $font-sizes: map-merge($font-sizes, (#{$i}: #{$i}px));
+}
+
+$font-weights: (
+  lighter: lighter,
+  light: 300,
+  normal: normal,
+  bold: bold,
+  bolder: bolder,
+);
+
+$flex-values: (
+  start,
+  end,
+  center,
+  space-between,
+  space-around
+);
