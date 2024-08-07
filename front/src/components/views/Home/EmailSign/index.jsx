@@ -34,7 +34,7 @@ const EmailSign = () => {
   return (
     <section>
       <div className="container">
-        <div className="row flex-column flex-justify-center">
+        <div className="row flex-column flex-justify-center flex-align-center">
           <PageHeader header="Free online Email Signature Generator" />
           <p className="font-size-20 font-weight-400 py-4 text-align-center">
             Measure, track and maximize your Email signature
