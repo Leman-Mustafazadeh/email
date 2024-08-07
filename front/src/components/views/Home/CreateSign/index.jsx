@@ -16,7 +16,9 @@ const CreateSign = () => {
       className: "bg-primary30",
     },
     {
-      title: "Customize",
+      title: "Integrate",
+      item:"Integrate and Manage Your Email Signatures",
+      note:"Effortlessly connect your email signatures with Gmail. Your team members can easily link their signatures to their accounts, update existing ones, and switch to new signatures as needed. Simplify your workflow with our intuitive tools!",
       className: "bg-primary60",
     },
     {

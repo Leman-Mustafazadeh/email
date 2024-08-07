@@ -7,7 +7,7 @@ import "./style.scss"
 
 const Brands = () => {
   return (
-    <div className="brands">
+    <div className="brands mt-6">
       <SectionHeader header="Top brands that use email signature" />
       <div className="container my-5">
         <div className="brands-logo row">

@@ -9,30 +9,30 @@ const FAQs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const faqs = [
     {
-      question: "What is email signature software?",
-      answer:
-        "Nam erat orci, dictum eu iaculis a, scelerisque commodo risus. Mauris eu egestas ipsum. In hac habitasse platea dictumst. Duis in consequat est. Sed feugiat, ante in finibus ullamcorper, felis sem porta orci, sed pretium nibh nunc a tellus.",
+      question: "What is an Email Signature?",
+      answer:"An email signature is a personalized block of text at the end of your emails that includes your name, contact information, and other details. It enhances your professional image and makes it easy for recipients to contact you."
     },
     {
-      question: "How to add a global Office 365 signature?",
-      answer:
-        "Nam erat orci, dictum eu iaculis a, scelerisque commodo risus. Mauris eu egestas ipsum. In hac habitasse platea dictumst. Duis in consequat est. Sed feugiat, ante in finibus ullamcorper, felis sem porta orci, sed pretium nibh nunc a tellus.",
+      question: "What is an Email Signature Generator?",
+      answer:"An Email Signature Generator is a tool that allows users to create professional and personalized email signatures easily. It typically offers features such as customizable templates, social media links, logos, banners, and contact information, ensuring a consistent and polished look for all email communications."
     },
     {
-      question: "How to edit an email signature in Office 365?",
-      answer:
-        "Nam erat orci, dictum eu iaculis a, scelerisque commodo risus. Mauris eu egestas ipsum. In hac habitasse platea dictumst. Duis in consequat est. Sed feugiat, ante in finibus ullamcorper, felis sem porta orci, sed pretium nibh nunc a tellus.",
+      question: "How to set up an email signature in Gmail?",
+      answer:"To set up an email signature in Gmail with our service, simply provide the correct email login details for integration. Our tool will automatically add your personalized signature to your Gmail account."
     },
     {
       question: "How to create an email signature in Exchange?",
-      answer:
-        "Nam erat orci, dictum eu iaculis a, scelerisque commodo risus. Mauris eu egestas ipsum. In hac habitasse platea dictumst. Duis in consequat est. Sed feugiat, ante in finibus ullamcorper, felis sem porta orci, sed pretium nibh nunc a tellus.",
+      answer:"What are the advantages of an email signature?"
     },
     {
       question: "How to create an email signature in Google Workspace?",
-      answer:
-        "Nam erat orci, dictum eu iaculis a, scelerisque commodo risus. Mauris eu egestas ipsum. In hac habitasse platea dictumst. Duis in consequat est. Sed feugiat, ante in finibus ullamcorper, felis sem porta orci, sed pretium nibh nunc a tellus.",
+      answer:"An email signature significantly enhances your email marketing process by:"
     },
+    {
+      question: "What does an email signature offer me?",
+      answer:"An email signature offers you multiple templates, personalized signatures for every employee in any size company, and links to social media and websites. It also provides marketing campaign capabilities with various banners, bulk creation, and automatic integration."
+    }
+    
   ];
 
   const toggleFAQ = (index) => {
@@ -64,11 +64,7 @@ const FAQs = () => {
                   )}
                 </div>
               ))}
-              <div className="col-12 flex-container flex-justify-center my-5">
-                <p className="support-question">
-                  Still have a question? <a href="#">Ask your question here</a>
-                </p>
-              </div>
+             
             </div>
           </div>
         </div>
