@@ -1,8 +1,36 @@
 import TextField from "@mui/material/TextField";
 import "./_style.scss";
 import { Link } from "react-router-dom";
+import { Upload } from 'antd';
+import ImgCrop from 'antd-img-crop';
 import PageHeader from "../../../common/PageHeader";
+import { useState } from "react";
 const EmailSign = () => {
+  const [fileList, setFileList] = useState([
+    {
+      uid: '-1',
+      name: 'image.png',
+      status: 'done',
+      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    },
+  ]);
+  const onChange = ({ fileList: newFileList }) => {
+    setFileList(newFileList);
+  };
+  const onPreview = async (file) => {
+    let src = file.url;
+    if (!src) {
+      src = await new Promise((resolve) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file.originFileObj);
+        reader.onload = () => resolve(reader.result);
+      });
+    }
+    const image = new Image();
+    image.src = src;
+    const imgWindow = window.open(src);
+    imgWindow?.document.write(image.outerHTML);
+  };
   return (
     <section>
       <div className="container">
@@ -72,6 +100,17 @@ const EmailSign = () => {
                         Upload
                       </a>
                     </li>
+                    <ImgCrop rotationSlider>
+      <Upload
+        action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
+        listType="picture-card"
+        fileList={fileList}
+        onChange={onChange}
+        onPreview={onPreview}
+      >
+        {fileList.length < 5 && '+ Upload'}
+      </Upload>
+    </ImgCrop>
                     <li>
                       <a
                         href=""
@@ -98,12 +137,12 @@ const EmailSign = () => {
                     </li>
                   </ul>
 
-                  <div className="row btn-store mt-5 ">
+                  {/* <div className="row btn-store mt-5 ">
                     <div className="temp_wrap btn-light"></div>
                     <div className="temp_wrap btn-light"></div>
                     <div className="temp_wrap btn-light"></div>
                     <div className="temp_wrap btn-light"></div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
 
