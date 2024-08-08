@@ -5,6 +5,7 @@ import { Upload } from "antd";
 import ImgCrop from "antd-img-crop";
 import PageHeader from "../../../common/PageHeader";
 import { useState } from "react";
+
 const EmailSign = () => {
   const [fileList, setFileList] = useState([
     {
@@ -14,9 +15,12 @@ const EmailSign = () => {
       url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
     },
   ]);
+  const [activeTab, setActiveTab] = useState('upload');
+
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
+
   const onPreview = async (file) => {
     let src = file.url;
     if (!src) {
@@ -31,6 +35,7 @@ const EmailSign = () => {
     const imgWindow = window.open(src);
     imgWindow?.document.write(image.outerHTML);
   };
+    
   return (
     <section>
       <div className="container">
@@ -41,9 +46,9 @@ const EmailSign = () => {
           </p>
 
           <div className="generator">
-            <div className="generator_title row mt-3 btn-natural px-1 ">
-              <div className="left col-12 col-lg-6 row flex-column ">
-                <div className="btn-store  p-6 text">
+            <div className="generator_title row mt-3 btn-natural px-1">
+              <div className="left col-12 col-lg-6 row flex-column">
+                <div className="btn-store p-6 text">
                   <TextField
                     style={{ width: "100%" }}
                     id="outlined-basic"
@@ -77,22 +82,44 @@ const EmailSign = () => {
                   <TextField
                     style={{ width: "100%" }}
                     id="outlined-basic"
-                    label="Adress"
+                    label="Address"
                     variant="outlined"
                   />
                 </div>
 
-                <div className="templateX p-5 mt-3 ">
-                  <ul className=" row 
-                   ">
+                <div className="templateX p-6 mt-3">
+                  <ul className="row btn-store">
                     <li>
                       <a
-                        href=""
-                        className="text-text font-size-16 font-weight-400  "
+                        href="#"
+                        className={`text-text font-size-16 font-weight-400 ${activeTab === 'upload' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('upload')}
                       >
                         Upload
                       </a>
-                      <ImgCrop rotationSlider>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className={`text-text font-size-16 font-weight-400 ${activeTab === 'design' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('design')}
+                      >
+                        Design
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="#"
+                        className={`text-text font-size-16 font-weight-400 ${activeTab === 'url' ? 'active' : ''}`}
+                        onClick={() => setActiveTab('url')}
+                      >
+                        URL
+                      </a>
+                    </li>
+                  </ul>
+
+                  {activeTab === 'upload' && (
+                    <ImgCrop rotationSlider>
                       <Upload
                         action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
                         listType="picture-card"
@@ -103,38 +130,39 @@ const EmailSign = () => {
                         {fileList.length < 5 && "+ Upload"}
                       </Upload>
                     </ImgCrop>
-                    </li>
-                    <li>
-                      <a
-                        href=""
-                        className="text-text font-size-16 font-weight-400  "
-                      >
-                        Design
-                      </a>
-                    </li>
-                   
-                    <li>
-                      <a
-                        href=""
-                        className="text-text font-size-16 font-weight-400  "
-                      >
-                        URL
-                      </a>
-                    </li>
-                  </ul>
+                  )}
 
-                  {/* <div className="row btn-store mt-5 ">
-                    <div className="temp_wrap btn-light"></div>
-                    <div className="temp_wrap btn-light"></div>
-                    <div className="temp_wrap btn-light"></div>
-                    <div className="temp_wrap btn-light"></div>
-                  </div> */}
+                  {activeTab === 'design' && (
+                    <div>
+                      <p>Design</p>
+                    </div>
+                  )}
+
+                  {activeTab === 'url' && (
+                    <div className="btn-store flex-column py-3 ">
+                    <div >
+                    <input className="font-size-17 font-weight-400 p-2" type="text" placeholder="Instagram URL" />
+                    </div>
+
+                    <div>
+                      <input className="font-size-17 font-weight-400 p-2" type="text" placeholder="Facebook URL"/>
+                    </div>
+
+                    <div>
+                      <input className="font-size-17 font-weight-400 p-2" type="text" placeholder="Linkedln URL"/>
+                    </div>
+
+                    <div>
+                      <input className="font-size-17 font-weight-400 p-2" type="text" placeholder="QR code URL"/>
+                    </div>
+                    </div>
+                  )}
                 </div>
               </div>
 
               <div className="right col-12 col-lg-6 px-3">
                 <div className="right_item">
-                  <h5 className="text-inky font-size-28 font-weight-700 ">
+                  <h5 className="text-inky font-size-28 font-weight-700">
                     Kind Regards
                   </h5>
 
@@ -165,16 +193,16 @@ const EmailSign = () => {
                       </div>
                     </div>
 
-                    <h4 className="text-text  font-size-16 font-weight-500 pt-3">
+                    <h4 className="text-text font-size-16 font-weight-500 pt-3">
                       Create your WebSite{" "}
-                      <a href="" className="text-danger ">
+                      <a href="#" className="text-danger">
                         <Link>email signature</Link>
                       </a>
                     </h4>
                   </div>
                 </div>
-                <button className=" btn_email bg-secondary p-2 mt-4 font-size-24 text-natural font-weight-500 ">
-                  İntegrate to your email
+                <button className="btn_email bg-secondary p-2 mt-4 font-size-24 text-natural font-weight-500">
+                  Integrate to your email
                 </button>
               </div>
             </div>
