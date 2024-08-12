@@ -4,6 +4,7 @@ import Disclaimers from "../components/views/Home/DIsclaimers";
 import EmailSign from "../components/views/Home/EmailSign";
 import Explore from "../components/views/Home/Explore";
 import FAQs from "../components/views/Home/FAQ";
+import ForgotPassword from "../pages/ForgotPassword";
 
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -53,7 +54,10 @@ export const Routes = [
         path: "login",
         element: <Login />,
       },
-      
+      {
+        path: "forgotpassword",
+        element: <ForgotPassword />,
+      },
     ],
   },
 ];
