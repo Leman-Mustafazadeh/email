@@ -1,8 +1,6 @@
 import { useState } from "react";
 import SectionHeader from "../../../common/SectionHeader";
 import { CiCircleChevDown } from "react-icons/ci";
-
-
 import "./_style.scss";
 
 const FAQs = () => {
@@ -32,9 +30,7 @@ const FAQs = () => {
       question: "What does an email signature offer me?",
       answer:"An email signature offers you multiple templates, personalized signatures for every employee in any size company, and links to social media and websites. It also provides marketing campaign capabilities with various banners, bulk creation, and automatic integration."
     }
-    
   ];
-
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
   };

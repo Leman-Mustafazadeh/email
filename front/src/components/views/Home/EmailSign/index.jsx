@@ -5,7 +5,6 @@ import { Upload } from "antd";
 import ImgCrop from "antd-img-crop";
 import PageHeader from "../../../common/PageHeader";
 import { useState } from "react";
-
 const EmailSign = () => {
   const [fileList, setFileList] = useState([
     {
@@ -13,18 +12,16 @@ const EmailSign = () => {
       name: "image.png",
       status: "done",
       url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
-    },
+    }
   ]);
   const [activeTab, setActiveTab] = useState("upload");
-
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
   };
-
   const onPreview = async (file) => {
     let src = file.url;
     if (!src) {
-      src = await new Promise((resolve) => {
+      src = await new Promise((resolve) => {     
         const reader = new FileReader();
         reader.readAsDataURL(file.originFileObj);
         reader.onload = () => resolve(reader.result);

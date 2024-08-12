@@ -53,6 +53,7 @@ export const Routes = [
         path: "login",
         element: <Login />,
       },
+      
     ],
   },
 ];

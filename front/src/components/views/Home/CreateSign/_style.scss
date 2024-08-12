@@ -38,7 +38,7 @@
             @extend .p-5;
             gap: 20px;
             color: map-get($colors, text);
-            border-right: 2px solid map-get($colors, text);
+            // border-right: 2px solid map-get($colors, text);
 
             h4 {
                 @extend .font-size-28;

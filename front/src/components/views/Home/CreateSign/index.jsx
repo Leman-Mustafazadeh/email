@@ -11,20 +11,26 @@ const CreateSign = () => {
   const bannerRef = useRef([]);
 
   const bannerData = [
+   
     {
       title: "Design",
+      item:"Design your signatures effortlessly with the easiest tool",
+      note:"Easily create your email signatures using our provided templates, with no additional design skills required! Showcase your brand identity in every email you send.",
+      button: "Create your signature",
       className: "bg-primary30",
     },
     {
-      title: "Integrate",
+      title: "Design",
       item:"Integrate and Manage Your Email Signatures",
       note:"Effortlessly connect your email signatures with Gmail. Your team members can easily link their signatures to their accounts, update existing ones, and switch to new signatures as needed. Simplify your workflow with our intuitive tools!",
       className: "bg-primary60",
     },
     {
       title: "Design",
+      item:"Elevate Your Marketing Campaigns Using Signature Banners",
+      note:"Increase the impact of your emails by adding eye-catching banners to your email signatures. These banners not only make your brand more visible but also boost engagement and conversions. Customize them to fit your campaigns and see your marketing results improve",
       className: "bg-primary90",
-      button: "Try it now",
+     
       path: "#",
     },
   ];
@@ -60,12 +66,9 @@ const CreateSign = () => {
             </div>
             <div className="row banner-content">
               <div className="col-12 col-md-6 banner-description">
-                <h4>On-brand email signatures in just 3 clicks</h4>
-                <p className="mb-5">
-                  Import your logo. Letsignite automatically generates email
-                  signature templates based on your brand colors.Use the Drag &
-                  Drop Designer to customize each signature template to meet
-                  your brand charter.
+                <h4>{banner.item}</h4>
+                <p className="">
+                  {banner.note}
                 </p>
                 {banner.button && (
                   <Link to={banner.path}>
