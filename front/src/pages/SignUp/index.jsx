@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
@@ -11,6 +11,8 @@ import "./_style.scss";
 
 const SignUp = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // Initialize the navigate function
+
   // const { useRegister } = useAuth();
   // const register = useRegister();
 
@@ -33,29 +35,32 @@ const SignUp = () => {
     },
     onSubmit: async (values, actions) => {
       try {
-        // register.mutate(formik.values);
         const response = await controller.post("/Account/Register", values);
         if (response.auth) {
           actions.resetForm();
-          dispatch(login(response.user));
+          dispatch(login(response));
           Swal.fire({
             icon: "success",
             title: "Registration successful",
             showConfirmButton: false,
             timer: 1500,
           });
+          console.log("succes");
+          
+          navigate("/"); 
         } else {
           Swal.fire({
             icon: "error",
             title: "Registration failed",
-            text: response.message,
+            text: response.message || "An error occurred during registration.",
           });
         }
       } catch (error) {
-        console.error("Error:", error);
+        console.error("Error:", error.response ? error.response.data : error.message);
         Swal.fire({
           icon: "error",
           title: "Oops, something went wrong!",
+          text: error.response ? error.response.data.message : "An unexpected error occurred.",
         });
       }
     },
@@ -72,7 +77,7 @@ const SignUp = () => {
             <form onSubmit={formik.handleSubmit}>
               <div className="form-group">
                 <TextField
-                  id="outlined-basic"
+                  id="email"
                   label="E-mail Address"
                   variant="outlined"
                   type="email"
@@ -88,7 +93,7 @@ const SignUp = () => {
 
               <div className="form-group">
                 <TextField
-                  id="outlined-basic"
+                  id="password"
                   label="Password"
                   variant="outlined"
                   type="password"
@@ -96,18 +101,14 @@ const SignUp = () => {
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  error={
-                    formik.touched.password && Boolean(formik.errors.password)
-                  }
+                  error={formik.touched.password && Boolean(formik.errors.password)}
                   helperText={formik.touched.password && formik.errors.password}
                   required
                 />
               </div>
               <button
                 type="submit"
-                className={`btn btn-primary text-natural ${
-                  formik.isSubmitting ? "btn-disabled" : ""
-                }`}
+                className={`btn btn-primary text-natural ${formik.isSubmitting ? "btn-disabled" : ""}`}
                 disabled={formik.isSubmitting}
               >
                 {formik.isSubmitting ? "Registering..." : "Sign Up"}
@@ -128,7 +129,7 @@ const SignUp = () => {
 
             <div className="login">
               <span>Already have an account? - </span>
-              <Link to={"/login"}>Login</Link>
+              <Link to="/login">Login</Link>
             </div>
 
             <div className="free-trial">

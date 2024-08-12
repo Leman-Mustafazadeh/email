@@ -15,7 +15,7 @@ const EmailSign = () => {
       url: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
     },
   ]);
-  const [activeTab, setActiveTab] = useState('upload');
+  const [activeTab, setActiveTab] = useState("upload");
 
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
@@ -35,7 +35,7 @@ const EmailSign = () => {
     const imgWindow = window.open(src);
     imgWindow?.document.write(image.outerHTML);
   };
-    
+
   return (
     <section>
       <div className="container">
@@ -92,8 +92,10 @@ const EmailSign = () => {
                     <li>
                       <a
                         href="#"
-                        className={`text-text font-size-16 font-weight-400 ${activeTab === 'upload' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('upload')}
+                        className={`text-text font-size-16 font-weight-400 ${
+                          activeTab === "upload" ? "active" : ""
+                        }`}
+                        onClick={() => setActiveTab("upload")}
                       >
                         Upload
                       </a>
@@ -101,8 +103,10 @@ const EmailSign = () => {
                     <li>
                       <a
                         href="#"
-                        className={`text-text font-size-16 font-weight-400 ${activeTab === 'design' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('design')}
+                        className={`text-text font-size-16 font-weight-400 ${
+                          activeTab === "design" ? "active" : ""
+                        }`}
+                        onClick={() => setActiveTab("design")}
                       >
                         Design
                       </a>
@@ -110,51 +114,81 @@ const EmailSign = () => {
                     <li>
                       <a
                         href="#"
-                        className={`text-text font-size-16 font-weight-400 ${activeTab === 'url' ? 'active' : ''}`}
-                        onClick={() => setActiveTab('url')}
+                        className={`text-text font-size-16 font-weight-400 ${
+                          activeTab === "url" ? "active" : ""
+                        }`}
+                        onClick={() => setActiveTab("url")}
                       >
                         URL
                       </a>
                     </li>
                   </ul>
 
-                  {activeTab === 'upload' && (
-                    <ImgCrop rotationSlider>
-                      <Upload
-                        action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
-                        listType="picture-card"
-                        fileList={fileList}
-                        onChange={onChange}
-                        onPreview={onPreview}
-                      >
-                        {fileList.length < 5 && "+ Upload"}
-                      </Upload>
-                    </ImgCrop>
-                  )}
-
-                  {activeTab === 'design' && (
+                  {activeTab === "upload" && (
                     <div>
-                      <p>Design</p>
+                      <p className="font-size-16 py-3 font-weight-500 text-text">
+                        Profile Image or Logo
+                      </p>
+                      <ImgCrop rotationSlider>
+                        <Upload
+                          action="https://660d2bd96ddfa2943b33731c.mockapi.io/api/upload"
+                          listType="picture-card"
+                          fileList={fileList}
+                          onChange={onChange}
+                          onPreview={onPreview}
+                        >
+                          {fileList.length < 5 && "+ Upload"}
+                        </Upload>
+                      </ImgCrop>
                     </div>
                   )}
 
-                  {activeTab === 'url' && (
+                  {activeTab === "design" && (
+                    <div>
+                      <div style={{ width: "200px" }}>
+                        <select>
+                          <option value="0">Montesarat</option>
+                          <option value="1">Audi</option>
+                          <option value="2">kjsn</option>
+                          <option value="3">Citroen</option>
+                        </select>
+                      </div>
+                      <p>Font color</p>
+                    </div>
+                  )}
+                  {activeTab === "url" && (
                     <div className="btn-store flex-column py-3 ">
-                    <div >
-                    <input className="font-size-17 font-weight-400 p-2" type="text" placeholder="Instagram URL" />
-                    </div>
+                      <div>
+                        <input
+                          className="font-size-17 font-weight-400 p-2"
+                          type="text"
+                          placeholder="Instagram URL"
+                        />
+                      </div>
 
-                    <div>
-                      <input className="font-size-17 font-weight-400 p-2" type="text" placeholder="Facebook URL"/>
-                    </div>
+                      <div>
+                        <input
+                          className="font-size-17 font-weight-400 p-2"
+                          type="text"
+                          placeholder="Facebook URL"
+                        />
+                      </div>
 
-                    <div>
-                      <input className="font-size-17 font-weight-400 p-2" type="text" placeholder="Linkedln URL"/>
-                    </div>
+                      <div>
+                        <input
+                          className="font-size-17 font-weight-400 p-2"
+                          type="text"
+                          placeholder="Linkedln URL"
+                        />
+                      </div>
 
-                    <div>
-                      <input className="font-size-17 font-weight-400 p-2" type="text" placeholder="QR code URL"/>
-                    </div>
+                      <div>
+                        <input
+                          className="font-size-17 font-weight-400 p-2"
+                          type="text"
+                          placeholder="QR code URL"
+                        />
+                      </div>
                     </div>
                   )}
                 </div>

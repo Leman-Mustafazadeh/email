@@ -42,7 +42,9 @@ const Login = () => {
           actions.resetForm();
           dispatch(login(response.user));
           showAlert("success", response.message);
-          navigate("/signup");
+          console.log("SUCCESS");
+          
+          navigate("/");
         } else {
           showAlert("error", response.message);
         }
