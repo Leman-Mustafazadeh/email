@@ -1,7 +1,6 @@
 import { useState } from "react";
-import SectionHeader from "../../../common/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
 import { CiCircleChevDown } from "react-icons/ci";
-
 
 import "./_style.scss";
 

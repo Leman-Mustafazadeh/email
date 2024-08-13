@@ -17,7 +17,7 @@ const CreateSign = () => {
       item:"Design your signatures effortlessly with the easiest tool",
       note:"Easily create your email signatures using our provided templates, with no additional design skills required! Showcase your brand identity in every email you send.",
       button: "Create your signature",
-      className: "bg-primary30",
+      className: "bg-primary",
     },
     {
       title: "Design",
@@ -29,7 +29,7 @@ const CreateSign = () => {
       title: "Design",
       item:"Elevate Your Marketing Campaigns Using Signature Banners",
       note:"Increase the impact of your emails by adding eye-catching banners to your email signatures. These banners not only make your brand more visible but also boost engagement and conversions. Customize them to fit your campaigns and see your marketing results improve",
-      className: "bg-primary90",
+      className: "bg-primary30",
      
       path: "#",
     },

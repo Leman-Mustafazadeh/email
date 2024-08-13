@@ -43,10 +43,14 @@ $spacers: (
 // page main colors
 $colors: (
   "background": #F7F7F7,
+  "natural": #fff,
+  "inky": #000000,
   "primary": #1A73E8,
-  "primary60": #8ab5f2,
-  "primary30": #CDE0FA,
-  "primary90": #6da4f8,
+  "primary10": #2E75D4,
+  "primary30": #5E9DEF,
+  "primary30d": #1251A3,
+  "primary60": #A3C7F6,
+  "primary60d": #0A2E5D,
   "access": #34A853,
   "secondary": #FB7701,
   "danger": #d9534f,
@@ -55,12 +59,10 @@ $colors: (
   "light10": #F1F1F1,
   "light30": #9C9C9C,
   "light60": #DDDDDD,
-  "dark": #292b2c,
-  "natural": #fff,
-  "inky": #000000,
   "text": #3C3C3C,
-  "text30": #838383,
-  "overlay": rgba(255, 255, 255, 0.7),
+  "text10": #4F4F4F,
+  "text30": #767676,
+  "text60": #B1B1B1,
 );
 
 $offset-values: 1, 2, 3, 4, 5;

@@ -11,7 +11,7 @@ import "./_style.scss";
 
 const SignUp = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Initialize the navigate function
+  const navigate = useNavigate(); 
 
   // const { useRegister } = useAuth();
   // const register = useRegister();

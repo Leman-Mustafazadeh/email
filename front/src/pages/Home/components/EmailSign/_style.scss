@@ -1,24 +1,32 @@
 .generator {
 
-    width: 100%;
 
-    .generator_title {
-        background-color: red;
+    &_banner {
 
 
-        .left {
-            background-color: #fff;
+        &_left {
+            background-color: map-get($colors, natural);
+            border-radius: 12px;
 
             .text {
-                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                border-radius: 25px;
             }
 
             .templateX {
-                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-                border-radius: 25px;
+                &-headers {
+                    gap: 50px;
+
+                    li {
+                        cursor: pointer;
+                        user-select: none;
+                    }
+
+                    .active-category {
+                        transition: all 0.2s ease;
+                        color: map-get($colors, secondary);
+                    }
+                }
 
             }
 
@@ -29,11 +37,11 @@
             }
         }
 
-        .right {
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            border-radius: 25px;
-            padding: 50px 40px;
-            height: fit-content;
+        &_right {
+            @extend .p-5;
+            background-color: map-get($colors, natural);
+            border-radius: 12px;
+            flex-grow: 1;
 
             .right-img {
                 width: 20%;
@@ -44,10 +52,10 @@
                 }
             }
 
-            .btn_email {
-                width: 100%;
-                border-radius: 8px;
-            }
+        }
+
+        .btn_email {
+            border-radius: 8px;
         }
     }
 

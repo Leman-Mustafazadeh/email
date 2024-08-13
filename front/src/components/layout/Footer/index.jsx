@@ -7,11 +7,11 @@ const Footer = () => {
     <div>
      <div className="row flex-justify-space-between ">
       <ul className="form-group ">
-        <li className="mb-2"><a href=""  className="font-size- font-weight-500 text-natural "><Link to={""}>Solutions</Link></a></li>
-        <li><Link to={""} className="font-size-16 text-natural">Email signature genarator</Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">Email signature </Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">Pricing</Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">API</Link></li>
+        <li className="mb-2"><Link to={""}>Solutions</Link></li>
+        <li><Link to={""}>Email signature genarator</Link></li>
+        <li><Link to={""}>Email signature </Link></li>
+        <li><Link to={""}>Pricing</Link></li>
+        <li><Link to={""}>API</Link></li>
       </ul>
 
       <ul className="form-group ">
@@ -23,19 +23,19 @@ const Footer = () => {
       </ul>
 
       <ul className="form-group ">
-        <li className="mb-2"><a href="" className="font-size- font-weight-500 text-natural"><Link to={""}>Support</Link></a></li>
-        <li><Link to={""} className="font-size-16 text-natural">Help center</Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">Terms & Conditions</Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">Privacy Policy </Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">Thirty party tools</Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">Cookies policy</Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">GDRP</Link></li>
+        <li className="mb-2"><Link to={""}>Support</Link></li>
+        <li><Link to={""}>Help center</Link></li>
+        <li><Link to={""}>Terms & Conditions</Link></li>
+        <li><Link to={""}>Privacy Policy </Link></li>
+        <li><Link to={""}>Thirty party tools</Link></li>
+        <li><Link to={""}>Cookies policy</Link></li>
+        <li><Link to={""}>GDRP</Link></li>
       </ul>
 
       <ul className="form-group ">
-        <li className="mb-2"><a href="" className="font-size- font-weight-500 text-natural"><Link to={""}>Company</Link></a></li>
-        <li><Link to={""} className="font-size-16 text-natural">About us</Link></li>
-        <li><Link to={""} className="font-size-16 text-natural">Contact us</Link></li>
+        <li className="mb-2"><Link to={""}>Company</Link></li>
+        <li><Link to={""}>About us</Link></li>
+        <li><Link to={""}>Contact us</Link></li>
       </ul>
 
      </div>

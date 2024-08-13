@@ -1,20 +1,15 @@
-import Brands from "../components/views/Home/Brands";
-import CreateSign from "../components/views/Home/CreateSign";
-import Disclaimers from "../components/views/Home/DIsclaimers";
-import EmailSign from "../components/views/Home/EmailSign";
-import Explore from "../components/views/Home/Explore";
-import FAQs from "../components/views/Home/FAQ";
-
 import Home from "../pages/Home";
 import Brands from "../pages/Home/components/Brands";
 import CreateSign from "../pages/Home/components/CreateSign";
 import Disclaimers from "../pages/Home/components/Disclaimers";
 import EmailSign from "../pages/Home/components/EmailSign";
+import Explore from "../pages/Home/components/Explore";
 import FAQs from "../pages/Home/components/FAQ";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
 import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
+import ForgotPassword from "../pages/ForgotPassword";
 
 export const Routes = [
   {
