@@ -2,8 +2,8 @@ import { useEffect, useRef } from "react";
 import "./_style.scss";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import SectionHeader from "../../../common/SectionHeader";
 import { Link } from "react-router-dom";
+import SectionHeader from "../../../../components/common/SectionHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 

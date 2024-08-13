@@ -1,3 +1,10 @@
-footer{
+footer {
     background-color: #2E75D4;
+
+    ul {
+        li {
+            @extend .font-size-16;
+            @extend .text-natural;
+        }
+    }
 }

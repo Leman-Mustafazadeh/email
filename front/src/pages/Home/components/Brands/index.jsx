@@ -1,9 +1,9 @@
-import SectionHeader from "../../../common/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
 import adobe from "../../../../assets/images/brands/adobe.png";
 import amazon from "../../../../assets/images/brands/amazon.png";
 import ibm from "../../../../assets/images/brands/ibm.png";
 import oracle from "../../../../assets/images/brands/oracle.png";
-import "./style.scss"
+import "./style.scss";
 
 const Brands = () => {
   return (

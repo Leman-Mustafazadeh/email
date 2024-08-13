@@ -1,9 +1,10 @@
-import Brands from "../../components/views/Home/Brands";
-import CreateSign from "../../components/views/Home/CreateSign";
-import Disclaimers from "../../components/views/Home/DIsclaimers";
-import EmailSign from "../../components/views/Home/EmailSign";
-import Explore from "../../components/views/Home/Explore";
-import FAQs from "../../components/views/Home/FAQ";
+import Brands from "./components/Brands";
+import CreateSign from "./components/CreateSign";
+import Disclaimers from "./components/Disclaimers";
+import EmailSign from "./components/EmailSign";
+import Explore from "./components/Explore";
+import FAQs from "./components/FAQ";
+
 
 const Home = () => {
   return (

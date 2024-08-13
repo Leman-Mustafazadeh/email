@@ -1,4 +1,4 @@
-import SectionHeader from "../../../common/SectionHeader";
+import SectionHeader from "../../../../components/common/SectionHeader";
 
 const Explore = () => {
   return (

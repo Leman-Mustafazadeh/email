@@ -16,10 +16,11 @@ html {
 }
 
 body {
+  background-color: map-get($colors, background);
   position: relative;
 }
 
-main{
+main {
   overflow: hidden;
 }
 
