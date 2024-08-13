@@ -14,6 +14,7 @@ html {
 }
 
 body {
+  background-color: #F7F7F7;
   position: relative;
 }
 
@@ -1445,6 +1446,22 @@ a {
 
 .flex-column, .form-group, form {
   flex-direction: column;
+}
+
+.bg-background {
+  background-color: #F7F7F7 !important;
+}
+
+.text-background {
+  color: #F7F7F7 !important;
+}
+
+.border-background {
+  border: 1px solid #F7F7F7 !important;
+}
+
+.btn-background {
+  background-color: #F7F7F7 !important;
 }
 
 .bg-primary {
