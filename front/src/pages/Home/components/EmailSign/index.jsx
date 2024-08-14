@@ -1,14 +1,41 @@
+import { MenuItem, Select } from "@mui/material";
 import TextField from "@mui/material/TextField";
-import { Link } from "react-router-dom";
 import { Upload } from "antd";
 import ImgCrop from "antd-img-crop";
-import PageHeader from "../../../../components/common/PageHeader";
-import "./_style.scss";
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import { MenuItem, Select } from "@mui/material";
-import { SketchPicker } from "react-color";
+import { Link } from "react-router-dom";
+import PageHeader from "../../../../components/common/PageHeader";
+import "./_style.scss";
+// import { SketchPicker } from "react-color";
+// import colorWheel from "../../../../assets/images/color_wheel.png";
+
+const colors = [
+  { color: "21548F" },
+  { color: "1A73E8" },
+  { color: "34A853" },
+  { color: "FB7701" },
+  { color: "E9B2B3" },
+  { color: "8F2123" },
+  { color: "DF6818" },
+  { color: "26C843" },
+  { color: "FF6BC1" },
+];
+
+const fonts = [
+  "Roboto",
+  "Arial",
+  "Open Sans",
+  "Lato",
+  "Montserrat",
+  "Raleway",
+  "Oswald",
+  "PT Sans",
+  "Quicksand",
+  "Work Sans",
+  "Playfair Display",
+];
 
 const EmailSign = () => {
   const [selectedItem, setSelectedItem] = useState("upload");
@@ -44,18 +71,19 @@ const EmailSign = () => {
       phone,
     }));
   };
-  const handleFontColorChange = (color) => {
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      fontColor: color.hex,
-    }));
-  };
 
-  const handleBackgroundColorChange = (color) => {
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      backgroundColor: color.hex,
-    }));
+  const handleColorItemClick = (color, type) => {
+    if (type === "font") {
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        fontColor: color,
+      }));
+    } else if (type === "background") {
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        backgroundColor: color,
+      }));
+    }
   };
 
   const onChange = ({ fileList: newFileList }) => {
@@ -178,7 +206,7 @@ const EmailSign = () => {
                       </ImgCrop>
                     )}
                     {selectedItem === "design" && (
-                      <div className="design-container">
+                      <div className="design-container flex-container flex-column">
                         <div className="font">
                           <Select
                             style={{ width: "100%", marginBottom: "16px" }}
@@ -192,29 +220,56 @@ const EmailSign = () => {
                             displayEmpty
                             fullWidth
                           >
-                            <MenuItem value="Arial">Arial</MenuItem>
-                            <MenuItem value="Times New Roman">
-                              Times New Roman
-                            </MenuItem>
-                            <MenuItem value="Courier New">Courier New</MenuItem>
-                            <MenuItem value="Georgia">Georgia</MenuItem>
-                            <MenuItem value="Verdana">Verdana</MenuItem>
+                            {fonts.map((font) => (
+                              <MenuItem value={font} key={font}>
+                                {font}
+                              </MenuItem>
+                            ))}
                           </Select>
                         </div>
-                        <div className="font-color">
+
+                        <div className="font-color flex-container flex-column">
                           <span>Font Color</span>
-                          <SketchPicker
-                            color={formValues.fontColor}
-                            onChangeComplete={handleFontColorChange}
-                          />
+
+                          <div className="colors-pallete flex-container">
+                            {colors.map((colorObj, index) => (
+                              <button
+                                className="color"
+                                key={index}
+                                style={{
+                                  backgroundColor: `#${colorObj.color}`,
+                                }}
+                                onClick={() =>
+                                  handleColorItemClick(
+                                    `#${colorObj.color}`,
+                                    "font"
+                                  )
+                                }
+                              ></button>
+                            ))}
+                          </div>
                         </div>
 
-                        <div className="background-color">
+                        <div className="background-color flex-container flex-column">
                           <span>Background Color</span>
-                          <SketchPicker
-                            color={formValues.backgroundColor}
-                            onChangeComplete={handleBackgroundColorChange}
-                          />
+
+                          <div className="colors-pallete flex-container">
+                            {colors.map((colorObj, index) => (
+                              <button
+                                className="color"
+                                key={index}
+                                style={{
+                                  backgroundColor: `#${colorObj.color}`,
+                                }}
+                                onClick={() =>
+                                  handleColorItemClick(
+                                    `#${colorObj.color}`,
+                                    "background"
+                                  )
+                                }
+                              ></button>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     )}
@@ -234,7 +289,10 @@ const EmailSign = () => {
                   Kind Regards
                 </h5>
 
-                <div className="row mt-4 btn-store">
+                <div
+                  className="row mt-4"
+                  style={{ backgroundColor: formValues.backgroundColor }}
+                >
                   <div className="right-img">
                     <img
                       src={
@@ -244,22 +302,22 @@ const EmailSign = () => {
                     />
                   </div>
                   <div className="right-regard">
-                    <h2 className="text-light font-weight-700 pb-2">
+                    <h2 style={{ color: formValues.fontColor }}>
                       {formValues.fullName || "Your Name"}
                     </h2>
-                    <p className="text-light font-weight-600 pb-2">
+                    <p style={{ color: formValues.fontColor }}>
                       {formValues.company || "Company Name"}
                     </p>
-                    <p className="text-light font-weight-600 pb-2">
+                    <p style={{ color: formValues.fontColor }}>
                       {formValues.position || "Your Position"}
                     </p>
-                    <p className="text-light font-weight-500 pb-2">
+                    <p style={{ color: formValues.fontColor }}>
                       {formValues.phone || "Your Phone"}
                     </p>
-                    <p className="text-light font-weight-500 pb-2">
+                    <p style={{ color: formValues.fontColor }}>
                       {formValues.email || "Your Email"}
                     </p>
-                    <p className="text-light font-weight-500 pb-2">
+                    <p style={{ color: formValues.fontColor }}>
                       {formValues.address || "Your Address"}
                     </p>
                   </div>

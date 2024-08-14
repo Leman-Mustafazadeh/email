@@ -45,7 +45,35 @@
                 }
 
                 .design-container {
+                    gap: 10px;
                     width: 100%;
+
+
+                    img {
+                        width: 25px;
+                        height: 25px;
+                        cursor: pointer;
+                        user-select: none;
+                    }
+
+                    .font-color,
+                    .background-color {
+                        gap: 10px;
+                    }
+
+                    .colors-pallete {
+                        @extend .flex-container;
+                        gap: 10px;
+
+                        .color {
+                            cursor: pointer;
+                            user-select: none;
+                            border-radius: 50%;
+                            width: 24px;
+                            height: 24px;
+                            background-color: map-get($colors, primary);
+                        }
+                    }
                 }
             }
 
