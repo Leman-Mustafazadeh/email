@@ -8,6 +8,22 @@
             background-color: map-get($colors, natural);
             border-radius: 12px;
 
+            .react-tel-input {
+                position: relative;
+                height: 55px;
+
+                input {
+                    height: 100%;
+                }
+
+                .flag-dropdown {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: 100%;
+                }
+            }
+
             .text {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
@@ -28,6 +44,9 @@
                     }
                 }
 
+                .design-container {
+                    width: 100%;
+                }
             }
 
             .temp_wrap {
