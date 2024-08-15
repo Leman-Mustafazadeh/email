@@ -347,7 +347,7 @@ const EmailSign = () => {
                 </h5>
 
                 <div
-                  className="row mt-4 p-2 flex-container flex-align-center"
+                  className="row mt-4 p-1 flex-container flex-align-center"
                   style={{ backgroundColor: formValues.backgroundColor }}
                 >
                   <div className="right-img">
