@@ -4,8 +4,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import controller from "../../service/API";
+import { apiController } from "../../service/Auth/authApi";
 import { login } from "../../service/slice/user";
+import { apiEndpoints } from "../../service/Auth/authApi";
 import "./_style.scss";
 
 const showAlert = (icon, title) => {
@@ -36,14 +37,17 @@ const Login = () => {
     },
     onSubmit: async (values, actions) => {
       try {
-        const response = await controller.post("/Account/Login", values);
+        const response = await apiController.post(
+          apiEndpoints.post("/Account/Login"),
+          values
+        );
 
         if (response.auth) {
           actions.resetForm();
           dispatch(login(response.user));
           showAlert("success", response.message);
           console.log("SUCCESS");
-          
+
           navigate("/");
         } else {
           showAlert("error", response.message);
@@ -65,14 +69,13 @@ const Login = () => {
             <h4>Welcome back!</h4>
 
             <div className="login">
-              <span>Do not have an acoount? - </span>
-              <Link to={"/signup"}>Sign Up</Link>{" "}
+              <span>Do not have an account? - </span>
+              <Link to={"/signup"}>Sign Up</Link>
             </div>
-            <form>
+            <form onSubmit={formik.handleSubmit}>
               <div className="form-group">
-                {/* <span>E-mail Address</span> */}
                 <TextField
-                  id="outlined-basic"
+                  id="email"
                   label="E-mail Address"
                   variant="outlined"
                   name="email"
@@ -86,9 +89,8 @@ const Login = () => {
                 />
               </div>
               <div className="form-group">
-                {/* <span>Password</span> */}
                 <TextField
-                  id="outlined-basic"
+                  id="password"
                   label="Password"
                   variant="outlined"
                   name="password"
@@ -116,14 +118,14 @@ const Login = () => {
                 src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg"
                 alt="google sign up"
               />
-              Sing up with Google
+              Sign up with Google
             </button>
 
             <div className="free-trial">
               <span>Try our services free for 7 days!</span>
               <div className="privacy-policy">
                 <p>
-                  By signing up, your agree to the
+                  By signing up, you agree to the
                   <Link to="/"> Terms And Condition</Link>
                 </p>
                 <p>

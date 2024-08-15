@@ -48,7 +48,7 @@ const EmailSign = () => {
     phone: "",
     email: "",
     address: "",
-    font: "Arial",
+    font: "Montserrat",
     fontColor: "#000000",
     backgroundColor: "#ffffff",
   });
@@ -290,7 +290,7 @@ const EmailSign = () => {
                 </h5>
 
                 <div
-                  className="row mt-4"
+                  className="row mt-4 p-2 flex-container flex-align-center"
                   style={{ backgroundColor: formValues.backgroundColor }}
                 >
                   <div className="right-img">
@@ -301,23 +301,56 @@ const EmailSign = () => {
                       alt="Uploaded"
                     />
                   </div>
-                  <div className="right-regard">
-                    <h2 style={{ color: formValues.fontColor }}>
+                  <div className="right-regard mx-5">
+                    <h2
+                      style={{
+                        color: formValues.fontColor,
+                        fontFamily: formValues.font,
+                      }}
+                    >
                       {formValues.fullName || "Your Name"}
                     </h2>
-                    <p style={{ color: formValues.fontColor }}>
-                      {formValues.company || "Company Name"}
-                    </p>
-                    <p style={{ color: formValues.fontColor }}>
-                      {formValues.position || "Your Position"}
-                    </p>
-                    <p style={{ color: formValues.fontColor }}>
+                    <div className="flex-container">
+                      <p
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.company || "Company Name"},
+                      </p>
+                      <p
+                        className="mx-2"
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.position || "Your Position"}
+                      </p>
+                    </div>
+                    <p
+                      style={{
+                        color: formValues.fontColor,
+                        fontFamily: formValues.font,
+                      }}
+                    >
                       {formValues.phone || "Your Phone"}
                     </p>
-                    <p style={{ color: formValues.fontColor }}>
+                    <p
+                      style={{
+                        color: formValues.fontColor,
+                        fontFamily: formValues.font,
+                      }}
+                    >
                       {formValues.email || "Your Email"}
                     </p>
-                    <p style={{ color: formValues.fontColor }}>
+                    <p
+                      style={{
+                        color: formValues.fontColor,
+                        fontFamily: formValues.font,
+                      }}
+                    >
                       {formValues.address || "Your Address"}
                     </p>
                   </div>

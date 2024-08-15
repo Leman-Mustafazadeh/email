@@ -10,10 +10,10 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action) => {
-      const { role, _id } = action.payload;
-      state.id = _id;
+      const { id, role } = action.payload;
+      state.id = id;
       state.role = role;
-      localStorage.setItem("user", JSON.stringify({ id: _id, role }));
+      localStorage.setItem("user", JSON.stringify({ id, role }));
     },
     logout: (state) => {
       state.id = null;
