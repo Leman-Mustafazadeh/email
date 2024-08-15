@@ -4,8 +4,9 @@ import "./_style.scss";
 const Navbar = () => {
   return (
     <>
-      <div className="container py-3">
-        <div className="row px-5">
+     <header>
+     <div className="container ">
+        <div className="row py-3">
           <div className="col-6">
             <div className="logo">
               <Link to="/">
@@ -27,6 +28,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+     </header>
     </>
   );
 };

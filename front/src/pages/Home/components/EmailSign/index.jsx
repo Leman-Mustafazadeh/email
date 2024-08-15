@@ -70,6 +70,8 @@ const EmailSign = () => {
   };
 
   const handlePhoneChange = (phone) => {
+
+    
     setFormValues((prevValues) => ({
       ...prevValues,
       phone,
@@ -121,7 +123,7 @@ const EmailSign = () => {
 
         <div className="generator">
           <div className="generator_banner row mt-3">
-            <div className="col-12 col-lg-6 px-2">
+            <div className="col-12 pr-2 col-lg-6">
               <div className="generator_banner_left">
                 <div className="btn-store p-3 text">
                   <TextField
@@ -339,7 +341,7 @@ const EmailSign = () => {
               </div>
             </div>
 
-            <div className="col-12 col-lg-6 px-2 flex-container flex-column">
+            <div className="col-12 col-lg-6 pl-2 flex-container flex-column">
               <div className="generator_banner_right">
                 <h5 className="text-inky font-size-28 font-weight-700">
                   Kind Regards
