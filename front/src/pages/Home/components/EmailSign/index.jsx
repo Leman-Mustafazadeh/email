@@ -70,8 +70,6 @@ const EmailSign = () => {
   };
 
   const handlePhoneChange = (phone) => {
-
-    
     setFormValues((prevValues) => ({
       ...prevValues,
       phone,
@@ -99,7 +97,8 @@ const EmailSign = () => {
 
     if (singleFileList.length > 0 && singleFileList[0].status === "done") {
       setUploadedImageUrl(
-        singleFileList[0].url || URL.createObjectURL(singleFileList[0].originFileObj)
+        singleFileList[0].url ||
+          URL.createObjectURL(singleFileList[0].originFileObj)
       );
     } else {
       setUploadedImageUrl(null);
@@ -357,11 +356,64 @@ const EmailSign = () => {
                         uploadedImageUrl || "https://via.placeholder.com/150"
                       }
                       alt="Uploaded"
-                      style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                      style={{
+                        width: "150px",
+                        height: "150px",
+                        objectFit: "cover",
+                      }}
                     />
                   </div>
-                  
 
+                  <div className="right-regard mx-5">
+                    <h2
+                      style={{
+                        color: formValues.fontColor,
+                        fontFamily: formValues.font,
+                      }}
+                    >
+                      {formValues.fullName || "Your Name"}
+                    </h2>
+                    <div className="flex-container">
+                      <p
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.company || "Company Name"},
+                      </p>
+                      <p
+                        className="mx-2"
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.position || "Your Position"}
+                      </p>
+                    </div>
+                    <p
+                      style={{
+                        color: formValues.fontColor,
+                        fontFamily: formValues.font,
+                      }}
+                    >
+                      {formValues.phone || "Your Phone"}
+                    </p>
+                    <p
+                      style={{
+                        color: formValues.fontColor,
+                        fontFamily: formValues.font,
+                      }}
+                    >
+                      {formValues.email || "Your Email"}
+                    </p>
+                    <p
+                      style={{
+                        color: formValues.fontColor,
+                        fontFamily: formValues.font,
+                      }}
+                    >
                       {formValues.address || "Your Address"}
                     </p>
                   </div>
