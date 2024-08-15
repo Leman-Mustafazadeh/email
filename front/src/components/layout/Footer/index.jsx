@@ -11,7 +11,6 @@ const Footer = () => {
         <li><Link to={""}>Email signature genarator</Link></li>
         <li><Link to={""}>Email signature </Link></li>
         <li><Link to={""}>Pricing</Link></li>
-        <li><Link to={""}>API</Link></li>
       </ul>
 
       <ul className="form-group ">
@@ -28,8 +27,6 @@ const Footer = () => {
         <li><Link to={""}>Terms & Conditions</Link></li>
         <li><Link to={""}>Privacy Policy </Link></li>
         <li><Link to={""}>Thirty party tools</Link></li>
-        <li><Link to={""}>Cookies policy</Link></li>
-        <li><Link to={""}>GDRP</Link></li>
       </ul>
 
       <ul className="form-group ">
