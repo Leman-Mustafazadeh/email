@@ -1,20 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
 import TextField from "@mui/material/TextField";
-import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import controller from "../../service/API";
+import { apiController } from "../../service/Auth/authApi";
 import { login } from "../../service/slice/user";
 import "./_style.scss";
-// import useAuth from "../../service/Auth/useAuth";
 
 const SignUp = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); 
-
-  // const { useRegister } = useAuth();
-  // const register = useRegister();
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -35,7 +31,8 @@ const SignUp = () => {
     },
     onSubmit: async (values, actions) => {
       try {
-        const response = await controller.post("/Account/Register", values);
+        const response = await apiController.post("/Account/Register", values);
+
         if (response.auth) {
           actions.resetForm();
           dispatch(login(response));
@@ -45,9 +42,7 @@ const SignUp = () => {
             showConfirmButton: false,
             timer: 1500,
           });
-          console.log("succes");
-          
-          navigate("/"); 
+          navigate("/");
         } else {
           Swal.fire({
             icon: "error",
@@ -56,11 +51,16 @@ const SignUp = () => {
           });
         }
       } catch (error) {
-        console.error("Error:", error.response ? error.response.data : error.message);
+        console.error(
+          "Error:",
+          error.response ? error.response.data : error.message
+        );
         Swal.fire({
           icon: "error",
           title: "Oops, something went wrong!",
-          text: error.response ? error.response.data.message : "An unexpected error occurred.",
+          text: error.response
+            ? error.response.data.message
+            : "An unexpected error occurred.",
         });
       }
     },
@@ -101,14 +101,18 @@ const SignUp = () => {
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  error={formik.touched.password && Boolean(formik.errors.password)}
+                  error={
+                    formik.touched.password && Boolean(formik.errors.password)
+                  }
                   helperText={formik.touched.password && formik.errors.password}
                   required
                 />
               </div>
               <button
                 type="submit"
-                className={`btn btn-primary text-natural ${formik.isSubmitting ? "btn-disabled" : ""}`}
+                className={`btn btn-primary text-natural ${
+                  formik.isSubmitting ? "btn-disabled" : ""
+                }`}
                 disabled={formik.isSubmitting}
               >
                 {formik.isSubmitting ? "Registering..." : "Sign Up"}

@@ -52,7 +52,7 @@ const EmailSign = () => {
     phone: "",
     email: "",
     address: "",
-    font: "Arial",
+    font: "Montserrat",
     fontColor: "#000000",
     backgroundColor: "#ffffff",
   });
@@ -348,7 +348,7 @@ const EmailSign = () => {
                 </h5>
 
                 <div
-                  className="row mt-4"
+                  className="row mt-4 p-2 flex-container flex-align-center"
                   style={{ backgroundColor: formValues.backgroundColor }}
                 >
                   <div className="right-img">
@@ -360,26 +360,8 @@ const EmailSign = () => {
                       style={{ width: "150px", height: "150px", objectFit: "cover" }}
                     />
                   </div>
-                  <div className="right-regard ml-4">
-                    <h2
-                      style={{ color: formValues.fontColor }}
-                      className="pb-1"
-                    >
-                      {formValues.fullName || "Your Name"}
-                    </h2>
-                    <p style={{ color: formValues.fontColor }} className="pb-1">
-                      {formValues.company || "Company Name"}
-                    </p>
-                    <p style={{ color: formValues.fontColor }} className="pb-1">
-                      {formValues.position || "Your Position"}
-                    </p>
-                    <p style={{ color: formValues.fontColor }} className="pb-1">
-                      {formValues.phone || "Your Phone"}
-                    </p>
-                    <p style={{ color: formValues.fontColor }} className="pb-1">
-                      {formValues.email || "Your Email"}
-                    </p>
-                    <p style={{ color: formValues.fontColor }} className="pb-1">
+                  
+
                       {formValues.address || "Your Address"}
                     </p>
                   </div>
