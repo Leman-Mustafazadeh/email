@@ -8,8 +8,12 @@ import "react-phone-input-2/lib/style.css";
 import { Link } from "react-router-dom";
 import PageHeader from "../../../../components/common/PageHeader";
 import "./_style.scss";
-// import { SketchPicker } from "react-color";
-// import colorWheel from "../../../../assets/images/color_wheel.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faFacebook,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
 
 const colors = [
   { color: "21548F" },
@@ -87,31 +91,25 @@ const EmailSign = () => {
   };
 
   const onChange = ({ fileList: newFileList }) => {
-    setFileList(newFileList);
+    // Allow only one file at a time
+    const singleFileList = newFileList.slice(-1);
+    setFileList(singleFileList);
 
-    if (newFileList.length > 0 && newFileList[0].status === "done") {
+    if (singleFileList.length > 0 && singleFileList[0].status === "done") {
       setUploadedImageUrl(
-        newFileList[0].url || URL.createObjectURL(newFileList[0].originFileObj)
+        singleFileList[0].url || URL.createObjectURL(singleFileList[0].originFileObj)
       );
     } else {
       setUploadedImageUrl(null);
     }
   };
 
-  const onPreview = async (file) => {
-    let src = file.url;
-    if (!src) {
-      src = await new Promise((resolve) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(file.originFileObj);
-        reader.onload = () => resolve(reader.result);
-      });
-    }
-    const image = new Image();
-    image.src = src;
-    const imgWindow = window.open(src);
-    imgWindow?.document.write(image.outerHTML);
-  };
+  const [socialUrl, setSocialUrl] = useState({
+    instagram: "",
+    facebook: "",
+    linkedln: "",
+    qrCode: "",
+  });
 
   return (
     <section>
@@ -176,7 +174,7 @@ const EmailSign = () => {
 
                 <div className="templateX p-5 mt-3">
                   <ul className="row templateX-headers">
-                    {["upload", "design", "url"].map((category) => (
+                    {["upload", "design", "URL"].map((category) => (
                       <Link
                         key={category}
                         onClick={() => handleCategoryClick(category)}
@@ -199,9 +197,9 @@ const EmailSign = () => {
                           listType="picture-card"
                           fileList={fileList}
                           onChange={onChange}
-                          onPreview={onPreview}
+                          maxCount={1} // Restrict to 1 file
                         >
-                          {fileList.length < 5 && "+ Upload"}
+                          {fileList.length < 1 && "+ Upload"}
                         </Upload>
                       </ImgCrop>
                     )}
@@ -273,9 +271,67 @@ const EmailSign = () => {
                         </div>
                       </div>
                     )}
-                    {selectedItem === "url" && (
+                    {selectedItem === "URL" && (
                       <div className="url-container">
-                        <p>URL content goes here.</p>
+                        <div className="url-sosial">
+                          <div className="mb-3">
+                            <input
+                              type="text"
+                              className="font-size-14 font-weight-400 btn-background p-3"
+                              placeholder="Instagram URL"
+                              value={socialUrl.instagram}
+                              onChange={(e) =>
+                                setSocialUrl((prev) => ({
+                                  ...prev,
+                                  instagram: e.target.value,
+                                }))
+                              }
+                            />
+                          </div>
+                          <div className="mb-3">
+                            <input
+                              type="text"
+                              className="font-size-14 font-weight-400 btn-background p-3"
+                              placeholder="Facebook URL"
+                              value={socialUrl.facebook}
+                              onChange={(e) =>
+                                setSocialUrl((prev) => ({
+                                  ...prev,
+                                  facebook: e.target.value,
+                                }))
+                              }
+                            />
+                          </div>
+
+                          <div className="mb-3">
+                            <input
+                              type="text"
+                              className="font-size-14 font-weight-400 btn-background p-3"
+                              placeholder="LinkedIn URL"
+                              value={socialUrl.linkedln}
+                              onChange={(e) =>
+                                setSocialUrl((prev) => ({
+                                  ...prev,
+                                  linkedln: e.target.value,
+                                }))
+                              }
+                            />
+                          </div>
+                          <div className="mb-3">
+                            <input
+                              type="text"
+                              className="font-size-14 font-weight-400 btn-background p-3"
+                              placeholder="QR code URL"
+                              value={socialUrl.qrCode}
+                              onChange={(e) =>
+                                setSocialUrl((prev) => ({
+                                  ...prev,
+                                  qrCode: e.target.value,
+                                }))
+                              }
+                            />
+                          </div>
+                        </div>
                       </div>
                     )}
                   </div>
@@ -299,33 +355,73 @@ const EmailSign = () => {
                         uploadedImageUrl || "https://via.placeholder.com/150"
                       }
                       alt="Uploaded"
+                      style={{ width: "150px", height: "150px", objectFit: "cover" }}
                     />
                   </div>
-                  <div className="right-regard">
-                    <h2 style={{ color: formValues.fontColor }}>
+                  <div className="right-regard ml-4">
+                    <h2
+                      style={{ color: formValues.fontColor }}
+                      className="pb-1"
+                    >
                       {formValues.fullName || "Your Name"}
                     </h2>
-                    <p style={{ color: formValues.fontColor }}>
+                    <p style={{ color: formValues.fontColor }} className="pb-1">
                       {formValues.company || "Company Name"}
                     </p>
-                    <p style={{ color: formValues.fontColor }}>
+                    <p style={{ color: formValues.fontColor }} className="pb-1">
                       {formValues.position || "Your Position"}
                     </p>
-                    <p style={{ color: formValues.fontColor }}>
+                    <p style={{ color: formValues.fontColor }} className="pb-1">
                       {formValues.phone || "Your Phone"}
                     </p>
-                    <p style={{ color: formValues.fontColor }}>
+                    <p style={{ color: formValues.fontColor }} className="pb-1">
                       {formValues.email || "Your Email"}
                     </p>
-                    <p style={{ color: formValues.fontColor }}>
+                    <p style={{ color: formValues.fontColor }} className="pb-1">
                       {formValues.address || "Your Address"}
                     </p>
                   </div>
                 </div>
 
                 <h4 className="text-text font-size-16 font-weight-500 pt-3">
-                  Create your WebSite <Link to="#">email signature</Link>
+                  Create your Website{" "}
+                  <Link to="#" className="text-danger">
+                    email signature
+                  </Link>
                 </h4>
+
+                <div className="btn-store mt-4">
+                  <a
+                    href={socialUrl.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      className="font-size-30"
+                    />
+                  </a>
+                  <a
+                    href={socialUrl.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      className="font-size-30"
+                    />
+                  </a>
+                  <a
+                    href={socialUrl.linkedln}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      className="font-size-30"
+                    />
+                  </a>
+                </div>
               </div>
               <button
                 className="btn_email bg-secondary p-2 mt-4 font-size-24 text-natural font-weight-500"
