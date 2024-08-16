@@ -5,7 +5,6 @@
 
 
         &_left {
-            background-color: map-get($colors, natural);
             border-radius: 12px;
 
             .react-tel-input {
@@ -25,11 +24,17 @@
             }
 
             .text {
+                background-color: map-get($colors, natural);
+                border-radius: 12px;
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                gap: 15px 10px;
             }
 
             .templateX {
+                background-color: map-get($colors, natural);
+                border-radius: 12px;
+
                 &-headers {
                     gap: 50px;
 
@@ -105,6 +110,7 @@
 
         .url-container {
             width: 100%;
+
             .url-sosial {
                 gap: 10px;
 
