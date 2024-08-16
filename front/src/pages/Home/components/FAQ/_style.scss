@@ -3,40 +3,49 @@
         @extend .flex-container;
         @extend .flex-column;
         gap: 20px;
+
         .faq-container {
             @extend .flex-container;
             @extend .flex-column;
             gap: 20px;
+
             .faq-question {
                 @extend .p-5;
                 background-color: map-get($colors, light10);
                 border-radius: 16px;
                 position: relative;
                 cursor: pointer;
+
                 h5 {
                     @extend .font-size-16;
                 }
+
                 svg {
                     width: 27px;
                     height: 27px;
                 }
+
                 h5,
                 svg {
                     transition: all 0.3s;
                 }
+
                 &.active-question {
                     color: map-get($colors, primary);
                 }
+
                 &:hover {
+
                     h5,
                     svg {
                         color: map-get($colors, primary);
                     }
                 }
             }
+
             .faq-answer {
                 @extend .p-5;
-                background-color: map-get($colors, primary30);
+                background-color: map-get($colors, primaryFAQ);
                 border-radius: 16px;
                 max-height: 0;
                 overflow: hidden;

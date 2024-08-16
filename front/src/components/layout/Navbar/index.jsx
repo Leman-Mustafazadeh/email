@@ -21,7 +21,7 @@ const Navbar = () => {
               </Link>
               <Link to="sign-up">
                 <button className="btn btn-primary text-natural">
-                  Sing Up
+                  Sign Up
                 </button>
               </Link>
             </div>
