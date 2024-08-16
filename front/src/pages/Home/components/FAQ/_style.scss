@@ -11,19 +11,27 @@
 
             .faq-question {
                 @extend .p-5;
+                @extend .flex-container;
+                @extend .flex-column;
                 background-color: map-get($colors, light10);
                 border-radius: 16px;
                 position: relative;
                 cursor: pointer;
 
-                h5 {
-                    @extend .font-size-16;
+                &-header {
+                    @extend .flex-container;
+                    @extend .flex-justify-space-between;
+
+                    h5 {
+                        @extend .font-size-16;
+                    }
+
+                    svg {
+                        width: 27px;
+                        height: 27px;
+                    }
                 }
 
-                svg {
-                    width: 27px;
-                    height: 27px;
-                }
 
                 h5,
                 svg {
@@ -32,6 +40,7 @@
 
                 &.active-question {
                     color: map-get($colors, primary);
+
                 }
 
                 &:hover {
@@ -61,18 +70,20 @@
 
             &.faq-active {
                 .faq-question {
+                    background-color: map-get($colors, primaryFAQ);
+
                     &.active-question {
                         color: map-get($colors, primary);
                     }
-                }
 
-                .faq-answer {
-                    max-height: 300px;
-                    animation: fade 1s ease-in-out;
-                }
+                    .faq-answer {
+                        max-height: 300px;
+                        animation: fade 1s ease-in-out;
+                    }
 
-                svg {
-                    transform: rotate(180deg);
+                    svg {
+                        transform: rotate(180deg);
+                    }
                 }
             }
         }

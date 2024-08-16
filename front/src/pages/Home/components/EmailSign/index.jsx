@@ -116,7 +116,7 @@ const EmailSign = () => {
     <section>
       <div className="container">
         <PageHeader header="Free online Email Signature Generator" />
-        <p className="font-size-20 font-weight-400 py-4 text-align-center">
+        <p className="font-size-20 font-weight-400 py-3 text-align-center">
           Measure, track and maximize your Email signature
         </p>
 
@@ -124,9 +124,9 @@ const EmailSign = () => {
           <div className="generator_banner row mt-3">
             <div className="col-12 pr-2 col-lg-6">
               <div className="generator_banner_left">
-                <div className="btn-store p-3 text">
+                <div className="text p-5">
                   <TextField
-                    style={{ width: "100%", marginBottom: "16px" }}
+                    style={{ width: "100%" }}
                     label="Full Name"
                     variant="outlined"
                     name="fullName"
@@ -134,7 +134,7 @@ const EmailSign = () => {
                     onChange={handleInputChange}
                   />
                   <TextField
-                    style={{ width: "100%", marginBottom: "16px" }}
+                    style={{ width: "100%" }}
                     label="Company"
                     variant="outlined"
                     name="company"
@@ -142,7 +142,7 @@ const EmailSign = () => {
                     onChange={handleInputChange}
                   />
                   <TextField
-                    style={{ width: "100%", marginBottom: "16px" }}
+                    style={{ width: "100%" }}
                     label="Position"
                     variant="outlined"
                     name="position"
@@ -153,10 +153,10 @@ const EmailSign = () => {
                     country={"us"}
                     value={formValues.phone}
                     onChange={handlePhoneChange}
-                    inputStyle={{ width: "100%", marginBottom: "16px" }}
+                    inputStyle={{ width: "100%" }}
                   />
                   <TextField
-                    style={{ width: "100%", marginBottom: "16px" }}
+                    style={{ width: "100%" }}
                     label="Email"
                     variant="outlined"
                     name="email"
@@ -164,7 +164,7 @@ const EmailSign = () => {
                     onChange={handleInputChange}
                   />
                   <TextField
-                    style={{ width: "100%", marginBottom: "16px" }}
+                    style={{ width: "100%" }}
                     label="Address"
                     variant="outlined"
                     name="address"
@@ -208,7 +208,7 @@ const EmailSign = () => {
                       <div className="design-container flex-container flex-column">
                         <div className="font">
                           <Select
-                            style={{ width: "100%", marginBottom: "16px" }}
+                            style={{ width: "100%" }}
                             value={formValues.font}
                             onChange={(e) =>
                               handleInputChange({
