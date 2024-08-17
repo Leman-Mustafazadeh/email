@@ -53,7 +53,7 @@ const FAQs = () => {
                 >
                   <div className="faq-question flex-container flex-justify-space-between">
                     <div className="faq-question-header">
-                      <h5>{faq.question}</h5>
+                      <h5 className="etxt-text">{faq.question}</h5>
                       <CiCircleChevDown />
                     </div>
                     {activeIndex === index && (
