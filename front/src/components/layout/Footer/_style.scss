@@ -5,6 +5,10 @@ footer {
         li {
             @extend .font-size-16;
             @extend .text-natural;
+            
+        }
+        li:first-child{
+            color: red;
         }
     }
 }
