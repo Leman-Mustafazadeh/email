@@ -746,7 +746,7 @@ a {
   margin-left: auto;
   padding-right: 20px;
   padding-left: 20px;
-  max-width: 1296px !important;
+  max-width: 1140px !important;
 }
 
 .row {
@@ -2224,7 +2224,7 @@ a {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1296px !important;
+    max-width: 1150px !important;
   }
 }
 @media screen and (max-width: 992px) {
