@@ -37,9 +37,8 @@ const FAQs = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
   return (
-    <div>
-      <SectionHeader header="Frequently Asked Questions" />
-      <section className="support FAQ my-5">
+ 
+      <section className="support FAQ ">
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-10 offset-lg-1 faqs">
@@ -58,7 +57,7 @@ const FAQs = () => {
                     </div>
                     {activeIndex === index && (
                       <div className="faq-answer">
-                        <p>{faq.answer}</p>
+                        <p className="font-weight-400">{faq.answer}</p>
                       </div>
                     )}
                   </div>
@@ -68,7 +67,7 @@ const FAQs = () => {
           </div>
         </div>
       </section>
-    </div>
+    
   );
 };
 

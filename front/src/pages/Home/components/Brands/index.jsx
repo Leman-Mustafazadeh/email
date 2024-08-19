@@ -7,20 +7,20 @@ import "./style.scss";
 
 const Brands = () => {
   return (
-    <div className="brands mt-6">
+    <div className="brands ">
       <SectionHeader header="Top brands that use email signature" />
-      <div className="container my-5">
+      <div className=" my-5">
         <div className="brands-logo row">
-          <div className="col-12 col-md-6 col-lg-3 logo">
+          <div className="col-12 col-md-6 col-lg-2 logo">
             <img src={amazon} alt="amazon" />
           </div>
-          <div className="col-12 col-md-6 col-lg-3 logo">
+          <div className="col-12 col-md-6 col-lg-2 logo">
             <img src={oracle} alt="oracle" />
           </div>
-          <div className="col-12 col-md-6 col-lg-3 logo">
+          <div className="col-12 col-md-6 col-lg-2 logo">
             <img src={ibm} alt="ibm" />
           </div>
-          <div className="col-12 col-md-6 col-lg-3 logo">
+          <div className="col-12 col-md-6 col-lg-2 logo">
             <img src={adobe} alt="adobe" />
           </div>
         </div>

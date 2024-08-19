@@ -1,14 +1,14 @@
-.FAQ {
+.support {
+    margin-top: 150px;
+    margin-bottom: 140px;
     .faqs {
         @extend .flex-container;
         @extend .flex-column;
         gap: 20px;
-
         .faq-container {
             @extend .flex-container;
             @extend .flex-column;
             gap: 20px;
-
             .faq-question {
                 @extend .p-5;
                 @extend .flex-container;
@@ -24,6 +24,7 @@
 
                     h5 {
                         @extend .font-size-16;
+                        line-height: 22px;
                     }
 
                     svg {
@@ -47,7 +48,7 @@
 
                     h5,
                     svg {
-                        color: map-get($colors, primary);
+                        color: map-get($colors, bg-primary60 );
                     }
                 }
             }
@@ -64,7 +65,7 @@
                     @extend .py-3;
                     @extend .font-size-16;
                     color: map-get($colors, text);
-                    line-height: 1.75;
+                    line-height:28px;
                 }
             }
 

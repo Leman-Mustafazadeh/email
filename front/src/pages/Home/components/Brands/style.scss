@@ -1,5 +1,8 @@
 .brands {
-    .brands-logo {
+    margin: 120px 0;
+    .brands-logo {   @extend .flex-container;
+        @extend .flex-align-center;
+        @extend .flex-justify-center;
         .logo {
             // @extend .p-3;
             @extend .flex-container;

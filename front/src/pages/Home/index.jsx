@@ -4,6 +4,7 @@ import Disclaimers from "./components/Disclaimers";
 import EmailSign from "./components/EmailSign";
 import Explore from "./components/Explore";
 import FAQs from "./components/FAQ";
+import FreeTrial from "./components/FreeTrial";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
       <CreateSign />
       <Explore />
       <FAQs />
+      <FreeTrial/>
       <Disclaimers />
     </div>
   );

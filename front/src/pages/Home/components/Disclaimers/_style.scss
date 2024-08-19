@@ -1,5 +1,6 @@
 .disclaimer {
     @extend .p-5;
+    margin-bottom: 60px;
     background-color: map-get($colors, silvery);
 
     p {
