@@ -12,7 +12,8 @@ import { Link } from "react-router-dom";
 
 const Explore = () => {
   return (
-    <div className="explore">
+   <section className="explore_head">
+     <div className="explore">
       <SectionHeader header="Explore templates" />
       <div className="container ">
        <div className="explore-templates row">
@@ -52,6 +53,7 @@ const Explore = () => {
        <Link to={'/sign-up'}><button className="btn-access font-size-18 font-weight-700 mt-7">Explore template</button></Link>
       </div>
     </div>
+   </section>
   );
 };
 
