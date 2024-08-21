@@ -91,15 +91,15 @@ const EmailSign = () => {
   };
 
   const onChange = ({ fileList: newFileList }) => {
-    // Allow only one file at a time
     const singleFileList = newFileList.slice(-1);
     setFileList(singleFileList);
 
-    if (singleFileList.length > 0 && singleFileList[0].status === "done") {
-      setUploadedImageUrl(
-        singleFileList[0].url ||
-          URL.createObjectURL(singleFileList[0].originFileObj)
-      );
+    if (singleFileList.length > 0) {
+      const file = singleFileList[0].originFileObj;
+      if (file) {
+        const imageURL = URL.createObjectURL(file);
+        setUploadedImageUrl(imageURL);
+      }
     } else {
       setUploadedImageUrl(null);
     }
@@ -258,7 +258,13 @@ const EmailSign = () => {
                           listType="picture-card"
                           fileList={fileList}
                           onChange={onChange}
-                          maxCount={1} // Restrict to 1 file
+                          maxCount={1}
+                          beforeUpload={(file) => {
+                            const imageURL = URL.createObjectURL(file); // Create a local URL for preview
+                            setUploadedImageUrl(imageURL); // Set the uploaded image URL
+                            setFileList([file]); // Update fileList
+                            return false; // Prevent the default upload behavior
+                          }}
                         >
                           {fileList.length < 1 && "+ Upload"}
                         </Upload>
@@ -394,7 +400,7 @@ const EmailSign = () => {
                   <div className="right-regard-img">
                     <img
                       src={
-                        uploadedImageUrl || "https://via.placeholder.com/150"
+                        uploadedImageUrl || "https://via.placeholder.com/140"
                       }
                       alt="Uploaded"
                       style={{
