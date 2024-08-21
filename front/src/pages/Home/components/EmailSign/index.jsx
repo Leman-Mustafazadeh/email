@@ -3,19 +3,19 @@ import TextField from "@mui/material/TextField";
 import { Upload } from "antd";
 import ImgCrop from "antd-img-crop";
 import { useState } from "react";
+import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
+import { FiMapPin } from "react-icons/fi";
+import { LuMail, LuPhone } from "react-icons/lu";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
+import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
 import PageHeader from "../../../../components/common/PageHeader";
 import "./_style.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faFacebook,
-  faLinkedin,
-} from "@fortawesome/free-brands-svg-icons";
 
 const colors = [
+  { color: "000" },
+  { color: "fff" },
   { color: "21548F" },
   { color: "1A73E8" },
   { color: "34A853" },
@@ -124,7 +124,7 @@ const EmailSign = () => {
           <div className="generator_banner row mt-3">
             <div className="col-12 pr-2 col-lg-6">
               <div className="generator_banner_left">
-                <div className="text p-5">
+                <div className="text p-4">
                   <TextField
                     style={{ width: "100%" }}
                     label="Full Name"
@@ -132,6 +132,18 @@ const EmailSign = () => {
                     name="fullName"
                     value={formValues.fullName}
                     onChange={handleInputChange}
+                    InputProps={{
+                      style: {
+                        height: 41,
+                        fontSize: 14,
+                        textAlign: "center",
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: {
+                        fontSize: 12,
+                      },
+                    }}
                   />
                   <TextField
                     style={{ width: "100%" }}
@@ -140,6 +152,18 @@ const EmailSign = () => {
                     name="company"
                     value={formValues.company}
                     onChange={handleInputChange}
+                    InputProps={{
+                      style: {
+                        height: 41,
+                        fontSize: 14,
+                        textAlign: "center",
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: {
+                        fontSize: 12,
+                      },
+                    }}
                   />
                   <TextField
                     style={{ width: "100%" }}
@@ -148,6 +172,18 @@ const EmailSign = () => {
                     name="position"
                     value={formValues.position}
                     onChange={handleInputChange}
+                    InputProps={{
+                      style: {
+                        height: 41,
+                        fontSize: 14,
+                        textAlign: "center",
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: {
+                        fontSize: 12,
+                      },
+                    }}
                   />
                   <PhoneInput
                     country={"us"}
@@ -162,6 +198,18 @@ const EmailSign = () => {
                     name="email"
                     value={formValues.email}
                     onChange={handleInputChange}
+                    InputProps={{
+                      style: {
+                        height: 41,
+                        fontSize: 14,
+                        textAlign: "center",
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: {
+                        fontSize: 12,
+                      },
+                    }}
                   />
                   <TextField
                     style={{ width: "100%" }}
@@ -170,10 +218,22 @@ const EmailSign = () => {
                     name="address"
                     value={formValues.address}
                     onChange={handleInputChange}
+                    InputProps={{
+                      style: {
+                        height: 41,
+                        fontSize: 14,
+                        textAlign: "center",
+                      },
+                    }}
+                    InputLabelProps={{
+                      style: {
+                        fontSize: 12,
+                      },
+                    }}
                   />
                 </div>
 
-                <div className="templateX p-5 mt-3">
+                <div className="templateX p-4 mt-3">
                   <ul className="row templateX-headers">
                     {["upload", "design", "URL"].map((category) => (
                       <Link
@@ -191,7 +251,7 @@ const EmailSign = () => {
                     ))}
                   </ul>
 
-                  <div className="row templateX-banners my-5">
+                  <div className="row templateX-banners my-3">
                     {selectedItem === "upload" && (
                       <ImgCrop rotationSlider>
                         <Upload
@@ -275,63 +335,44 @@ const EmailSign = () => {
                     {selectedItem === "URL" && (
                       <div className="url-container">
                         <div className="url-sosial">
-                          <div className="mb-3">
-                            <input
-                              type="text"
-                              className="font-size-14 font-weight-400 btn-background p-3"
-                              placeholder="Instagram URL"
-                              value={socialUrl.instagram}
-                              onChange={(e) =>
-                                setSocialUrl((prev) => ({
-                                  ...prev,
-                                  instagram: e.target.value,
-                                }))
-                              }
-                            />
-                          </div>
-                          <div className="mb-3">
-                            <input
-                              type="text"
-                              className="font-size-14 font-weight-400 btn-background p-3"
-                              placeholder="Facebook URL"
-                              value={socialUrl.facebook}
-                              onChange={(e) =>
-                                setSocialUrl((prev) => ({
-                                  ...prev,
-                                  facebook: e.target.value,
-                                }))
-                              }
-                            />
-                          </div>
+                          <input
+                            type="text"
+                            className="font-size-14 font-weight-400 btn-background p-3"
+                            placeholder="Facebook URL"
+                            value={socialUrl.facebook}
+                            onChange={(e) =>
+                              setSocialUrl((prev) => ({
+                                ...prev,
+                                facebook: e.target.value,
+                              }))
+                            }
+                          />
 
-                          <div className="mb-3">
-                            <input
-                              type="text"
-                              className="font-size-14 font-weight-400 btn-background p-3"
-                              placeholder="LinkedIn URL"
-                              value={socialUrl.linkedln}
-                              onChange={(e) =>
-                                setSocialUrl((prev) => ({
-                                  ...prev,
-                                  linkedln: e.target.value,
-                                }))
-                              }
-                            />
-                          </div>
-                          <div className="mb-3">
-                            <input
-                              type="text"
-                              className="font-size-14 font-weight-400 btn-background p-3"
-                              placeholder="QR code URL"
-                              value={socialUrl.qrCode}
-                              onChange={(e) =>
-                                setSocialUrl((prev) => ({
-                                  ...prev,
-                                  qrCode: e.target.value,
-                                }))
-                              }
-                            />
-                          </div>
+                          <input
+                            type="text"
+                            className="font-size-14 font-weight-400 btn-background p-3"
+                            placeholder="LinkedIn URL"
+                            value={socialUrl.linkedln}
+                            onChange={(e) =>
+                              setSocialUrl((prev) => ({
+                                ...prev,
+                                linkedln: e.target.value,
+                              }))
+                            }
+                          />
+
+                          <input
+                            type="text"
+                            className="font-size-14 font-weight-400 btn-background p-3"
+                            placeholder="QR code URL"
+                            value={socialUrl.qrCode}
+                            onChange={(e) =>
+                              setSocialUrl((prev) => ({
+                                ...prev,
+                                qrCode: e.target.value,
+                              }))
+                            }
+                          />
                         </div>
                       </div>
                     )}
@@ -347,43 +388,34 @@ const EmailSign = () => {
                 </h5>
 
                 <div
-                  className="row mt-4 p-1 flex-container flex-align-center"
+                  className="mt-4 p-1 flex-container right-regard"
                   style={{ backgroundColor: formValues.backgroundColor }}
                 >
-                  <div className="right-img">
+                  <div className="right-regard-img">
                     <img
                       src={
                         uploadedImageUrl || "https://via.placeholder.com/150"
                       }
                       alt="Uploaded"
                       style={{
-                        width: "150px",
-                        height: "150px",
+                        width: "142px",
+                        height: "142px",
                         objectFit: "cover",
                       }}
                     />
                   </div>
 
-                  <div className="right-regard mx-5">
-                    <h2
-                      style={{
-                        color: formValues.fontColor,
-                        fontFamily: formValues.font,
-                      }}
-                    >
-                      {formValues.fullName || "Your Name"}
-                    </h2>
-                    <div className="flex-container">
-                      <p
+                  <div className="right-regard-container">
+                    <div className="right-regard-name">
+                      <h2
                         style={{
                           color: formValues.fontColor,
                           fontFamily: formValues.font,
                         }}
                       >
-                        {formValues.company || "Company Name"},
-                      </p>
+                        {formValues.fullName || "Your Name"}
+                      </h2>
                       <p
-                        className="mx-2"
                         style={{
                           color: formValues.fontColor,
                           fontFamily: formValues.font,
@@ -392,30 +424,58 @@ const EmailSign = () => {
                         {formValues.position || "Your Position"}
                       </p>
                     </div>
-                    <p
-                      style={{
-                        color: formValues.fontColor,
-                        fontFamily: formValues.font,
-                      }}
-                    >
-                      {formValues.phone || "Your Phone"}
-                    </p>
-                    <p
-                      style={{
-                        color: formValues.fontColor,
-                        fontFamily: formValues.font,
-                      }}
-                    >
-                      {formValues.email || "Your Email"}
-                    </p>
-                    <p
-                      style={{
-                        color: formValues.fontColor,
-                        fontFamily: formValues.font,
-                      }}
-                    >
-                      {formValues.address || "Your Address"}
-                    </p>
+
+                    <div className="right-regard-contacts">
+                      <div className="right-regard-contacts-item">
+                        <LuMail />
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.email || "Your Email"}
+                        </p>
+                      </div>
+                      <div className="right-regard-contacts-item">
+                        <FiMapPin />
+
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.address || "Your Address"}
+                        </p>
+                      </div>
+                      <div className="right-regard-contacts-item">
+                        <LuPhone />
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.phone || "Your Phone"}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="right-regard-qr ml-10">
+                    <QRCode
+                      value={socialUrl.qrCode}
+                      style={{ height: "107px", width: "107px" }}
+                    />
+                    <div className="sosial-icons">
+                      <Link to={socialUrl.facebook}>
+                        <FaFacebookSquare />
+                      </Link>
+                      <Link to={socialUrl.linkedin}>
+                        <FaLinkedin />
+                      </Link>
+                    </div>
                   </div>
                 </div>
 
@@ -425,39 +485,6 @@ const EmailSign = () => {
                     email signature
                   </Link>
                 </h4>
-
-                <div className="btn-store mt-4">
-                  <a
-                    href={socialUrl.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faInstagram}
-                      className="font-size-30"
-                    />
-                  </a>
-                  <a
-                    href={socialUrl.facebook}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faFacebook}
-                      className="font-size-30"
-                    />
-                  </a>
-                  <a
-                    href={socialUrl.linkedln}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FontAwesomeIcon
-                      icon={faLinkedin}
-                      className="font-size-30"
-                    />
-                  </a>
-                </div>
               </div>
               <button
                 className="btn_email bg-secondary p-2 mt-4 font-size-24 text-natural font-weight-500"
