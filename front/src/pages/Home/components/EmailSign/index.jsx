@@ -52,7 +52,7 @@ const EmailSign = () => {
     phone: "",
     email: "",
     address: "",
-    font: "Montserrat",
+    font: "Oswald",
     fontColor: "#000000",
     backgroundColor: "#ffffff",
   });
