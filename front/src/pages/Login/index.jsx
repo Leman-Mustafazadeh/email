@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { apiController } from "../../service/Auth/authApi";
 import { login } from "../../service/slice/user";
-import { apiEndpoints } from "../../service/Auth/authApi";
 import "./_style.scss";
 
 const showAlert = (icon, title) => {
@@ -37,12 +36,9 @@ const Login = () => {
     },
     onSubmit: async (values, actions) => {
       try {
-        const response = await apiController.post(
-          apiEndpoints.post("/Account/Login"),
-          values
-        );
+        const response = await apiController.post("/Account/Login", values);
 
-        if (response.auth) {
+        if (response.success) {
           actions.resetForm();
           dispatch(login(response.user));
           showAlert("success", response.message);
