@@ -31,8 +31,8 @@ const Footer = () => {
 
       <ul className="form-group ">
         <li  className="mb-2 font-size-18 font-weight-500"><Link to={""}>Company</Link></li>
-        <li><Link to={""}>About us</Link></li>
-        <li><Link to={""}>Contact us</Link></li>
+        <li><Link to={"/aboutus"}>About us</Link></li>
+        <li><Link to={"/contactus"}>Contact us</Link></li>
       </ul>
 
      </div>

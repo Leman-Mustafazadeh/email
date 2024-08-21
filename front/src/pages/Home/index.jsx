@@ -17,6 +17,7 @@ const Home = () => {
       <FAQs />
       <FreeTrial/>
       <Disclaimers />
+      
     </div>
   );
 };
