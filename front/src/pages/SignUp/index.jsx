@@ -32,8 +32,9 @@ const SignUp = () => {
     onSubmit: async (values, actions) => {
       try {
         const response = await apiController.post("/Account/Register", values);
+        console.log(response);
 
-        if (response.auth) {
+        if (response) {
           actions.resetForm();
           dispatch(login(response));
           Swal.fire({
