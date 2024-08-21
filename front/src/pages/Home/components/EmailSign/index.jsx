@@ -465,14 +465,15 @@ const EmailSign = () => {
 
                   <div className="right-regard-qr ml-10">
                     <QRCode
-                      value={socialUrl.qrCode}
+                      value={socialUrl.qrCode || " "}
                       style={{ height: "107px", width: "107px" }}
+                      fgColor={socialUrl.qrCode ? "#000000" : "#D3D3D3"}
                     />
                     <div className="sosial-icons">
                       <Link to={socialUrl.facebook}>
                         <FaFacebookSquare />
                       </Link>
-                      <Link to={socialUrl.linkedin}>
+                      <Link to={socialUrl.linkedln}>
                         <FaLinkedin />
                       </Link>
                     </div>
