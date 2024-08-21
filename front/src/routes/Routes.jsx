@@ -11,6 +11,7 @@ import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
 import ForgotPassword from "../pages/ForgotPassword";
 import ContactUs from "../pages/Home/components/ContactUs";
+import AboutUs from "../pages/Home/components/AboutUs";
 
 export const Routes = [
   {
@@ -61,6 +62,10 @@ export const Routes = [
       {
         path: "contactus",
         element: <ContactUs />,
+      },
+      {
+        path: "aboutus",
+        element: <AboutUs />,
       },
     ],
   },
