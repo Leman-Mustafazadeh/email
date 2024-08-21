@@ -473,7 +473,7 @@ const EmailSign = () => {
                       <Link to={socialUrl.facebook}>
                         <FaFacebookSquare />
                       </Link>
-                      <Link to={socialUrl.linkedin}>
+                      <Link to={socialUrl.linkedln}>
                         <FaLinkedin />
                       </Link>
                     </div>
