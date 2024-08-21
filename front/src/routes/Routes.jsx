@@ -10,6 +10,7 @@ import SignUp from "../pages/SignUp";
 import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
 import ForgotPassword from "../pages/ForgotPassword";
+import ContactUs from "../pages/Home/components/ContactUs";
 
 export const Routes = [
   {
@@ -56,6 +57,10 @@ export const Routes = [
       {
         path: "forgotpassword",
         element: <ForgotPassword />,
+      },
+      {
+        path: "contactus",
+        element: <ContactUs />,
       },
     ],
   },
