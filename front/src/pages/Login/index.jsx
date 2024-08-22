@@ -1,27 +1,18 @@
 import { TextField } from "@mui/material";
 import { useFormik } from "formik";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import { apiController } from "../../service/Auth/authApi";
 import { login } from "../../service/slice/user";
 import "./_style.scss";
-
-const showAlert = (icon, title) => {
-  Swal.fire({
-    position: "top-end",
-    icon,
-    title,
-    showConfirmButton: false,
-    timer: 1000,
-  });
-};
+import useAuth from "../../service/Auth/useAuth";
 
 const Login = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+
+  const { useLogin } = useAuth();
+  const loginin = useLogin();
 
   useEffect(() => {
     if (user.id) {
@@ -34,24 +25,27 @@ const Login = () => {
       email: "",
       password: "",
     },
+    
     onSubmit: async (values, actions) => {
-      try {
-        const response = await apiController.post("/Account/Login", values);
+      loginin.mutate(values, actions);
 
-        if (response.success) {
-          actions.resetForm();
-          dispatch(login(response.user));
-          showAlert("success", response.message);
-          console.log("SUCCESS");
+      // try {
+      //   const response = await apiController.post("/Account/Login", values);
 
-          navigate("/");
-        } else {
-          showAlert("error", response.message);
-        }
-      } catch (error) {
-        console.error("Error:", error);
-        showAlert("error", "Oops, something went wrong!");
-      }
+      //   if (response.success) {
+      //     actions.resetForm();
+      //     dispatch(login(response.user));
+      //     showAlert("success", response.message);
+      //     console.log("SUCCESS");
+
+      //     navigate("/");
+      //   } else {
+      //     showAlert("error", response.message);
+      //   }
+      // } catch (error) {
+      //   console.error("Error:", error);
+      //   showAlert("error", "Oops, something went wrong!");
+      // }
     },
   });
 
@@ -66,7 +60,7 @@ const Login = () => {
 
             <div className="login">
               <span>Do not have an account? - </span>
-              <Link to={"/signup"}>Sign Up</Link>
+              <Link to={"/sign-up"}>Sign Up</Link>
             </div>
             <form onSubmit={formik.handleSubmit}>
               <div className="form-group">
@@ -101,8 +95,13 @@ const Login = () => {
                   required
                 />
               </div>
-              <button type="submit" className="btn btn-primary text-natural">
-                Login
+              <button
+                type="submit"
+                className={`btn btn-primary text-natural ${
+                  formik.isSubmitting ? "btn-disabled" : ""
+                }`}
+              >
+                {formik.isSubmitting ? "Login in..." : "Login"}
               </button>
             </form>
             <span className="line">or</span>

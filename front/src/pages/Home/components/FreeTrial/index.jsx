@@ -1,7 +1,6 @@
-import React from 'react'
-import "./_style.scss"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import trial1 from "../../../../assets/images/trial/trial1.png"
+import "./_style.scss"
 const FreeTrial = () => {
   return (
     <section className='trial_head'>

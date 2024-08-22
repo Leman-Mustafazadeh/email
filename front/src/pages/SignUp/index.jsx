@@ -1,16 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 import TextField from "@mui/material/TextField";
 import { useFormik } from "formik";
-import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
-import { apiController } from "../../service/Auth/authApi";
+import { Link } from "react-router-dom";
 import { login } from "../../service/slice/user";
 import "./_style.scss";
+import useAuth from "../../service/Auth/useAuth";
 
 const SignUp = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+
+  const { useRegister } = useAuth();
+  const register = useRegister();
 
   const formik = useFormik({
     initialValues: {
@@ -30,40 +29,41 @@ const SignUp = () => {
       return errors;
     },
     onSubmit: async (values, actions) => {
-      try {
-        const response = await apiController.post("/Account/Register", values);
-        console.log(response);
+      register.mutate(values, actions);
+      // try {
+      //   const response = await apiController.post("/Account/Register", values);
+      //   console.log(response);
 
-        if (response) {
-          actions.resetForm();
-          dispatch(login(response));
-          Swal.fire({
-            icon: "success",
-            title: "Registration successful",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          navigate("/");
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Registration failed",
-            text: response.message || "An error occurred during registration.",
-          });
-        }
-      } catch (error) {
-        console.error(
-          "Error:",
-          error.response ? error.response.data : error.message
-        );
-        Swal.fire({
-          icon: "error",
-          title: "Oops, something went wrong!",
-          text: error.response
-            ? error.response.data.message
-            : "An unexpected error occurred.",
-        });
-      }
+      //   if (response) {
+      //     actions.resetForm();
+      //     dispatch(login(response));
+      //     Swal.fire({
+      //       icon: "success",
+      //       title: "Registration successful",
+      //       showConfirmButton: false,
+      //       timer: 1500,
+      //     });
+      //     navigate("/");
+      //   } else {
+      //     Swal.fire({
+      //       icon: "error",
+      //       title: "Registration failed",
+      //       text: response.message || "An error occurred during registration.",
+      //     });
+      //   }
+      // } catch (error) {
+      //   console.error(
+      //     "Error:",
+      //     error.response ? error.response.data : error.message
+      //   );
+      //   Swal.fire({
+      //     icon: "error",
+      //     title: "Oops, something went wrong!",
+      //     text: error.response
+      //       ? error.response.data.message
+      //       : "An unexpected error occurred.",
+      //   });
+      // }
     },
   });
 
