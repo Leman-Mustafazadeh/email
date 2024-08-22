@@ -9,7 +9,7 @@
 
             .react-tel-input {
                 position: relative;
-                height: 55px;
+                height: 41px;
 
                 input {
                     height: 100%;
@@ -34,6 +34,7 @@
             .templateX {
                 background-color: map-get($colors, natural);
                 border-radius: 12px;
+                min-height: 272px;
 
                 &-headers {
                     gap: 50px;
@@ -46,6 +47,16 @@
                     .active-category {
                         transition: all 0.2s ease;
                         color: map-get($colors, secondary);
+                    }
+                }
+
+                &-banners {
+                    .url-container {
+                        .url-sosial {
+                            @extend .flex-container;
+                            @extend .flex-column;
+                            gap: 10px;
+                        }
                     }
                 }
 
@@ -72,6 +83,7 @@
 
                         .color {
                             cursor: pointer;
+                            border: 1px solid map-get($colors, light10 );
                             user-select: none;
                             border-radius: 50%;
                             width: 24px;
@@ -95,10 +107,65 @@
             border-radius: 12px;
             flex-grow: 1;
 
-            .right-img {
+            .right-regard {
+                @extend .flex-container;
+                gap: 25px;
 
-                img {
-                    width: 100%;
+                &-img {
+                    img {
+                        width: 100%;
+                        border-radius: 5px
+                    }
+                }
+
+                &-container {
+                    @extend .flex-container;
+                    @extend .flex-column;
+                    @extend .flex-justify-space-between;
+                    line-height: 1.75;
+
+                    h2 {
+                        @extend .font-size-18;
+                        text-transform: capitalize;
+                    }
+
+                    p {
+                        @extend .font-size-14;
+                        text-transform: capitalize;
+                    }
+                }
+
+                &-contacts {
+                    &-item {
+                        @extend .flex-container;
+                        @extend .flex-align-center;
+
+                        svg {
+                            color: map-get($colors, primary30d)
+                        }
+
+                        p {
+                            @extend .mx-2;
+                        }
+                    }
+                }
+
+                &-qr {
+                    @extend .flex-container;
+                    @extend .flex-column;
+                    @extend .flex-align-end;
+                    gap: 15px;
+
+                    .sosial-icons {
+                        @extend .flex-container;
+                        gap: 10px;
+
+                        svg {
+                            color: map-get($colors, primary30d);
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
                 }
             }
 

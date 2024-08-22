@@ -9,19 +9,21 @@ const Brands = () => {
   return (
     <div className="brands ">
       <SectionHeader header="Top brands that use email signature" />
-      <div className=" my-5">
-        <div className="brands-logo row">
-          <div className="col-12 col-md-6 col-lg-2 logo">
-            <img src={amazon} alt="amazon" />
-          </div>
-          <div className="col-12 col-md-6 col-lg-2 logo">
-            <img src={oracle} alt="oracle" />
-          </div>
-          <div className="col-12 col-md-6 col-lg-2 logo">
-            <img src={ibm} alt="ibm" />
-          </div>
-          <div className="col-12 col-md-6 col-lg-2 logo">
-            <img src={adobe} alt="adobe" />
+      <div className="row">
+        <div className="col-6 offset-md-3 container my-5">
+          <div className="brands-logo row">
+            <div className="col-12 col-md-6 col-lg-3 logo">
+              <img src={amazon} alt="amazon" />
+            </div>
+            <div className="col-12 col-md-6 col-lg-3 logo">
+              <img src={oracle} alt="oracle" />
+            </div>
+            <div className="col-12 col-md-6 col-lg-3 logo">
+              <img src={ibm} alt="ibm" />
+            </div>
+            <div className="col-12 col-md-6 col-lg-3 logo">
+              <img src={adobe} alt="adobe" />
+            </div>
           </div>
         </div>
       </div>
