@@ -1,8 +1,8 @@
-import "./_style.scss";
-import SectionHeader from "../../../../components/common/SectionHeader";
 import banner1 from "../../../../assets/images/use/Line 17.png";
 import banner2 from "../../../../assets/images/use/Line1.png";
 import banner3 from "../../../../assets/images/use/Line2.png";
+import SectionHeader from "../../../../components/common/SectionHeader";
+import "./_style.scss";
 
 const CreateSign = () => {
   return (
