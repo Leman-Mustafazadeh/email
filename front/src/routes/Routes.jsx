@@ -10,8 +10,9 @@ import SignUp from "../pages/SignUp";
 import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
 import ForgotPassword from "../pages/ForgotPassword";
-import ContactUs from "../pages/Home/components/ContactUs";
-import AboutUs from "../pages/Home/components/AboutUs";
+import ContactUs from "../pages/ContactUs";
+import AboutUs from "../pages/AboutUs";
+import NonProfit from "../pages/NonProfit";
 
 export const Routes = [
   {
@@ -60,12 +61,16 @@ export const Routes = [
         element: <ForgotPassword />,
       },
       {
-        path: "contactus",
+        path: "contact-us",
         element: <ContactUs />,
       },
       {
         path: "aboutus",
         element: <AboutUs />,
+      },
+      {
+        path: "non-profit",
+        element: <NonProfit />,
       },
     ],
   },

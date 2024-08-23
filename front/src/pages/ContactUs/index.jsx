@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/no-unescaped-entities */
 import "./_style.scss";
 import icon from "./Icon.png";
 import icon2 from "./Icon2.png";
@@ -6,6 +6,7 @@ import icon3 from "./Icon3.png";
 import icon4 from "./Icon4.png";
 import icon5 from "./Icon5.png";
 import { Link } from "react-router-dom";
+
 const ContactUs = () => {
   return (
     <section className="contact_head">
@@ -26,10 +27,13 @@ const ContactUs = () => {
                 <h4 className="text-text60 font-size-20 font-weight-400 pb-2">
                   Location
                 </h4>
-              <Link>  <p className="text-text font-size-20 font-weight-500">
-                  407 Cubes 1, Beacon South Quarter, Sandyford, Dublin 18,
-                  Ireland
-                </p></Link>
+                <Link>
+                  {" "}
+                  <p className="text-text font-size-20 font-weight-500">
+                    407 Cubes 1, Beacon South Quarter, Sandyford, Dublin 18,
+                    Ireland
+                  </p>
+                </Link>
               </div>
             </div>
 
@@ -41,9 +45,12 @@ const ContactUs = () => {
                 <h4 className="text-text60 font-size-20 font-weight-400 pb-2">
                   Email
                 </h4>
-               <Link> <p className="text-text font-size-20 font-weight-500">
-                  support@emailsignature.com
-                </p></Link>
+                <Link>
+                  {" "}
+                  <p className="text-text font-size-20 font-weight-500">
+                    support@emailsignature.com
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
@@ -58,13 +65,20 @@ const ContactUs = () => {
                   <img src={icon3} alt="" />
                 </div>
                 <div>
-                  <h2 className="font-size-24 font-weight-500 text-text pb-2">Help Center</h2>
+                  <h2 className="font-size-24 font-weight-500 text-text pb-2">
+                    Help Center
+                  </h2>
                   <p className="text-text60 ">Get answers and resources</p>
                 </div>
               </div>
 
               <div className="hero_end row">
-                <a href="" className="font-size-18 font-weight-500 text-primary">Visit page</a>
+                <a
+                  href=""
+                  className="font-size-18 font-weight-500 text-primary"
+                >
+                  Visit page
+                </a>
                 <Link>
                   <img src={icon4} alt="" />
                 </Link>
@@ -77,16 +91,21 @@ const ContactUs = () => {
                   <img src={icon5} alt="" />
                 </div>
                 <div>
-                  <h2 className="font-size-24 font-weight-500 text-text pb-2"> Help Center Get answers and resources</h2>
+                  <h2 className="font-size-24 font-weight-500 text-text pb-2">
+                    {" "}
+                    Help Center Get answers and resources
+                  </h2>
                   <p className="text-text60 ">Reach out to us</p>
                 </div>
               </div>
 
-            
-            <Link>  <p className="support_contact text-text font-size-16 font-weight-500">Contact support</p></Link>
-            
+              <Link>
+                {" "}
+                <p className="support_contact text-text font-size-16 font-weight-500">
+                  Contact support
+                </p>
+              </Link>
             </div>
-
           </div>
         </div>
       </div>

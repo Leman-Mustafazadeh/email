@@ -2,9 +2,9 @@
 import TextField from "@mui/material/TextField";
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
-import { login } from "../../service/slice/user";
-import "./_style.scss";
+// import { login } from "../../service/slice/user";
 import useAuth from "../../service/Auth/useAuth";
+import "./_style.scss";
 
 const SignUp = () => {
 

@@ -15,7 +15,7 @@ const Footer = () => {
 
       <ul className="form-group ">
         <li className="mb-2 font-size-18 font-weight-500"><Link to={""}>Email signature genarator</Link></li>
-        <li><Link to={""}>Signature for non-profits page</Link></li>
+        <li><Link to={"/non-profit"}>Signature for non-profits page</Link></li>
         <li><Link to={""}>Signature for freelancers page</Link></li>
         <li><Link to={""}>Signature for business page</Link></li>
         <li><Link to={""}>Signature for employeers page</Link></li>
@@ -32,7 +32,7 @@ const Footer = () => {
       <ul className="form-group ">
         <li  className="mb-2 font-size-18 font-weight-500"><Link to={""}>Company</Link></li>
         <li><Link to={"/aboutus"}>About us</Link></li>
-        <li><Link to={"/contactus"}>Contact us</Link></li>
+        <li><Link to={"/contact-us"}>Contact us</Link></li>
       </ul>
 
      </div>
