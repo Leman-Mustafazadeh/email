@@ -47,7 +47,7 @@ const useAuth = () =>
               showConfirmButton: false,
               timer: 1000,
             });
-            navigate("/contactus");
+            navigate("/contact-us");
           },
           onError: (error) => {
             Swal.fire({

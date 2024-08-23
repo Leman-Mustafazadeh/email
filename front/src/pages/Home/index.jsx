@@ -6,7 +6,6 @@ import Explore from "./components/Explore";
 import FAQs from "./components/FAQ";
 import FreeTrial from "./components/FreeTrial";
 
-
 const Home = () => {
   return (
     <div>
@@ -15,9 +14,8 @@ const Home = () => {
       <CreateSign />
       <Explore />
       <FAQs />
-      <FreeTrial/>
+      <FreeTrial />
       <Disclaimers />
-      
     </div>
   );
 };
