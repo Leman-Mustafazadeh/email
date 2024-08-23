@@ -30,6 +30,7 @@ const SignUp = () => {
     },
     onSubmit: async (values, actions) => {
       register.mutate(values, actions);
+      
       // try {
       //   const response = await apiController.post("/Account/Register", values);
       //   console.log(response);
