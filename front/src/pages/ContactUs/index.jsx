@@ -12,10 +12,10 @@ const ContactUs = () => {
     <section className="contact_head">
       <div className="container">
         <div className="contact">
-          <h1 className="font-size-36 font-weight-700 text-primary mt-8  text-align-center ">
+          <h1 className="font-size-36 font-weight-700 text-primary mt-8 text-align-center ">
             Get in touch with us.
           </h1>
-          <h1 className="font-size-36 font-weight-700 text-primary  text-align-center">
+          <h1 className="font-size-36 font-weight-700 text-primary text-align-center">
             We're here to assist you.
           </h1>
           <div className="contact_wrap">

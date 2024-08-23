@@ -744,9 +744,7 @@ a {
 .container {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 20px;
-  padding-left: 20px;
-  max-width: 1140px !important;
+  max-width: 1440px !important;
 }
 
 .row {
@@ -1594,6 +1592,22 @@ a {
   background-color: #0A2E5D !important;
 }
 
+.bg-primary90 {
+  background-color: #CDE0FA !important;
+}
+
+.text-primary90 {
+  color: #CDE0FA !important;
+}
+
+.border-primary90 {
+  border: 1px solid #CDE0FA !important;
+}
+
+.btn-primary90 {
+  background-color: #CDE0FA !important;
+}
+
 .bg-primaryFAQ {
   background-color: #EFF5FD !important;
 }
@@ -2224,7 +2238,7 @@ a {
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1150px !important;
+    max-width: 1440px !important;
   }
 }
 @media screen and (max-width: 992px) {
@@ -2287,3 +2301,5 @@ form {
 .form-group span {
   user-select: none;
 }
+
+/*# sourceMappingURL=style.css.map */

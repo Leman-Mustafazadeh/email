@@ -1,0 +1,31 @@
+.non-profit {
+    @extend .flex-container;
+    @extend .flex-column;
+    gap: 100px;
+
+    &-signature {
+        background-color: map-get($colors, primary90);
+        border-radius: 12px;
+    }
+
+    &-description {
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 20px;
+
+        p {
+            color: map-get($colors, text30);
+            text-align: center;
+        }
+    }
+
+    &-apply {
+        .header {
+            @extend .flex-container;
+            @extend .flex-column;
+            gap: 10px;
+            text-align: center;
+            
+        }
+    }
+}
