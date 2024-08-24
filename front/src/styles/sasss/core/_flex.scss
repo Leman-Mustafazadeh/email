@@ -18,13 +18,13 @@
 @each $breakpoint, $min-width in $breakpoints {
   @each $value in $flex-values {
     .flex-justify-#{$breakpoint}-#{$value} {
-      @media (min-width: $min-width) {
+      @media (max-width: $min-width) {
         justify-content: $value !important;
       }
     }
 
     .flex-align-#{$breakpoint}-#{$value} {
-      @media (min-width: $min-width) {
+      @media (max-width: $min-width) {
         align-items: $value !important;
       }
     }
