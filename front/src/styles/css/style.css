@@ -1039,55 +1039,55 @@ a {
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-align-xs-start {
     align-items: start !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-justify-xs-end {
     justify-content: end !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-align-xs-end {
     align-items: end !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-justify-xs-center {
     justify-content: center !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-align-xs-center {
     align-items: center !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-justify-xs-space-between {
     justify-content: space-between !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-align-xs-space-between {
     align-items: space-between !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-justify-xs-space-around {
     justify-content: space-around !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-align-xs-space-around {
     align-items: space-around !important;
   }
@@ -1111,55 +1111,55 @@ a {
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-align-sm-start {
     align-items: start !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-justify-sm-end {
     justify-content: end !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-align-sm-end {
     align-items: end !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-justify-sm-center {
     justify-content: center !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-align-sm-center {
     align-items: center !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-justify-sm-space-between {
     justify-content: space-between !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-align-sm-space-between {
     align-items: space-between !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-justify-sm-space-around {
     justify-content: space-around !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-align-sm-space-around {
     align-items: space-around !important;
   }
@@ -1183,55 +1183,55 @@ a {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-align-md-start {
     align-items: start !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-justify-md-end {
     justify-content: end !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-align-md-end {
     align-items: end !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-justify-md-center {
     justify-content: center !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-align-md-center {
     align-items: center !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-justify-md-space-between {
     justify-content: space-between !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-align-md-space-between {
     align-items: space-between !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-justify-md-space-around {
     justify-content: space-around !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-align-md-space-around {
     align-items: space-around !important;
   }
@@ -1255,55 +1255,55 @@ a {
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-align-lg-start {
     align-items: start !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-justify-lg-end {
     justify-content: end !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-align-lg-end {
     align-items: end !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-justify-lg-center {
     justify-content: center !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-align-lg-center {
     align-items: center !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-justify-lg-space-between {
     justify-content: space-between !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-align-lg-space-between {
     align-items: space-between !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-justify-lg-space-around {
     justify-content: space-around !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-align-lg-space-around {
     align-items: space-around !important;
   }
@@ -1327,55 +1327,55 @@ a {
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-align-xl-start {
     align-items: start !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-justify-xl-end {
     justify-content: end !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-align-xl-end {
     align-items: end !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-justify-xl-center {
     justify-content: center !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-align-xl-center {
     align-items: center !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-justify-xl-space-between {
     justify-content: space-between !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-align-xl-space-between {
     align-items: space-between !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-justify-xl-space-around {
     justify-content: space-around !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-align-xl-space-around {
     align-items: space-around !important;
   }
