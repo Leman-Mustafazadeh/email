@@ -746,9 +746,6 @@ a {
   margin-left: auto;
   max-width: 100%;
   padding: 0 20px;
-  padding-right: 20px;
-  padding-left: 20px;
-  max-width: 1296px !important;
 }
 
 .row {
@@ -1024,6 +1021,18 @@ a {
   text-align: space-around !important;
 }
 
+.flex-justify-space-evenly {
+  justify-content: space-evenly !important;
+}
+
+.flex-align-space-evenly {
+  align-items: space-evenly !important;
+}
+
+.text-align-space-evenly {
+  text-align: space-evenly !important;
+}
+
 @media (min-width: 0) {
   .flex-justify-xs-start {
     justify-content: start !important;
@@ -1081,6 +1090,18 @@ a {
 @media (min-width: 0) {
   .flex-align-xs-space-around {
     align-items: space-around !important;
+  }
+}
+
+@media (min-width: 0) {
+  .flex-justify-xs-space-evenly {
+    justify-content: space-evenly !important;
+  }
+}
+
+@media (min-width: 0) {
+  .flex-align-xs-space-evenly {
+    align-items: space-evenly !important;
   }
 }
 
@@ -1144,6 +1165,18 @@ a {
   }
 }
 
+@media (min-width: 576px) {
+  .flex-justify-sm-space-evenly {
+    justify-content: space-evenly !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .flex-align-sm-space-evenly {
+    align-items: space-evenly !important;
+  }
+}
+
 @media (min-width: 768px) {
   .flex-justify-md-start {
     justify-content: start !important;
@@ -1201,6 +1234,18 @@ a {
 @media (min-width: 768px) {
   .flex-align-md-space-around {
     align-items: space-around !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-justify-md-space-evenly {
+    justify-content: space-evenly !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .flex-align-md-space-evenly {
+    align-items: space-evenly !important;
   }
 }
 
@@ -1264,6 +1309,18 @@ a {
   }
 }
 
+@media (min-width: 992px) {
+  .flex-justify-lg-space-evenly {
+    justify-content: space-evenly !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .flex-align-lg-space-evenly {
+    align-items: space-evenly !important;
+  }
+}
+
 @media (min-width: 1200px) {
   .flex-justify-xl-start {
     justify-content: start !important;
@@ -1321,6 +1378,18 @@ a {
 @media (min-width: 1200px) {
   .flex-align-xl-space-around {
     align-items: space-around !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flex-justify-xl-space-evenly {
+    justify-content: space-evenly !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .flex-align-xl-space-evenly {
+    align-items: space-evenly !important;
   }
 }
 
@@ -2310,8 +2379,5 @@ form {
 .form-group span {
   user-select: none;
 }
-
-/*# sourceMappingURL=style.css.map */
-
 
 /*# sourceMappingURL=style.css.map */
