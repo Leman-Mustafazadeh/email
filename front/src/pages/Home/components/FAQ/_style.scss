@@ -1,14 +1,17 @@
 .support {
     margin-top: 150px;
     margin-bottom: 140px;
+
     .faqs {
         @extend .flex-container;
         @extend .flex-column;
         gap: 20px;
+
         .faq-container {
             @extend .flex-container;
             @extend .flex-column;
             gap: 20px;
+
             .faq-question {
                 @extend .p-5;
                 @extend .flex-container;
@@ -33,7 +36,6 @@
                     }
                 }
 
-
                 h5,
                 svg {
                     transition: all 0.3s;
@@ -41,14 +43,13 @@
 
                 &.active-question {
                     color: map-get($colors, primary);
-
                 }
 
                 &:hover {
 
                     h5,
                     svg {
-                        color: map-get($colors, bg-primary60 );
+                        color: map-get($colors, bg-primary60);
                     }
                 }
             }
@@ -59,13 +60,14 @@
                 border-radius: 16px;
                 max-height: 0;
                 overflow: hidden;
-                // transition: all 0.6s ease;
+                clip-path: inset(0 0 100% 0);
+                transition: clip-path 5s ease;
 
                 p {
                     @extend .py-3;
                     @extend .font-size-16;
                     color: map-get($colors, text);
-                    line-height:28px;
+                    line-height: 28px;
                 }
             }
 
@@ -79,11 +81,12 @@
 
                     .faq-answer {
                         max-height: 300px;
+                        clip-path: inset(0 0 0 0);
                         // animation: fade 1s ease-in-out;
                     }
 
                     svg {
-                        // transform: rotate(180deg);
+                        transform: rotate(180deg);
                     }
                 }
             }
