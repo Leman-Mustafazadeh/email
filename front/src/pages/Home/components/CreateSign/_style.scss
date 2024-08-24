@@ -1,45 +1,59 @@
 .create-banners {
+  @extend .flex-container;
+  @extend .flex-column;
+
+  .banners_items {
     @extend .flex-container;
     @extend .flex-column;
+    gap: 72px;
+    overflow: hidden;
 
-    .banners {
-      margin-top: 69px;   
-    }
-    .banners_item{
-      .banners_wrap{
-        button{
-          padding: 15px 34px;
-          border-radius: 10px;
-        }
-        .banners_title{
-          margin-top: 63px;
-          gap: 87px;
-        }
-        .banner_middle{
-          margin: 10px 0 64px;
-        }
-        .banners_end{
-          margin-top: 72px;
-          margin-bottom: 91px;
-        }
-        .banner_middle_title{
-          justify-content: space-evenly;
-        }
+    .banners_wrap {
+      @extend .flex-container;
+      @extend .flex-column;
+      gap: 64px;
+
+      button {
+        @extend .font-size-22;
+        @extend .font-weight-500;
+
+        border: 2px solid map-get($colors, primary);
+        border-radius: 10px;
+        background-color: map-get($colors, natural);
+        color: map-get($colors, primary);
+        min-height: 55px;
+        padding: 13px 34px;
+
       }
-      .left_banners{
-        width: 40%;
-        line-height: 28px;
-        h2{
-          width: 81%;
+
+      .banners_title {
+
+        h2 {
+          @extend .font-size-24;
+          @extend .font-weight-500;
+          color: map-get($colors, text10);
         }
-       
-      }
-      .banner_line{
-        width: 100%;
-        margin-top: 72px;
-        img{
+
+        p {
+          @extend .font-size-18;
+          @extend .font-weight-400;
+          color: map-get($colors, text30);
+          line-height: 1.55;
+        }
+
+        img {
           width: 100%;
         }
       }
     }
+
+    .banner_line {
+      width: 100%;
+      transform: translateX(110px);
+
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
