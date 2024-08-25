@@ -1,12 +1,50 @@
 footer {
     background-color: map-get($colors, primary10);
 
+    .footer-group {
+        flex-wrap: wrap;
+    }
+
     ul {
         li {
             @extend .font-size-16;
-            @extend .font-weight-300;
-            @extend .text-natural;
+            font-weight: 300;
+            color: map-get($colors, natural);
         }
 
+    }
+
+    .copyright {
+        border-top: 1px solid map-get($colors, natural);
+
+        p {
+            @extend .font-size-12;
+            @extend .font-weight-300;
+            color: map-get($colors, natural);
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .footer-group {
+        gap: 30px;
+
+        .footer-group-item {
+            min-width: 40%;
+        }
+    }
+
+    .copyright{
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .footer-group {
+
+        .footer-group-item {
+            text-align: center;
+            min-width: 100%;
+        }
     }
 }

@@ -17,7 +17,7 @@ const Explore = () => {
       <SectionHeader header="Explore templates" />
       <div className="container ">
        <div className="explore-templates row">
-       <div className="col-6 col-lg-4  ">
+       <div className="col-12 col-md-6 col-lg-4  ">
           <div className=" pr-5 pb-5">
             <img src={templatePic_1} alt="template" />
           </div>
@@ -26,7 +26,7 @@ const Explore = () => {
           </div>
         </div>
 
-        <div className="col-6 col-lg-4 ">
+        <div className="col-12 col-md-6 col-lg-4 ">
           <div className="pr-5 pb-5">
             <img src={templatePic_2} alt="template" />
           </div>
@@ -40,7 +40,7 @@ const Explore = () => {
           </div>
         </div>
 
-        <div className="col-6 col-lg-4 ">
+        <div className="col-12 col-md-6 col-lg-4 ">
           <div className=" pr-5 pb-5">
             <img src={templatePic_3} alt="template" />
           </div>

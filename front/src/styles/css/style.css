@@ -2363,7 +2363,7 @@ a {
   font-weight: 1000 !important;
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1440px) {
   .container {
     max-width: 1336px !important;
   }
