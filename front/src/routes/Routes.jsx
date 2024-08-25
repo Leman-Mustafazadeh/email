@@ -14,6 +14,8 @@ import ContactUs from "../pages/ContactUs";
 import AboutUs from "../pages/AboutUs";
 import NonProfit from "../pages/NonProfit";
 import Freelancer from "../pages/SignaturePages/Freelancer";
+import ResetPassword from "../pages/ResetPassword";
+import Passwords from "../pages/Password";
 
 export const Routes = [
   {
@@ -60,6 +62,14 @@ export const Routes = [
       {
         path: "forgotpassword",
         element: <ForgotPassword />,
+      },
+      {
+        path: "resetpassword",
+        element: <ResetPassword />,
+      },
+      {
+        path: "passwords",
+        element: <Passwords />,
       },
       {
         path: "contact-us",
