@@ -1,0 +1,25 @@
+.common-header {
+    @extend .flex-container;
+    @extend .flex-column;
+    gap: 14px;
+
+    p {
+        color: map-get($colors, text);
+    }
+
+    button {
+        @extend .mt-7;
+        min-width: 282px;
+        min-height: 62px;
+    }
+}
+
+.template-banners {
+    margin-top: 72px;
+
+    img {
+        width: 100%;
+        max-height: 254px;
+        height: 100%;
+    }
+}

@@ -1,0 +1,33 @@
+@each $key, $value in $spacers {
+    @media (min-width: 993px) {
+        .gap-#{$key} {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $value;
+
+            >div {
+                flex: 1 1 calc((100% / 12) - #{$value});
+            }
+
+            >div:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 992px) {
+        .gap-#{$key} {
+            display: flex;
+            flex-wrap: wrap;
+            gap: $value;
+
+            >div {
+                flex: 1 1 calc((50%) - #{$value});
+            }
+
+            >div:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}

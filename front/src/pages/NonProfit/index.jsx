@@ -34,7 +34,7 @@ function NonProfit() {
       </div>
 
       <div className="flex-container flex-column flex-align-center space">
-        <div className="non-profit-apply">
+        <div className="steps-section">
           <div className="container header">
             <h2 className="font-size-32 font-weight-700">How to apply?</h2>
             <p className="font-size-20">In 3 simple steps</p>
@@ -115,7 +115,7 @@ function NonProfit() {
           </h2>
           <p className="font-size-20">Email signature tips</p>
         </div>
-        <div className="row non-profit-tips">
+        <div className="row tips">
           <div className="col-12 col-lg-6 px-5 py-2">
             <div className="tips-item row">
               <div className="col-3 ">
