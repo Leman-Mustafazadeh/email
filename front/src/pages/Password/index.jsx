@@ -18,11 +18,11 @@ const Passwords = () => {
               </h3>
               <TextField
                 className="mt-3 text-text"
-                id="email"
-                label="E-mail Address"
+                id=" New password"
+                label=" New password"
                 variant="outlined"
-                type="email"
-                name="email"
+                type="password"
+                name="password"
               />
 
               <h3 className="font-size-18 font-weight-500 text-text pt-6">
@@ -30,11 +30,11 @@ const Passwords = () => {
               </h3>
               <TextField
                 className="mt-3 text-text"
-                id="email"
+                id="password"
                 label="Confirm the password"
                 variant="outlined"
-                type="email"
-                name="email"
+                type="password"
+                name="password"
               />
               <Button variant="contained" className="mt-7 p-3">
                 Submit
