@@ -21,7 +21,7 @@ const CreateSign = () => {
             </div>
             <div className="row banners_title">
               <div className="col-12 col-lg-6">
-                <div className="col-12 col-md-9">
+                <div className="col-12 col-lg-9">
                   <h2 className="mb-4">
                     Design your signatures effortlessly with the easiest tool
                   </h2>
@@ -71,7 +71,7 @@ const CreateSign = () => {
           </div>
 
           <div className="banners_wrap container">
-            <div className="row">
+            <div className="row flex-justify-start flex-justify-md-center">
               <Link to="#">
                 <button>3.Boost email campaigns</button>
               </Link>

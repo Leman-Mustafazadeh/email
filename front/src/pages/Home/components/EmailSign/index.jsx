@@ -419,7 +419,7 @@ const EmailSign = () => {
                   className="right-regard row"
                   style={{ backgroundColor: formValues.backgroundColor }}
                 >
-                  <div className="col-3 right-regard-img">
+                  <div className="col-12 col-md-3 right-regard-img">
                     <img
                       src={
                         uploadedImageUrl || "https://via.placeholder.com/140"
@@ -433,7 +433,7 @@ const EmailSign = () => {
                     />
                   </div>
 
-                  <div className="col-6 right-regard-container">
+                  <div className="col-12 col-md-6 right-regard-container">
                     <div className="right-regard-name">
                       <h2
                         style={{
@@ -491,7 +491,7 @@ const EmailSign = () => {
                     </div>
                   </div>
 
-                  <div className="col-3 right-regard-qr px-2">
+                  <div className="col-12 col-md-3 right-regard-qr px-2">
                     <QRCode
                       value={socialUrl.qrCode || " "}
                       style={{ height: "107px", width: "107px" }}

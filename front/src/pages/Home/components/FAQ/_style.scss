@@ -27,6 +27,7 @@
 
                     h5 {
                         @extend .font-size-16;
+                        color: map-get($colors, text);
                         line-height: 22px;
                     }
 
@@ -66,7 +67,7 @@
                     @extend .px-6;
                     @extend .py-4;
                     @extend .font-size-16;
-                    color: map-get($colors, text);
+                    color: map-get($colors, text10);
                     line-height: 28px;
                 }
             }
@@ -80,7 +81,7 @@
                     }
 
                     .faq-answer {
-                        max-height: 120px;
+                        max-height: 500px;
                         clip-path: inset(0 0 0 0);
                         // animation: fade 1s ease-in-out;
                     }

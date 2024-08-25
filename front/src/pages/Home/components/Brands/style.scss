@@ -4,7 +4,7 @@
         @extend .flex-align-center;
         @extend .flex-justify-center;
         .logo {
-            // @extend .p-3;
+            // @extend .my-3;
             @extend .flex-container;
             @extend .flex-align-center;
             @extend .flex-justify-center;
@@ -14,5 +14,11 @@
                 object-fit: cover;
             }
         }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .logo{
+        margin: 20px auto;
     }
 }
