@@ -1,24 +1,32 @@
-.trial_head{
+.trial_head {
     margin-bottom: 175px;
+
+    .trial {
+
+        h2 {
+            line-height: 36px;
+        }
+
+        p {
+            line-height: 31px;
+        }
+
+        button {
+            padding: 16px 82px;
+            border-radius: 8px;
+            line-height: 20px;
+        }
+
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
     .trial{
-        .trial_left{
-            h2{
-                line-height: 36px;
-            }
-            p{
-                line-height: 31px;
-            }
-            button{
-                padding: 16px 82px ;
-                border-radius: 8px;
-                line-height: 20px;
-            
-            }
-        }
-        .trial_right{
-            img{
-                width: 100%;
-            }
-        }
+        gap: 50px;
+        text-align: center;
     }
 }

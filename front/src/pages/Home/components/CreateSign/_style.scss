@@ -69,3 +69,26 @@
     }
   }
 }
+
+@media screen and (max-width: 992px) {
+  .banners_wrap {
+    .banners_title {
+      text-align: center;
+      gap: 40px;
+    }
+
+    &:last-child {
+      img {
+        position: relative !important;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .banner_line {
+    transform: translateX(50px) !important;
+  }
+}

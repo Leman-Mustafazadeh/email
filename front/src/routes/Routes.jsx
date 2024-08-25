@@ -13,6 +13,7 @@ import ForgotPassword from "../pages/ForgotPassword";
 import ContactUs from "../pages/ContactUs";
 import AboutUs from "../pages/AboutUs";
 import NonProfit from "../pages/NonProfit";
+import Freelancer from "../pages/SignaturePages/Freelancer";
 
 export const Routes = [
   {
@@ -71,6 +72,10 @@ export const Routes = [
       {
         path: "non-profit",
         element: <NonProfit />,
+      },
+      {
+        path: "freelancer",
+        element: <Freelancer />,
       },
     ],
   },

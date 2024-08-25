@@ -4,7 +4,7 @@ const Disclaimers = () => {
   return (
     <div className="disclaimer">
       <div className="container">
-        <div className="container">
+        <div className="container mx-4">
           <p>*Disclaimers</p>
           <ul>
             <li className="pb-1">

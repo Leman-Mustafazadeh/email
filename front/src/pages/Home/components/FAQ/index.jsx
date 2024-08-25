@@ -37,9 +37,9 @@ const FAQs = () => {
   };
   return (
  
-      <section className="support FAQ ">
+      <section className="support FAQ">
         <div className="container">
-          <div className="row">
+          <div className="mx-4">
             <div className="container col-12 faqs">
               {faqs.map((faq, index) => (
                 <div

@@ -1,0 +1,88 @@
+.customers {
+    .rating {
+        .users {
+            @extend .flex-container;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid map-get($colors, primary);
+                object-fit: cover;
+                margin-left: -15px;
+            }
+        }
+
+        &-folowers {
+            .stars {
+                @extend .flex-container;
+                gap: 5px;
+
+                svg {
+                    height: 16px;
+                    width: 16px;
+                    color: #FDC151;
+                }
+            }
+
+            span {
+                @extend .font-size-12;
+                color: map-get($colors, text10);
+            }
+        }
+    }
+
+    &-item {
+        background-color: map-get($colors, natural);
+        border: 1px solid map-get($colors, lightGray10);
+        border-radius: 12px;
+        width: 416px;
+        height: 294px;
+
+        .comment {
+            border-bottom: 1px solid map-get($colors, lightGray20);
+
+            h4 {
+                @extend .mb-3;
+                @extend .font-size-18;
+                @extend .font-weight-500;
+                color: map-get($colors, text)
+            }
+
+            p {
+                @extend .mb-6;
+                @extend .font-size-16;
+                @extend .font-weight-400;
+                color: map-get($colors, text)
+            }
+        }
+
+        .customer-ava {
+            @extend .my-3;
+            @extend .flex-container;
+            gap: 12px;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid map-get($colors, primary);
+                object-fit: cover;
+            }
+
+            .customer-name {
+                p {
+                    @extend .font-size-14;
+                    @extend .font-weight-400;
+                    color: map-get($colors, text);
+                }
+
+                span {
+                    @extend .font-size-12;
+                    @extend .font-weight-400;
+                    color: map-get($colors, text10);
+                }
+            }
+        }
+    }
+}
