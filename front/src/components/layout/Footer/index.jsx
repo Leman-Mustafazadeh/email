@@ -28,7 +28,7 @@ const Footer = () => {
               <Link to={"/non-profit"}>Signature for non-profits</Link>
             </li>
             <li>
-              <Link to={""}>Signature for freelancers</Link>
+              <Link to={"/freelancer"}>Signature for freelancers</Link>
             </li>
             <li>
               <Link to={""}>Signature for business</Link>
