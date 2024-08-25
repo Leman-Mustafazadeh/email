@@ -14,8 +14,8 @@ import PageHeader from "../../../../components/common/PageHeader";
 import "./_style.scss";
 
 const colors = [
-  { color: "000" },
-  { color: "fff" },
+  { color: "000000" },
+  { color: "ffffff" },
   { color: "21548F" },
   { color: "1A73E8" },
   { color: "34A853" },
@@ -56,6 +56,28 @@ const EmailSign = () => {
     fontColor: "#000000",
     backgroundColor: "#ffffff",
   });
+
+  const iconColor = "#1251A3";
+
+  const setIconColor = () => {
+    if (
+      formValues.backgroundColor === "#ffffff" &&
+      formValues.fontColor === "#000000"
+    ) {
+      return iconColor;
+    }
+    return formValues.fontColor;
+  };
+
+  const getQRCodeColors = () => {
+    const fgColor = !socialUrl.qrCode
+      ? "#D3D3D3"
+      : formValues.backgroundColor === "#000000"
+      ? "#ffffff"
+      : "#000000";
+
+    return { fgColor, bgColor: formValues.backgroundColor };
+  };
 
   const handleCategoryClick = (category) => {
     setSelectedItem(category);
@@ -260,10 +282,10 @@ const EmailSign = () => {
                           onChange={onChange}
                           maxCount={1}
                           beforeUpload={(file) => {
-                            const imageURL = URL.createObjectURL(file); // Create a local URL for preview
-                            setUploadedImageUrl(imageURL); // Set the uploaded image URL
-                            setFileList([file]); // Update fileList
-                            return false; // Prevent the default upload behavior
+                            const imageURL = URL.createObjectURL(file);
+                            setUploadedImageUrl(imageURL);
+                            setFileList([file]);
+                            return false;
                           }}
                         >
                           {fileList.length < 1 && "+ Upload"}
@@ -394,10 +416,10 @@ const EmailSign = () => {
                 </h5>
 
                 <div
-                  className="mt-4 p-1 flex-container right-regard"
+                  className="right-regard row"
                   style={{ backgroundColor: formValues.backgroundColor }}
                 >
-                  <div className="right-regard-img">
+                  <div className="col-3 right-regard-img">
                     <img
                       src={
                         uploadedImageUrl || "https://via.placeholder.com/140"
@@ -411,7 +433,7 @@ const EmailSign = () => {
                     />
                   </div>
 
-                  <div className="right-regard-container">
+                  <div className="col-6 right-regard-container">
                     <div className="right-regard-name">
                       <h2
                         style={{
@@ -433,7 +455,7 @@ const EmailSign = () => {
 
                     <div className="right-regard-contacts">
                       <div className="right-regard-contacts-item">
-                        <LuMail />
+                        <LuMail style={{ color: setIconColor() }} />
                         <p
                           style={{
                             color: formValues.fontColor,
@@ -444,7 +466,7 @@ const EmailSign = () => {
                         </p>
                       </div>
                       <div className="right-regard-contacts-item">
-                        <FiMapPin />
+                        <FiMapPin style={{ color: setIconColor() }} />
 
                         <p
                           style={{
@@ -456,7 +478,7 @@ const EmailSign = () => {
                         </p>
                       </div>
                       <div className="right-regard-contacts-item">
-                        <LuPhone />
+                        <LuPhone style={{ color: setIconColor() }} />
                         <p
                           style={{
                             color: formValues.fontColor,
@@ -469,18 +491,18 @@ const EmailSign = () => {
                     </div>
                   </div>
 
-                  <div className="right-regard-qr ml-10">
+                  <div className="col-3 right-regard-qr px-2">
                     <QRCode
                       value={socialUrl.qrCode || " "}
                       style={{ height: "107px", width: "107px" }}
-                      fgColor={socialUrl.qrCode ? "#000000" : "#D3D3D3"}
+                      {...getQRCodeColors()}
                     />
                     <div className="sosial-icons">
                       <Link to={socialUrl.facebook}>
-                        <FaFacebookSquare />
+                        <FaFacebookSquare style={{ color: setIconColor() }} />
                       </Link>
                       <Link to={socialUrl.linkedln}>
-                        <FaLinkedin />
+                        <FaLinkedin style={{ color: setIconColor() }} />
                       </Link>
                     </div>
                   </div>

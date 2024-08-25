@@ -4,11 +4,9 @@ footer {
     ul {
         li {
             @extend .font-size-16;
+            @extend .font-weight-300;
             @extend .text-natural;
-            
         }
-        li:first-child{
-            color: red;
-        }
+
     }
 }

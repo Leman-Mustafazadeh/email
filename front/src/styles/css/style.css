@@ -1,5 +1,59 @@
-@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Raleway:wght@400;700&family=Oswald:wght@400;700&family=PT+Sans:wght@400;700&family=Quicksand:wght@400;700&family=Work+Sans:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+@import url("https://v1.fontapi.ir/css/SFProDisplay:100;200;300;400;500;600;700;800;900");
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYBOLD.OTF);
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYBLACKITALIC.OTF);
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYHEAVYITALIC.OTF);
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYMEDIUM.OTF);
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYREGULAR.OTF);
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYTHINITALIC.OTF);
+  font-weight: 100;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYULTRALIGHTITALIC.OTF);
+  font-weight: 200;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYLIGHTITALIC.OTF);
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: "SF Pro Display";
+  src: url(../../../../public/fonts/sf-pro-display/SFPRODISPLAYSEMIBOLDITALIC.OTF);
+  font-weight: 600;
+  font-style: italic;
+}
 * {
   margin: 0;
   padding: 0;
@@ -1033,7 +1087,7 @@ a {
   text-align: space-evenly !important;
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-justify-xs-start {
     justify-content: start !important;
   }
@@ -1093,19 +1147,19 @@ a {
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-justify-xs-space-evenly {
     justify-content: space-evenly !important;
   }
 }
 
-@media (min-width: 0) {
+@media (max-width: 0) {
   .flex-align-xs-space-evenly {
     align-items: space-evenly !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-justify-sm-start {
     justify-content: start !important;
   }
@@ -1165,19 +1219,19 @@ a {
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-justify-sm-space-evenly {
     justify-content: space-evenly !important;
   }
 }
 
-@media (min-width: 576px) {
+@media (max-width: 576px) {
   .flex-align-sm-space-evenly {
     align-items: space-evenly !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-justify-md-start {
     justify-content: start !important;
   }
@@ -1237,19 +1291,19 @@ a {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-justify-md-space-evenly {
     justify-content: space-evenly !important;
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .flex-align-md-space-evenly {
     align-items: space-evenly !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-justify-lg-start {
     justify-content: start !important;
   }
@@ -1309,19 +1363,19 @@ a {
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-justify-lg-space-evenly {
     justify-content: space-evenly !important;
   }
 }
 
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   .flex-align-lg-space-evenly {
     align-items: space-evenly !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-justify-xl-start {
     justify-content: start !important;
   }
@@ -1381,13 +1435,13 @@ a {
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-justify-xl-space-evenly {
     justify-content: space-evenly !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .flex-align-xl-space-evenly {
     align-items: space-evenly !important;
   }

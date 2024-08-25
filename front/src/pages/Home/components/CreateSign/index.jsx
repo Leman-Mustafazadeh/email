@@ -78,18 +78,16 @@ const CreateSign = () => {
             </div>
             <div className="row banners_title ">
               <div className="col-12 col-lg-6">
-                <div className="col-12 col-md-9">
-                  <h2 className="mb-10 ">
-                    Elevate Your Marketing Campaigns Using Signature Banners
-                  </h2>
-                  <p>
-                    Increase the impact of your emails by adding eye-catching
-                    banners to your email signatures. These banners not only
-                    make your brand more visible but also boost engagement and
-                    conversions. Customize them to fit your campaigns and see
-                    your marketing results improve
-                  </p>
-                </div>
+                <h2 className="mb-10 ">
+                  Elevate Your Marketing Campaigns Using Signature Banners
+                </h2>
+                <p>
+                  Increase the impact of your emails by adding eye-catching
+                  banners to your email signatures. These banners not only make
+                  your brand more visible but also boost engagement and
+                  conversions. Customize them to fit your campaigns and see your
+                  marketing results improve
+                </p>
               </div>
               <div className="col-12 col-lg-6">
                 <img src={banner4} alt="" />
