@@ -27,6 +27,8 @@
       }
 
       .banners_title {
+        position: relative;
+        min-height: 600px;
 
         h2 {
           @extend .font-size-24;
@@ -43,6 +45,16 @@
 
         img {
           width: 100%;
+        }
+
+      }
+
+      &:last-child {
+
+        img {
+          position: absolute;
+          width: auto;
+          right: 0;
         }
       }
     }

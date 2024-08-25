@@ -83,7 +83,7 @@
 
                         .color {
                             cursor: pointer;
-                            border: 1px solid map-get($colors, light10 );
+                            border: 1px solid map-get($colors, light10);
                             user-select: none;
                             border-radius: 50%;
                             width: 24px;
@@ -108,8 +108,9 @@
             flex-grow: 1;
 
             .right-regard {
-                @extend .flex-container;
-                gap: 25px;
+                @extend .mt-4;
+                @extend .p-3;
+                border-radius: 8px;
 
                 &-img {
                     img {
@@ -122,6 +123,7 @@
                     @extend .flex-container;
                     @extend .flex-column;
                     @extend .flex-justify-space-between;
+                    @extend .px-5;
                     line-height: 1.75;
 
                     h2 {
@@ -132,21 +134,6 @@
                     p {
                         @extend .font-size-14;
                         text-transform: capitalize;
-                    }
-                }
-
-                &-contacts {
-                    &-item {
-                        @extend .flex-container;
-                        @extend .flex-align-center;
-
-                        svg {
-                            color: map-get($colors, primary30d)
-                        }
-
-                        p {
-                            @extend .mx-2;
-                        }
                     }
                 }
 
@@ -167,6 +154,19 @@
                         }
                     }
                 }
+
+                &-contacts {
+                    &-item {
+                        @extend .flex-container;
+                        @extend .flex-align-center;
+
+                        p {
+                            @extend .mx-2;
+                        }
+                    }
+                }
+
+
             }
 
         }

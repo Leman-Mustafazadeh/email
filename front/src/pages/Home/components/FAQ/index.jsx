@@ -40,7 +40,7 @@ const FAQs = () => {
       <section className="support FAQ ">
         <div className="container">
           <div className="row">
-            <div className="col-12 col-lg-10 offset-lg-1 faqs">
+            <div className="container col-12 faqs">
               {faqs.map((faq, index) => (
                 <div
                   key={index}

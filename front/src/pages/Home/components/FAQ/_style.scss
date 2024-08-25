@@ -13,7 +13,7 @@
             gap: 20px;
 
             .faq-question {
-                @extend .p-5;
+                @extend .p-6;
                 @extend .flex-container;
                 @extend .flex-column;
                 background-color: map-get($colors, light10);
@@ -55,7 +55,6 @@
             }
 
             .faq-answer {
-                @extend .p-5;
                 background-color: map-get($colors, primaryFAQ);
                 border-radius: 16px;
                 max-height: 0;
@@ -64,7 +63,8 @@
                 transition: clip-path 5s ease;
 
                 p {
-                    @extend .py-3;
+                    @extend .px-6;
+                    @extend .py-4;
                     @extend .font-size-16;
                     color: map-get($colors, text);
                     line-height: 28px;
@@ -80,7 +80,7 @@
                     }
 
                     .faq-answer {
-                        max-height: 300px;
+                        max-height: 120px;
                         clip-path: inset(0 0 0 0);
                         // animation: fade 1s ease-in-out;
                     }
