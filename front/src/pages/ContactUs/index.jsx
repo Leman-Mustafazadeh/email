@@ -24,7 +24,7 @@ const ContactUs = () => {
                 <img src={icon} alt="" />
               </div>
               <div>
-                <h4 className="text-text60 font-size-20 font-weight-400 pb-2">
+                <h4 className="text-text font-size-20 font-weight-400 pb-2">
                   Location
                 </h4>
                 <Link>
@@ -42,7 +42,7 @@ const ContactUs = () => {
                 <img src={icon2} alt="" />
               </div>
               <div>
-                <h4 className="text-text60 font-size-20 font-weight-400 pb-2">
+                <h4 className="text-text font-size-20 font-weight-400 pb-2">
                   Email
                 </h4>
                 <Link>
