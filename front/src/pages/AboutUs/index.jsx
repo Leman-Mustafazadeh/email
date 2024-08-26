@@ -19,7 +19,7 @@ const AboutUs = () => {
             <h2 className="font-size-26 font-weight-600 text-text text-align-center">
               Our Story
             </h2>
-            <p className="font-size-21 font-weight-400 text-text pt-4 text-align-center px-9">
+            <p className="font-size-21 font-weight-400 text-text pt-4 text-align-center px-9 about_head_text ">
               Our primary goal is to make every email you send more unique,
               impactful, and memorable. At the same time, we're here to support
               brands and businesses in building stronger, deeper connections.
@@ -43,7 +43,8 @@ const AboutUs = () => {
           </div>
 
           <div className=" about_item text-align-center">
-            <h2 className="font-size-28 font-weight-600 text-primary ">
+           <div className="about_wrap">
+           <h2 className="font-size-28 font-weight-600 text-primary about_text">
               Email Signature Generator in Action: The Stats Behind Our Success
             </h2>
             <div className="row about_item_hero flex-justify-space-between">
@@ -51,7 +52,7 @@ const AboutUs = () => {
                 <div>
                   <img src={img3} alt="" />
                 </div>
-                <h2 className="font-size-50 font-weight-600 text-inky ">
+                <h2 className="font-size-50 font-weight-600  text-text">
                   1 million+
                 </h2>
                 <p className="font-size-20 font-weight-500 text-text ">
@@ -63,7 +64,7 @@ const AboutUs = () => {
                 <div>
                   <img src={img4} alt="" />
                 </div>
-                <h2 className="font-size-50 font-weight-600 text-inky ">90%</h2>
+                <h2 className="font-size-50 font-weight-600 text-text">90%</h2>
                 <p className="font-size-20 font-weight-500 text-text ">
                   ROI Increase
                 </p>
@@ -73,7 +74,7 @@ const AboutUs = () => {
                 <div>
                   <img src={img5} alt="" />
                 </div>
-                <h2 className="font-size-50 font-weight-600 text-inky ">
+                <h2 className="font-size-50 font-weight-600  text-text ">
                   10000+{" "}
                 </h2>
                 <p className="font-size-20 font-weight-500 text-text ">
@@ -81,6 +82,7 @@ const AboutUs = () => {
                 </p>
               </div>
             </div>
+           </div>
           </div>
 
           <div className="free">

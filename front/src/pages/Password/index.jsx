@@ -16,26 +16,11 @@ const Passwords = () => {
               <h3 className="font-size-18 font-weight-500 text-text">
                 New password
               </h3>
-              <TextField
-                className="mt-3 text-text"
-                id=" New password"
-                label=" New password"
-                variant="outlined"
-                type="password"
-                name="password"
-              />
-
+              <input type="password" placeholder="password" className="font-size-16 font-weight-400"/>
               <h3 className="font-size-18 font-weight-500 text-text pt-6">
                 Confirm the password
               </h3>
-              <TextField
-                className="mt-3 text-text"
-                id="password"
-                label="Confirm the password"
-                variant="outlined"
-                type="password"
-                name="password"
-              />
+              <input type="text" placeholder="confirm password" className="font-size-16 font-weight-400"/>
               <Button variant="contained" className="mt-7 p-3">
                 Submit
               </Button>

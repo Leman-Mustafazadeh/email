@@ -1,22 +1,39 @@
 .about_title{
-    margin-top: 32px ;
+    margin-top: 52px ;
     margin-bottom: 140px;
     img{
         width: 100%;
     }
 }
 .about_head{
+   
 h1{
-    margin-bottom: 112px;
+    margin-bottom: 60px;
+}
+
+.about_head_text{
+    width: 89%;
+    margin: 0 auto
 }
 .about_item{
-    padding: 64px 192px;
+    padding: 44px 84px;
     border-radius: 16px;
-    background-color: #CDE0FA    ;
+    background-color: #E1EDFC    ;
+    .about_wrap{
+    width: 80%;
+    margin: 0 auto
+    }
+    .about_text{
+        width: 78%;
+        margin: 0 auto;
+    }
     h2{
         line-height: 37px;
         padding-top: 32px;
+       
+        margin: 0 auto;
         padding-bottom: 16px;
+
     }
     .about_item_hero{
         padding-top: 112px;

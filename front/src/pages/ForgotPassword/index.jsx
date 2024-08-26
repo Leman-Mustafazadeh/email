@@ -19,13 +19,15 @@ const ForgotPassword = () => {
             </p>
             <div className=" row flex-column forgot_title">
               <h3 className="font-size-18 font-weight-500 text-text">E-mail address</h3>
-              <TextField  className="mt-3 text-text"
+              {/* <TextField  className="mt-3 text-text"
                   id="email"
                   label="E-mail Address"
                   variant="outlined"
                   type="email"
                   name="email"
-                />
+                /> */}
+
+                <input type="text" placeholder="aysuqulameliyeva05@gmail.com" className="font-size-16 font-weight-400"/>
            <Button variant="contained" className="mt-7 p-3">Submit</Button>
             </div>
             <p className="pt-6 font-size-16 font-weight-400">

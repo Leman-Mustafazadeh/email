@@ -12,6 +12,7 @@
       @extend .flex-container;
       @extend .flex-column;
       gap: 64px;
+      max-width: 1336px;
 
       button {
         @extend .font-size-22;
