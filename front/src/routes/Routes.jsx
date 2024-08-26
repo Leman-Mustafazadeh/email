@@ -72,7 +72,7 @@ export const Routes = [
         element: <Passwords />,
       },
       {
-        path: "contact-us",
+        path: "contactus",
         element: <ContactUs />,
       },
       {

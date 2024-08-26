@@ -11,13 +11,14 @@
             margin-bottom: 150px;
 
             .contact_title {
-                padding: 34px;
+                padding: 34px 52px;
                 display: flex;
                 width: 50%;
                 align-items: center;
                 gap: 28px;
                 border-radius: 11px;
                 background-color: #E1EDFC;
+                
             }
         }
 
@@ -29,11 +30,14 @@
                 background-color: #FFFFFF;
                 border-radius: 16px;
                 margin-bottom: 24px;
+                width: 70%;
+                margin: 24px auto;
 
                 .hero_wrap {
                     gap: 28px;
                 }
-
+.help{
+}
                 .hero_end {
                     gap: 8px;
                 }

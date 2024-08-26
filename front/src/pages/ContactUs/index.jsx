@@ -48,7 +48,7 @@ const ContactUs = () => {
                 <Link>
                   {" "}
                   <p className="text-text font-size-20 font-weight-500">
-                    support@emailsignature.com
+                   <a href="support@emailsignature.com">support@emailsignature.com</a>
                   </p>
                 </Link>
               </div>
@@ -64,7 +64,7 @@ const ContactUs = () => {
                 <div>
                   <img src={icon3} alt="" />
                 </div>
-                <div>
+                <div className="help">
                   <h2 className="font-size-24 font-weight-500 text-text pb-2">
                     Help Center
                   </h2>
@@ -72,7 +72,7 @@ const ContactUs = () => {
                 </div>
               </div>
 
-              <div className="hero_end row">
+              <div className="hero_end row help">
                 <a
                   href=""
                   className="font-size-18 font-weight-500 text-primary"
