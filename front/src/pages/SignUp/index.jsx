@@ -1,15 +1,23 @@
 /* eslint-disable react/no-unescaped-entities */
-import TextField from "@mui/material/TextField";
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
 // import { login } from "../../service/slice/user";
 import useAuth from "../../service/Auth/useAuth";
+import { TextField, IconButton, InputAdornment, Checkbox, FormControlLabel } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "./_style.scss";
+import { useState } from "react";
 
 const SignUp = () => {
 
   const { useRegister } = useAuth();
   const register = useRegister();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -98,8 +106,8 @@ const SignUp = () => {
                   id="password"
                   label="Password"
                   variant="outlined"
-                  type="password"
                   name="password"
+                  type={showPassword ? "text" : "password"}
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -108,6 +116,18 @@ const SignUp = () => {
                   }
                   helperText={formik.touched.password && formik.errors.password}
                   required
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={togglePasswordVisibility}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
               </div>
               <button
