@@ -12,13 +12,13 @@ const Brands = () => {
       <div className="row">
         <div className="col-6 offset-md-3 container my-5">
           <div className="brands-logo row">
-            <div className="col-12 col-md-6 col-lg-3 logo">
+            <div className="col-12 col-md-6 col-lg-3 logo amazon">
               <img src={amazon} alt="amazon" />
             </div>
             <div className="col-12 col-md-6 col-lg-3 logo">
               <img src={oracle} alt="oracle" />
             </div>
-            <div className="col-12 col-md-6 col-lg-3 logo">
+            <div className="col-12 col-md-6 col-lg-3 logo ibm">
               <img src={ibm} alt="ibm" />
             </div>
             <div className="col-12 col-md-6 col-lg-3 logo">

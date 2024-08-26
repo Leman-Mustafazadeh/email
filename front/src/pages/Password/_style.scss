@@ -12,4 +12,22 @@
             width: 100%;
         }
     }
+    .password-input-container {
+        position: relative;
+        width: 100%;
+      
+        input {
+          width: 100%;
+          padding-right: 170px; 
+        }
+      
+        .password-toggle-icon {
+          position: absolute;
+          top: 57%;
+          right: 22px;
+          transform: translateY(-50%);
+          cursor: pointer;
+          color: #666;
+        }
+    }  
 }

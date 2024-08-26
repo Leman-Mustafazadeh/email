@@ -1,9 +1,9 @@
-import { TextField } from "@mui/material";
+import { TextField, IconButton, InputAdornment, Checkbox, FormControlLabel } from "@mui/material";
 import { useFormik } from "formik";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-// import { login } from "../../service/slice/user";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import useAuth from "../../service/Auth/useAuth";
 import "./_style.scss";
 
@@ -13,6 +13,12 @@ const Login = () => {
 
   const { useLogin } = useAuth();
   const loginin = useLogin();
+
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   useEffect(() => {
     if (user.id) {
@@ -24,28 +30,11 @@ const Login = () => {
     initialValues: {
       email: "",
       password: "",
+      rememberMe: false, // added for Remember Me checkbox
     },
-    
+
     onSubmit: async (values, actions) => {
       loginin.mutate(values, actions);
-
-      // try {
-      //   const response = await apiController.post("/Account/Login", values);
-
-      //   if (response.success) {
-      //     actions.resetForm();
-      //     dispatch(login(response.user));
-      //     showAlert("success", response.message);
-      //     console.log("SUCCESS");
-
-      //     navigate("/");
-      //   } else {
-      //     showAlert("error", response.message);
-      //   }
-      // } catch (error) {
-      //   console.error("Error:", error);
-      //   showAlert("error", "Oops, something went wrong!");
-      // }
     },
   });
 
@@ -84,7 +73,7 @@ const Login = () => {
                   label="Password"
                   variant="outlined"
                   name="password"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   value={formik.values.password}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
@@ -93,7 +82,36 @@ const Login = () => {
                   }
                   helperText={formik.touched.password && formik.errors.password}
                   required
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={togglePasswordVisibility}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
                 />
+              </div>
+              <div className="row flex-align-center flex-justify-space-between">
+                <FormControlLabel className="font-size-12 font-weight-400"
+                  control={
+                    <Checkbox
+                      name="rememberMe"
+                      color="primary"
+                      checked={formik.values.rememberMe}
+                      onChange={formik.handleChange}
+                    />
+                  }
+                  
+                  label="Remember Me"
+                />
+                <Link to="/forgotpassword" className="forgot-password-link font-size-12 font-weight-400 text-primary ">
+                  Forgot Password?
+                </Link>
               </div>
               <button
                 type="submit"
@@ -116,7 +134,7 @@ const Login = () => {
               Sign up with Google
             </button>
 
-            <div className="free-trial">
+            {/* <div className="free-trial">
               <span>Try our services free for 7 days!</span>
               <div className="privacy-policy">
                 <p>
@@ -128,7 +146,7 @@ const Login = () => {
                   <Link to="/"> Privacy Policy</Link>
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
