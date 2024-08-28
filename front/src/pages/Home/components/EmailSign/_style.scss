@@ -256,7 +256,9 @@ justify-content: center;
     overflow: auto;
    height: 643px;
   }
-  
+  .ant-modal-content{
+    padding: 0 !important;
+  }
   .modal_head {
     display: flex;
     flex-direction: row;
@@ -266,12 +268,14 @@ justify-content: center;
   .modal_left {
     flex: 1;
     padding: 20px;
+    width: 50%;
   }
   
   .modal_right {
+    width: 50%;
     flex: 1;
-    padding: 20px;
-    background-color: #f0f0f0; /* Adjust background as needed */
+    padding: 30px;
+    background-color:#EFF5FD /* Adjust background as needed */
   }
   
   .form-group {

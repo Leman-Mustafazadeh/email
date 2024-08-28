@@ -550,7 +550,7 @@ const EmailSign = () => {
                 footer={null}
                 className="custom-modal"
               >
-                <div className="modal-content">
+                <div className="modal-content p-0">
                   <div className="modal_head">
                     <div className="modal_left">
                       <h3 className="font-size-22 font-weight-500 text-text">
@@ -593,9 +593,9 @@ const EmailSign = () => {
                                     edge="end"
                                   >
                                     {showPassword ? (
-                                      <VisibilityOff />
+                                      < Visibility />
                                     ) : (
-                                      <Visibility />
+                                      <VisibilityOff/>
                                     )}
                                   </IconButton>
                                 </InputAdornment>
@@ -637,7 +637,7 @@ const EmailSign = () => {
                         </div>
                       </form>
                     </div>
-                    <div className="modal_right btn-primary60">
+                    <div className="modal_right ">
                       <div className="modal_right_img">
                         <img src={popup} alt="" />
                       </div>
