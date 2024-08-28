@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./_style.scss";
-
+import logo from "./logo.png"
 const Navbar = () => {
   return (
     <>
@@ -10,7 +10,7 @@ const Navbar = () => {
           <div className="col-6">
             <div className="logo">
               <Link to="/">
-                <h1>logo</h1>
+               <img src={logo} alt="" style={{width:"220px"}}/>
               </Link>
             </div>
           </div>

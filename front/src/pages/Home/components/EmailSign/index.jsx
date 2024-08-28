@@ -12,7 +12,10 @@ import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
 import PageHeader from "../../../../components/common/PageHeader";
 import "./_style.scss";
-
+import { IconButton, InputAdornment } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { Button, Modal } from "antd";
+import popup from "./popup.png";
 const colors = [
   { color: "000000" },
   { color: "ffffff" },
@@ -42,6 +45,11 @@ const fonts = [
 ];
 
 const EmailSign = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
   const [selectedItem, setSelectedItem] = useState("upload");
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
   const [fileList, setFileList] = useState([]);
@@ -83,6 +91,11 @@ const EmailSign = () => {
     setSelectedItem(category);
   };
 
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormValues((prevValues) => ({
@@ -515,12 +528,123 @@ const EmailSign = () => {
                   </Link>
                 </h4>
               </div>
-              <button
+
+              <Button
+                type="primary"
+                onClick={showModal}
                 className="btn_email bg-secondary p-2 mt-4 font-size-24 text-natural font-weight-500"
-                onClick={() => alert("Integrate to your email")}
               >
-                Integrate to your email
-              </button>
+                İntegrate to your email
+              </Button>
+              <Modal
+                open={isModalOpen}
+                style={{
+                  maxWidth: "70vw",
+                  width: "70vw",
+                  margin: "auto",
+                }}
+                bodyStyle={{
+                  height: "calc(100vh - 120px)",
+                  overflow: "hidden",
+                }}
+                footer={null}
+                className="custom-modal"
+              >
+                <div className="modal-content">
+                  <div className="modal_head">
+                    <div className="modal_left">
+                      <h3 className="font-size-22 font-weight-500 text-text">
+                        Your Email signature is just a click away!
+                      </h3>
+                      <p className="font-size-16 font-weight-400 text-text30 pt-3">
+                        Sign up in just 30 seconds to set up and begin using
+                        your email signature free for 7 days.
+                      </p>
+                      <form>
+                        <div className="form-group">
+                          <p className="font-size-18 text-text10 font-weight-500 pt-3">
+                            E-mail address
+                          </p>
+                          <TextField
+                            id="email"
+                            label="E-mail Address"
+                            variant="outlined"
+                            type="email"
+                            name="email"
+                            fullWidth
+                          />
+                        </div>
+                        <div className="form-group">
+                          <p className="font-size-18 text-text10 font-weight-500 ">
+                            Password
+                          </p>
+                          <TextField
+                            id="password"
+                            label="Password"
+                            variant="outlined"
+                            name="password"
+                            type={showPassword ? "text" : "password"}
+                            fullWidth
+                            InputProps={{
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  <IconButton
+                                    onClick={togglePasswordVisibility}
+                                    edge="end"
+                                  >
+                                    {showPassword ? (
+                                      <VisibilityOff />
+                                    ) : (
+                                      <Visibility />
+                                    )}
+                                  </IconButton>
+                                </InputAdornment>
+                              ),
+                            }}
+                          />
+                        </div>
+                        <button
+                          type="submit"
+                          className="btn btn-primary text-natural"
+                        >
+                          Free sign up
+                        </button>
+                        <button className="google btn-google font-size-14 font-weight-500 text-text">
+                          <img
+                            width={"50px"}
+                            height={"50px"}
+                            src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg"
+                            alt="google sign up"
+                            className="mr-1"
+                          />
+                          Continue with Google
+                        </button>
+                        <div className="login">
+                          <span>Already have an account? - </span>
+                          <Link to="/login">Login</Link>
+                        </div>
+                        <div className="free-trial">
+                          <div className="privacy-policy">
+                            <p>
+                              By signing up, you agree to the
+                              <Link to="/"> Terms And Condition</Link>
+                            </p>
+                            <p>
+                              and
+                              <Link to="/"> Privacy Policy</Link>
+                            </p>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div className="modal_right btn-primary60">
+                      <div className="modal_right_img">
+                        <img src={popup} alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Modal>
             </div>
           </div>
         </div>
