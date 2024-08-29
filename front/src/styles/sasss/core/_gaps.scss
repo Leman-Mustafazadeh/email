@@ -1,8 +1,7 @@
 @each $key, $value in $spacers {
     @media (min-width: 993px) {
         .gap-#{$key} {
-            display: flex;
-            flex-wrap: wrap;
+            
             gap: $value;
 
             >div {

@@ -1,4 +1,9 @@
 .section-header {
+    @extend .flex-container;
+    @extend .flex-column;
+    text-align: center;
+    gap: 18px;
+
     h2 {
         @extend .py-3;
         @extend .font-size-36;
@@ -6,5 +11,11 @@
         text-align: center;
         color: map-get($colors, primary);
         line-height: 42px;
+    }
+
+    p {
+        @extend .font-size-20;
+        line-height: 1.35;
+        color: map-get($colors, text);
     }
 }
