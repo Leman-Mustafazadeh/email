@@ -16,6 +16,7 @@ import NonProfit from "../pages/NonProfit";
 import Freelancer from "../pages/SignaturePages/Freelancer";
 import ResetPassword from "../pages/ResetPassword";
 import Passwords from "../pages/Password";
+import Business from "../pages/SignaturePages/Business";
 
 export const Routes = [
   {
@@ -86,6 +87,10 @@ export const Routes = [
       {
         path: "freelancer",
         element: <Freelancer />,
+      },
+      {
+        path: "business",
+        element: <Business />,
       },
     ],
   },

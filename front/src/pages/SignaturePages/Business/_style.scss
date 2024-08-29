@@ -1,0 +1,10 @@
+.business-page {
+    .business-signature {
+
+        &-item {
+            border: 1px solid map-get($colors, lightGray10);
+        }
+
+
+    }
+}
