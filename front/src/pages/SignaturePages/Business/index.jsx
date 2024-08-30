@@ -20,7 +20,7 @@ function Business() {
         />
       </div>
       <div className="space"></div>
-      <div className="business-signature ">
+      <div className="business-signature">
         <div className="container px-10">
           <SectionHeader
             header="Why Every Business Needs Professional Email Signatures"
@@ -136,6 +136,7 @@ function Business() {
           </div>
         </div>
       </div>
+      <div className="space"></div>
       <FreeTrial />
       <Customers />
       <div className="space"></div>
