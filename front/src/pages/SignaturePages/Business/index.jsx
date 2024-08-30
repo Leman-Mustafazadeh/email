@@ -20,14 +20,14 @@ function Business() {
         />
       </div>
       <div className="space"></div>
-      <div className="business-signature ">
+      <div className="business-signature">
         <div className="container px-10">
           <SectionHeader
             header="Why Every Business Needs Professional Email Signatures"
             paragpaph="In today’s digital landscape, email is a primary mode of communication for businesses. Your email signature is more than just a sign-off—it's an extension of your brand, a tool for engagement, and a means to create a lasting impression. Here’s why a professional email signature is essential for your business:"
           />
         </div>
-        <div className="container grid gap-5">
+        <div className="container grid gap-5"> 
           <div className="col-12">
             <div className="business-signature-item">
               <div className="mb-3">

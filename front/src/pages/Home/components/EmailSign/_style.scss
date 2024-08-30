@@ -189,14 +189,16 @@
         }
 
     }
-  
+
 
 }
+
 .login {
     @extend .font-weight-700;
-display: flex;
-align-items: center;
-justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     span {
         color: map-get($colors, text);
     }
@@ -215,12 +217,14 @@ justify-content: center;
     display: flex;
     align-items: center;
     justify-content: center;
+
     span {
         color: map-get($colors, light);
     }
 
     .privacy-policy {
         color: #575757;
+
         a {
             color: map-get($colors, primary);
             text-decoration: underline;
@@ -232,63 +236,70 @@ justify-content: center;
         }
     }
 }
-.modal_right{
-    .modal_right_img{
-        height: 60vh;
-        padding-top: 50px;;
-        img{height: 100%;
 
-    }
+.modal_right {
+    .modal_right_img {
+        height: 60vh;
+        padding-top: 50px;
+        ;
+
+        img {
+            height: 100%;
+
+        }
     }
 }
+
 .ant-modal {
     width: 68vw !important;
     max-width: 70vw !important;
     height: 70vh !important;
     max-height: 70vh !important;
-   
-    margin: 0  auto !important;
-   
-  }
-  
-  .ant-modal-body {
+
+    margin: 0 auto !important;
+
+}
+
+.ant-modal-body {
     // height: calc(100vh - 120px) !important; /* Adjust as needed */
     overflow: auto;
-   height: 643px;
-  }
-  .ant-modal-content{
+    height: 643px;
+}
+
+.ant-modal-content {
     padding: 0 !important;
-  }
-  .modal_head {
+}
+
+.modal_head {
     display: flex;
     flex-direction: row;
     height: 100%;
-  }
-  
-  .modal_left {
+}
+
+.modal_left {
     flex: 1;
     padding: 20px;
     width: 50%;
-  }
-  
-  .modal_right {
+}
+
+.modal_right {
     width: 50%;
     flex: 1;
     padding: 30px;
-    background-color:#EFF5FD /* Adjust background as needed */
-  }
-  
-  .form-group {
+    background-color: #EFF5FD
+        /* Adjust background as needed */
+}
+
+.form-group {
     margin-bottom: 15px;
-  }
-  
-  .google {
+}
+
+.google {
     display: flex;
     align-items: center;
     background-color: #f0f0f0;
-  }
-  
-  .google img {
+}
+
+.google img {
     margin-right: 10px;
-  }
-  
+}
