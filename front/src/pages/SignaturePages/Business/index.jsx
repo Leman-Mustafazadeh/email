@@ -27,7 +27,7 @@ function Business() {
             paragpaph="In today’s digital landscape, email is a primary mode of communication for businesses. Your email signature is more than just a sign-off—it's an extension of your brand, a tool for engagement, and a means to create a lasting impression. Here’s why a professional email signature is essential for your business:"
           />
         </div>
-        <div className="container grid gap-5"> 
+        <div className="container grid gap-5">
           <div className="col-12">
             <div className="business-signature-item">
               <div className="mb-3">
@@ -136,6 +136,7 @@ function Business() {
           </div>
         </div>
       </div>
+      <div className="space"></div>
       <FreeTrial />
       <Customers />
       <div className="space"></div>
