@@ -2036,6 +2036,22 @@ a {
   background-color: #EFF5FD !important;
 }
 
+.bg-primaryItem {
+  background-color: #DAE7FB !important;
+}
+
+.text-primaryItem {
+  color: #DAE7FB !important;
+}
+
+.border-primaryItem {
+  border: 1px solid #DAE7FB !important;
+}
+
+.btn-primaryItem {
+  background-color: #DAE7FB !important;
+}
+
 .bg-access {
   background-color: #34A853 !important;
 }

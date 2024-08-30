@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import PageHeader from "../../components/common/PageHeader";
 import { Button } from "@mui/material";
 import "./_style.scss";
