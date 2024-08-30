@@ -1,10 +1,83 @@
 .business-page {
-    .business-signature {
+    .space {
+        margin-bottom: 175px;
+    }
 
+    .business-signature {
         &-item {
+            @extend .py-5;
+            @extend .px-6;
+            @extend .flex-container;
+            @extend .flex-column;
+            gap: 16px;
             border: 1px solid map-get($colors, lightGray10);
+            background-color: map-get($colors, natural);
+            color: map-get($colors, text);
+        }
+    }
+
+    .get-started {
+        .advices {
+            gap: 270px;
+
+            .advice {
+                max-width: 522px;
+                width: 100%;
+                min-height: 218px;
+                background-color: map-get($colors, primaryItem);
+                border-radius: 12px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: -33px;
+                    left: -33px;
+                    width: 66px;
+                    height: 66px;
+                    border-radius: 50%;
+                    background-color: map-get($colors, primary);
+                }
+
+
+            }
         }
 
+        .right {
+            .advice {
+                &:first-child {
+                    margin-top: 218px;
 
+                    &::before {
+                        background-color: map-get($colors, secondary);
+                    }
+                }
+
+                &:nth-child(2n) {
+
+                    &::before {
+                        background-color: #C516C5;
+                    }
+                }
+            }
+        }
+
+        .left {
+            .advice {
+                &:nth-child(2n) {
+                    transform: translate(110px, -30px);
+
+                    &::before {
+                        background-color: map-get($colors, access);
+                    }
+                }
+
+                &:last-child {
+                    &::before {
+                        background-color: #0F9BB0;
+                    }
+                }
+            }
+        }
     }
 }
