@@ -50,6 +50,10 @@ const EmailSign = () => {
     setIsModalOpen(true);
   };
 
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   const [selectedItem, setSelectedItem] = useState("upload");
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
   const [fileList, setFileList] = useState([]);
@@ -532,27 +536,36 @@ const EmailSign = () => {
               <Button
                 type="primary"
                 onClick={showModal}
-                className="btn_email bg-secondary p-2 mt-4 font-size-24 text-natural font-weight-500"
+                className="btn_email bg-secondary p-5 mt-4 font-size-24 text-natural font-weight-500"
               >
-                İntegrate to your email
+                Integrate to your email
               </Button>
               <Modal
                 open={isModalOpen}
+                onClose={handleCloseModal}
                 style={{
-                  maxWidth: "70vw",
-                  width: "70vw",
-                  margin: "auto",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                 }}
-                bodyStyle={{
-                  height: "calc(100vh - 120px)",
-                  overflow: "hidden",
-                }}
-                footer={null}
                 className="custom-modal"
+                footer={null}
+                BackdropProps={{
+                  onClick: handleCloseModal,
+                }}
               >
-                <div className="modal-content p-0">
+                <div
+                  className="modal-content"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <div className="modal_head">
-                    <div className="modal_left">
+                    <button
+                      type="button"
+                      aria-label="Close"
+                      className="ant-modal-close"
+                      onClick={handleCloseModal}
+                    ></button>
+                    <div className="modal_left py-4 px-8">
                       <h3 className="font-size-22 font-weight-500 text-text">
                         Your Email signature is just a click away!
                       </h3>
@@ -593,9 +606,9 @@ const EmailSign = () => {
                                     edge="end"
                                   >
                                     {showPassword ? (
-                                      < Visibility />
+                                      <Visibility />
                                     ) : (
-                                      <VisibilityOff/>
+                                      <VisibilityOff />
                                     )}
                                   </IconButton>
                                 </InputAdornment>
