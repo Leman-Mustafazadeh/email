@@ -1,8 +1,5 @@
 .generator {
-
-
     &_banner {
-
 
         &_left {
             border-radius: 12px;
@@ -165,10 +162,7 @@
                         }
                     }
                 }
-
-
             }
-
         }
 
         .btn_email {
@@ -187,10 +181,7 @@
                 }
             }
         }
-
     }
-
-
 }
 
 .login {
@@ -237,6 +228,9 @@
     }
 }
 
+
+// Modal style 
+
 .modal_right {
     .modal_right_img {
         height: 60vh;
@@ -255,15 +249,13 @@
     max-width: 70vw !important;
     height: 70vh !important;
     max-height: 70vh !important;
-
     margin: 0 auto !important;
 
 }
 
 .ant-modal-body {
-    // height: calc(100vh - 120px) !important; /* Adjust as needed */
-    overflow: auto;
-    height: 643px;
+    overflow-y: auto;
+    border-radius: 16px;
 }
 
 .ant-modal-content {
@@ -278,7 +270,6 @@
 
 .modal_left {
     flex: 1;
-    padding: 20px;
     width: 50%;
 }
 
