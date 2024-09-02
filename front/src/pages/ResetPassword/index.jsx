@@ -1,8 +1,9 @@
 import { Button } from "@mui/material";
 import PageHeader from "../../components/common/PageHeader";
+import "./_style.scss"
 const ResetPassword = () => {
   return (
-    <section>
+    <section className="r_pass">
       <div className="container">
         <div className="row flex-column flex-align-center flex-justify-center   ">
           <PageHeader header=" Email Signature Generator" />

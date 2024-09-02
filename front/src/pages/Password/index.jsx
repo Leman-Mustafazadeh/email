@@ -37,7 +37,7 @@ const Passwords = () => {
                   className="font-size-16 font-weight-400"
                 />
                 <FontAwesomeIcon
-                  icon={showPassword1 ? faEyeSlash : faEye}
+                  icon={showPassword1 ? faEye : faEyeSlash}
                   onClick={togglePasswordVisibility1}
                   className="password-toggle-icon"
                 />
@@ -52,7 +52,7 @@ const Passwords = () => {
                   className="font-size-16 font-weight-400"
                 />
                 <FontAwesomeIcon
-                  icon={showPassword2 ? faEyeSlash : faEye}
+                  icon={showPassword2 ?  faEye:faEyeSlash}
                   onClick={togglePasswordVisibility2}
                   className="password-toggle-icon"
                 />

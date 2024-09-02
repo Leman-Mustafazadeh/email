@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import trial1 from "../../../../assets/images/trial/trial1.png";
+import trial2 from "../../../../assets/images/trial/free.png";
 import "./_style.scss";
 const FreeTrial = () => {
   return (
@@ -20,8 +21,11 @@ const FreeTrial = () => {
               </button>
             </Link>
           </div>
-          <div className="col-12 col-md-6 col-lg-5">
+          <div className="col-12 col-md-6 col-lg-5 trial_title">
             <img src={trial1} alt="" />
+          </div>
+          <div className="col-12 col-md-6 col-lg-5 free">
+            <img src={trial2} alt="" />
           </div>
         </div>
       </div>

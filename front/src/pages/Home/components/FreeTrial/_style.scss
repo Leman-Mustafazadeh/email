@@ -22,6 +22,15 @@
             width: 100%;
         }
     }
+    .trial_title{
+        position: relative;
+        
+    }
+    .free{
+        width: 303px;
+        position: absolute;
+        right: 230px;
+    }
 }
 
 @media screen and (max-width: 767px) {

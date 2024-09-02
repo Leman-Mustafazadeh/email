@@ -5,7 +5,7 @@ import { Button, TextField } from "@mui/material";
 import "./_style.scss";
 const ForgotPassword = () => {
   return (
-    <section>
+    <section className="f_pass">
       <div className="container">
         <div className="row flex-column flex-align-center flex-justify-center   ">
           <PageHeader header=" Email Signature Generator"  />
