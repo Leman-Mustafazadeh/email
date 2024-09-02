@@ -428,9 +428,23 @@ const EmailSign = () => {
 
             <div className="col-12 col-lg-6 pl-2 flex-container flex-column">
               <div className="generator_banner_right">
-                <h5 className="text-inky font-size-28 font-weight-700">
-                  Kind Regards
-                </h5>
+                <div className="generator-header">
+                  <div className="message">
+                    <div className="container">
+                      <span>New Messages</span>
+                    </div>
+                  </div>
+                  <div className="container">
+                    <div className="mail-forms">
+                      <span>To</span>
+                    </div>
+                  </div>
+                  <div className="container">
+                    <div className="mail-forms">
+                      <span>Subject</span>
+                    </div>
+                  </div>
+                </div>
 
                 <div
                   className="right-regard row"
@@ -524,13 +538,6 @@ const EmailSign = () => {
                     </div>
                   </div>
                 </div>
-
-                <h4 className="text-text font-size-16 font-weight-500 pt-3">
-                  Create your Website{" "}
-                  <Link to="#" className="text-danger">
-                    email signature
-                  </Link>
-                </h4>
               </div>
 
               <Button
