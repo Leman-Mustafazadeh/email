@@ -47,6 +47,30 @@
                 border-radius: 12px;
                 min-height: 272px;
 
+                .uploader {
+
+                    .ant-upload-select,
+                    .ant-upload-list-item {
+                        min-width: 160px;
+                        min-height: 160px;
+                    }
+
+
+                    .upload-button {
+                        svg {
+                            color: map-get($colors, primary );
+                            width: 36px;
+                            height: 36px;
+                        }
+
+                        p {
+                            @extend .font-size-10;
+                            color: map-get($colors, text);
+                            line-height: 1.5;
+                        }
+                    }
+                }
+
                 &-headers {
                     gap: 50px;
 
@@ -268,67 +292,87 @@
 
 
 // Modal style 
+.sign-up-modal {
+    min-width: 70vw !important;
+    width: 100%;
 
-.modal_right {
-    .modal_right_img {
-        height: 60vh;
-        padding-top: 50px;
-        ;
+    .ant-modal-content {
+        padding: 0 !important;
 
-        img {
-            height: 100%;
+        .ant-modal-body {
 
+            .modal_head {
+
+                .modal_left {
+                    @extend .flex-container;
+                    @extend .flex-column;
+                    gap: 32px;
+
+                    &-header {
+                        @extend .flex-container;
+                        @extend .flex-column;
+                        gap: 14px;
+
+                        h3 {
+                            @extend .font-size-22;
+                            @extend .font-weight-500;
+                            color: map-get($colors, text);
+                        }
+
+                        p {
+                            @extend .font-size-16;
+                            @extend .font-weight-400;
+                            color: map-get($colors, text30);
+                        }
+                    }
+
+                    .form-group {
+                        gap: 32px;
+
+                        &-input {
+                            @extend .flex-container;
+                            @extend .flex-column;
+                            gap: 12px;
+                        }
+
+                        .sign-up-buttons {
+                            @extend .flex-container;
+                            @extend .flex-column;
+                            gap: 16px;
+
+                            .btn {
+                                height: 55px;
+                            }
+                        }
+                    }
+
+                    &-footer {
+                        @extend .flex-container;
+                        @extend .flex-column;
+                        gap: 16px;
+                    }
+                }
+
+                .modal_right {
+                    @extend .p-4;
+                    @extend .flex-container;
+                    @extend .flex-align-center;
+
+                    background-color: #EFF5FD;
+                    border-radius: 0 16px 16px 0;
+
+
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                        margin-bottom: -50px;
+                    }
+                }
+            }
         }
     }
 }
 
 .ant-modal {
-    width: 68vw !important;
-    max-width: 70vw !important;
-    height: 70vh !important;
-    max-height: 70vh !important;
-    margin: 0 auto !important;
-
-}
-
-.ant-modal-body {
-    overflow-y: auto;
-    border-radius: 16px;
-}
-
-.ant-modal-content {
-    padding: 0 !important;
-}
-
-.modal_head {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-}
-
-.modal_left {
-    flex: 1;
-    width: 50%;
-}
-
-.modal_right {
-    width: 50%;
-    flex: 1;
-    padding: 30px;
-    background-color: #EFF5FD
-        /* Adjust background as needed */
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-.google {
-    display: flex;
-    align-items: center;
-    background-color: #f0f0f0;
-}
-
-.google img {
-    margin-right: 10px;
+    width: 70vw !important;
 }
