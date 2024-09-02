@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
+import { IoIosAddCircle } from "react-icons/io";
 import { LuMail, LuPhone } from "react-icons/lu";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
@@ -122,7 +123,19 @@ const EmailSign = () => {
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
 
-    if (newFileList.length > 0 && !uploadedImageUrl) {
+    if (uploadedImageUrl) {
+      const currentImageUrls = newFileList.map(
+        (file) => file.url || URL.createObjectURL(file.originFileObj)
+      );
+
+      if (!currentImageUrls.includes(uploadedImageUrl)) {
+        if (currentImageUrls.length > 0) {
+          setUploadedImageUrl(currentImageUrls[0]);
+        } else {
+          setUploadedImageUrl(null);
+        }
+      }
+    } else if (newFileList.length > 0) {
       const file = newFileList[0].originFileObj;
       if (file) {
         const imageURL = URL.createObjectURL(file);
@@ -185,8 +198,8 @@ const EmailSign = () => {
 
         <div className="generator">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="generator_banner row mt-3">
-              <div className="col-12 pr-2 col-lg-6">
+            <div className="generator_banner row gap-4 mt-3">
+              <div className="col-12 col-lg-6">
                 <div className="generator_banner_left">
                   <div className="form-group text p-4">
                     <input
@@ -257,10 +270,13 @@ const EmailSign = () => {
                                 showUploadList={{
                                   showRemoveIcon: fileList.length > 0,
                                 }}
+                                className=""
                               >
                                 {fileList.length < 3 && (
                                   <div className="upload-button">
-                                    <span>+ Upload</span>
+                                    <IoIosAddCircle />
+                                    <p>Format .png .jpg</p>
+                                    <p>Size (Px): 800 x 300</p>
                                   </div>
                                 )}
                               </Upload>
@@ -381,7 +397,7 @@ const EmailSign = () => {
                 </div>
               </div>
 
-              <div className="col-12 col-lg-6 pl-2 flex-container flex-column">
+              <div className="col-12 col-lg-6 flex-container flex-column">
                 <div className="generator_banner_right">
                   <div className="generator-header">
                     <div className="message">
@@ -419,7 +435,7 @@ const EmailSign = () => {
                       />
                     </div>
 
-                    <div className="col-12 col-md-6 right-regard-container">
+                    <div className="col-md-6 right-regard-container">
                       <div className="right-regard-name">
                         <h2
                           style={{
@@ -477,7 +493,7 @@ const EmailSign = () => {
                       </div>
                     </div>
 
-                    <div className="col-12 col-md-3 right-regard-qr px-2">
+                    <div className="col-md-3 right-regard-qr px-2">
                       <QRCode
                         value={socialUrl.qrCode || " "}
                         style={{ height: "107px", width: "107px" }}
@@ -502,126 +518,133 @@ const EmailSign = () => {
                 >
                   Integrate to your email
                 </Button>
-                <Modal
-                  open={isModalOpen}
-                  onClose={handleCloseModal}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  className="custom-modal"
-                  footer={null}
-                  BackdropProps={{
-                    onClick: handleCloseModal,
-                  }}
-                >
-                  <div
-                    className="modal-content"
-                    onClick={(e) => e.stopPropagation()}
-                  >
-                    <div className="modal_head">
-                      <button
-                        type="button"
-                        aria-label="Close"
-                        className="ant-modal-close"
-                        onClick={handleCloseModal}
-                      ></button>
-                      <div className="modal_left py-4 px-8">
-                        <h3 className="font-size-22 font-weight-500 text-text">
-                          Your Email signature is just a click away!
-                        </h3>
-                        <p className="font-size-16 font-weight-400 text-text30 pt-3">
+              </div>
+            </div>
+            <Modal
+              open={isModalOpen}
+              onClose={handleCloseModal}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+              className="sign-up-modal"
+              footer={null}
+              BackdropProps={{
+                onClick: handleCloseModal,
+              }}
+            >
+              <div className="modal-content">
+                <div className="modal_head">
+                  <button
+                    type="button"
+                    aria-label="Close"
+                    className="ant-modal-close"
+                    onClick={handleCloseModal}
+                  ></button>
+                  <div className="row">
+                    <div className="col-12 col-lg-6 modal_left py-4 px-8">
+                      <div className="modal_left-header">
+                        <h3>Your Email signature is just a click away!</h3>
+                        <p>
                           Sign up in just 30 seconds to set up and begin using
                           your email signature free for 7 days.
                         </p>
-                        <form>
-                          <div className="form-group">
-                            <p className="font-size-18 text-text10 font-weight-500 pt-3">
-                              E-mail address
-                            </p>
-                            <TextField
-                              id="email"
-                              label="E-mail Address"
-                              variant="outlined"
-                              type="email"
-                              name="email"
-                              fullWidth
-                            />
-                          </div>
-                          <div className="form-group">
-                            <p className="font-size-18 text-text10 font-weight-500 ">
-                              Password
-                            </p>
-                            <TextField
-                              id="password"
-                              label="Password"
-                              variant="outlined"
-                              name="password"
-                              type={showPassword ? "text" : "password"}
-                              fullWidth
-                              InputProps={{
-                                endAdornment: (
-                                  <InputAdornment position="end">
-                                    <IconButton
-                                      onClick={togglePasswordVisibility}
-                                      edge="end"
-                                    >
-                                      {showPassword ? (
-                                        <Visibility />
-                                      ) : (
-                                        <VisibilityOff />
-                                      )}
-                                    </IconButton>
-                                  </InputAdornment>
-                                ),
-                              }}
-                            />
-                          </div>
-                          <button
-                            type="submit"
-                            className="btn btn-primary text-natural"
-                          >
-                            Free sign up
-                          </button>
-                          <button className="google btn-google font-size-14 font-weight-500 text-text">
-                            <img
-                              width={"50px"}
-                              height={"50px"}
-                              src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg"
-                              alt="google sign up"
-                              className="mr-1"
-                            />
-                            Continue with Google
-                          </button>
-                          <div className="login">
-                            <span>Already have an account? - </span>
-                            <Link to="/login">Login</Link>
-                          </div>
-                          <div className="free-trial">
-                            <div className="privacy-policy">
-                              <p>
-                                By signing up, you agree to the
-                                <Link to="/"> Terms And Condition</Link>
-                              </p>
-                              <p>
-                                and
-                                <Link to="/"> Privacy Policy</Link>
-                              </p>
-                            </div>
-                          </div>
-                        </form>
                       </div>
-                      <div className="modal_right ">
-                        <div className="modal_right_img">
-                          <img src={popup} alt="" />
+
+                      <form className="form-group">
+                        <div className="form-group-input">
+                          <label className="font-size-18 text-text10 font-weight-500">
+                            E-mail address
+                          </label>
+                          <TextField
+                            id="email"
+                            label="Email"
+                            variant="outlined"
+                            type="email"
+                            name="email"
+                            fullWidth
+                          />
+                        </div>
+                        <div className="form-group-input">
+                          <label className="font-size-18 text-text10 font-weight-500 ">
+                            Password
+                          </label>
+                          <TextField
+                            id="password"
+                            label="Password"
+                            variant="outlined"
+                            name="password"
+                            type={showPassword ? "text" : "password"}
+                            fullWidth
+                            InputProps={{
+                              endAdornment: (
+                                <InputAdornment position="end">
+                                  <IconButton
+                                    onClick={togglePasswordVisibility}
+                                    edge="end"
+                                  >
+                                    {showPassword ? (
+                                      <Visibility />
+                                    ) : (
+                                      <VisibilityOff />
+                                    )}
+                                  </IconButton>
+                                </InputAdornment>
+                              ),
+                            }}
+                          />
+                        </div>
+                        <div className="sign-up-buttons">
+                          <Link to="#">
+                            <button
+                              type="submit"
+                              className="btn btn-primary text-natural"
+                            >
+                              Free sign up
+                            </button>
+                          </Link>
+                          <Link to="#">
+                            <button className="google btn-google">
+                              <img
+                                src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg"
+                                alt="google sign up"
+                              />
+                              Continue with Google
+                            </button>
+                          </Link>
+                        </div>
+                      </form>
+
+                      <div className="modal_left-footer">
+                        <div className="login">
+                          <span>Already have an account? - </span>
+                          <Link to="/login">Login</Link>
+                        </div>
+                        <div className="free-trial">
+                          <div className="privacy-policy">
+                            <p>
+                              By signing up, you agree to the
+                              <Link to="/"> Terms And Condition</Link>
+                            </p>
+                            <p>
+                              and
+                              <Link to="/"> Privacy Policy</Link>
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
+
+                    <div className="col-12 col-lg-6 modal_right d-none">
+                      <div className="modal_right_img">
+                        <img src={popup} alt="" />
+                      </div>
+                    </div>
                   </div>
-                </Modal>
+                </div>
               </div>
-            </div>
+            </Modal>
           </form>
         </div>
       </div>
