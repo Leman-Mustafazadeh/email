@@ -396,7 +396,7 @@ const EmailSign = () => {
                     </div>
                     <div className="container">
                       <div className="mail-forms">
-                        <span>Subject</span>
+                        <span>Subjects</span>
                       </div>
                     </div>
                   </div>
