@@ -3,7 +3,7 @@ import { IconButton, InputAdornment, MenuItem, Select } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { Button, Modal, Upload } from "antd";
 import ImgCrop from "antd-img-crop";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
@@ -122,14 +122,12 @@ const EmailSign = () => {
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
 
-    if (newFileList.length > 0) {
+    if (newFileList.length > 0 && !uploadedImageUrl) {
       const file = newFileList[0].originFileObj;
       if (file) {
         const imageURL = URL.createObjectURL(file);
         setUploadedImageUrl(imageURL);
       }
-    } else {
-      setUploadedImageUrl(null);
     }
   };
 
@@ -147,6 +145,24 @@ const EmailSign = () => {
     const imgWindow = window.open(src);
     imgWindow?.document.write(image.outerHTML);
   };
+
+  useEffect(() => {
+    const handleImageClick = (event) => {
+      const container = event.target.closest(".ant-upload-list-item-container");
+      if (container) {
+        const img = container.querySelector("img");
+        if (img) {
+          setUploadedImageUrl(img.src);
+        }
+      }
+    };
+
+    document.addEventListener("click", handleImageClick);
+
+    return () => {
+      document.removeEventListener("click", handleImageClick);
+    };
+  }, [fileList, uploadedImageUrl]);
 
   const [socialUrl, setSocialUrl] = useState({
     instagram: "",
