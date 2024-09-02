@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row flex-justify-space-between footer-group">
           <ul className="form-group footer-group-item">
             <li className="mb-2 font-size-18 font-weight-500">
-              <Link to={""}>Solutions</Link>
+              Solutions
             </li>
             <li>
               <Link to={""}>Email signature template</Link>
@@ -22,7 +22,7 @@ const Footer = () => {
 
           <ul className="form-group footer-group-item">
             <li className="mb-2 font-size-18 font-weight-500">
-              <Link to={""}>Email signature genarator</Link>
+            Email signature genarator
             </li>
             <li>
               <Link to={"/non-profit"}>Signature for non-profits</Link>
@@ -37,7 +37,7 @@ const Footer = () => {
 
           <ul className="form-group footer-group-item">
             <li className="mb-2 font-size-18 font-weight-500">
-              <Link to={""}>Support</Link>
+              Support
             </li>
             <li>
               <Link to={""}>Help center</Link>
@@ -48,14 +48,12 @@ const Footer = () => {
             <li>
               <Link to={""}>Privacy Policy </Link>
             </li>
-            <li>
-              <Link to={""}>Thirty party tools</Link>
-            </li>
+            
           </ul>
 
           <ul className="form-group footer-group-item">
             <li className="mb-2 font-size-18 font-weight-500">
-              <Link to={""}>Company</Link>
+            Company
             </li>
             <li>
               <Link to={"/aboutus"}>About us</Link>
