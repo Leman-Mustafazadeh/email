@@ -104,6 +104,25 @@
             border-radius: 12px;
             flex-grow: 1;
 
+            .generator-header {
+                @extend .font-size-14;
+
+                .message {
+                    @extend .py-2;
+                    background-color: map-get($colors, light10);
+                    color: map-get($colors, text);
+                    font-weight: 400;
+                    border-radius: 8px 8px 0px 0px;
+                }
+
+                .mail-forms {
+                    @extend .py-2;
+                    color: map-get($colors, light30);
+                    font-weight: 400;
+                    border-bottom: 1px solid map-get($colors, light30)
+                }
+            }
+
             .right-regard {
                 @extend .mt-4;
                 @extend .p-3;
