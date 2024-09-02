@@ -6,17 +6,31 @@
 
             .react-tel-input {
                 position: relative;
-                height: 41px;
 
-                input {
+                .form-control {
+                    border: 1px solid map-get($colors, text30);
+                    border-radius: 4px;
+                    padding: 12px 50px;
+                    transition: all 0.2s ease;
                     height: 100%;
+
+                    &:focus {
+                        border: 1px solid map-get($colors, primary);
+                    }
                 }
 
                 .flag-dropdown {
+                    border: 1px solid map-get($colors, text30);
+                    background-color: map-get($colors, natural);
                     position: absolute;
                     top: 0;
                     left: 0;
                     height: 100%;
+
+                    &:focus {
+                        border: 1px solid map-get($colors, primary);
+
+                    }
                 }
             }
 
@@ -54,6 +68,11 @@
                             @extend .flex-column;
                             gap: 10px;
                         }
+                    }
+
+                    .ant-upload-list {
+                        display: flex;
+                        flex-direction: row-reverse;
                     }
                 }
 

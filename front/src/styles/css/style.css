@@ -2767,4 +2767,14 @@ form {
   user-select: none;
 }
 
+.form-control {
+  border: 1px solid #767676;
+  border-radius: 4px;
+  padding: 12px;
+  transition: all 0.2s ease;
+}
+.form-control:focus {
+  border: 1px solid #1A73E8;
+}
+
 /*# sourceMappingURL=style.css.map */
