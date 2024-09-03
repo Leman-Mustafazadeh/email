@@ -17,6 +17,7 @@ import Freelancer from "../pages/SignaturePages/Freelancer";
 import ResetPassword from "../pages/ResetPassword";
 import Passwords from "../pages/Password";
 import Business from "../pages/SignaturePages/Business";
+import MyAccountDeleteAccount from "../pages/MyAccount-DeleteAccount";
 
 export const Routes = [
   {
@@ -91,6 +92,10 @@ export const Routes = [
       {
         path: "business",
         element: <Business />,
+      },
+      {
+        path: "deleteaccount",
+        element: <MyAccountDeleteAccount />,
       },
     ],
   },
