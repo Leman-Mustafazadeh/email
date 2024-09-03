@@ -1,55 +1,68 @@
-.delete{
+.delete {
     margin-top: 28px;
-    .delete_head{
+
+    .delete_head {
         gap: 35px;
-        .delete_img{
+
+        .delete_img {
             width: 220px;
-            img{
+
+            img {
                 width: 100%;
             }
         }
-        .delete_dashboard{
+
+        .delete_dashboard {
             gap: 10px;
         }
-      
+
     }
-    .delete_help{
+
+    .delete_help {
         gap: 12px;
     }
 
 }
-.delete_wrap{
+
+.delete_wrap {
     width: 1167px;
     border-radius: 12px;
     padding: 24px;
     background-color: #FFFFFF;
     margin: 28px auto !important;
-    .del_hero{
+
+    .del_hero {
         width: 607px;
-        .box{
+
+        .box {
             line-height: 21px;
         }
-        h2{
+
+        h2 {
             padding-bottom: 13px;
             line-height: 22px;
         }
-        .checkbox{
+
+        .checkbox {
             padding-top: 25px;
             padding-bottom: 40px;
         }
     }
-    .close{
+
+    .close {
         border-radius: 8px;
-            padding: 16px 20px;
+        padding: 16px 20px;
         margin-left: 32px;
     }
-    .template{
+
+    .template {
         padding-right: 101px;
     }
-    textarea{
-border-radius: 12px;
-width: 100%;
-padding: 20px;
+
+    textarea {
+        border-radius: 12px;
+        width: 100%;
+        padding: 20px;
     }
-  
-}  
+
+}

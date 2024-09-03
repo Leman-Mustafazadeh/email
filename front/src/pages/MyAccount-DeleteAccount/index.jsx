@@ -65,111 +65,123 @@ const MyAccountDeleteAccount = () => {
           </div>
         </div>
 
-       <div className="delete_wrap">
-       <div className="del_hero">
-          <h2 className="font-size-24 font-weight-500 text-text10 ">
-            Delete Account
-          </h2>
-          <p className="font-size-14 font-weight-500 text-text60 pb-7">
-            You will permanently lose plan benefits if you close your account.
-          </p>
-          <p className="font-size-18 font-weight-400 text-text pb-6">
-            Take a look at stats before closing your advanced account:
-          </p>
-
-          <div className="row flex-align-center mb-3">
-            <p className="font-size-16 font-weight-500 text-text60 template">
-              Template:
+        <div className="delete_wrap">
+          <div className="del_hero">
+            <h2 className="font-size-24 font-weight-500 text-text10 ">
+              Delete Account
+            </h2>
+            <p className="font-size-14 font-weight-500 text-text60 pb-7">
+              You will permanently lose plan benefits if you close your account.
             </p>
-            <div className="row flex-align-center ">
+            <p className="font-size-18 font-weight-400 text-text pb-6">
+              Take a look at stats before closing your advanced account:
+            </p>
+
+            <div className="row flex-align-center mb-3">
+              <p className="font-size-16 font-weight-500 text-text60 template">
+                Template:
+              </p>
+              <div className="row flex-align-center ">
+                <svg
+                  width="167"
+                  height="6"
+                  viewBox="0 0 167 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="167" height="6" rx="3" fill="#3C3C3C" />
+                  <rect
+                    width="167"
+                    height="6"
+                    rx="3"
+                    fill="white"
+                    fill-opacity="0.9"
+                  />
+                </svg>
+
+                <span className="pl-4">0 / 10</span>
+              </div>
+            </div>
+
+            <div className="row pb-7">
+              <p className="font-size-16 font-weight-500 text-text60 template">
+                Members:
+              </p>
+              <div className="row flex-align-center">
+                <svg
+                  width="167"
+                  height="6"
+                  viewBox="0 0 167 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="167" height="6" rx="3" fill="#3C3C3C" />
+                  <rect
+                    width="167"
+                    height="6"
+                    rx="3"
+                    fill="white"
+                    fill-opacity="0.9"
+                  />
+                  <rect width="42" height="6" rx="3" fill="#1A73E8" />
+                </svg>
+
+                <span className="pl-4">3 / 10</span>
+              </div>
+            </div>
+            <p className="font-size-16 font-weight-400 text-inky box ">
+              <span className="text-text30 ">
+                By checking the box below, I acknowledge and approve that 
+              </span>
+              my QR Codes and all scan statistics 
+              <span className="text-text30 "> will be deleted, </span>dynamic QR
+              Codes will be deactivated, 
+              <span className="text-text30 ">and </span>
+               my account user information will be removed.
+            </p>
+            <div className="row flex-align-center checkbox">
               <svg
-                width="167"
-                height="6"
-                viewBox="0 0 167 6"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <rect width="167" height="6" rx="3" fill="#3C3C3C" />
-                <rect
-                  width="167"
-                  height="6"
-                  rx="3"
-                  fill="white"
-                  fill-opacity="0.9"
+                <rect width="20" height="20" rx="3" fill="#34A853" />
+                <path
+                  d="M4 12L7.233 14.425C7.43936 14.5797 7.69752 14.6487 7.95356 14.6176C8.2096 14.5865 8.44372 14.4577 8.607 14.258L17 4"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
                 />
               </svg>
-
-              <span className="pl-4">0 / 10</span>
+              <p className="font-size-16 font-weight-400 text-text60 pl-2">
+                I want to delete my account
+              </p>
             </div>
-          </div> 
 
-          <div className="row pb-7">
-            <p className="font-size-16 font-weight-500 text-text60 template">Members:</p>
-            <div className="row flex-align-center">
-              <svg
-                width="167"
-                height="6"
-                viewBox="0 0 167 6"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="167" height="6" rx="3" fill="#3C3C3C" />
-                <rect
-                  width="167"
-                  height="6"
-                  rx="3"
-                  fill="white"
-                  fill-opacity="0.9"
-                />
-                <rect width="42" height="6" rx="3" fill="#1A73E8" />
-              </svg>
-
-              <span className="pl-4">3 / 10</span>
-            </div>
-          </div>
-          <p className="font-size-16 font-weight-400 text-inky box ">
-            <span className="text-text30 ">
-              By checking the box below, I acknowledge and approve that   
-            </span>
-             my QR Codes and all scan statistics  
-            <span className="text-text30 ">  will be deleted, </span>dynamic QR
-            Codes will be deactivated, <span className="text-text30 ">and </span>
-             my account user information will be removed.
-          </p>
-          <div className="row flex-align-center checkbox">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect width="20" height="20" rx="3" fill="#34A853" />
-              <path
-                d="M4 12L7.233 14.425C7.43936 14.5797 7.69752 14.6487 7.95356 14.6176C8.2096 14.5865 8.44372 14.4577 8.607 14.258L17 4"
-                stroke="white"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
-            </svg>
-            <p className="font-size-16 font-weight-400 text-text60 pl-2">
-              I want to delete my account
+            <p className="font-size-16 font-weight-400 text-text pb-3">
+              We’d appreciate knowing the reason for the cancellation (optional)
             </p>
-          </div>
+            <textarea
+              className="border-text30 font-size-14 font-weight-400 "
+              id="w3review"
+              name="w3review"
+              rows="7"
+              cols="80"
+              placeholder=" Your message"
+            ></textarea>
 
-          <p className="font-size-16 font-weight-400 text-text pb-3">
-            We’d appreciate knowing the reason for the cancellation (optional)
-          </p>
-          <textarea className="border-text30 font-size-14 font-weight-400 " id="w3review" name="w3review" rows="7" cols="80"placeholder=" Your message">
-           
-          </textarea>
-
-          <div className="mt-7  row flex-justify-end">
-            <button className=" bg-natural font-size-18 font-weight-500 text-text">Cancel</button>
-            <button className=" close bg-secondary font-size-18 font-weight-700 text-natural ">Close my account</button>
+            <div className="mt-7  row flex-justify-end">
+              <button className=" bg-natural font-size-18 font-weight-500 text-text">
+                Cancel
+              </button>
+              <button className=" close bg-secondary font-size-18 font-weight-700 text-natural ">
+                Close my account
+              </button>
+            </div>
           </div>
         </div>
-       </div>
       </div>
     </section>
   );
