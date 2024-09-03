@@ -65,7 +65,8 @@ const MyAccountDeleteAccount = () => {
           </div>
         </div>
 
-        <div className="delete_wrap">
+       <div className="delete_wrap">
+       <div className="del_hero">
           <h2 className="font-size-24 font-weight-500 text-text10 ">
             Delete Account
           </h2>
@@ -76,11 +77,11 @@ const MyAccountDeleteAccount = () => {
             Take a look at stats before closing your advanced account:
           </p>
 
-          <div className="row flex-align-center">
-            <p className="font-size-16 font-weight-500 text-text60">
+          <div className="row flex-align-center mb-3">
+            <p className="font-size-16 font-weight-500 text-text60 template">
               Template:
             </p>
-            <div className="row flex-align-center">
+            <div className="row flex-align-center ">
               <svg
                 width="167"
                 height="6"
@@ -98,12 +99,12 @@ const MyAccountDeleteAccount = () => {
                 />
               </svg>
 
-              <span>0 / 10</span>
+              <span className="pl-4">0 / 10</span>
             </div>
-          </div>
+          </div> 
 
           <div className="row pb-7">
-            <p className="font-size-16 font-weight-500 text-text60">Members:</p>
+            <p className="font-size-16 font-weight-500 text-text60 template">Members:</p>
             <div className="row flex-align-center">
               <svg
                 width="167"
@@ -123,16 +124,16 @@ const MyAccountDeleteAccount = () => {
                 <rect width="42" height="6" rx="3" fill="#1A73E8" />
               </svg>
 
-              <span>3 / 10</span>
+              <span className="pl-4">3 / 10</span>
             </div>
           </div>
-          <p className="font-size-16 font-weight-400 text-inky ">
+          <p className="font-size-16 font-weight-400 text-inky box ">
             <span className="text-text30 ">
-              By checking the box below, I acknowledge and approve that 
+              By checking the box below, I acknowledge and approve that   
             </span>
-            my QR Codes and all scan statistics 
-            <span className="text-text30 ">will be deleted, </span>dynamic QR
-            Codes will be deactivated, <span className="text-text30 ">and</span>
+             my QR Codes and all scan statistics  
+            <span className="text-text30 ">  will be deleted, </span>dynamic QR
+            Codes will be deactivated, <span className="text-text30 ">and </span>
              my account user information will be removed.
           </p>
           <div className="row flex-align-center checkbox">
@@ -159,10 +160,16 @@ const MyAccountDeleteAccount = () => {
           <p className="font-size-16 font-weight-400 text-text pb-3">
             We’d appreciate knowing the reason for the cancellation (optional)
           </p>
-          <textarea id="w3review" name="w3review" rows="4" cols="50">
-            Your message
+          <textarea className="border-text30 font-size-14 font-weight-400 " id="w3review" name="w3review" rows="7" cols="80"placeholder=" Your message">
+           
           </textarea>
+
+          <div className="mt-7  row flex-justify-end">
+            <button className=" bg-natural font-size-18 font-weight-500 text-text">Cancel</button>
+            <button className=" close bg-secondary font-size-18 font-weight-700 text-natural ">Close my account</button>
+          </div>
         </div>
+       </div>
       </div>
     </section>
   );
