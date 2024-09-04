@@ -18,6 +18,7 @@ import ResetPassword from "../pages/ResetPassword";
 import Passwords from "../pages/Password";
 import Business from "../pages/SignaturePages/Business";
 import MyAccountDeleteAccount from "../pages/MyAccount-DeleteAccount";
+import AccountMember from "../pages/AccountMember";
 
 export const Routes = [
   {
@@ -96,6 +97,10 @@ export const Routes = [
       {
         path: "deleteaccount",
         element: <MyAccountDeleteAccount />,
+      },
+      {
+        path: "accountmember",
+        element: <AccountMember />,
       },
     ],
   },
