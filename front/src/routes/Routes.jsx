@@ -19,6 +19,7 @@ import Passwords from "../pages/Password";
 import Business from "../pages/SignaturePages/Business";
 import MyAccountDeleteAccount from "../pages/MyAccount-DeleteAccount";
 import AccountMember from "../pages/AccountMember";
+import Pricing from "../pages/Pricing";
 
 export const Routes = [
   {
@@ -101,6 +102,10 @@ export const Routes = [
       {
         path: "accountmember",
         element: <AccountMember />,
+      },
+      {
+        path: "pricing",
+        element: <Pricing />,
       },
     ],
   },

@@ -50,7 +50,7 @@
                 .uploader {
 
                     .ant-upload-select,
-                    .ant-upload-list-item {
+                    .ant-upload-list-item-container {
                         min-width: 160px;
                         min-height: 160px;
                     }
@@ -58,7 +58,7 @@
 
                     .upload-button {
                         svg {
-                            color: map-get($colors, primary );
+                            color: map-get($colors, primary);
                             width: 36px;
                             height: 36px;
                         }
@@ -295,6 +295,7 @@
 .sign-up-modal {
     min-width: 70vw !important;
     width: 100%;
+    height: 75vh !important;
 
     .ant-modal-content {
         padding: 0 !important;

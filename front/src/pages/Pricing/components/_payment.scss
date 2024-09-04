@@ -1,0 +1,10 @@
+.payment {
+    &-items {
+        justify-content: center;
+        gap: 66px;
+        img {
+            min-width: 60px;
+            object-fit: contain;
+        }
+    }
+}
