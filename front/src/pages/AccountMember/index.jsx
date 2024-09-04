@@ -96,7 +96,7 @@ const AccountMember = () => {
                 <h2 className="font-size-18 font-weight-500 text-text10 ">
                   Account Details
                 </h2>
-                <div className="py-4 row">
+                <div className="py-4 row gap-10">
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Customer ID:
                   </h4>
@@ -105,7 +105,7 @@ const AccountMember = () => {
                   </p>
                 </div>
 
-                <div className="pb-4 row">
+                <div className="pb-4 row gap-10">
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Signup date:
                   </h4>
@@ -114,7 +114,7 @@ const AccountMember = () => {
                   </p>
                 </div>
 
-                <div className="pb-4 row">
+                <div className="pb-4 row gap-10">
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Account plan:
                   </h4>
@@ -137,7 +137,7 @@ const AccountMember = () => {
                   Account Storage
                 </h2>
 
-                <div className="row flex-align-center mb-3 flex-justify-space-between">
+                <div className="row gap-10 flex-align-center mb-3">
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Template:
                   </p>
@@ -162,7 +162,7 @@ const AccountMember = () => {
                     <span className="pl-4">0 / 10</span>
                   </div>
                 </div>
-                <div className="row pb-7 flex-justify-space-between">
+                <div className="row pb-7 flex-justify-space-between gap-10">
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Members:
                   </p>
@@ -205,15 +205,15 @@ const AccountMember = () => {
             <h3 className="font-size-16 font-weight-500 text-text60 pb-2">
               Login Email:
             </h3>
-            <div>
+            <div className="row gap-10">
               <input type="text" placeholder="kenantagiyev010@gmail.com" className="font-size-14 font-weight-400 text-text "/>
               <Link to={""} className="font-size-14 font-weight-400 text-text60">Change email</Link>
             </div>
             <h3 className="font-size-16 font-weight-500 text-text60 pb-2 pt-4">
               Password:
             </h3>
-            <div>
-              <input type="password" placeholder="-----" />
+            <div className="row gap-10">
+              <input type="password" placeholder="---------" />
               <Link to={""} className="font-size-14 font-weight-400 text-primary ">Set a password</Link>
             </div>
           </div>

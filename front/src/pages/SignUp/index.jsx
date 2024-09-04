@@ -1,15 +1,12 @@
-/* eslint-disable react/no-unescaped-entities */
 import { useFormik } from "formik";
 import { Link } from "react-router-dom";
-// import { login } from "../../service/slice/user";
 import useAuth from "../../service/Auth/useAuth";
-import { TextField, IconButton, InputAdornment, Checkbox, FormControlLabel } from "@mui/material";
+import { IconButton, InputAdornment } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "./_style.scss";
 import { useState } from "react";
-
+import logo from "../../assets/images/logo/logo.png";
 const SignUp = () => {
-
   const { useRegister } = useAuth();
   const register = useRegister();
 
@@ -38,41 +35,6 @@ const SignUp = () => {
     },
     onSubmit: async (values, actions) => {
       register.mutate(values, actions);
-      
-      // try {
-      //   const response = await apiController.post("/Account/Register", values);
-      //   console.log(response);
-
-      //   if (response) {
-      //     actions.resetForm();
-      //     dispatch(login(response));
-      //     Swal.fire({
-      //       icon: "success",
-      //       title: "Registration successful",
-      //       showConfirmButton: false,
-      //       timer: 1500,
-      //     });
-      //     navigate("/");
-      //   } else {
-      //     Swal.fire({
-      //       icon: "error",
-      //       title: "Registration failed",
-      //       text: response.message || "An error occurred during registration.",
-      //     });
-      //   }
-      // } catch (error) {
-      //   console.error(
-      //     "Error:",
-      //     error.response ? error.response.data : error.message
-      //   );
-      //   Swal.fire({
-      //     icon: "error",
-      //     title: "Oops, something went wrong!",
-      //     text: error.response
-      //       ? error.response.data.message
-      //       : "An unexpected error occurred.",
-      //   });
-      // }
     },
   });
 
@@ -80,61 +42,60 @@ const SignUp = () => {
     <section>
       <div className="sign-up">
         <div className="sign-up-container">
-          <h1 className="sigh-up-header">Email Signature Generator</h1>
-
+          <div className="sigh-up-header">
+            <img src={logo} alt="" />
+          </div>
           <div className="sing-up-content">
             <h4>Let's Get Started</h4>
             <form onSubmit={formik.handleSubmit}>
               <div className="form-group">
-                <TextField
+                <label htmlFor="email" className="form-label font-size-18 font-weight-500 text-text10 pb-2">E-mail Address</label>
+                <input
                   id="email"
-                  label="E-mail Address"
-                  variant="outlined"
                   type="email"
                   name="email"
+                  placeholder="example@mail.com"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  error={formik.touched.email && Boolean(formik.errors.email)}
-                  helperText={formik.touched.email && formik.errors.email}
+                  className={`form-input ${formik.touched.email && formik.errors.email ? 'input-error' : ''}`}
                   required
                 />
+                {formik.touched.email && formik.errors.email && (
+                  <div className="error-message">{formik.errors.email}</div>
+                )}
               </div>
 
               <div className="form-group">
-                <TextField
-                  id="password"
-                  label="Password"
-                  variant="outlined"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  value={formik.values.password}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  error={
-                    formik.touched.password && Boolean(formik.errors.password)
-                  }
-                  helperText={formik.touched.password && formik.errors.password}
-                  required
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={togglePasswordVisibility}
-                          edge="end"
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                />
+                <label htmlFor="password" className="form-label font-size-18 font-weight-500 text-text10 pb-2">Password</label>
+                <div className="password-field">
+                  <input
+                    id="password"
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="min. 6 characters"
+                    value={formik.values.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className={`form-input ${formik.touched.password && formik.errors.password ? 'input-error' : ''}`}
+                    required
+                  />
+                  {/* <InputAdornment position="end">
+                    <IconButton
+                      onClick={togglePasswordVisibility}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment> */}
+                </div>
+                {formik.touched.password && formik.errors.password && (
+                  <div className="error-message">{formik.errors.password}</div>
+                )}
               </div>
               <button
                 type="submit"
-                className={`btn btn-primary text-natural ${
-                  formik.isSubmitting ? "btn-disabled" : ""
-                }`}
+                className={`btn btn-primary text-natural ${formik.isSubmitting ? "btn-disabled" : ""}`}
                 disabled={formik.isSubmitting}
               >
                 {formik.isSubmitting ? "Registering..." : "Sign Up"}
@@ -145,10 +106,10 @@ const SignUp = () => {
 
             <button className="google btn-google">
               <img
-                width={"50px"}
-                height={"50px"}
+                width="50px"
+                height="50px"
                 src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg"
-                alt="google sign up"
+                alt="Google Sign Up"
               />
               Sign up with Google
             </button>

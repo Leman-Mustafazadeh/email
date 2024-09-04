@@ -1,4 +1,3 @@
-import { TextField, IconButton, InputAdornment, Checkbox, FormControlLabel } from "@mui/material";
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -6,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import useAuth from "../../service/Auth/useAuth";
 import "./_style.scss";
+import logo from "../../assets/images/logo/logo.png";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ const Login = () => {
     initialValues: {
       email: "",
       password: "",
-      rememberMe: false, // added for Remember Me checkbox
+      rememberMe: false,
     },
 
     onSubmit: async (values, actions) => {
@@ -42,74 +42,86 @@ const Login = () => {
     <section>
       <div className="sign-up">
         <div className="sign-up-container">
-          <h1 className="sigh-up-header">Email Signature Generator</h1>
+          <div className="sigh-up-header">
+            <img src={logo} alt="" />
+          </div>
 
           <div className="sing-up-content">
-            <h4>Welcome back!</h4>
+            <h4 className="font-size-24 font-weight-700 text-primary">
+              Welcome back!
+            </h4>
 
             <div className="login">
-              <span>Do not have an account? - </span>
+              <span className="text-text60 font-size-18 font-weight-400">
+                Do not have an account? -{" "}
+              </span>
               <Link to={"/sign-up"}>Sign Up</Link>
             </div>
             <form onSubmit={formik.handleSubmit}>
               <div className="form-group">
-                <TextField
+                <h2 className="font-size-18 font-weight-500 text-text10 pb-2">
+                  E-mail address
+                </h2>
+                <input
                   id="email"
-                  label="E-mail Address"
-                  variant="outlined"
                   name="email"
                   type="email"
+                  placeholder="example@mail.com"
                   value={formik.values.email}
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
-                  error={formik.touched.email && Boolean(formik.errors.email)}
-                  helperText={formik.touched.email && formik.errors.email}
+                  className={`input-field ${
+                    formik.touched.email && formik.errors.email
+                      ? "input-error"
+                      : ""
+                  }`}
                   required
                 />
+
+                {formik.touched.email && formik.errors.email && (
+                  <div className="error-message">{formik.errors.email}</div>
+                )}
               </div>
               <div className="form-group">
-                <TextField
-                  id="password"
-                  label="Password"
-                  variant="outlined"
-                  name="password"
-                  type={showPassword ? "text" : "password"}
-                  value={formik.values.password}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  error={
-                    formik.touched.password && Boolean(formik.errors.password)
-                  }
-                  helperText={formik.touched.password && formik.errors.password}
-                  required
-                  InputProps={{
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <IconButton
-                          onClick={togglePasswordVisibility}
-                          edge="end"
-                        >
-                          {showPassword ? <VisibilityOff /> : <Visibility />}
-                        </IconButton>
-                      </InputAdornment>
-                    ),
-                  }}
-                />
+                <div className="password-field">
+                  <h2 className="font-size-18 font-weight-500 text-text10 pb-2 pt-4">
+                    Password
+                  </h2>
+                  <input
+                    id="password"
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    placeholder="min.6 character"
+                    value={formik.values.password}
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    className={`input-field ${
+                      formik.touched.password && formik.errors.password
+                        ? "input-error"
+                        : ""
+                    }`}
+                    required
+                  />
+                </div>
+                {formik.touched.password && formik.errors.password && (
+                  <div className="error-message">{formik.errors.password}</div>
+                )}
               </div>
               <div className="row flex-align-center flex-justify-space-between">
-                <FormControlLabel className="font-size-12 font-weight-400"
-                  control={
-                    <Checkbox
-                      name="rememberMe"
-                      color="primary"
-                      checked={formik.values.rememberMe}
-                      onChange={formik.handleChange}
-                    />
-                  }
-                  
-                  label="Remember Me"
-                />
-                <Link to="/forgotpassword" className="forgot-password-link font-size-12 font-weight-400 text-primary ">
+                <label className=" row font-size-12 font-weight-400 flex-align-center gap-1">
+                  <input
+                    type="checkbox"
+                    name="rememberMe"
+                    checked={formik.values.rememberMe}
+                    onChange={formik.handleChange}
+                    className="checkbox"
+                  />
+                  <p className="font-size-12 font-weight-400"> Remember Me</p>
+                </label>
+                <Link
+                  to="/forgotpassword"
+                  className="forgot-password-link font-size-12 font-weight-400 text-primary"
+                >
                   Forgot Password?
                 </Link>
               </div>
