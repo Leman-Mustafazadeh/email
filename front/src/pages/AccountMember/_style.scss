@@ -1,49 +1,90 @@
-.delete {
-    margin-top: 28px;
 
-    .delete_head {
-        gap: 35px;
-
-        .delete_img {
-            width: 220px;
-
-            img {
-                width: 100%;
+.member{
+    @extend .flex-container;
+    @extend .flex-column;
+    gap: 28px;
+    .delete {
+        margin-top: 28px;
+    
+        .delete_head {
+            gap: 35px;
+    
+            .delete_img {
+                width: 220px;
+    
+                img {
+                    width: 100%;
+                }
+            }
+    
+            .delete_dashboard {
+                gap: 10px;
+            }
+    
+        }
+    
+        .delete_help {
+            gap: 12px;
+        }
+    
+    }
+    
+    .account_wrap {
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 25px;
+        border-radius: 12px;
+        padding: 0 60px;
+    
+        .account_head {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 24px;
+    
+            .account_hero {
+                width: 607px;
+                gap: 21px;
+    
+                .box {
+                    line-height: 21px;
+                }
+    
+                h2 {
+                    padding-bottom: 13px;
+                    line-height: 22px;
+                }
+    
+                .checkbox {
+                    padding-top: 25px;
+                    padding-bottom: 40px;
+                }
             }
         }
-
-        .delete_dashboard {
-            gap: 10px;
+    
+        .account_del {
+    
+            button {
+                width: 50%;
+                padding: 12px 32px;
+                border-radius: 6px;
+            }
         }
-
+    
+        .account_upgrade_head {
+            .account_upgrade {
+    
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                padding: 24px;
+                width: 50%;
+            }
+        }
+    
+        .personal {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 24px;
+        }
     }
 
-    .delete_help {
-        gap: 12px;
-    }
-
-}
-
-// width: 1167px;
-// border-radius: 12px;
-// padding: 24px;
-// background-color: #FFFFFF;
-// margin: 28px auto !important;
-
-.del_hero {
-    width: 607px;
-
-    .box {
-        line-height: 21px;
-    }
-
-    h2 {
-        padding-bottom: 13px;
-        line-height: 22px;
-    }
-
-    .checkbox {
-        padding-top: 25px;
-        padding-bottom: 40px;
-    }
 }
