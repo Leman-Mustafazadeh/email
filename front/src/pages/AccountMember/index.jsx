@@ -137,7 +137,7 @@ const AccountMember = () => {
                   Account Storage
                 </h2>
 
-                <div className="row flex-align-center mb-3">
+                <div className="row flex-align-center mb-3 flex-justify-space-between">
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Template:
                   </p>
@@ -162,7 +162,7 @@ const AccountMember = () => {
                     <span className="pl-4">0 / 10</span>
                   </div>
                 </div>
-                <div className="row pb-7">
+                <div className="row pb-7 flex-justify-space-between">
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Members:
                   </p>
@@ -185,7 +185,7 @@ const AccountMember = () => {
                       <rect width="42" height="6" rx="3" fill="#1A73E8" />
                     </svg>
 
-                    <span className="pl-4">3 / 10</span>
+                    <span className="pl-4 pr-5">3 / 10</span>
                     <Link
                       to={""}
                       className="font-size-16 font-weight-400 text-primary"
