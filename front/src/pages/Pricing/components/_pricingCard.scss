@@ -1,0 +1,110 @@
+.pricing-card {
+    text-align: center;
+   
+
+    &-item {
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 24px;
+        background-color: map-get($colors, natural);
+        border-radius: 16px;
+        padding: 36px;
+        overflow: hidden;
+        position: relative;
+
+        .card-plan {
+            @extend .flex-container;
+            @extend .flex-column;
+            gap: 16px;
+
+            h3 {
+                @extend .font-size-32;
+                @extend .font-weight-500;
+                line-height: 1.2;
+                color: map-get($colors, text5)
+            }
+
+            p {
+                @extend .font-size-20;
+                line-height: 1.2;
+                color: map-get($colors, text5)
+            }
+        }
+
+        .card-price {
+            h1 {
+                @extend .font-size-49;
+                @extend .font-weight-400;
+                line-height: 1.2;
+                color: map-get($colors, text);
+                font-family: "Belgrano", serif;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            span {
+                @extend .font-size-16;
+                @extend .font-weight-400;
+                color: map-get($colors, text);
+            }
+        }
+
+        .card-plan-includes {
+            @extend .flex-container;
+            @extend .flex-column;
+            gap: 20px;
+
+            p {
+                color: map-get($colors, text);
+            }
+
+            ul {
+                li {
+                    @extend .flex-container;
+                    @extend .flex-align-center;
+                    @extend .font-size-16;
+                    @extend .font-weight-400;
+                    gap: 12px;
+                    color: map-get($colors, text10);
+
+                    img {
+                        max-width: 25px;
+                        max-height: 25px;
+                        width: 100%;
+                        height: 100%;
+
+                    }
+
+                    span {
+                        @extend .py-2;
+                        width: 100%;
+                        border-bottom: 1px solid map-get($colors, lightGray30);
+                    }
+                }
+            }
+        }
+    }
+
+    .popular {
+        border: 3px solid map-get($colors, primary);
+
+        &::before {
+            content: "Most Popular";
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 44px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: map-get($colors, natural);
+            background-color: map-get($colors, primary);
+            transform: rotate(45deg) translate(85px, -30px);
+        }
+    }
+
+
+}

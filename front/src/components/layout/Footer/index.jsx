@@ -16,7 +16,7 @@ const Footer = () => {
               <Link to={""}>Professional Email signature</Link>
             </li>
             <li>
-              <Link to={""}>Pricing</Link>
+              <Link to={"/pricing"}>Pricing</Link>
             </li>
           </ul>
 

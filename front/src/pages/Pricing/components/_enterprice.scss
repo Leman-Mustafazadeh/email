@@ -1,0 +1,22 @@
+.enterprice {
+    &-box {
+        ul {
+            @extend .flex-container;
+            li {
+                @extend .flex-container;
+                @extend .flex-align-center;
+                @extend .flex-justify-center;
+
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid map-get($colors, primary);
+
+                img{
+                    
+                }
+
+            }
+        }
+    }
+}
