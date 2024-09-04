@@ -1,0 +1,49 @@
+.delete {
+    margin-top: 28px;
+
+    .delete_head {
+        gap: 35px;
+
+        .delete_img {
+            width: 220px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .delete_dashboard {
+            gap: 10px;
+        }
+
+    }
+
+    .delete_help {
+        gap: 12px;
+    }
+
+}
+
+// width: 1167px;
+// border-radius: 12px;
+// padding: 24px;
+// background-color: #FFFFFF;
+// margin: 28px auto !important;
+
+.del_hero {
+    width: 607px;
+
+    .box {
+        line-height: 21px;
+    }
+
+    h2 {
+        padding-bottom: 13px;
+        line-height: 22px;
+    }
+
+    .checkbox {
+        padding-top: 25px;
+        padding-bottom: 40px;
+    }
+}

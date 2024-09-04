@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./_style.scss";
-import logo from "./logo.png"
+import logo from "../../../assets/images/logo/logo.png"
 const Navbar = () => {
   return (
     <>
