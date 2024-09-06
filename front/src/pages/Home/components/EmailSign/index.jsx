@@ -2,7 +2,6 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { IconButton, InputAdornment, MenuItem, Select } from "@mui/material";
 import TextField from "@mui/material/TextField";
 import { Button, Modal, Upload } from "antd";
-import ImgCrop from "antd-img-crop";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
@@ -123,19 +122,19 @@ const EmailSign = () => {
   const onChange = ({ fileList: newFileList }) => {
     setFileList(newFileList);
 
-    if (uploadedImageUrl) {
-      const currentImageUrls = newFileList.map(
-        (file) => file.url || URL.createObjectURL(file.originFileObj)
-      );
+    const currentImageUrls = newFileList.map(
+      (file) => file.url || URL.createObjectURL(file.originFileObj)
+    );
 
-      if (!currentImageUrls.includes(uploadedImageUrl)) {
-        if (currentImageUrls.length > 0) {
-          setUploadedImageUrl(currentImageUrls[0]);
-        } else {
-          setUploadedImageUrl(null);
-        }
+    if (uploadedImageUrl && !currentImageUrls.includes(uploadedImageUrl)) {
+      if (currentImageUrls.length > 0) {
+        setUploadedImageUrl(currentImageUrls[0]);
+      } else {
+        setUploadedImageUrl(null);
       }
-    } else if (newFileList.length > 0) {
+    }
+
+    if (!uploadedImageUrl && newFileList.length > 0) {
       const file = newFileList[0].originFileObj;
       if (file) {
         const imageURL = URL.createObjectURL(file);
@@ -189,7 +188,7 @@ const EmailSign = () => {
   };
 
   return (
-    <section>
+    <section className="signature-generator">
       <div className="container">
         <PageHeader header="Free online Email Signature Generator" />
         <p className="font-size-20 font-weight-400 py-3 text-align-center">
@@ -258,29 +257,27 @@ const EmailSign = () => {
                       {selectedItem === "upload" && (
                         <div className="upload-container">
                           <div className="uploader">
-                            <ImgCrop rotationSlider>
-                              <Upload
-                                listType="picture-card"
-                                fileList={fileList}
-                                onPreview={onPreview}
-                                onChange={onChange}
-                                beforeUpload={() => false}
-                                action={null}
-                                maxCount={3}
-                                showUploadList={{
-                                  showRemoveIcon: fileList.length > 0,
-                                }}
-                                className=""
-                              >
-                                {fileList.length < 3 && (
-                                  <div className="upload-button">
-                                    <IoIosAddCircle />
-                                    <p>Format .png .jpg</p>
-                                    <p>Size (Px): 800 x 300</p>
-                                  </div>
-                                )}
-                              </Upload>
-                            </ImgCrop>
+                            <Upload
+                              listType="picture-card"
+                              fileList={fileList}
+                              onPreview={onPreview}
+                              onChange={onChange}
+                              beforeUpload={() => false}
+                              action={null}
+                              maxCount={1}
+                              showUploadList={{
+                                showRemoveIcon: fileList.length > 0,
+                              }}
+                              className=""
+                            >
+                              {fileList.length < 2 && (
+                                <div className="upload-button">
+                                  <IoIosAddCircle />
+                                  <p>Format .png .jpg</p>
+                                  <p>Size (Px): 800 x 300</p>
+                                </div>
+                              )}
+                            </Upload>
                           </div>
                         </div>
                       )}

@@ -1,0 +1,35 @@
+.enterprice {
+
+    &-box {
+        background-color: map-get($colors, primary90);
+        border-radius: 12px;
+        background-image: url("../../../../assets/images/enterprice-bg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        ul {
+            @extend .flex-container;
+            margin-top: 12px;
+            padding: 0 10px;
+
+            li {
+                @extend .flex-container;
+                @extend .flex-align-center;
+                @extend .flex-justify-center;
+
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid map-get($colors, primary);
+                background-color: map-get($colors, natural);
+                margin-left: -10px;
+            }
+        }
+    }
+
+    &-description{
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 12px;
+    }
+}

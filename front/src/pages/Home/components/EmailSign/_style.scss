@@ -1,6 +1,5 @@
 .generator {
     &_banner {
-
         &_left {
             border-radius: 12px;
 
@@ -49,11 +48,41 @@
 
                 .uploader {
 
-                    .ant-upload-select,
-                    .ant-upload-list-item-container {
-                        min-width: 160px;
-                        min-height: 160px;
+                    .ant-upload-list {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-direction: row-reverse;
+
+                        .ant-upload-select,
+                        .ant-upload-list-item-container {
+                            min-width: 160px;
+                            min-height: 160px;
+                        }
+
+                        &-item {
+                            display: flex;
+                            align-items: end;
+                            padding: 0;
+
+                            &::before {
+                                width: 100% !important;
+                                height: 100% !important;
+                                border-radius: 6px;
+
+                            }
+
+                            &-actions {
+                                display: flex;
+                                justify-content: end;
+                                padding: 15px 10px;
+
+                                a {
+                                    display: none;
+                                }
+                            }
+                        }
                     }
+
 
 
                     .upload-button {
@@ -94,10 +123,7 @@
                         }
                     }
 
-                    .ant-upload-list {
-                        display: flex;
-                        flex-direction: row-reverse;
-                    }
+
                 }
 
                 .design-container {

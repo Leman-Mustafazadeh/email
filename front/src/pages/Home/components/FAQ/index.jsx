@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CiCircleChevDown } from "react-icons/ci";
 
 import "./_style.scss";
+import SectionHeader from "../../../../components/common/SectionHeader";
 
 const FAQs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -23,7 +24,8 @@ const FAQs = () => {
     },
     {
       question: "What are the advantages of an email signature?",
-      answer: "An email signature offers you multiple templates, personalized signatures for every employee in any size company",
+      answer:
+        "An email signature offers you multiple templates, personalized signatures for every employee in any size company",
     },
     {
       question: "What does an email signature offer me?",
@@ -36,37 +38,36 @@ const FAQs = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
   return (
- 
-      <section className="support FAQ">
-        <div className="container">
-          <div className="mx-4">
-            <div className="container col-12 faqs">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className={`faq-container ${
-                    activeIndex === index ? "faq-active" : ""
-                  }`}
-                  onClick={() => toggleFAQ(index)}
-                >
-                  <div className="faq-question flex-container flex-justify-space-between">
-                    <div className="faq-question-header">
-                      <h5 className="etxt-text">{faq.question}</h5>
-                      <CiCircleChevDown />
-                    </div>
-                    {activeIndex === index && (
-                      <div className="faq-answer">
-                        <p className="font-weight-400">{faq.answer}</p>
-                      </div>
-                    )}
+    <section className="support FAQ">
+      <SectionHeader header="FAQ" />
+      <div className="container">
+        <div className="mx-4">
+          <div className="container col-12 faqs">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className={`faq-container ${
+                  activeIndex === index ? "faq-active" : ""
+                }`}
+                onClick={() => toggleFAQ(index)}
+              >
+                <div className="faq-question flex-container flex-justify-space-between">
+                  <div className="faq-question-header">
+                    <h5 className="etxt-text">{faq.question}</h5>
+                    <CiCircleChevDown />
                   </div>
+                  {activeIndex === index && (
+                    <div className="faq-answer">
+                      <p className="font-weight-400">{faq.answer}</p>
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-      </section>
-    
+      </div>
+    </section>
   );
 };
 

@@ -1,11 +1,15 @@
 import PageHeader from "../../components/common/PageHeader";
 import "./_style.scss";
-import Enterprice from "./components/enterprice";
-import Payment from "./components/payment";
-import PricingCard from "./components/pricingCard";
+import Brands from "../../pages/Home/components/Brands" 
+import FAQ from "../../pages/Home/components/FAQ" 
+import Customers from "../../pages/SignaturePages/components/Customers/Customers"
+import PricingCard from "./components/Pricing/pricingCard";
+import Payment from "./components/Payment/payment";
+import Enterprice from "./components/Enterprice/enterprice";
+import Help from "./components/Help/help";
 function Pricing() {
   return (
-    <main className="pricing-page">
+    <main className="pricing-page mt-10">
       <div className="container pricing-page-header">
         <PageHeader header='"Exclusive Features for Your Email Signatures”' />
         <p>
@@ -16,6 +20,11 @@ function Pricing() {
       <PricingCard />
       <Payment />
       <Enterprice />
+      <Brands/>
+      <Customers/>
+      <FAQ/>
+      <Help/>
+      <div className="space"></div>
     </main>
   );
 }
