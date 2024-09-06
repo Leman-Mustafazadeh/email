@@ -7,10 +7,15 @@
         @extend .font-weight-500;
         @extend .font-size-14;
         @extend .mb-3;
-        color:#767676
+        color: #767676
     }
-    li {
-        @extend .font-size-12;
-        color:#B1B1B1;
+
+    ul {
+        line-height: 0.8;
+
+        li {
+            @extend .font-size-12;
+            color: #B1B1B1;
+        }
     }
 }

@@ -6,13 +6,14 @@
     @extend .flex-container;
     @extend .flex-column;
     gap: 72px;
-    overflow: hidden;
 
     .banners_wrap {
       @extend .flex-container;
       @extend .flex-column;
+      @extend .px-6;
       gap: 64px;
-      max-width: 1336px;
+      position: relative;
+      margin-bottom: 175px;
 
       button {
         @extend .font-size-22;
@@ -29,7 +30,7 @@
 
       .banners_title {
         position: relative;
-        min-height: 600px;
+        min-height: 70vh;
 
         h2 {
           @extend .font-size-24;
@@ -51,6 +52,7 @@
       }
 
       &:last-child {
+        margin-bottom: 0;
 
         img {
           position: absolute;
@@ -58,16 +60,18 @@
           right: 0;
         }
       }
-    }
 
-    .banner_line {
-      width: 100%;
-      transform: translateX(110px);
+      .banner_line {
+        position: absolute;
+        bottom: -30%;
+        left: -5%;
 
-      img {
-        width: 100%;
+        img {
+          width: 120%;
+        }
       }
     }
+
   }
 }
 

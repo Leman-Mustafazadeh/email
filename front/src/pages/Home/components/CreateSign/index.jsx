@@ -8,12 +8,12 @@ import "./_style.scss";
 
 const CreateSign = () => {
   return (
-    <div className="create-signature">
-      <div className="create-banners">
+    <div className="create-signature container">
+      <div className="create-banners container">
         <SectionHeader header="How to use" />
 
-        <div className="banners_items">
-          <div className="banners_wrap container">
+        <div className="banners_items container px-10">
+          <div className="banners_wrap container ">
             <div className="row flex-justify-start flex-justify-md-center">
               <Link to="#">
                 <button>1.Design</button>
@@ -36,10 +36,9 @@ const CreateSign = () => {
                 <img src={banner2} alt="" />
               </div>
             </div>
-          </div>
-
-          <div className="banner_line">
-            <img src={banner1} alt="" />
+            <div className="banner_line">
+              <img src={banner1} alt="" />
+            </div>
           </div>
 
           <div className="banners_wrap container">
@@ -64,10 +63,9 @@ const CreateSign = () => {
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="banner_line">
-            <img src={banner1} alt="" />
+            <div className="banner_line">
+              <img src={banner1} alt="" />
+            </div>
           </div>
 
           <div className="banners_wrap container">
