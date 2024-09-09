@@ -1,0 +1,25 @@
+.delete {
+    margin-top: 28px;
+
+    .delete_head {
+        gap: 35px;
+
+        .delete_img {
+            width: 220px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .delete_dashboard {
+            gap: 10px;
+        }
+
+    }
+
+    .delete_help {
+        gap: 12px;
+    }
+
+}

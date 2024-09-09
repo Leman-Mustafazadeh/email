@@ -1,0 +1,48 @@
+.account-set-password {
+    .password-form {
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 20px;
+        margin-top: 28px;
+        border-radius: 12px;
+        background-color: map-get($colors, natural);
+
+
+        h3 {
+            @extend .font-size-18;
+            @extend .font-weight-500;
+            color: map-get($colors, text10)
+        }
+
+        p {
+            @extend .font-size-14;
+            color: map-get($colors, text52);
+        }
+
+        form {
+            margin-top: 13px;
+
+            label {
+                @extend .font-size-16;
+                color: map-get($colors, text52);
+            }
+
+            input {
+                border: 1px solid map-get($colors, text60);
+            }
+
+            .eye-icon {
+                position: absolute;
+                cursor: pointer;
+                top: 50px;
+                right: 10px;
+                transform: translateY(-45%);
+
+                svg {
+                    @extend .font-size-20;
+                    color: map-get($colors, text60);
+                }
+            }
+        }
+    }
+}
