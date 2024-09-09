@@ -1,3 +1,8 @@
+import AboutUs from "../pages/AboutUs";
+import AccountMember from "../pages/Account/AccountMember";
+import AccountSetPassword from "../pages/Account/AccountSetPassword";
+import ContactUs from "../pages/ContactUs";
+import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
 import Brands from "../pages/Home/components/Brands";
 import CreateSign from "../pages/Home/components/CreateSign";
@@ -6,20 +11,16 @@ import EmailSign from "../pages/Home/components/EmailSign";
 import Explore from "../pages/Home/components/Explore";
 import FAQs from "../pages/Home/components/FAQ";
 import Login from "../pages/Login";
+import MyAccountDeleteAccount from "../pages/MyAccount-DeleteAccount";
+import NonProfit from "../pages/NonProfit";
+import Passwords from "../pages/Password";
+import Pricing from "../pages/Pricing";
+import ResetPassword from "../pages/ResetPassword";
+import Business from "../pages/SignaturePages/Business";
+import Freelancer from "../pages/SignaturePages/Freelancer";
 import SignUp from "../pages/SignUp";
 import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
-import ForgotPassword from "../pages/ForgotPassword";
-import ContactUs from "../pages/ContactUs";
-import AboutUs from "../pages/AboutUs";
-import NonProfit from "../pages/NonProfit";
-import Freelancer from "../pages/SignaturePages/Freelancer";
-import ResetPassword from "../pages/ResetPassword";
-import Passwords from "../pages/Password";
-import Business from "../pages/SignaturePages/Business";
-import MyAccountDeleteAccount from "../pages/MyAccount-DeleteAccount";
-import AccountMember from "../pages/AccountMember";
-import Pricing from "../pages/Pricing";
 
 export const Routes = [
   {
@@ -102,6 +103,10 @@ export const Routes = [
       {
         path: "accountmember",
         element: <AccountMember />,
+      },
+      {
+        path: "accountpassword",
+        element: <AccountSetPassword />,
       },
       {
         path: "pricing",

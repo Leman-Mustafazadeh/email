@@ -796,6 +796,10 @@ a {
   width: calc(8.3333333333% * 12);
 }
 
+.relative {
+  position: relative !important;
+}
+
 .container {
   margin-right: auto;
   margin-left: auto;
@@ -2291,6 +2295,22 @@ a {
 
 .btn-text30 {
   background-color: #767676 !important;
+}
+
+.bg-text52 {
+  background-color: #A2A2A2 !important;
+}
+
+.text-text52 {
+  color: #A2A2A2 !important;
+}
+
+.border-text52 {
+  border: 1px solid #A2A2A2 !important;
+}
+
+.btn-text52 {
+  background-color: #A2A2A2 !important;
 }
 
 .bg-text60 {

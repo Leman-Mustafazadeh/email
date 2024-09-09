@@ -5,8 +5,15 @@ import Navbar from "../components/layout/Navbar";
 const UserRouter = () => {
   const location = useLocation();
   const hideNavFoot =
-    location.pathname === "/sign-up" || location.pathname === "/login"  || location.pathname === "/resetpassword" || location.pathname === "/forgotpassword" || location.pathname === "/passwords" || location.pathname==="/deleteaccount"   || location.pathname==="/accountmember" ;
-    
+    location.pathname === "/sign-up" ||
+    location.pathname === "/login" ||
+    location.pathname === "/resetpassword" ||
+    location.pathname === "/forgotpassword" ||
+    location.pathname === "/passwords" ||
+    location.pathname === "/deleteaccount" ||
+    location.pathname === "/accountmember" ||
+    location.pathname === "/accountpassword";
+
   return (
     <div>
       {!hideNavFoot && <Navbar />}
