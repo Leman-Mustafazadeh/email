@@ -1,6 +1,9 @@
 import AboutUs from "../pages/AboutUs";
 import AccountMember from "../pages/Account/AccountMember";
+import AccountMemberSetting from "../pages/Account/AccountMemberSetting";
 import AccountSetPassword from "../pages/Account/AccountSetPassword";
+import MyAccountBilling from "../pages/Account/MyAccountBilling";
+import MyAccountSetting from "../pages/Account/MyAccountSetting";
 import ContactUs from "../pages/ContactUs";
 import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
@@ -111,6 +114,18 @@ export const Routes = [
       {
         path: "pricing",
         element: <Pricing />,
+      },
+      {
+        path: "accountmembersetting",
+        element: <AccountMemberSetting />,
+      },
+      {
+        path: "myaccountsetting",
+        element: <MyAccountSetting />,
+      },
+      {
+        path: "myaccountbilling",
+        element: <MyAccountBilling/>,
       },
     ],
   },

@@ -7,7 +7,7 @@
     .account_wrap {
         @extend .flex-container;
         @extend .flex-column;
-        gap: 25px;
+        // gap: 25px;
         border-radius: 12px;
 
 
@@ -17,7 +17,6 @@
             padding: 24px;
 
             .account_hero {
-                width: 607px;
                 gap: 21px;
 
                 .box {
@@ -36,22 +35,28 @@
             }
         }
 
-        .account_del {
 
-            button {
-                width: 50%;
-                padding: 12px 32px;
-                border-radius: 6px;
+        .account_upgrade {
+            border-radius: 8px !important;
+            background-color: #FFFFFF !important;
+            border-radius: 12px;
+            padding: 24px;
+
+
+            .select {
+                padding: 10px 10px 10px 13px;
+                margin-top: 14px;
+                border-radius: 8px !important;
+
+                .option {
+                    border-radius: 8px !important;
+                    border: 2px solid black;
+                }
             }
-        }
 
-        .account_upgrade_head {
-            .account_upgrade {
+            .btn-save {
+                border-radius: 8px;
 
-                background-color: #FFFFFF;
-                border-radius: 12px;
-                padding: 24px;
-                width: 50%;
             }
         }
 
@@ -59,6 +64,10 @@
             background-color: #FFFFFF;
             border-radius: 12px;
             padding: 24px;
+
+            .personal_title {
+                width: 45%;
+            }
         }
     }
 
