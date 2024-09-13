@@ -1,0 +1,65 @@
+.member {
+    @extend .flex-container;
+    @extend .flex-column;
+    gap: 28px;
+
+
+    .account_wrap {
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 25px;
+        border-radius: 12px;
+
+
+        .account_head {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 24px;
+
+            .account_hero {
+                width: 607px;
+                gap: 21px;
+
+                .box {
+                    line-height: 21px;
+                }
+
+                h2 {
+                    padding-bottom: 13px;
+                    line-height: 22px;
+                }
+
+                .checkbox {
+                    padding-top: 25px;
+                    padding-bottom: 40px;
+                }
+            }
+        }
+
+        .account_del {
+
+            button {
+                width: 50%;
+                padding: 12px 32px;
+                border-radius: 6px;
+            }
+        }
+
+        .account_upgrade_head {
+            .account_upgrade {
+
+                background-color: #FFFFFF;
+                border-radius: 12px;
+                padding: 24px;
+                width: 50%;
+            }
+        }
+
+        .personal {
+            background-color: #FFFFFF;
+            border-radius: 12px;
+            padding: 24px;
+        }
+    }
+
+}

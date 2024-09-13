@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
-import AccountNavBar from "../components/AccountNavBar/AccountNavBar";
 import { Link } from "react-router-dom";
 import "./_style.scss";
 import { LuEyeOff, LuEye } from "react-icons/lu";
 import { useState } from "react";
+import AccountNoLogo from "../components/AccountNavBar/AccountNoLogo";
 
 function AccountSetPassword() {
   const { register, handleSubmit } = useForm({
@@ -25,7 +25,7 @@ function AccountSetPassword() {
 
   return (
     <div className="account-set-password container">
-      <AccountNavBar />
+      <AccountNoLogo />
       <div className="password-form container p-5">
         <div className="form-title">
           <h3>Change Account Password</h3>
