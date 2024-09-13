@@ -5,6 +5,7 @@ import AccountSetPassword from "../pages/Account/AccountSetPassword";
 import MyAccountBilling from "../pages/Account/MyAccountBilling";
 import MyAccountSetting from "../pages/Account/MyAccountSetting";
 import ContactUs from "../pages/ContactUs";
+import CookiePopUp from "../pages/CookiePopUp/CookiePopUp";
 import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
 import Brands from "../pages/Home/components/Brands";
@@ -126,6 +127,10 @@ export const Routes = [
       {
         path: "myaccountbilling",
         element: <MyAccountBilling/>,
+      },
+      {
+        path: "cookiepopup",
+        element: <CookiePopUp/>,
       },
     ],
   },
