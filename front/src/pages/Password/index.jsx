@@ -4,6 +4,7 @@ import "./_style.scss";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import logo from "../../assets/images/logo/logo.png"
 
 const Passwords = () => {
   const [showPassword1, setShowPassword1] = useState(false);
@@ -21,7 +22,9 @@ const Passwords = () => {
     <section className="forgot_head">
       <div className="container">
         <div className="row flex-column flex-align-center flex-justify-center mt-9">
-          <PageHeader header="Email Signature Generator" />
+         <div>
+         <img src={logo} alt="" style={{width:"220px"}}/>
+         </div>
           <div className="flex-align-center flex-justify-center row flex-column bg-natural forgot mt-8">
             <h2 className="text-text font-size-24 font-weight-700 py-3">
               Create a new password!
