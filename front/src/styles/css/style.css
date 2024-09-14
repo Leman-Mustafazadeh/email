@@ -812,7 +812,6 @@ a {
   flex-wrap: wrap;
   overflow-x: auto;
 }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(1, 1fr);

@@ -38,7 +38,8 @@
                 width: 100%;
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr !important;
-
+                border-top: 1px solid #B1B1B1;
+                padding-top: 15px;
                 button {
                     text-align: center;
                     padding: 12px 32px;
@@ -73,6 +74,10 @@
                 border-radius: 8px;
 
             }
+            .cancel{
+                text-decoration: underline;
+                color: #b1b1b1;
+            }
         }
 
         .personal {
@@ -84,6 +89,63 @@
                 width: 45%;
             }
         }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000; 
+          }
+          
+          .modal {
+            width: 542px;
+            height: 247px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+            p{
+                padding: 18px 53px;
+            }
+          }
+          
+        
+          
+          .modal-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+          }
+          
+          .stay-btn,
+          .cancel-btn {
+            width: 47%;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+          }
+          .stay-btn{
+            color: #FFFFFF;
+          }
+          
+          .cancel-btn {
+            background: #fff;
+            color: #b1b1b1;
+            border: 1px solid #b1b1b1;
+          }
+          
+          .cancel {
+            text-decoration: underline;
+            color: #b1b1b1;
+          }
+          
     }
 
 }
