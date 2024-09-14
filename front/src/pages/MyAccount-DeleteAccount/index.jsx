@@ -140,21 +140,7 @@ const MyAccountDeleteAccount = () => {
                my account user information will be removed.
             </p>
             <div className="row flex-align-center checkbox">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <rect width="20" height="20" rx="3" fill="#34A853" />
-                <path
-                  d="M4 12L7.233 14.425C7.43936 14.5797 7.69752 14.6487 7.95356 14.6176C8.2096 14.5865 8.44372 14.4577 8.607 14.258L17 4"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
+            <input type="checkbox" />
               <p className="font-size-16 font-weight-400 text-text60 pl-2">
                 I want to delete my account
               </p>

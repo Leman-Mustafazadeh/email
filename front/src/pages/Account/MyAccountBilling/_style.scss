@@ -119,15 +119,16 @@
           
           .modal-actions {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             gap: 20px;
             margin-top: 30px;
+            
           }
           
           .stay-btn,
           .cancel-btn {
-            width: 47%;
-            padding: 10px 20px;
+            width: 40%;
+            padding: 10px 40px;
             border-radius: 6px;
             cursor: pointer;
           }
