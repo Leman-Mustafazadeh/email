@@ -1041,270 +1041,50 @@ a {
     width: calc(100% / 12 * 12);
   }
 }
-@media (min-width: 993px) {
-  .gap-0 {
-    gap: 0px;
-  }
-  .gap-0 > div {
-    flex: 1 1 calc(8.3333333333% - 0px);
-  }
-  .gap-0 > div:last-child {
-    margin-right: 0;
-  }
+.gap-0 {
+  gap: 0px;
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-0 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0px;
-  }
-  .gap-0 > div {
-    flex: 1 1 calc(50% - 0px);
-  }
-  .gap-0 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-1 {
+  gap: 5px;
 }
-@media (min-width: 993px) {
-  .gap-1 {
-    gap: 5px;
-  }
-  .gap-1 > div {
-    flex: 1 1 calc(8.3333333333% - 5px);
-  }
-  .gap-1 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-2 {
+  gap: 10px;
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-1 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  .gap-1 > div {
-    flex: 1 1 calc(50% - 5px);
-  }
-  .gap-1 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-3 {
+  gap: 15px;
 }
-@media (min-width: 993px) {
-  .gap-2 {
-    gap: 10px;
-  }
-  .gap-2 > div {
-    flex: 1 1 calc(8.3333333333% - 10px);
-  }
-  .gap-2 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-4 {
+  gap: 20px;
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-2 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .gap-2 > div {
-    flex: 1 1 calc(50% - 10px);
-  }
-  .gap-2 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-5 {
+  gap: 25px;
 }
-@media (min-width: 993px) {
-  .gap-3 {
-    gap: 15px;
-  }
-  .gap-3 > div {
-    flex: 1 1 calc(8.3333333333% - 15px);
-  }
-  .gap-3 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-6 {
+  gap: 30px;
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-3 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-  .gap-3 > div {
-    flex: 1 1 calc(50% - 15px);
-  }
-  .gap-3 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-7 {
+  gap: 35px;
 }
-@media (min-width: 993px) {
-  .gap-4 {
-    gap: 20px;
-  }
-  .gap-4 > div {
-    flex: 1 1 calc(8.3333333333% - 20px);
-  }
-  .gap-4 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-8 {
+  gap: 40px;
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-4 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  .gap-4 > div {
-    flex: 1 1 calc(50% - 20px);
-  }
-  .gap-4 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-9 {
+  gap: 45px;
 }
-@media (min-width: 993px) {
-  .gap-5 {
-    gap: 25px;
-  }
-  .gap-5 > div {
-    flex: 1 1 calc(8.3333333333% - 25px);
-  }
-  .gap-5 > div:last-child {
-    margin-right: 0;
-  }
+
+.gap-10 {
+  gap: 50px;
 }
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-5 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-  }
-  .gap-5 > div {
-    flex: 1 1 calc(50% - 25px);
-  }
-  .gap-5 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 993px) {
-  .gap-6 {
-    gap: 30px;
-  }
-  .gap-6 > div {
-    flex: 1 1 calc(8.3333333333% - 30px);
-  }
-  .gap-6 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-6 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-  }
-  .gap-6 > div {
-    flex: 1 1 calc(50% - 30px);
-  }
-  .gap-6 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 993px) {
-  .gap-7 {
-    gap: 35px;
-  }
-  .gap-7 > div {
-    flex: 1 1 calc(8.3333333333% - 35px);
-  }
-  .gap-7 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-7 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 35px;
-  }
-  .gap-7 > div {
-    flex: 1 1 calc(50% - 35px);
-  }
-  .gap-7 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 993px) {
-  .gap-8 {
-    gap: 40px;
-  }
-  .gap-8 > div {
-    flex: 1 1 calc(8.3333333333% - 40px);
-  }
-  .gap-8 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-8 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-  }
-  .gap-8 > div {
-    flex: 1 1 calc(50% - 40px);
-  }
-  .gap-8 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 993px) {
-  .gap-9 {
-    gap: 45px;
-  }
-  .gap-9 > div {
-    flex: 1 1 calc(8.3333333333% - 45px);
-  }
-  .gap-9 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-9 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 45px;
-  }
-  .gap-9 > div {
-    flex: 1 1 calc(50% - 45px);
-  }
-  .gap-9 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 993px) {
-  .gap-10 {
-    gap: 50px;
-  }
-  .gap-10 > div {
-    flex: 1 1 calc(8.3333333333% - 50px);
-  }
-  .gap-10 > div:last-child {
-    margin-right: 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .gap-10 {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-  }
-  .gap-10 > div {
-    flex: 1 1 calc(50% - 50px);
-  }
-  .gap-10 > div:last-child {
-    margin-right: 0;
-  }
-}
+
 .flex-justify-start {
   justify-content: start !important;
 }
@@ -2231,6 +2011,22 @@ a {
 
 .btn-lightGray30 {
   background-color: #CFCFCF !important;
+}
+
+.bg-lightGray40 {
+  background-color: #F3F0F0 !important;
+}
+
+.text-lightGray40 {
+  color: #F3F0F0 !important;
+}
+
+.border-lightGray40 {
+  border: 1px solid #F3F0F0 !important;
+}
+
+.btn-lightGray40 {
+  background-color: #F3F0F0 !important;
 }
 
 .bg-text {

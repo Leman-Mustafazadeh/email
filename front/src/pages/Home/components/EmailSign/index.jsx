@@ -197,7 +197,7 @@ const EmailSign = () => {
 
         <div className="generator">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="generator_banner row gap-4 mt-3">
+            <div className="generator_banner row gap-4 mt-3" style={{flexWrap: "nowrap"}}>
               <div className="col-12 col-lg-6">
                 <div className="generator_banner_left">
                   <div className="form-group text p-4">

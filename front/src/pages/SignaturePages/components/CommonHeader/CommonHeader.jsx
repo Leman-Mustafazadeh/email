@@ -16,7 +16,7 @@ function CommonHeader({ header, paragraph }) {
         </Link>
       </div>
 
-      <div className="container row template-banners gap-5">
+      <div className="container row template-banners gap-5" style={{flexWrap: "nowrap"}}>
         <div className="col-12 col-md-6 col-lg-4">
           <img src={xmas} alt="" />
         </div>

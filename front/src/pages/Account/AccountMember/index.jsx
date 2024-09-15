@@ -6,7 +6,7 @@ const AccountMember = () => {
   return (
     <section>
       <div className="container member">
-        <AccountNavBar/>
+        <AccountNavBar />
 
         <div className="account_wrap">
           <div className="account_head">
@@ -32,13 +32,16 @@ const AccountMember = () => {
             </div>
           </div>
 
-          <div className="row account_upgrade_head gap-4">
+          <div
+            className="row account_upgrade_head gap-4"
+            style={{ flexWrap: "nowrap" }}
+          >
             <div className="col-12 col-md-6 account_upgrade">
               <div>
                 <h2 className="font-size-18 font-weight-500 text-text10 ">
                   Account Details
                 </h2>
-                <div className="py-4 row gap-10">
+                <div className="py-4 row gap-10" style={{ flexWrap: "nowrap" }}>
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Customer ID:
                   </h4>
@@ -47,7 +50,7 @@ const AccountMember = () => {
                   </p>
                 </div>
 
-                <div className="pb-4 row gap-10">
+                <div className="pb-4 row gap-10" style={{ flexWrap: "nowrap" }}>
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Signup date:
                   </h4>
@@ -56,7 +59,7 @@ const AccountMember = () => {
                   </p>
                 </div>
 
-                <div className="pb-4 row gap-10">
+                <div className="pb-4 row gap-10" style={{ flexWrap: "nowrap" }}>
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Account plan:
                   </h4>
@@ -79,7 +82,10 @@ const AccountMember = () => {
                   Account Storage
                 </h2>
 
-                <div className="row gap-10 flex-align-center mb-3">
+                <div
+                  className="row gap-10 flex-align-center mb-3"
+                  style={{ flexWrap: "nowrap" }}
+                >
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Template:
                   </p>
@@ -97,14 +103,17 @@ const AccountMember = () => {
                         height="6"
                         rx="3"
                         fill="white"
-                        fill-opacity="0.9"
+                        fillOpacity="0.9"
                       />
                     </svg>
 
                     <span className="pl-4">0 / 10</span>
                   </div>
                 </div>
-                <div className="row pb-7 flex-justify-space-between gap-10">
+                <div
+                  className="row pb-7 flex-justify-space-between gap-10"
+                  style={{ flexWrap: "nowrap" }}
+                >
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Members:
                   </p>
@@ -122,7 +131,7 @@ const AccountMember = () => {
                         height="6"
                         rx="3"
                         fill="white"
-                        fill-opacity="0.9"
+                        fillOpacity="0.9"
                       />
                       <rect width="42" height="6" rx="3" fill="#1A73E8" />
                     </svg>
@@ -147,16 +156,30 @@ const AccountMember = () => {
             <h3 className="font-size-16 font-weight-500 text-text60 pb-2">
               Login Email:
             </h3>
-            <div className="row gap-10">
-              <input type="text" placeholder="kenantagiyev010@gmail.com" className="font-size-14 font-weight-400 text-text "/>
-              <Link to={""} className="font-size-14 font-weight-400 text-text60">Change email</Link>
+            <div className="row gap-10" style={{ flexWrap: "nowrap" }}>
+              <input
+                type="text"
+                placeholder="kenantagiyev010@gmail.com"
+                className="font-size-14 font-weight-400 text-text "
+              />
+              <Link
+                to={""}
+                className="font-size-14 font-weight-400 text-text60"
+              >
+                Change email
+              </Link>
             </div>
             <h3 className="font-size-16 font-weight-500 text-text60 pb-2 pt-4">
               Password:
             </h3>
-            <div className="row gap-10">
+            <div className="row gap-10" style={{ flexWrap: "nowrap" }}>
               <input type="password" placeholder="---------" />
-              <Link to={""} className="font-size-14 font-weight-400 text-primary ">Set a password</Link>
+              <Link
+                to={""}
+                className="font-size-14 font-weight-400 text-primary "
+              >
+                Set a password
+              </Link>
             </div>
           </div>
         </div>
