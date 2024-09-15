@@ -1,8 +1,11 @@
 import AboutUs from "../pages/AboutUs";
 import AccountMember from "../pages/Account/AccountMember";
+import AccountMemberSetting from "../pages/Account/AccountMemberSetting";
 import AccountSetPassword from "../pages/Account/AccountSetPassword";
+import MyAccount from "../pages/Account/MyAccount/MyAccount";
+import MyAccountBilling from "../pages/Account/MyAccountBilling";
+import MyAccountSetting from "../pages/Account/MyAccountSetting";
 import ContactUs from "../pages/ContactUs";
-import DashboardDesign from "../pages/Dashboard/DashboardDesign";
 import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
 import Brands from "../pages/Home/components/Brands";
@@ -114,8 +117,7 @@ export const Routes = [
         element: <Pricing />,
       },
       {
-        path: "dashboard",
-        element: <DashboardDesign />,
+
       },
     ],
   },

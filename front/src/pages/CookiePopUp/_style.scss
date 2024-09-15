@@ -1,0 +1,15 @@
+.cookie{
+    flex-wrap: nowrap !important;
+    gap: 64px;
+    justify-content: space-between;
+    .btn-cookie{
+        border-radius: 8px;
+    }
+    .cookie_wrap{
+display: flex;
+gap: 27px;
+button{
+    max-height: 51px;
+}
+    }
+}
