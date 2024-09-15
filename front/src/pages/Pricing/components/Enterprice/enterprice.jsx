@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import Icon1 from "../../../../assets/images/pricing-plan-icons/mailsignature.ai/Vector1.svg";
-import Icon12 from "../../../../assets/images/pricing-plan-icons/mailsignature.ai/Vector2.svg";
-import Icon3 from "../../../../assets/images/pricing-plan-icons/mailsignature.ai/Vector3.svg";
-import Icon4 from "../../../../assets/images/pricing-plan-icons/mailsignature.ai/Vector4.svg";
-import Icon7 from "../../../../assets/images/pricing-plan-icons/mailsignature.ai/Vector5.svg";
-import Icon8 from "../../../../assets/images/pricing-plan-icons/mailsignature.ai/Vector6.svg";
+
+import { Icon } from "../../../../utils/icons/icons";
 import "./_enterprice.scss";
+import { Banner, Headphones, PushUp, Team, Template } from "../../../../utils/icons";
+import Customize from "../../../../utils/icons/Customize";
 
 function Enterprice() {
   return (
@@ -20,28 +18,30 @@ function Enterprice() {
           </p>
           <ul>
             <li>
-              <img src={Icon1} alt="" />
+              <Icon icon={PushUp} color="#1A73E8"/>
             </li>
             <li>
-              <img src={Icon12} alt="" />
+              <Icon icon={Team} color="#1A73E8"/>
             </li>
             <li>
-              <img src={Icon3} alt="" />
+              <Icon icon={Template} color="#1A73E8"/>
             </li>
             <li>
-              <img src={Icon4} alt="" />
+              <Icon icon={Banner} color="#1A73E8"/>
             </li>
             <li>
-              <img src={Icon7} alt="" />
+              <Icon icon={Headphones} color="#1A73E8"/>
             </li>
             <li>
-              <img src={Icon8} alt="" />
+              <Icon icon={Customize} color="#1A73E8"/>
             </li>
           </ul>
         </div>
         <div className="col-12 col-md-6 flex-container flex-justify-end flex-align-center">
           <Link to="/">
-            <button className="btn btn-primary text-natural px-10">Contact us</button>
+            <button className="btn btn-primary text-natural px-10">
+              Contact us
+            </button>
           </Link>
         </div>
       </div>

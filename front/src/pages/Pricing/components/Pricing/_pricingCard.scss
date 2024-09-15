@@ -52,6 +52,7 @@
         .card-plan-includes {
             @extend .flex-container;
             @extend .flex-column;
+
             gap: 20px;
 
             p {

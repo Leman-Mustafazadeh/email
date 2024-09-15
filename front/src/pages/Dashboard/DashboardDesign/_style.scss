@@ -1,0 +1,372 @@
+:root {
+    --utils-width: 88px;
+    --dashboard-width: 665px;
+}
+
+.dashboard-design {
+    .utils {
+        @extend .flex-container;
+        @extend .flex-column;
+        @extend .flex-justify-space-between;
+        position: relative;
+        max-width: 88px;
+        max-height: 580px;
+        width: 100%;
+        border-radius: 12px;
+        border: 2px solid map-get($colors, primary90);
+        background-color: map-get($colors, natural);
+
+        .utils-icons {
+            @extend .flex-container;
+            @extend .flex-column;
+            @extend .flex-align-center;
+            gap: 24px;
+
+            .avatar {
+                background-color: map-get($colors, primaryFAQ);
+                width: 100%;
+                text-align: center;
+                border-radius: 12px 12px 0 0;
+                padding: 10px;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    border: 1px solid map-get($colors, primary);
+                    background-color: map-get($colors, light60)
+                }
+            }
+
+            .icon {
+                @extend .flex-container;
+                @extend .flex-column;
+                @extend .flex-align-center;
+                gap: 5px;
+                cursor: pointer;
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                }
+
+                span {
+                    @extend .font-size-14;
+                    @extend .font-weight-500;
+                    color: map-get($colors, text30);
+                }
+            }
+        }
+
+        .help {
+            border-top: 1px solid map-get($colors, light60);
+        }
+    }
+
+    .dashboard {
+        max-width: 665px;
+        width: 100%;
+        @extend .flex-container;
+        @extend .flex-column;
+        gap: 20px;
+        margin-left: 0;
+
+        .titles,
+        .links,
+        .qr,
+        .photo,
+        .banner-upload {
+            background-color: map-get($colors, natural);
+            border-radius: 12px;
+        }
+
+        .uploader {
+            .ant-upload-list {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row-reverse;
+
+
+
+                &-item {
+                    display: flex;
+                    align-items: end;
+                    padding: 0;
+
+                    &::before {
+                        width: 100% !important;
+                        height: 100% !important;
+                        border-radius: 6px;
+
+                    }
+
+                    &-actions {
+                        display: flex;
+                        justify-content: end;
+                        padding: 15px 10px;
+
+                        a {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .upload-button {
+                svg {
+                    color: map-get($colors, primary);
+                    width: 36px;
+                    height: 36px;
+                }
+
+                p {
+                    @extend .font-size-10;
+                    color: map-get($colors, text);
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        form {
+            .form-group {
+                .form-control {
+                    max-height: 41px;
+                    background-color: map-get($colors, background);
+                    border: none;
+                }
+            }
+        }
+
+        .title {
+            @extend .flex-container;
+            @extend .flex-align-center;
+            @extend .flex-justify-space-between;
+            @extend .mb-4;
+
+
+            h3 {
+                @extend .font-size-18;
+                @extend .font-weight-500;
+                color: map-get($colors, text)
+            }
+
+            button {
+                @extend .flex-container;
+                @extend .flex-align-center;
+                gap: 7px;
+                padding: 8px 12px;
+                border-radius: 4px;
+                border: 1px solid map-get($colors, lightGray40);
+                background-color: map-get($colors, natural);
+
+                svg {
+                    @extend .font-size-16;
+                }
+
+                svg,
+                span {
+                    color: map-get($colors, text10);
+                }
+            }
+        }
+
+        .photo {
+
+            .ant-upload-select,
+            .ant-upload-list-item-container {
+                min-width: 154px;
+                min-height: 154px;
+            }
+        }
+
+        .banner-upload {
+
+            .ant-upload-select,
+            .ant-upload-list-item-container {
+                min-width: 300px;
+                min-height: 127px;
+            }
+
+            .banner-templates {
+                h4 {
+                    @extend .font-size-14;
+                    @extend .font-weight-500;
+                    margin-bottom: 16px;
+                    color: map-get($colors, text10);
+                }
+            }
+        }
+    }
+
+    .banner {
+        max-width: 495px;
+        width: 100%;
+
+
+        .generator_banner_right {
+            @extend .p-0;
+
+            .right-regard-container {
+                .right-regard-name {
+
+                    h2 {
+                        @extend .font-size-12;
+                    }
+
+                    p {
+                        @extend .font-size-10;
+                    }
+                }
+
+                .right-regard-contacts {
+                    p {
+                        @extend .font-size-10;
+                    }
+
+                    .sosial-icons {
+                        @extend .flex-container;
+                        gap: 4px;
+
+                        svg {
+                            height: 14px;
+                            width: 14px;
+                        }
+                    }
+                }
+            }
+
+            .banner-img {
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+
+    }
+
+    &.onscroll {
+        .utils {
+            position: fixed;
+            top: 10px;
+            min-height: 640px;
+        }
+
+        .dashboard,
+        .members {
+            margin-left: calc(var(--utils-width) + 25px);
+        }
+
+        .banner {
+            position: fixed;
+            top: 10px;
+            margin-left: calc(var(--utils-width) + 25px + var(--dashboard-width) + 25px);
+        }
+    }
+
+    .members {
+        background-color: map-get($colors, natural);
+        width: 100%;
+        border-radius: 12px;
+        max-height: 100vh;
+        overflow-y: hidden;
+
+        p,
+        span {
+            @extend .font-size-16;
+            @extend .font-weight-500;
+        }
+
+        &-header {
+            p {
+                color: map-get($colors, text52);
+            }
+        }
+
+        &-user-count {
+            p {
+                color: map-get($colors, text);
+            }
+
+            span {
+                color: map-get($colors, primary);
+            }
+        }
+
+        .emails {
+            background-color: map-get($colors, text60);
+            padding: 5px;
+            border-radius: 50%;
+        }
+
+        &-user-add {
+            .MuiInputBase-root {
+                border-radius: 8px;
+                height: 48px;
+            }
+        }
+
+        &-user-add,
+        &-user-list {
+            p {
+                color: map-get($colors, text30);
+
+            }
+        }
+
+        &-user-list {
+            p {
+                margin-bottom: 10px;
+            }
+
+            table {
+                width: 80%;
+
+
+                thead {
+                    th {
+                        @extend .font-size-14;
+                        @extend .font-weight-500;
+
+                        text-align: start;
+                        color: map-get($colors, text30);
+                    }
+                }
+
+                tbody {
+                    td {
+                        @extend .font-size-14;
+                        @extend .font-weight-500;
+                        @extend .flex-container;
+                        @extend .flex-align-center;
+                        gap: 10px;
+
+                        text-align: start;
+                        color: map-get($colors, text);
+
+                        img {
+                            width: 24px;
+                            height: 24px;
+                            border-radius: 50%;
+                            border: 1px solid map-get($colors, primary);
+                            background-color: map-get($colors, text52);
+                        }
+
+                        button {
+                            @extend .p-0;
+                            @extend .font-size-14;
+                            @extend .font-weight-400;
+
+                            border-radius: 8px;
+                            max-width: 137px;
+                            max-height: 37px;
+                            min-height: 37px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}

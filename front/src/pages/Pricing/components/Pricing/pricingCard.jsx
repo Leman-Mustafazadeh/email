@@ -1,23 +1,23 @@
-import icon1 from "../../../../assets/images/pricing-plan-icons/icon-1.png";
-import icon2 from "../../../../assets/images/pricing-plan-icons/icon-2.png";
-import icon3 from "../../../../assets/images/pricing-plan-icons/icon-3.png";
-import icon4 from "../../../../assets/images/pricing-plan-icons/icon-4.png";
-import icon5 from "../../../../assets/images/pricing-plan-icons/icon-5.png";
-import icon6 from "../../../../assets/images/pricing-plan-icons/icon-6.png";
-import icon7 from "../../../../assets/images/pricing-plan-icons/icon-7.png";
-import icon8 from "../../../../assets/images/pricing-plan-icons/icon-8.png";
-import icon10 from "../../../../assets/images/pricing-plan-icons/icon-10.png";
-import icon11 from "../../../../assets/images/pricing-plan-icons/icon-11.png";
-import icon12 from "../../../../assets/images/pricing-plan-icons/icon-12.png";
-import icon13 from "../../../../assets/images/pricing-plan-icons/icon-13.png";
-import icon14 from "../../../../assets/images/pricing-plan-icons/icon-14.png";
 import { Link } from "react-router-dom";
 import "./_pricingCard.scss";
+import {
+  Banner,
+  Block,
+  Bulk,
+  CheckList,
+  Customize,
+  Headphones,
+  PushUp,
+  Target,
+  Team,
+  Template,
+} from "../../../../utils/icons";
+import { Icon } from "../../../../utils/icons/icons";
 
 function PricingCard() {
   return (
     <div className="pricing-card">
-      <div className="container row gap-5 mb-5">
+      <div className="container row gap-5 mb-5" style={{ flexWrap: "nowrap" }}>
         {/* Card 1 */}
         <div className="col-12 col-md-4 pricing-card-item">
           <div className="card-plan">
@@ -37,29 +37,32 @@ function PricingCard() {
             <p>Plan includes:</p>
             <ul>
               <li>
-                <img src={icon1} alt="icons" />{" "}
+                <Icon icon={Template} />
                 <span> 50 email signature template</span>
               </li>
               <li>
-                <img src={icon2} alt="icons" />{" "}
+                <Icon icon={Banner} />
                 <span> 25 Push banner template</span>
               </li>
               <li>
-                <img src={icon3} alt="icons" /> <span> 5O User</span>
+                <Icon icon={Team} />
+                <span> 50 User</span>
               </li>
               <li>
-                <img src={icon4} alt="icons" />{" "}
+                <Icon icon={PushUp} />
                 <span> Animated push banner</span>
               </li>
               <li>
-                <img src={icon5} alt="icons" /> <span> Bulk creation</span>
+                <Icon icon={Bulk} />
+                <span> Bulk creation</span>
               </li>
               <li>
-                <img src={icon6} alt="icons" />{" "}
+                <Icon icon={Block} />
                 <span> Banner, icons, logo, qr code</span>
               </li>
               <li>
-                <img src={icon7} alt="icons" /> <span> VİP support</span>
+                <Icon icon={Headphones} />
+                <span> VIP Support</span>
               </li>
             </ul>
           </div>
@@ -86,24 +89,24 @@ function PricingCard() {
             <p>Plan includes:</p>
             <ul>
               <li className="text-inky">
-                <img src={icon8} alt="icons" />{" "}
+                <Icon icon={Customize} color="#000" />
                 <span> Up to 15 signature templates</span>
               </li>
               <li className="text-inky">
-                <img src={icon11} alt="icons" /> <span> 25 User</span>
+                <Icon icon={Team} color="#000" />
+                <span> 25 User</span>
               </li>
               <li className="text-inky">
-                <img src={icon12} alt="icons" />{" "}
+                <Icon icon={Banner} color="#000" />
                 <span> 5 Push banner template</span>
               </li>
               <li className="text-inky">
-                <img src={icon13} alt="icons" />{" "}
+                <Icon icon={Block} color="#000" />
                 <span> Banner, icons, logo, qr code</span>
               </li>
               <li className="text-inky">
-                <img src={icon14} alt="icons" />{" "}
+                <Icon icon={CheckList} color="#000" />
                 <span>
-                  {" "}
                   Unique signatures for different departments and teams
                 </span>
               </li>
@@ -130,17 +133,21 @@ function PricingCard() {
             <p>Plan includes:</p>
             <ul>
               <li>
-                <img src={icon1} alt="icons" /> <span> 1 Template</span>
+                <Icon icon={Template} />
+                <span>1 Template</span>
+
               </li>
               <li>
-                <img src={icon3} alt="icons" /> <span> 1O User</span>
+                <Icon icon={Team} />
+                <span>10 User</span>
+
               </li>
               <li>
-                <img src={icon6} alt="icons" />{" "}
+                <Icon icon={Block} />
                 <span> Banner, icons, logo, qr code</span>
               </li>
               <li>
-                <img src={icon10} alt="icons" />
+                <Icon icon={Target} />
                 <span>Centrally managed</span>
               </li>
             </ul>

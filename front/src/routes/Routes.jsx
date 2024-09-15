@@ -6,7 +6,6 @@ import MyAccount from "../pages/Account/MyAccount/MyAccount";
 import MyAccountBilling from "../pages/Account/MyAccountBilling";
 import MyAccountSetting from "../pages/Account/MyAccountSetting";
 import ContactUs from "../pages/ContactUs";
-import CookiePopUp from "../pages/CookiePopUp/CookiePopUp";
 import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
 import Brands from "../pages/Home/components/Brands";
@@ -118,24 +117,7 @@ export const Routes = [
         element: <Pricing />,
       },
       {
-        path: "accountmembersetting",
-        element: <AccountMemberSetting />,
-      },
-      {
-        path: "myaccountsetting",
-        element: <MyAccountSetting />,
-      },
-      {
-        path: "myaccountbilling",
-        element: <MyAccountBilling/>,
-      },
-      {
-        path: "cookiepopup",
-        element: <CookiePopUp/>,
-      },
-      {
-        path: "myaccount",
-        element: <MyAccount/>,
+
       },
     ],
   },

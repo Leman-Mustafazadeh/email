@@ -41,7 +41,7 @@ function AccountSetPassword() {
 
         <form className="form-group" onSubmit={handleSubmit(onSubmit)}>
           <div className="col-12 col-md-8">
-            <div className="row gap-5 ">
+            <div className="row gap-5 " style={{flexWrap: "nowrap"}}>
               <div className="col-12 flex-container flex-column relative">
                 <label>New password</label>
                 <input
