@@ -130,10 +130,15 @@
         form {
             .form-group {
                 .form-control {
-                    max-height: 41px;
+                    height: 41px;
                     background-color: map-get($colors, background);
                     border: none;
                 }
+            }
+
+            .flag-dropdown {
+                border: none;
+                border-radius: 8px
             }
         }
 
