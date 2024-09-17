@@ -112,7 +112,7 @@ const CreateSign = () => {
               </div>
 
               <div className="gif gif2 ">
-                <img src={banner4} alt="" />
+                <img src={banner6} alt="" />
               </div>
 
               <div className="">
@@ -130,8 +130,8 @@ const CreateSign = () => {
                 </svg>
               </div> 
 
-              <div className="gif">
-                <img src={banner6} alt="" />
+              <div className="gif gif3">
+                <img src={banner4} alt="" />
               </div>
             </div>
             </div>

@@ -61,24 +61,7 @@ const Footer = () => {
             <li>
               <Link to={"/contact-us"}>Contact us</Link>
             </li>
-            <li>
-              <Link to={"/deleteaccount"}>Delete Account</Link>
-            </li>
-            <li>
-              <Link to={"/myaccountbilling"}>MyAccountBilling</Link>
-            </li>
-            <li>
-              <Link to={"/accountmember"}>accountmember</Link>
-            </li>
-            <li>
-              <Link to={"/accountmembersetting"}>accountmembersetting</Link>
-            </li>
-            <li>
-              <Link to={"/myaccountsetting"}>myaccountsetting</Link>
-            </li>
-            <li>
-              <Link to={"/myaccountbilling"}>myaccountbilling</Link>
-            </li>
+          
           </ul>
         </div>
       </div>
