@@ -299,15 +299,37 @@
         }
 
         .emails {
-            background-color: map-get($colors, text60);
+            @extend .flex-container;
+            @extend .flex-align-center;
+            @extend .font-size-14;
+            gap: 4px;
+            border: 1px solid map-get($colors, lightGray50);
+            background-color: map-get($colors, natural);
+            color: map-get($colors, text);
             padding: 5px;
-            border-radius: 50%;
+            border-radius: 50px;
+
+            img {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                border: 1px solid map-get($colors, primary);
+                background-color: map-get($colors, lightGray50);
+            }
+
+            svg {
+                color: map-get($colors, text30);
+                cursor: pointer;
+            }
         }
 
         &-user-add {
             .MuiInputBase-root {
                 border-radius: 8px;
-                height: 48px;
+            }
+
+            .MuiOutlinedInput-root {
+                padding: 5px;
             }
         }
 
