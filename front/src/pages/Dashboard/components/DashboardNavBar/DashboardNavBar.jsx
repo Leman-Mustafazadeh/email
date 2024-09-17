@@ -7,7 +7,9 @@ function DashboardNavBar() {
       <div className="delete row flex-align-center flex-justify-space-between">
         <div className="row flex-align-center delete_head">
           <div className="delete_img">
-            <img src={logo} alt="" />
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
           </div>
         </div>
 

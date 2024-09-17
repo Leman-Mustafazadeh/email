@@ -1,10 +1,11 @@
-import { TextField } from "@mui/material";
+import { Autocomplete, TextField } from "@mui/material";
 import { Upload } from "antd";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { IoIosAddCircle } from "react-icons/io";
+import { IoClose } from "react-icons/io5";
 import { LuMail, LuPhone } from "react-icons/lu";
 import { RiSettingsLine } from "react-icons/ri";
 import PhoneInput from "react-phone-input-2";
@@ -50,6 +51,8 @@ function DashboardDesign() {
     };
   }, []);
 
+  // ==== Key Codes ====
+
   // ==== Form values ====
   const [socialUrl, setSocialUrl] = useState({
     instagram: "",
@@ -71,12 +74,14 @@ function DashboardDesign() {
         font: "Montserrat",
         fontColor: "#000000",
         backgroundColor: "#ffffff",
-        emails: ["example@gmail.com"],
+        emails: [],
         searchText: "",
       },
     });
 
   const formValues = watch();
+
+  const [tags, setTags] = useState(formValues.emails);
 
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
@@ -88,29 +93,39 @@ function DashboardDesign() {
 
   // ==== Members section add user logic ====
 
-  const handleAddUser = () => {
-    const currentEmail = getValues("emails");
-    const newEmails = getValues("searchText")
-      .split(" ")
-      .map((email) => email.trim())
-      .filter((email) => email && !currentEmail.includes(email));
+  const handleAddTag = () => {
+    const currentEmails = getValues("emails");
+    const newEmail = getValues("searchText").trim();
 
-    if (newEmails.length > 0) {
-      setValue("emails", [...currentEmail, ...newEmails]);
+    if (newEmail && !currentEmails.includes(newEmail)) {
+      const updatedEmails = [...currentEmails, newEmail];
+      setTags(updatedEmails);
+      setValue("emails", updatedEmails);
       setValue("searchText", "");
     }
   };
 
   const handleDeleteEmail = (emailDelete) => {
-    const updatedEmail = getValues("emails").filter(
+    const updatedEmails = getValues("emails").filter(
       (email) => email !== emailDelete
     );
-    setValue("emails", updatedEmail);
+    setTags(updatedEmails);
+    setValue("emails", updatedEmails);
   };
 
-  const handleKeyPress = (e) => {
-    if (e.key === " ") {
-      e.preventDefault();
+  const handleKeyDown = (event) => {
+    if (event.key === " " || event.key === "," || event.key === "Enter") {
+      event.preventDefault();
+      handleAddTag();
+    }
+  };
+
+  const handleAddUserToTable = () => {
+    const currentEmails = getValues("emails");
+    if (currentEmails.length > 0) {
+      console.log("Adding to table:", currentEmails);
+      setValue("emails", []);
+      setTags([]);
     }
   };
 
@@ -585,26 +600,50 @@ function DashboardDesign() {
                 <p>Add new user</p>
                 <div className=" flex-container gap-4">
                   <Controller
-                    name="searchText"
+                    name="emails"
                     control={control}
                     render={({ field }) => (
-                      <TextField
+                      <Autocomplete
                         {...field}
-                        variant="outlined"
-                        className="form-control"
-                        onKeyPress={handleKeyPress}
-                        style={{
-                          minWidth: "531px",
-                          maxWidth: "731px",
-                          height: "auto",
+                        multiple
+                        freeSolo
+                        options={[]}
+                        value={tags}
+                        onChange={(event, newValue) => {
+                          setTags(newValue);
+                          setValue("emails", newValue);
                         }}
+                        renderTags={(value, getTagProps) =>
+                          value.map((option, index) => (
+                            <span
+                              {...getTagProps({ index })}
+                              key={index}
+                              className="emails"
+                            >
+                              <img src="" alt="" />
+                              {option}
+                              <IoClose />
+                            </span>
+                          ))
+                        }
+                        renderInput={(params) => (
+                          <TextField
+                            {...params}
+                            variant="outlined"
+                            onKeyDown={handleKeyDown}
+                            style={{
+                              minWidth: "531px",
+                              maxWidth: "731px",
+                            }}
+                          />
+                        )}
                       />
                     )}
                   />
                   <Link>
                     <button
                       className="btn bg-primary text-natural"
-                      onClick={handleAddUser}
+                      onClick={handleAddUserToTable}
                     >
                       Add user
                     </button>
