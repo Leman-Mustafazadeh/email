@@ -1,0 +1,13 @@
+.error{
+    margin: 0 auto;
+    text-align: center;
+    .error_svg{
+        position: relative;
+    }
+    .error_btn{
+padding: 10px 20px;
+border-radius: 5px;
+position: absolute;
+top: 20px;
+    }
+}

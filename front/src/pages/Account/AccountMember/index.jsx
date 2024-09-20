@@ -1,12 +1,12 @@
 import "./_style.scss";
 import account from "../../../assets/images/accountmember/account.png";
 import { Link } from "react-router-dom";
-import AccountNavBar from "../components/AccountNavBar/AccountNavBar";
+import AccountNoLogo from "../components/AccountNavBar/AccountNoLogo";
 const AccountMember = () => {
   return (
     <section>
       <div className="container member">
-        <AccountNavBar />
+        <AccountNoLogo />
 
         <div className="account_wrapd">
           <div className="account_head">
@@ -24,10 +24,10 @@ const AccountMember = () => {
 
             <div className="account_del mt-9">
               <button className="bg-primaryFAQ font-size-20 font-weight-400 text-text">
-                Account
+              <Link to={"/accountmember"}> Account</Link>
               </button>
               <button className="bg-natural font-size-20 font-weight-400 text-text">
-                Settings
+              <Link to={"/accountmembersetting"}> Settings</Link>
               </button>
             </div>
           </div>

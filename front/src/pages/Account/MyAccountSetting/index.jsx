@@ -29,13 +29,13 @@ const MyAccountSetting = () => {
 
             <div className="account_dels mt-9">
               <button className="btn bg-natural font-size-20 font-weight-400 text-text">
-                <Link to={'/accountmember'}>Account</Link>
+                <Link to={'/myaccount'}>Account</Link>
               </button>
               <button className="btn bg-primaryFAQ font-size-20 font-weight-400 text-text">
-                Settings
+                <Link to={"/myaccountsetting"}>Settings</Link>
               </button>
               <button className="btn bg-natural font-size-20 font-weight-400 text-text">
-                Billing
+                <Link to={"/myaccountbilling"}>Billing</Link>
               </button>
             </div>
           </div>
