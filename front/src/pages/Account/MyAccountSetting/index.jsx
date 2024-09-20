@@ -1,21 +1,25 @@
 import React from "react";
 import account from "../../../assets/images/accountmember/account.png";
 import { Link } from "react-router-dom";
+import { Select } from "antd"; 
 import "./_style.scss";
 import AccountNoLogo from "../components/AccountNavBar/AccountNoLogo";
+
+const { Option } = Select; 
 const MyAccountSetting = () => {
   return (
-    <section>
+    <section className="my-account-settings">
       <div className="container member">
         <AccountNoLogo />
 
         <div className="account_wrap">
           <div className="account_head">
             <div className="account_hero row flex-align-center">
-              <div>
-                <img src={account} alt="" />
+              <div className="account_image">
+                <img src={account} alt="Account" />
               </div>
-              <div>
+
+              <div className="account_info">
                 <h2 className="font-size-24 font-weight-500 text-text">
                   kenantagiyev010@gmail.com
                 </h2>
@@ -23,48 +27,57 @@ const MyAccountSetting = () => {
               </div>
             </div>
 
-            <div className="account_dels mt-9 ">
-              <button className=" bg-natural font-size-20 font-weight-400 text-text">
+            <div className="account_dels mt-9">
+              <button className="btn bg-natural font-size-20 font-weight-400 text-text">
                 Account
               </button>
-              <button className="bg-primaryFAQ font-size-20 font-weight-400 text-text   ">
+              <button className="btn bg-primaryFAQ font-size-20 font-weight-400 text-text">
                 Settings
               </button>
-              <button className=" bg-natural font-size-20 font-weight-400 text-text">
+              <button className="btn bg-natural font-size-20 font-weight-400 text-text">
                 Billing
               </button>
             </div>
           </div>
 
-          <div className=" account_upgrade">
-            <div>
-              <h2 className="font-size-18 font-weight-500 text-text10 ">
-                Software Preferences
-              </h2>
-              <div className="py-4  gap-10">
-                <h4 className="font-size-16 font-weight-400 text-text60">
-                  Time zone
-                </h4>
+          <div className="account_upgrade mt-6">
+            <h2 className="font-size-18 font-weight-500 text-text10">
+              Software Preferences
+            </h2>
 
-                <select name="" id="" className="select p-3 mt-3">
-                  <option
-                    value=""
-                    className=" option font-size-18 font-wegith-400"
-                  >
-                    (GMT+04:00) Asia/Baku
-                  </option>
-                </select>
-              </div>
+            <div className="preference_group  gap-10">
+              <h4 className="font-size-16 font-weight-400 text-text60">
+                Time zone
+              </h4>
+
+              <Select
+                defaultValue="GMT+04:00"
+                className="timezone-select mt-3"
+                style={{ width: "100%" }}
+                size="large"
+              >
+                <Option value="GMT+04:00">(GMT+04:00) Asia/Baku</Option>
+                <Option value="GMT+00:00">(GMT+00:00) UTC</Option>
+                <Option value="GMT-05:00">
+                  (GMT-05:00) Eastern Time (US & Canada)
+                </Option>
+                <Option value="GMT+08:00">(GMT+08:00) Beijing, China</Option>
+              </Select>
 
               <div className="btn-save mt-5">
-                <Link className="font-size-16 font-weight-700 p-3 bg-primary  text-natural btn ">
-                  Save
-                </Link>
-              </div>
+              <Link
+                to="#"
+                className="btn font-size-16 font-weight-700 p-3 bg-primary text-natural"
+              >
+                Save
+              </Link>
             </div>
+            </div>
+
+            
           </div>
 
-          <div className="personal">
+          <div className="personal mt-6">
             <div className="personal_title">
               <h2 className="font-size-18 font-weight-500 text-text10 mb-4">
                 Delete User Account

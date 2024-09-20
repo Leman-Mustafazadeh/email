@@ -8,6 +8,7 @@ import MyAccountSetting from "../pages/Account/MyAccountSetting";
 import ContactUs from "../pages/ContactUs";
 import CookiePopUp from "../pages/CookiePopUp/CookiePopUp";
 import DashboardDesign from "../pages/Dashboard/DashboardDesign";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
 import Brands from "../pages/Home/components/Brands";
@@ -141,6 +142,10 @@ export const Routes = [
       {
         path: "dashboard",
         element: <DashboardDesign />,
+      },
+      {
+        path: "errorpage",
+        element: <ErrorPage />,
       },
     ],
   },

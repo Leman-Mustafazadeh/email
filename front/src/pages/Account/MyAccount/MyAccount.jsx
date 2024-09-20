@@ -8,7 +8,7 @@ const MyAccount = () => {
     <div className="container member">
       <AccountNoLogo/>
 
-      <div className="account_wrap">
+      <div className="account_wraps">
         <div className="account_head">
           <div className="account_hero row flex-align-center">
             <div>
