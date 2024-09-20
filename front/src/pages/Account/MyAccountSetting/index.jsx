@@ -29,7 +29,7 @@ const MyAccountSetting = () => {
 
             <div className="account_dels mt-9">
               <button className="btn bg-natural font-size-20 font-weight-400 text-text">
-                Account
+                <Link to={'/accountmember'}>Account</Link>
               </button>
               <button className="btn bg-primaryFAQ font-size-20 font-weight-400 text-text">
                 Settings

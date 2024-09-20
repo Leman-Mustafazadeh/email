@@ -4,10 +4,10 @@
     gap: 28px;
 
 
-    .account_wraps {
+    .account_wrap    {
         @extend .flex-container;
         @extend .flex-column;
-        gap: 25px;
+        // gap: 25px;
         border-radius: 12px;
 
 
@@ -46,12 +46,13 @@
         }
 
         .account_upgrade_head {
+            flex-wrap: nowrap  !important;
             .account_upgrade {
 
                 background-color: #FFFFFF;
                 border-radius: 12px;
                 padding: 24px;
-                width: 50%;
+                // width: 50%;
             }
         }
 
