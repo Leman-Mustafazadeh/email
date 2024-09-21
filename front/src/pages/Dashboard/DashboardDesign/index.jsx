@@ -2,11 +2,16 @@
 import { Upload } from "antd";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaChevronRight,
+  FaFacebookSquare,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { IoIosAddCircle } from "react-icons/io";
 import { IoClose } from "react-icons/io5";
-import { LuMail, LuPhone } from "react-icons/lu";
+import { LuClock4, LuMail, LuPhone } from "react-icons/lu";
 import { RiSettingsLine } from "react-icons/ri";
 import PhoneInput from "react-phone-input-2";
 import QRCode from "react-qr-code";
@@ -26,9 +31,10 @@ import {
 import { Icon } from "../../../utils/icons/icons";
 import DashboardNavBar from "../components/DashboardNavBar/DashboardNavBar";
 import "./_style.scss";
+import { Switch } from "antd";
 
 function DashboardDesign() {
-  const [selectedItem, setSelectedItem] = useState("member");
+  const [selectedItem, setSelectedItem] = useState("signature");
 
   // ==== Fix utils on scroll ====
   const [isScrolled, setIsScrolled] = useState(false);
@@ -256,6 +262,13 @@ function DashboardDesign() {
     return { fgColor, bgColor: formValues.backgroundColor };
   };
 
+  // ==== switch button antd ====
+  const [checked, setChecked] = useState(false);
+
+  const handleChange = (checkedValue) => {
+    setChecked(checkedValue);
+  };
+
   // ==== select ulitls category ====
   const handleCategoryClick = (category) => {
     setSelectedItem(category);
@@ -267,8 +280,8 @@ function DashboardDesign() {
         return (
           <div className="signature">
             <div className="signature-template">
-              <div className="row">
-                <div className="banner">
+              <div className="row gap-4" >
+                <div className="banner col-6">
                   <div className="generator_banner_right">
                     <div
                       className="right-regard row"
@@ -373,7 +386,23 @@ function DashboardDesign() {
                     </div>
                   </div>
                 </div>
-                <div className="signature-info"></div>
+                <div className="signature-info col-6">
+                  <h3>Template name</h3>
+                  <p>Admin</p>
+                  <div className="email">
+                    <img src="" alt="" />
+                    {formValues.email}
+                  </div>
+                  <div className="clock">
+                    <LuClock4 />
+                    <span>31/07/2024</span>
+                  </div>
+                  <p>Status</p>
+                  <div className="switch-button">
+                    <Switch checked={checked} onChange={handleChange} />
+                  </div>
+                  <p>Integrated</p>
+                </div>
               </div>
             </div>
           </div>
@@ -699,7 +728,7 @@ function DashboardDesign() {
                   </button>
                 </div>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                  <div className="row gap-5" style={{ flexWrap: "nowrap" }}>
+                  <div className="row gap-5"  >
                     <div className="col-12 col-md-6">
                       <div className="form-group">
                         <input
@@ -1150,7 +1179,7 @@ function DashboardDesign() {
       <DashboardNavBar />
       <div
         className="container row gap-5 relative"
-        style={{ flexWrap: "nowrap" }}
+         
       >
         <div
           className={`utils ${
@@ -1160,6 +1189,15 @@ function DashboardDesign() {
           <div className="utils-icons pb-5">
             <div className="avatar">
               <img src="" alt="" />
+              {selectedItem === "signature" ? (
+                <div className="account">
+                  <div className="account-info">
+                    <h4>My account</h4>
+                    <p>{formValues.email}</p>
+                  </div>
+                  <FaChevronRight />
+                </div>
+              ) : null}
             </div>
             <div className="utils-icons utils-custom-icons">
               <Link

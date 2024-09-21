@@ -33,7 +33,7 @@ function Customers() {
           <span>Loved by 35K+ customers</span>
         </div>
       </div>
-      <div className="container row gap-5" style={{ flexWrap: "nowrap" }}>
+      <div className="container row gap-5"  >
         <div className="col-12 col-md-6 col-lg-4 p-6 customers-item">
           <div className="comment">
             <h4>Performance Metrics</h4>

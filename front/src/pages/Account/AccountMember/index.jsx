@@ -34,14 +34,13 @@ const AccountMember = () => {
 
           <div
             className="row account_upgrade_head gap-4"
-            style={{ flexWrap: "nowrap" }}
           >
             <div className="col-12 col-md-6 account_upgrade">
               <div>
                 <h2 className="font-size-18 font-weight-500 text-text10 ">
                   Account Details
                 </h2>
-                <div className="py-4 row gap-10" style={{ flexWrap: "nowrap" }}>
+                <div className="py-4 row gap-10" >
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Customer ID:
                   </h4>
@@ -50,7 +49,7 @@ const AccountMember = () => {
                   </p>
                 </div>
 
-                <div className="pb-4 row gap-10" style={{ flexWrap: "nowrap" }}>
+                <div className="pb-4 row gap-10" >
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Signup date:
                   </h4>
@@ -59,7 +58,7 @@ const AccountMember = () => {
                   </p>
                 </div>
 
-                <div className="pb-4 row gap-10" style={{ flexWrap: "nowrap" }}>
+                <div className="pb-4 row gap-10" >
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Account plan:
                   </h4>
@@ -84,7 +83,6 @@ const AccountMember = () => {
 
                 <div
                   className="row gap-10 flex-align-center mb-3"
-                  style={{ flexWrap: "nowrap" }}
                 >
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Template:
@@ -112,7 +110,6 @@ const AccountMember = () => {
                 </div>
                 <div
                   className="row pb-7 flex-justify-space-between gap-10"
-                  style={{ flexWrap: "nowrap" }}
                 >
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Members:
@@ -156,7 +153,7 @@ const AccountMember = () => {
             <h3 className="font-size-16 font-weight-500 text-text60 pb-2">
               Login Email:
             </h3>
-            <div className="row gap-10" style={{ flexWrap: "nowrap" }}>
+            <div className="row gap-10"  >
               <input
                 type="text"
                 placeholder="kenantagiyev010@gmail.com"
@@ -172,7 +169,7 @@ const AccountMember = () => {
             <h3 className="font-size-16 font-weight-500 text-text60 pb-2 pt-4">
               Password:
             </h3>
-            <div className="row gap-10" style={{ flexWrap: "nowrap" }}>
+            <div className="row gap-10"  >
               <input type="password" placeholder="---------" />
               <Link
                 to={""}
