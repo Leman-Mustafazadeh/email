@@ -55,10 +55,12 @@
             .avatar {
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 background-color: map-get($colors, primaryFAQ);
                 width: 100%;
                 border-radius: 12px 12px 0 0;
                 padding: 10px;
+                gap: 10px;
 
                 img {
                     width: 40px;
@@ -67,6 +69,34 @@
                     border: 1px solid map-get($colors, primary);
                     background-color: map-get($colors, light60)
                 }
+
+                .account {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    &-info {
+                        h4 {
+                            @extend .font-size-18;
+                            @extend .font-weight-500;
+                            color: map-get($colors, text);
+                        }
+
+                        p {
+                            @extend .font-size-12;
+                            color: map-get($colors, text10);
+                        }
+                    }
+
+                    svg {
+                        @extend .font-size-12;
+                        @extend .font-weight-500;
+
+                        color: map-get($colors, text30);
+                    }
+                }
+
             }
 
             .icon {
@@ -106,8 +136,6 @@
             border-top: 1px solid map-get($colors, light60);
         }
     }
-
-
 
     .dashboard {
         max-width: 665px;
@@ -490,6 +518,44 @@
 
                 .right-regard {
                     @extend .mt-0;
+                }
+            }
+        }
+
+        &-info {
+            .email {
+                @extend .font-size-18;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: map-get($colors, text30);
+
+                img {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    border: 1px solid map-get($colors, primary);
+                    background-color: map-get($colors, lightGray50);
+                }
+            }
+
+            .clock {
+                @extend .font-size-16;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: map-get($colors, text30);
+
+                svg {
+                    width: 28px;
+                    height: 28px;
+                    color: map-get($colors, text60);
+                }
+            }
+
+            .switch-button {
+                .ant-switch-checked {
+                    background-color: #34C759;
                 }
             }
         }

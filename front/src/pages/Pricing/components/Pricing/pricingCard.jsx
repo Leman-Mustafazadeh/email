@@ -17,7 +17,7 @@ import { Icon } from "../../../../utils/icons/icons";
 function PricingCard() {
   return (
     <div className="pricing-card">
-      <div className="container row gap-5 mb-5" style={{ flexWrap: "nowrap" }}>
+      <div className="container row gap-5 mb-5"  >
         {/* Card 1 */}
         <div className="col-12 col-md-4 pricing-card-item">
           <div className="card-plan">
