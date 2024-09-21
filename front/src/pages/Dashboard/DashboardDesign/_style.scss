@@ -5,27 +5,58 @@
 
 .dashboard-design {
     .utils {
-        @extend .flex-container;
-        @extend .flex-column;
-        @extend .flex-justify-space-between;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         position: relative;
         max-width: 88px;
-        max-height: 580px;
+        max-height: 650px;
         width: 100%;
         border-radius: 12px;
         border: 2px solid map-get($colors, primary90);
         background-color: map-get($colors, natural);
+        overflow-y: hidden;
+        transition: max-width 0.3s ease, padding 0.3s ease;
+
+        &.utils-custom {
+            max-width: 305px;
+            transition: max-width 0.3s ease, padding 0.3s ease;
+
+            .avatar {
+                @extend .flex-justify-start;
+                @extend .px-5;
+            }
+
+            .utils-icons {
+                width: 100%;
+
+                &.utils-custom-icons {
+                    padding: 0 24px;
+                }
+
+                .icon {
+                    flex-direction: row;
+                    padding: 16px 14px;
+                    gap: 12px;
+
+                    span {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
 
         .utils-icons {
-            @extend .flex-container;
-            @extend .flex-column;
-            @extend .flex-align-center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             gap: 24px;
 
             .avatar {
+                display: flex;
+                justify-content: center;
                 background-color: map-get($colors, primaryFAQ);
                 width: 100%;
-                text-align: center;
                 border-radius: 12px 12px 0 0;
                 padding: 10px;
 
@@ -39,11 +70,15 @@
             }
 
             .icon {
-                @extend .flex-container;
-                @extend .flex-column;
-                @extend .flex-align-center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
                 gap: 5px;
                 cursor: pointer;
+                padding: 3px;
+                border-radius: 6px;
+                transition: all 0.2s ease;
+                width: 100%;
 
                 img {
                     width: 24px;
@@ -51,17 +86,28 @@
                 }
 
                 span {
-                    @extend .font-size-14;
-                    @extend .font-weight-500;
+                    font-size: 14px;
+                    font-weight: 500;
                     color: map-get($colors, text30);
                 }
+
+                &:hover {
+                    background-color: map-get($colors, silvery);
+                }
+
+                &.active {
+                    background-color: map-get($colors, silvery);
+                }
             }
+
         }
 
         .help {
             border-top: 1px solid map-get($colors, light60);
         }
     }
+
+
 
     .dashboard {
         max-width: 665px;
@@ -70,6 +116,9 @@
         @extend .flex-column;
         gap: 20px;
         margin-left: 0;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInSlideUp 0.2s ease forwards;
 
         .titles,
         .links,
@@ -206,7 +255,9 @@
     .banner {
         max-width: 495px;
         width: 100%;
-
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInSlideUp 0.2s ease forwards;
 
         .generator_banner_right {
             @extend .p-0;
@@ -273,8 +324,10 @@
         background-color: map-get($colors, natural);
         width: 100%;
         border-radius: 12px;
-        max-height: 100vh;
         overflow-y: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInSlideUp 0.2s ease forwards;
 
         p,
         span {
@@ -324,12 +377,27 @@
         }
 
         &-user-add {
-            .MuiInputBase-root {
+            .tagInput {
                 border-radius: 8px;
+                min-width: 531px;
+                max-width: 787px;
+
+                input {
+                    flex-grow: 1;
+                }
+
             }
 
-            .MuiOutlinedInput-root {
-                padding: 5px;
+            .error-message {
+                span {
+                    @extend .font-size-12;
+                    color: map-get($colors, danger);
+                }
+            }
+
+            button:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
             }
         }
 
@@ -395,5 +463,47 @@
         }
 
 
+    }
+
+    .template {
+        width: 100%;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInSlideUp 0.2s ease forwards;
+
+        .right-regard {
+            @extend .mt-0;
+        }
+    }
+
+    .signature {
+        width: 100%;
+
+        &-template {
+            border: 2px solid map-get($colors, primary60);
+            border-radius: 15px;
+            background-color: map-get($colors, natural);
+            padding: 32px 24px;
+
+            .banner {
+                background-color: map-get($colors, background);
+
+                .right-regard {
+                    @extend .mt-0;
+                }
+            }
+        }
+    }
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
