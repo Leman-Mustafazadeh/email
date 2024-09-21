@@ -1,4 +1,4 @@
-import { Autocomplete, TextField } from "@mui/material";
+// import { Autocomplete, TextField } from "@mui/material";
 import { Upload } from "antd";
 import { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
@@ -28,14 +28,11 @@ import DashboardNavBar from "../components/DashboardNavBar/DashboardNavBar";
 import "./_style.scss";
 
 function DashboardDesign() {
-  const [profileFileList, setProfileFileList] = useState([]);
-  const [profileImageUrl, setProfileImageUrl] = useState(null);
-  const [bannerFileList, setBannerFileList] = useState([]);
-  const [bannerImageUrl, setBannerImageUrl] = useState(null);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [selectedItem, setSelectedItem] = useState("signature");
+  const [selectedItem, setSelectedItem] = useState("member");
 
   // ==== Fix utils on scroll ====
+  const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -50,8 +47,6 @@ function DashboardDesign() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // ==== Key Codes ====
 
   // ==== Form values ====
   const [socialUrl, setSocialUrl] = useState({
@@ -81,8 +76,6 @@ function DashboardDesign() {
 
   const formValues = watch();
 
-  const [tags, setTags] = useState(formValues.emails);
-
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
   };
@@ -93,43 +86,86 @@ function DashboardDesign() {
 
   // ==== Members section add user logic ====
 
-  const handleAddTag = () => {
-    const currentEmails = getValues("emails");
-    const newEmail = getValues("searchText").trim();
+  const userLimit = 10;
+  const [tags, setTags] = useState([]);
+  const [tagValue, setTagValue] = useState("");
+  const [emails, setEmails] = useState(getValues("emails") || []);
+  const [error, setError] = useState("");
 
-    if (newEmail && !currentEmails.includes(newEmail)) {
-      const updatedEmails = [...currentEmails, newEmail];
-      setTags(updatedEmails);
+  const handleAddEmail = () => {
+    const currentEmails = getValues("emails");
+
+    if (tags.length === 0) {
+      setError("You need to add a user.");
+      return;
+    }
+
+    if (tags.length > 0 && currentEmails.length + tags.length <= userLimit) {
+      const updatedEmails = [...currentEmails, ...tags];
+      setEmails(updatedEmails);
       setValue("emails", updatedEmails);
-      setValue("searchText", "");
+      setTags([]);
+      setTagValue("");
+    } else {
+      setError(`You cannot add more than ${userLimit} users.`);
     }
   };
 
   const handleDeleteEmail = (emailDelete) => {
-    const updatedEmails = getValues("emails").filter(
-      (email) => email !== emailDelete
-    );
-    setTags(updatedEmails);
+    const updatedEmails = emails.filter((email) => email !== emailDelete);
+    setEmails(updatedEmails);
     setValue("emails", updatedEmails);
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === " " || event.key === "," || event.key === "Enter") {
+  const handleAddTag = (event) => {
+    if ((event.keyCode === 32 || event.keyCode === 13) && tagValue.trim()) {
       event.preventDefault();
-      handleAddTag();
+      setError("");
+
+      const newTags = tagValue.trim().split(" ").filter(Boolean);
+      const currentEmails = getValues("emails");
+
+      newTags.forEach((tag) => {
+        const emailExists = currentEmails.includes(tag) || tags.includes(tag);
+        const isValidEmail = tag.endsWith("@gmail.com");
+        const withinUserLimit =
+          tags.length < userLimit &&
+          currentEmails.length + newTags.length <= userLimit;
+
+        switch (true) {
+          case emailExists:
+            setError(`User "${tag}" has already been added.`);
+            break;
+
+          case !isValidEmail:
+            setError(
+              `"${tag}" is not a valid Gmail address. Must end with @gmail.com.`
+            );
+            break;
+
+          case withinUserLimit:
+            setTags([...tags, ...newTags]);
+            setTagValue("");
+            setError("");
+            break;
+
+          default:
+            setError(`User limit of ${userLimit} reached.`);
+            break;
+        }
+      });
     }
   };
 
-  const handleAddUserToTable = () => {
-    const currentEmails = getValues("emails");
-    if (currentEmails.length > 0) {
-      console.log("Adding to table:", currentEmails);
-      setValue("emails", []);
-      setTags([]);
-    }
+  const handleDelTag = (val, e) => {
+    e.preventDefault();
+    let deleteTag = tags.filter((item) => item !== val);
+    setTags(deleteTag);
+    setError("");
   };
 
   // ==== Image Upload logic ====
+
   const handleProfileChange = ({ fileList: newFileList }) => {
     setProfileFileList(newFileList);
 
@@ -194,6 +230,11 @@ function DashboardDesign() {
   };
 
   // ==== generator banner logic ====
+  const [profileFileList, setProfileFileList] = useState([]);
+  const [profileImageUrl, setProfileImageUrl] = useState(null);
+  const [bannerFileList, setBannerFileList] = useState([]);
+  const [bannerImageUrl, setBannerImageUrl] = useState(null);
+
   const iconColor = "#1251A3";
   const setIconColor = () => {
     if (
@@ -223,6 +264,429 @@ function DashboardDesign() {
   const renderContent = () => {
     switch (selectedItem) {
       case "signature":
+        return (
+          <div className="signature">
+            <div className="signature-template">
+              <div className="row">
+                <div className="banner">
+                  <div className="generator_banner_right">
+                    <div
+                      className="right-regard row"
+                      style={{ backgroundColor: formValues.backgroundColor }}
+                    >
+                      <div className="col-12 col-md-3 right-regard-img">
+                        <img
+                          src={
+                            profileImageUrl || "https://via.placeholder.com/130"
+                          }
+                          alt="Uploaded"
+                          style={{
+                            width: "129px",
+                            height: "129px",
+                            objectFit: "cover",
+                          }}
+                        />
+                      </div>
+
+                      <div className="col-md-6 right-regard-container">
+                        <div className="right-regard-name">
+                          <h2
+                            style={{
+                              color: formValues.fontColor,
+                              fontFamily: formValues.font,
+                            }}
+                          >
+                            {formValues.fullName || "Your Name"}
+                          </h2>
+                          <p
+                            style={{
+                              color: formValues.fontColor,
+                              fontFamily: formValues.font,
+                            }}
+                          >
+                            {formValues.position || "Your Position"}
+                          </p>
+                        </div>
+
+                        <div className="right-regard-contacts">
+                          <div className="right-regard-contacts-item">
+                            <LuMail style={{ color: setIconColor() }} />
+                            <p
+                              style={{
+                                color: formValues.fontColor,
+                                fontFamily: formValues.font,
+                              }}
+                            >
+                              {formValues.email || "Your Email"}
+                            </p>
+                          </div>
+                          <div className="right-regard-contacts-item">
+                            <FiMapPin style={{ color: setIconColor() }} />
+
+                            <p
+                              style={{
+                                color: formValues.fontColor,
+                                fontFamily: formValues.font,
+                              }}
+                            >
+                              {formValues.address || "Your Address"}
+                            </p>
+                          </div>
+                          <div className="right-regard-contacts-item">
+                            <LuPhone style={{ color: setIconColor() }} />
+                            <p
+                              style={{
+                                color: formValues.fontColor,
+                                fontFamily: formValues.font,
+                              }}
+                            >
+                              {formValues.phone || "Your Phone"}
+                            </p>
+                          </div>
+                          <div className="sosial-icons">
+                            <Link to={socialUrl.instagram}>
+                              <FaInstagram style={{ color: setIconColor() }} />
+                            </Link>
+                            <Link to={socialUrl.facebook}>
+                              <FaFacebookSquare
+                                style={{ color: setIconColor() }}
+                              />
+                            </Link>
+                            <Link to={socialUrl.linkedln}>
+                              <FaLinkedin style={{ color: setIconColor() }} />
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="col-md-3 right-regard-qr px-2">
+                        <QRCode
+                          value={socialUrl.qrCode || " "}
+                          style={{ height: "107px", width: "107px" }}
+                          {...getQRCodeColors()}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="banner-img px-3 pb-2">
+                      <img src={banner1} alt="" />
+                    </div>
+                  </div>
+                </div>
+                <div className="signature-info"></div>
+              </div>
+            </div>
+          </div>
+        );
+      case "template":
+        return (
+          <div className="template row gap-5 ">
+            <div className="banner col-6">
+              <div className="generator_banner_right">
+                <div
+                  className="right-regard row"
+                  style={{ backgroundColor: formValues.backgroundColor }}
+                >
+                  <div className="col-12 col-md-3 right-regard-img">
+                    <img
+                      src={profileImageUrl || "https://via.placeholder.com/130"}
+                      alt="Uploaded"
+                      style={{
+                        width: "129px",
+                        height: "129px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+
+                  <div className="col-md-6 right-regard-container">
+                    <div className="right-regard-name">
+                      <h2
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.fullName || "Your Name"}
+                      </h2>
+                      <p
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.position || "Your Position"}
+                      </p>
+                    </div>
+
+                    <div className="right-regard-contacts">
+                      <div className="right-regard-contacts-item">
+                        <LuMail style={{ color: setIconColor() }} />
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.email || "Your Email"}
+                        </p>
+                      </div>
+                      <div className="right-regard-contacts-item">
+                        <FiMapPin style={{ color: setIconColor() }} />
+
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.address || "Your Address"}
+                        </p>
+                      </div>
+                      <div className="right-regard-contacts-item">
+                        <LuPhone style={{ color: setIconColor() }} />
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.phone || "Your Phone"}
+                        </p>
+                      </div>
+                      <div className="sosial-icons">
+                        <Link to={socialUrl.instagram}>
+                          <FaInstagram style={{ color: setIconColor() }} />
+                        </Link>
+                        <Link to={socialUrl.facebook}>
+                          <FaFacebookSquare style={{ color: setIconColor() }} />
+                        </Link>
+                        <Link to={socialUrl.linkedln}>
+                          <FaLinkedin style={{ color: setIconColor() }} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-md-3 right-regard-qr px-2">
+                    <QRCode
+                      value={socialUrl.qrCode || " "}
+                      style={{ height: "107px", width: "107px" }}
+                      {...getQRCodeColors()}
+                    />
+                  </div>
+                </div>
+
+                <div className="banner-img px-3 pb-2">
+                  <img src={banner1} alt="" />
+                </div>
+              </div>
+            </div>
+            <div className="banner col-6">
+              <div className="generator_banner_right">
+                <div
+                  className="right-regard row"
+                  style={{ backgroundColor: formValues.backgroundColor }}
+                >
+                  <div className="col-12 col-md-3 right-regard-img">
+                    <img
+                      src={profileImageUrl || "https://via.placeholder.com/130"}
+                      alt="Uploaded"
+                      style={{
+                        width: "129px",
+                        height: "129px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+
+                  <div className="col-md-6 right-regard-container">
+                    <div className="right-regard-name">
+                      <h2
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.fullName || "Your Name"}
+                      </h2>
+                      <p
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.position || "Your Position"}
+                      </p>
+                    </div>
+
+                    <div className="right-regard-contacts">
+                      <div className="right-regard-contacts-item">
+                        <LuMail style={{ color: setIconColor() }} />
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.email || "Your Email"}
+                        </p>
+                      </div>
+                      <div className="right-regard-contacts-item">
+                        <FiMapPin style={{ color: setIconColor() }} />
+
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.address || "Your Address"}
+                        </p>
+                      </div>
+                      <div className="right-regard-contacts-item">
+                        <LuPhone style={{ color: setIconColor() }} />
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.phone || "Your Phone"}
+                        </p>
+                      </div>
+                      <div className="sosial-icons">
+                        <Link to={socialUrl.instagram}>
+                          <FaInstagram style={{ color: setIconColor() }} />
+                        </Link>
+                        <Link to={socialUrl.facebook}>
+                          <FaFacebookSquare style={{ color: setIconColor() }} />
+                        </Link>
+                        <Link to={socialUrl.linkedln}>
+                          <FaLinkedin style={{ color: setIconColor() }} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-md-3 right-regard-qr px-2">
+                    <QRCode
+                      value={socialUrl.qrCode || " "}
+                      style={{ height: "107px", width: "107px" }}
+                      {...getQRCodeColors()}
+                    />
+                  </div>
+                </div>
+
+                <div className="banner-img px-3 pb-2">
+                  <img src={banner1} alt="" />
+                </div>
+              </div>
+            </div>
+            <div className="banner col-6">
+              <div className="generator_banner_right">
+                <div
+                  className="right-regard row"
+                  style={{ backgroundColor: formValues.backgroundColor }}
+                >
+                  <div className="col-12 col-md-3 right-regard-img">
+                    <img
+                      src={profileImageUrl || "https://via.placeholder.com/130"}
+                      alt="Uploaded"
+                      style={{
+                        width: "129px",
+                        height: "129px",
+                        objectFit: "cover",
+                      }}
+                    />
+                  </div>
+
+                  <div className="col-md-6 right-regard-container">
+                    <div className="right-regard-name">
+                      <h2
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.fullName || "Your Name"}
+                      </h2>
+                      <p
+                        style={{
+                          color: formValues.fontColor,
+                          fontFamily: formValues.font,
+                        }}
+                      >
+                        {formValues.position || "Your Position"}
+                      </p>
+                    </div>
+
+                    <div className="right-regard-contacts">
+                      <div className="right-regard-contacts-item">
+                        <LuMail style={{ color: setIconColor() }} />
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.email || "Your Email"}
+                        </p>
+                      </div>
+                      <div className="right-regard-contacts-item">
+                        <FiMapPin style={{ color: setIconColor() }} />
+
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.address || "Your Address"}
+                        </p>
+                      </div>
+                      <div className="right-regard-contacts-item">
+                        <LuPhone style={{ color: setIconColor() }} />
+                        <p
+                          style={{
+                            color: formValues.fontColor,
+                            fontFamily: formValues.font,
+                          }}
+                        >
+                          {formValues.phone || "Your Phone"}
+                        </p>
+                      </div>
+                      <div className="sosial-icons">
+                        <Link to={socialUrl.instagram}>
+                          <FaInstagram style={{ color: setIconColor() }} />
+                        </Link>
+                        <Link to={socialUrl.facebook}>
+                          <FaFacebookSquare style={{ color: setIconColor() }} />
+                        </Link>
+                        <Link to={socialUrl.linkedln}>
+                          <FaLinkedin style={{ color: setIconColor() }} />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="col-md-3 right-regard-qr px-2">
+                    <QRCode
+                      value={socialUrl.qrCode || " "}
+                      style={{ height: "107px", width: "107px" }}
+                      {...getQRCodeColors()}
+                    />
+                  </div>
+                </div>
+
+                <div className="banner-img px-3 pb-2">
+                  <img src={banner1} alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      case "design":
         return (
           <>
             <div className="dashboard">
@@ -575,10 +1039,6 @@ function DashboardDesign() {
             </div>
           </>
         );
-      case "template":
-        return <div>Template Content</div>;
-      case "design":
-        return <div>Design Content</div>;
       case "member":
         return (
           <div className="members p-5 flex-container flex-column gap-6">
@@ -592,7 +1052,7 @@ function DashboardDesign() {
             </div>
 
             <div className="members-user-count flex-container gap-2">
-              <p>User limit:</p> <span>1/10</span>
+              <p>User limit:</p> <span>{`${emails.length}/${userLimit}`}</span>
             </div>
 
             <div className="members-user-add">
@@ -602,53 +1062,50 @@ function DashboardDesign() {
                   <Controller
                     name="emails"
                     control={control}
-                    render={({ field }) => (
-                      <Autocomplete
-                        {...field}
-                        multiple
-                        freeSolo
-                        options={[]}
-                        value={tags}
-                        onChange={(event, newValue) => {
-                          setTags(newValue);
-                          setValue("emails", newValue);
-                        }}
-                        renderTags={(value, getTagProps) =>
-                          value.map((option, index) => (
-                            <span
-                              {...getTagProps({ index })}
-                              key={index}
-                              className="emails"
-                            >
-                              <img src="" alt="" />
-                              {option}
-                              <IoClose />
-                            </span>
-                          ))
-                        }
-                        renderInput={(params) => (
-                          <TextField
-                            {...params}
-                            variant="outlined"
-                            onKeyDown={handleKeyDown}
-                            style={{
-                              minWidth: "531px",
-                              maxWidth: "731px",
-                            }}
-                          />
-                        )}
-                      />
+                    render={() => (
+                      <div className="tagInput form-control row gap-1">
+                        {tags.map((item, index) => (
+                          <button
+                            className="emails"
+                            key={index}
+                            onClick={(e) => handleDelTag(item, e)}
+                          >
+                            <img src="" alt="" />
+                            {item}
+                            <IoClose />
+                          </button>
+                        ))}
+                        <input
+                          type="text"
+                          value={tagValue}
+                          onChange={(e) => {
+                            setTagValue(e.target.value);
+                            setError("");
+                          }}
+                          onKeyDown={handleAddTag}
+                          style={{
+                            borderColor: error ? "#d9534f" : "#767676",
+                          }}
+                        />
+                      </div>
                     )}
                   />
                   <Link>
                     <button
+                      type="button"
                       className="btn bg-primary text-natural"
-                      onClick={handleAddUserToTable}
+                      onClick={handleAddEmail}
+                      disabled={emails.length >= userLimit}
                     >
                       Add user
                     </button>
                   </Link>
                 </div>
+                {error && (
+                  <div className="error-message">
+                    <span>{error}</span>
+                  </div>
+                )}
               </form>
             </div>
 
@@ -695,43 +1152,51 @@ function DashboardDesign() {
         className="container row gap-5 relative"
         style={{ flexWrap: "nowrap" }}
       >
-        <div className="utils">
+        <div
+          className={`utils ${
+            selectedItem === "signature" ? "utils-custom" : ""
+          }`}
+        >
           <div className="utils-icons pb-5">
             <div className="avatar">
               <img src="" alt="" />
             </div>
-            <div className="utils-icons">
+            <div className="utils-icons utils-custom-icons">
               <Link
                 onClick={() => handleCategoryClick("signature")}
-                className="icon"
+                className={`icon ${
+                  selectedItem === "signature" ? "active" : ""
+                }`}
               >
                 <Icon icon={Signature} />
                 <span>Signature</span>
               </Link>
               <Link
                 onClick={() => handleCategoryClick("template")}
-                className="icon"
+                className={`icon ${
+                  selectedItem === "template" ? "active" : ""
+                }`}
               >
                 <Icon icon={Template} />
                 <span>Template</span>
               </Link>
               <Link
                 onClick={() => handleCategoryClick("design")}
-                className="icon"
+                className={`icon ${selectedItem === "design" ? "active" : ""}`}
               >
                 <Icon icon={Customize} />
                 <span>Design</span>
               </Link>
               <Link
                 onClick={() => handleCategoryClick("member")}
-                className="icon"
+                className={`icon ${selectedItem === "member" ? "active" : ""}`}
               >
                 <Icon icon={Team} />
                 <span>Member</span>
               </Link>
             </div>
           </div>
-          <div className="utils-icons help pt-5 pb-6">
+          <div className="utils-icons utils-custom-icons help pt-5 pb-6">
             <Link onClick={() => handleCategoryClick("")} className="icon">
               <Icon icon={Question} />
               <span>Help center</span>
