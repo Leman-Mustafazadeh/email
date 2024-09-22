@@ -26,6 +26,7 @@ import ResetPassword from "../pages/ResetPassword";
 import Business from "../pages/SignaturePages/Business";
 import Freelancer from "../pages/SignaturePages/Freelancer";
 import SignUp from "../pages/SignUp";
+import Template1 from "../pages/Template/Template1/Template1";
 import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
 
@@ -146,6 +147,10 @@ export const Routes = [
       {
         path: "errorpage",
         element: <ErrorPage />,
+      },
+      {
+        path: "templatefirst",
+        element: <Template1 />,
       },
     ],
   },

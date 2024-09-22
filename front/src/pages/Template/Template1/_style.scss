@@ -1,0 +1,25 @@
+.template_dam{
+    background-color:#FFFFFF;
+    padding: 32px;
+    width: fit-content;
+    margin: 50px auto;
+    .template_wrap{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+        .template_hero{
+            gap: 32px;
+            .template_hero_title{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                justify-content: space-between;
+            }
+            .social_temp{
+                display: flex;
+                gap: 13px;
+                padding-top: 28px;
+            }
+        }
+    }
+}
