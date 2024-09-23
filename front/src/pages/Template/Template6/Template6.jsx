@@ -1,21 +1,27 @@
+import React from "react";
 import temp1 from "../../../assets/images/templateBanner/temp1.png";
-import temp2 from "../../../assets/images/templateBanner/temp2.png";
-import "./_style.scss"
-const Template1 = () => {
+import temp3 from "../../../assets/images/templateBanner/temp3.png";
+import "./_style.scss";
+import { Input, QRCode, Space } from "antd";
+const Template6 = () => {
+  const [text, setText] = React.useState("https://ant.design/");
+
   return (
     <section className="template_dam">
       <div className="container template_wrap">
-        <div className="row  template_hero">
-          <div>
-            <img src={temp1} alt="" />
-          </div>
+        
+        <div className="row  flex-justify-space-between  template_hero">
+          <div className="row flex-align-center  template_hero">
+            <div>
+              <h1 className="font-size-26 font-weight-400 text-text nunito">
+                SANDRA HARRİS
+              </h1>
+              <h5 className="font-size-20 font-weight-300 text-text pt-2 nunito">
+              Influcer
+              </h5>
 
-          <div>
-            <h1 className="font-size-20 font-weight-700 text-text ">SANDRA HARRİS</h1>
-            <h5 className="font-size-16 font-weight-400 text-text pt-2 pb-4 ">Fitness Influencer</h5>
-
-           <div className="template_hero_title">
-           <div className="row flex-align-center">
+            <div className="temp5_hero">
+            <div className="row flex-align-center">
               <svg
                 width="24"
                 height="24"
@@ -38,7 +44,7 @@ const Template1 = () => {
                 />
               </svg>
 
-              <a href="" className="font-size-16 font-weight-500 text-text pl-1 ">sandraharris050@gmail.com</a>
+              <a href="" className="font-size-16 font-weight-500 text-text pl-1 nunito">sandraharris050@gmail.com</a>
             </div>
 
             <div className="row flex-align-center">
@@ -76,7 +82,7 @@ const Template1 = () => {
                   fill-opacity="0.3"
                 />
               </svg>
-              <a href="" className="font-size-16 font-weight-500 text-text pl-1 ">  Baku,Fuzzy</a>
+              <a href="" className="font-size-16 font-weight-500 text-text pl-1 nunito ">  Baku,Fuzzy</a>
             
             </div>
 
@@ -98,11 +104,18 @@ const Template1 = () => {
                   fill-opacity="0.3"
                 />
               </svg>
-              <a href="" className="font-size-16 font-weight-500 text-text pl-1 ">(+994) 55 666 77 88</a>
+              <a href="" className="font-size-16 font-weight-500 text-text pl-1 nunito">(+994) 55 666 77 88</a>
             </div>
-           </div>
+            </div>
 
-            <div className="social_temp">
+            </div>
+          </div>
+
+        <div>
+        <Space direction="vertical" align="center">
+            <QRCode value={text || "-"} />
+          </Space>
+          <div className="social_temp5">
               <svg
                 width="24"
                 height="24"
@@ -166,15 +179,15 @@ const Template1 = () => {
                 />
               </svg>
             </div>
-          </div>
+        </div>
         </div>
 
         <div>
-          <img src={temp2} alt="" />
+          <img src={temp3} alt="" />
         </div>
       </div>
     </section>
   );
 };
 
-export default Template1;
+export default Template6;

@@ -27,6 +27,13 @@ import Business from "../pages/SignaturePages/Business";
 import Freelancer from "../pages/SignaturePages/Freelancer";
 import SignUp from "../pages/SignUp";
 import Template1 from "../pages/Template/Template1/Template1";
+import Template2 from "../pages/Template/Template2/Template2";
+import Template3 from "../pages/Template/Template3/Template3";
+import Template4 from "../pages/Template/Template4/Template4";
+import Template5 from "../pages/Template/Template5/Template5";
+import Template6 from "../pages/Template/Template6/Template6";
+import Template7 from "../pages/Template/Template7/Template7";
+import Template8 from "../pages/Template/Template8/Template8";
 import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
 
@@ -151,6 +158,34 @@ export const Routes = [
       {
         path: "templatefirst",
         element: <Template1 />,
+      },
+      {
+        path: "templatetwo",
+        element: <Template2 />,
+      },
+      {
+        path: "templatethird",
+        element: <Template3 />,
+      },
+      {
+        path: "templatefour",
+        element: <Template4 />,
+      },
+      {
+        path: "templatefive",
+        element: <Template5 />,
+      },
+      {
+        path: "templatesix",
+        element: <Template6 />,
+      },
+      {
+        path: "templateseven",
+        element: <Template7/>,
+      },
+      {
+        path: "templateeight",
+        element: <Template8/>,
       },
     ],
   },
