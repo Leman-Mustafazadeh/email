@@ -1,0 +1,33 @@
+.social_temp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .template_dam12 {
+    background-color: #FFFFFF;
+    padding: 32px;
+    width: 55%;
+    margin: 50px auto;
+  
+    .temp12 {
+      gap: 32px;
+      justify-content: space-between;
+    }
+  }
+  
+  .social_temp12{
+    display: flex;
+    align-items: center;
+    gap: 11px !important;
+    // justify-content: space-between;
+    margin-top: 26px;
+  }
+  
+  .template_hero_title {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  

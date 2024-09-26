@@ -1,0 +1,26 @@
+.template_dam13 {
+    background-image: url('../../../assets/images/templateBanner/temp5.png');
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #034364;
+
+    .damp12 {
+        text-align: center;
+        padding-top: 40px;
+
+        h1 {
+            font-size: 70px;
+            color: #FFFFFF;
+            font-family: "Ingrid Darling", cursive;
+        }
+    }
+
+    .temp12_hero {
+        gap: 25px;
+        margin-top: 41px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

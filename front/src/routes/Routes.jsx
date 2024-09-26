@@ -27,6 +27,15 @@ import Business from "../pages/SignaturePages/Business";
 import Freelancer from "../pages/SignaturePages/Freelancer";
 import SignUp from "../pages/SignUp";
 import Template1 from "../pages/Template/Template1/Template1";
+import Template10 from "../pages/Template/Template10/Template10";
+import Template11 from "../pages/Template/Template11/Template11";
+import Template12 from "../pages/Template/Template12/Template12";
+import Template13 from "../pages/Template/Template13/Template13";
+import Template14 from "../pages/Template/Template14/Template14";
+import Template15 from "../pages/Template/Template15/Template15";
+import Template16 from "../pages/Template/Template16/Template16";
+import Template17 from "../pages/Template/Template17/Template17";
+import Template18 from "../pages/Template/Template18/Template18";
 import Template2 from "../pages/Template/Template2/Template2";
 import Template3 from "../pages/Template/Template3/Template3";
 import Template4 from "../pages/Template/Template4/Template4";
@@ -34,6 +43,7 @@ import Template5 from "../pages/Template/Template5/Template5";
 import Template6 from "../pages/Template/Template6/Template6";
 import Template7 from "../pages/Template/Template7/Template7";
 import Template8 from "../pages/Template/Template8/Template8";
+import Template9 from "../pages/Template/Template9/Template9";
 import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
 
@@ -186,6 +196,46 @@ export const Routes = [
       {
         path: "templateeight",
         element: <Template8/>,
+      },
+      {
+        path: "templatenine",
+        element: <Template9/>,
+      },
+      {
+        path: "templateten",
+        element: <Template10/>,
+      },
+      {
+        path: "templatehero",
+        element: <Template11/>,
+      },
+      {
+        path: "templateherotwo",
+        element: <Template12/>,
+      },
+      {
+        path: "templateherothird",
+        element: <Template13/>,
+      },
+      {
+        path: "templateherofour",
+        element: <Template14/>,
+      },
+      {
+        path: "templateherofive",
+        element: <Template15/>,
+      },
+      {
+        path: "templateherosix",
+        element: <Template16/>,
+      },
+      {
+        path: "templateheroseven",
+        element: <Template17/>,
+      },
+      {
+        path: "templateheroeight",
+        element: <Template18/>,
       },
     ],
   },

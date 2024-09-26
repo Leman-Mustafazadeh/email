@@ -1,0 +1,43 @@
+.template_dam13 {
+    background-image: url('../../../assets/images/templateBanner/temp5.png');
+    width: 60%;
+    height: 500px;
+    margin: 0 auto;
+    background-color: #034364;
+
+    .damp_hero15{
+        display: flex;
+        gap: 44px;
+        // align-items: center;
+        margin-top: 70px;
+        justify-content: center;
+        .damp_title15{
+            text-align: start;
+        }
+    }
+    .damp12 {
+        text-align: center;
+        padding-top: 40px;
+
+        h1 {
+            font-size: 70px;
+            color: #FFFFFF;
+            font-family: "Ingrid Darling", cursive;
+        }
+        button{
+            color:#253352;
+            border-radius: 8px;
+            width: 20%;
+            padding:12px 0;
+            margin-top: 31px;
+        }
+    }
+
+    .temp15_hero {
+        gap: 25px;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        justify-content: center;
+    }
+}
