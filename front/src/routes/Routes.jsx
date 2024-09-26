@@ -37,6 +37,11 @@ import Template16 from "../pages/Template/Template16/Template16";
 import Template17 from "../pages/Template/Template17/Template17";
 import Template18 from "../pages/Template/Template18/Template18";
 import Template2 from "../pages/Template/Template2/Template2";
+import Template24 from "../pages/Template/Template24/Template24";
+import Template25 from "../pages/Template/Template25/Template25";
+import Template26 from "../pages/Template/Template26/Template26";
+import Template27 from "../pages/Template/Template27/Template27";
+import Template28 from "../pages/Template/Template28/Template28";
 import Template3 from "../pages/Template/Template3/Template3";
 import Template4 from "../pages/Template/Template4/Template4";
 import Template5 from "../pages/Template/Template5/Template5";
@@ -236,6 +241,26 @@ export const Routes = [
       {
         path: "templateheroeight",
         element: <Template18/>,
+      },
+      {
+        path: "templatedamfour",
+        element: <Template24/>,
+      },
+      {
+        path: "templatedamfive",
+        element: <Template25/>,
+      },
+      {
+        path: "templatedamsix",
+        element: <Template26/>,
+      },
+      {
+        path: "templatedamseven",
+        element: <Template27/>,
+      },
+      {
+        path: "templatedameight",
+        element: <Template28/>,
       },
     ],
   },
