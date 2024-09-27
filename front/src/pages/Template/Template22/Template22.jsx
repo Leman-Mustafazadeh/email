@@ -1,16 +1,14 @@
 import React from "react";
 import "./_style.scss";
 import img12 from "../../../assets/images/templateBanner/temp12.png"
-const Template18 = () => {
+const Template22 = () => {
   return (
     <section className="temp_18">
       <div className="temp_hero18">
         
-       <div className="mb-3">
-        <img src={img12} alt="" />
-       </div>
+      
 
-      <div className="influcer">
+      <div className="">
       <h1 className="font-size-26 font-weight-400 text-background  nunito">
             SANDRA HARRİS
           </h1>
@@ -18,6 +16,11 @@ const Template18 = () => {
             Influcer
           </h5>
       </div>
+
+      
+      <div className="py-10">
+        <img src={img12} alt="" />
+       </div>
 
         <div className="temp18_hero row">
           <div className="row flex-align-center">
@@ -102,4 +105,4 @@ const Template18 = () => {
   );
 };
 
-export default Template18;
+export default Template22

@@ -15,12 +15,21 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
+        .joinhead_btn{
+                margin: 60px 0;
+            .join_btn{
+                color: #033F5E;
+                background-color: #fff;
+                padding: 10px 25px;
+                border-radius: 8px;
+            }
+        }
     }
     .temp18_hero{
         display: flex;
         align-items: end;
         justify-content: end;
-        gap: 20px;
+        gap: 25px;
     }
     .influcer{
         padding-bottom: 80px;

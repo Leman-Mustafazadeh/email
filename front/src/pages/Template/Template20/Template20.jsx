@@ -1,7 +1,7 @@
 import React from "react";
 import "./_style.scss";
 import img12 from "../../../assets/images/templateBanner/temp12.png"
-const Template18 = () => {
+const Template20 = () => {
   return (
     <section className="temp_18">
       <div className="temp_hero18">
@@ -19,7 +19,7 @@ const Template18 = () => {
           </h5>
       </div>
 
-        <div className="temp18_hero row">
+        <div className="temp20_hero ">
           <div className="row flex-align-center">
             <svg
               width="20"
@@ -102,4 +102,4 @@ const Template18 = () => {
   );
 };
 
-export default Template18;
+export default Template20;

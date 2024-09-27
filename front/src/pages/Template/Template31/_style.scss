@@ -1,0 +1,20 @@
+.temp_31{
+    background-image: url('../../../assets/images/templateBanner/temp11.png');
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    padding: 30px 20px;
+    position: relative;
+   .qrcode{
+    position: relative;
+    left: 70px;
+   }
+   .temp31_hero{
+    position: absolute;
+    display: flex;
+    right: 50px;
+    gap: 19px;
+    bottom: 0;
+   }
+}

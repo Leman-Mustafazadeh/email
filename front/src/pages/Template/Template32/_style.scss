@@ -1,0 +1,32 @@
+.temp_31{
+    background-image: url('../../../assets/images/templateBanner/temp11.png');
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    padding: 30px 20px;
+    position: relative;
+   .qrcode{
+    position: absolute;
+    left: 69px;
+    h1{
+        font-size: 70px;
+        font-weight: 400;
+        color: #ED1C24;
+        font-family: "Inter", sans-serif;
+    }
+    h2{
+        font-size: 30px;
+        font-weight: 400;
+        color: #ED1C24;
+        font-family: "Inter", sans-serif;
+    }
+   }
+   .temp31_hero{
+    position: absolute;
+    display: flex;
+    right: 50px;
+    gap: 19px;
+    bottom: 0;
+   }
+}

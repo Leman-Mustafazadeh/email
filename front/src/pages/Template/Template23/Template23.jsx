@@ -1,7 +1,7 @@
 import React from "react";
 import "./_style.scss";
 import img12 from "../../../assets/images/templateBanner/temp12.png"
-const Template18 = () => {
+const Template23 = () => {
   return (
     <section className="temp_18">
       <div className="temp_hero18">
@@ -10,13 +10,16 @@ const Template18 = () => {
         <img src={img12} alt="" />
        </div>
 
-      <div className="influcer">
+      <div className="">
       <h1 className="font-size-26 font-weight-400 text-background  nunito">
             SANDRA HARRİS
           </h1>
           <h5 className="font-size-20 font-weight-300 text-background   pt-2 nunito">
             Influcer
           </h5>
+      </div>
+      <div className="joinhead_btn">
+      <button className="font-size-16 font-weight-700 join_btn">Join the event</button>
       </div>
 
         <div className="temp18_hero row">
@@ -102,4 +105,4 @@ const Template18 = () => {
   );
 };
 
-export default Template18;
+export default Template23

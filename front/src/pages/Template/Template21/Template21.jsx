@@ -1,16 +1,21 @@
 import React from "react";
 import "./_style.scss";
 import img12 from "../../../assets/images/templateBanner/temp12.png"
-const Template18 = () => {
+import qr from "../../../assets/images/templateBanner/temp10.png"
+
+const Template21 = () => {
   return (
     <section className="temp_18">
       <div className="temp_hero18">
         
-       <div className="mb-3">
+       <div className="">
         <img src={img12} alt="" />
        </div>
+       <div className="pb-5">
+        <img src={qr} alt="" />
+      </div>
 
-      <div className="influcer">
+      <div className="pb-7">
       <h1 className="font-size-26 font-weight-400 text-background  nunito">
             SANDRA HARRİS
           </h1>
@@ -18,7 +23,7 @@ const Template18 = () => {
             Influcer
           </h5>
       </div>
-
+     
         <div className="temp18_hero row">
           <div className="row flex-align-center">
             <svg
@@ -102,4 +107,4 @@ const Template18 = () => {
   );
 };
 
-export default Template18;
+export default Template21

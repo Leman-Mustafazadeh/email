@@ -1,0 +1,21 @@
+.temp36{
+    background-color: #5D0070;
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    margin: 0 auto;
+    padding: 50px;
+  
+    .temp36_hero{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        gap: 19px;
+    }
+    .temp38_left{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}

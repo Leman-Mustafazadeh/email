@@ -1,16 +1,13 @@
-import React from "react";
-import "./_style.scss";
-import img12 from "../../../assets/images/templateBanner/temp12.png"
-const Template18 = () => {
+import React from 'react'
+import temp13 from "../../../assets/images/templateBanner/temp13.png"
+import  qr from "../../../assets/images/templateBanner/qrcode.png"
+import "./_style.scss"
+const Template38 = () => {
   return (
-    <section className="temp_18">
-      <div className="temp_hero18">
-        
-       <div className="mb-3">
-        <img src={img12} alt="" />
-       </div>
-
-      <div className="influcer">
+   <div className="temp36">
+   <div className='row'>
+   <div className='temp38_left'>
+       <div >
       <h1 className="font-size-26 font-weight-400 text-background  nunito">
             SANDRA HARRİS
           </h1>
@@ -18,8 +15,18 @@ const Template18 = () => {
             Influcer
           </h5>
       </div>
+      <div className="py-6 qrcode">
+        <img src={qr} alt="" />
+      </div>
+      
+        
+    </div>
+    <div className="temp34_right">
+      <img src={temp13} alt="" />
+    </div>
+   </div>
 
-        <div className="temp18_hero row">
+   <div className="temp36_hero  row">
           <div className="row flex-align-center">
             <svg
               width="20"
@@ -97,9 +104,9 @@ const Template18 = () => {
             </a>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
+   </div>
+   
+  )
+}
 
-export default Template18;
+export default Template38

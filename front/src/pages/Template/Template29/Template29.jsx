@@ -1,11 +1,21 @@
-import React from 'react';
+import React from "react";
 import "./_style.scss";
-
-const Template24 = () => {
+import qr from "../../../assets/images/templateBanner/temp10.png"
+const Template29= () => {
   return (
-    <div className='temp24'>
-      <div className="temp24_hero">
-      <div className="row flex-align-center">
+    <div className="temp_27">
+      <div className="row flex-align-center  p-3">
+        <div>
+          <h1 className="font-size-26 font-weight-400 text-natural nunito">
+            SANDRA HARRİS
+          </h1>
+          <h5 className="font-size-20 font-weight-300 text-natural pt-2 nunito">
+            Influcer
+          </h5>
+
+        <div className="template_hero29">
+        <div className="temp29_hero">
+            <div className="row flex-align-center">
               <svg
                 width="20"
                 height="16"
@@ -72,9 +82,18 @@ const Template24 = () => {
                 (+994) 55 666 77 88
               </a>
             </div>
+          </div>
+          <div>
+<img src={qr} alt="" />
+
+        </div>
+        </div>
+        </div>
+
+       
       </div>
     </div>
   );
 };
 
-export default Template24;
+export default Template29;
