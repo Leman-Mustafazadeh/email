@@ -4,7 +4,7 @@ import qr from "../../../assets/images/templateBanner/temp10.png"
 const Template31 = () => {
   return (
     <div className="temp_31">
-<div className='qrcode'>
+<div className='qrcode_temp31'>
     <img src={qr} alt="" />
 </div>
 

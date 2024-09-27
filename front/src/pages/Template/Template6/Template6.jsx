@@ -7,7 +7,7 @@ const Template6 = () => {
   const [text, setText] = React.useState("https://ant.design/");
 
   return (
-    <section className="template_damp9">
+    <section className="template_dam6">
       <div className="container template_wrap">
         
         <div className="row  flex-justify-space-between  template_hero">
@@ -183,7 +183,7 @@ const Template6 = () => {
         </div>
 
         <div>
-          <img src={temp3} alt="" />
+          <img src={temp3} alt="" width={"100%"} />
         </div>
       </div>
     </section>
