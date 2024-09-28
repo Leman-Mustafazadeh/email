@@ -3,8 +3,11 @@
         gap: $value;
         flex-wrap: nowrap;
 
+        
+
         @media screen and (max-width: 992px) {
-            flex-wrap: wrap;
+            flex-wrap: wrap !important;
+            gap: 0;
         }
     }
 }

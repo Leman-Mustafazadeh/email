@@ -1,4 +1,3 @@
-
 import PropTypes from "prop-types";
 
 export const Icon = ({ icon, color, size }) => {
@@ -7,7 +6,7 @@ export const Icon = ({ icon, color, size }) => {
 };
 
 Icon.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.elementType,
   size: PropTypes.string,
   color: PropTypes.string,
 };
