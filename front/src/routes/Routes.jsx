@@ -212,135 +212,139 @@ export const Routes = [
       },
       {
         path: "templateseven",
-        element: <Template7/>,
+        element: <Template7 />,
       },
       {
         path: "templateeight",
-        element: <Template8/>,
+        element: <Template8 />,
       },
       {
         path: "templatenine",
-        element: <Template9/>,
+        element: <Template9 />,
       },
       {
         path: "templateten",
-        element: <Template10/>,
+        element: <Template10 />,
       },
       {
         path: "templatehero",
-        element: <Template11/>,
+        element: <Template11 />,
       },
       {
         path: "templateherotwo",
-        element: <Template12/>,
+        element: <Template12 />,
       },
       {
         path: "templateherothird",
-        element: <Template13/>,
+        element: <Template13 />,
       },
       {
         path: "templateherofour",
-        element: <Template14/>,
+        element: <Template14 />,
       },
       {
         path: "templateherofive",
-        element: <Template15/>,
+        element: <Template15 />,
       },
       {
         path: "templateherosix",
-        element: <Template16/>,
+        element: <Template16 />,
       },
       {
         path: "templateheroseven",
-        element: <Template17/>,
+        element: <Template17 />,
       },
       {
         path: "templateheroeight",
-        element: <Template18/>,
+        element: <Template18 />,
       },
       {
         path: "templateheronine",
-        element: <Template19/>,
+        element: <Template19 />,
       },
       {
         path: "templateheroten",
-        element: <Template20/>,
+        element: <Template20 />,
       },
       {
         path: "templatedamone",
-        element: <Template21/>,
+        element: <Template21 />,
       },
       {
         path: "templatedamtwo",
-        element: <Template22/>,
+        element: <Template22 />,
       },
       {
         path: "templatedamthird",
-        element: <Template23/>,
+        element: <Template23 />,
       },
       {
         path: "templatedamfour",
-        element: <Template24/>,
+        element: <Template24 />,
       },
       {
         path: "templatedamfive",
-        element: <Template25/>,
+        element: <Template25 />,
       },
       {
         path: "templatedamsix",
-        element: <Template26/>,
+        element: <Template26 />,
       },
       {
         path: "templatedamseven",
-        element: <Template27/>,
+        element: <Template27 />,
       },
       {
         path: "templatedameight",
-        element: <Template28/>,
+        element: <Template28 />,
       },
       {
         path: "templatedamnine",
-        element: <Template29/>,
+        element: <Template29 />,
       },
       {
         path: "templatedamten",
-        element: <Template30/>,
+        element: <Template30 />,
       },
       {
         path: "templatedealone",
-        element: <Template31/>,
+        element: <Template31 />,
       },
       {
         path: "templatedealtwo",
-        element: <Template32/>,
+        element: <Template32 />,
       },
       {
         path: "templatedealthird",
-        element: <Template33/>,
+        element: <Template33 />,
       },
       {
         path: "templatedealfour",
-        element: <Template34/>,
+        element: <Template34 />,
       },
       {
         path: "templatedealfive",
-        element: <Template35/>,
+        element: <Template35 />,
       },
       {
         path: "templatedealsix",
-        element: <Template36/>,
+        element: <Template36 />,
       },
       {
         path: "templatedealseven",
-        element: <Template37/>,
+        element: <Template37 />,
       },
       {
         path: "templatedealeight",
-        element: <Template38/>,
+        element: <Template38 />,
       },
       {
         path: "templatedealnine",
-        element: <Template39/>,
+        element: <Template39 />,
+      },
+      {
+        path: "dashboard",
+        element: <DashboardDesign />,
       },
     ],
   },

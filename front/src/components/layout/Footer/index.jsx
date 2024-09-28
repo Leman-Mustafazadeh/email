@@ -6,9 +6,7 @@ const Footer = () => {
       <div className="container py-10">
         <div className="row flex-justify-space-between footer-group">
           <ul className="form-group footer-group-item">
-            <li className="mb-2 font-size-18 font-weight-500">
-              Solutions
-            </li>
+            <li className="mb-2 font-size-18 font-weight-500">Solutions</li>
             <li>
               <Link to={""}>Email signature template</Link>
             </li>
@@ -22,7 +20,7 @@ const Footer = () => {
 
           <ul className="form-group footer-group-item">
             <li className="mb-2 font-size-18 font-weight-500">
-            Email signature genarator
+              Email signature genarator
             </li>
             <li>
               <Link to={"/non-profit"}>Signature for non-profits</Link>
@@ -36,9 +34,7 @@ const Footer = () => {
           </ul>
 
           <ul className="form-group footer-group-item">
-            <li className="mb-2 font-size-18 font-weight-500">
-              Support
-            </li>
+            <li className="mb-2 font-size-18 font-weight-500">Support</li>
             <li>
               <Link to={""}>Help center</Link>
             </li>
@@ -48,20 +44,19 @@ const Footer = () => {
             <li>
               <Link to={""}>Privacy Policy </Link>
             </li>
-            
           </ul>
 
           <ul className="form-group footer-group-item">
-            <li className="mb-2 font-size-18 font-weight-500">
-            Company
-            </li>
+            <li className="mb-2 font-size-18 font-weight-500">Company</li>
             <li>
               <Link to={"/aboutus"}>About us</Link>
             </li>
             <li>
               <Link to={"/contact-us"}>Contact us</Link>
             </li>
-          
+            <li>
+              <Link to={"/dashboard"}>Dashboard</Link>
+            </li>
           </ul>
         </div>
       </div>
