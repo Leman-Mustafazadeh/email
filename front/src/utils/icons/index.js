@@ -14,6 +14,8 @@ import Team from "./Team";
 import User from "./User";
 import Template from "./Template";
 import Signature from "./Signature";
+import Edit from "./Edit";
+import Delete from "./Delete";
 
 export {
   Active,
@@ -32,4 +34,6 @@ export {
   Team,
   User,
   Template,
+  Edit,
+  Delete
 };

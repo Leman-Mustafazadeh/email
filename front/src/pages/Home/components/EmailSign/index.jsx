@@ -197,7 +197,7 @@ const EmailSign = () => {
 
         <div className="generator">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="generator_banner row gap-4 mt-3" style={{flexWrap: "nowrap"}}>
+            <div className="generator_banner row gap-4 mt-3">
               <div className="col-12 col-lg-6">
                 <div className="generator_banner_left">
                   <div className="form-group text p-4">
@@ -285,15 +285,16 @@ const EmailSign = () => {
                         <div className="design-container flex-container flex-column">
                           <div className="font">
                             <Select
-                              style={{ width: "100%" }}
                               value={formValues.font}
                               onChange={handleFontChange}
                               displayEmpty
                               fullWidth
+                              suffixIcon={null}
+                              bordered={false}
                               {...register("font")}
                             >
-                              {fonts.map((font) => (
-                                <MenuItem value={font} key={font}>
+                              {fonts.map((font, index) => (
+                                <MenuItem value={font} key={index}>
                                   {font}
                                 </MenuItem>
                               ))}

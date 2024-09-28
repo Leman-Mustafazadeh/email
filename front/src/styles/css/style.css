@@ -1047,7 +1047,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-0 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1057,7 +1058,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-1 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1067,7 +1069,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-2 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1077,7 +1080,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-3 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1087,7 +1091,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-4 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1097,7 +1102,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-5 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1107,7 +1113,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-6 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1117,7 +1124,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-7 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1127,7 +1135,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-8 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1137,7 +1146,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-9 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -1147,7 +1157,8 @@ a {
 }
 @media screen and (max-width: 992px) {
   .gap-10 {
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
+    gap: 0;
   }
 }
 
@@ -2109,6 +2120,22 @@ a {
 
 .btn-lightGray50 {
   background-color: #DEDEDE !important;
+}
+
+.bg-lightGray60 {
+  background-color: #F6F6F6 !important;
+}
+
+.text-lightGray60 {
+  color: #F6F6F6 !important;
+}
+
+.border-lightGray60 {
+  border: 1px solid #F6F6F6 !important;
+}
+
+.btn-lightGray60 {
+  background-color: #F6F6F6 !important;
 }
 
 .bg-text {

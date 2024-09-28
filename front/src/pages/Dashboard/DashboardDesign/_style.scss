@@ -7,10 +7,9 @@
     .utils {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
         position: relative;
         max-width: 88px;
-        max-height: 650px;
+        max-height: 700px;
         width: 100%;
         border-radius: 12px;
         border: 2px solid map-get($colors, primary90);
@@ -18,57 +17,37 @@
         overflow-y: hidden;
         transition: max-width 0.3s ease, padding 0.3s ease;
 
+        .avatar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: map-get($colors, primaryFAQ);
+            width: 100%;
+            border-radius: 12px 12px 0 0;
+            padding: 10px;
+            gap: 10px;
+
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid map-get($colors, primary);
+                background-color: map-get($colors, light60)
+            }
+        }
+
+        .utils-wrapper {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
         &.utils-custom {
             max-width: 305px;
             transition: max-width 0.3s ease, padding 0.3s ease;
 
             .avatar {
-                @extend .flex-justify-start;
-                @extend .px-5;
-            }
-
-            .utils-icons {
-                width: 100%;
-
-                &.utils-custom-icons {
-                    padding: 0 24px;
-                }
-
-                .icon {
-                    flex-direction: row;
-                    padding: 16px 14px;
-                    gap: 12px;
-
-                    span {
-                        font-size: 18px;
-                    }
-                }
-            }
-        }
-
-        .utils-icons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 24px;
-
-            .avatar {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: map-get($colors, primaryFAQ);
-                width: 100%;
-                border-radius: 12px 12px 0 0;
-                padding: 10px;
-                gap: 10px;
-
-                img {
-                    width: 40px;
-                    height: 40px;
-                    border-radius: 50%;
-                    border: 1px solid map-get($colors, primary);
-                    background-color: map-get($colors, light60)
-                }
 
                 .account {
                     width: 100%;
@@ -98,6 +77,39 @@
                 }
 
             }
+
+            .utils-icons {
+                width: 100%;
+                gap: 12px;
+
+                &.utils-custom-icons {
+                    align-items: start;
+
+                    span {
+                        font-size: 14px;
+                        color: map-get($colors, text10);
+                    }
+                }
+
+                .icon {
+                    flex-direction: row;
+                    padding: 16px 14px;
+                    gap: 12px;
+
+                    span {
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        .utils-icons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+
+
 
             .icon {
                 display: flex;
@@ -132,7 +144,7 @@
 
         }
 
-        .help {
+        .utils-border {
             border-top: 1px solid map-get($colors, light60);
         }
     }
@@ -185,6 +197,10 @@
                         a {
                             display: none;
                         }
+                    }
+
+                    img {
+                        object-fit: cover !important;
                     }
                 }
             }
@@ -263,11 +279,27 @@
 
         .banner-upload {
 
-            .ant-upload-select,
-            .ant-upload-list-item-container {
-                min-width: 300px;
-                min-height: 127px;
+            .uploader {
+
+                .ant-upload-select,
+                .ant-upload-list-item-container {
+                    min-width: 300px;
+                    height: 72px !important;
+
+                    .upload-button svg {
+                        width: 28px;
+                        height: 28px;
+                    }
+
+                    img {
+                        border-radius: 8px;
+                    }
+                }
+
+
             }
+
+
 
             .banner-templates {
                 h4 {
@@ -322,6 +354,7 @@
             .banner-img {
                 img {
                     width: 100%;
+                    border-radius: 4.47px;
                 }
             }
         }
@@ -514,7 +547,6 @@
             padding: 32px 24px;
 
             .banner {
-                background-color: map-get($colors, background);
 
                 .right-regard {
                     @extend .mt-0;
@@ -523,19 +555,35 @@
         }
 
         &-info {
-            .email {
-                @extend .font-size-18;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                color: map-get($colors, text30);
+            display: flex;
+            flex-direction: column;
+            gap: 29px;
+            color: map-get($colors, text10);
+            @extend .font-size-18;
+            position: relative;
 
-                img {
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                    border: 1px solid map-get($colors, primary);
-                    background-color: map-get($colors, lightGray50);
+
+            h3 {
+                @extend .font-size-24;
+                @extend .font-weight-500;
+                color: map-get($colors, primary)
+            }
+
+            .user-data {
+
+                .email {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    color: map-get($colors, text30);
+
+                    img {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                        border: 1px solid map-get($colors, primary);
+                        background-color: map-get($colors, lightGray50);
+                    }
                 }
             }
 
@@ -553,14 +601,152 @@
                 }
             }
 
-            .switch-button {
-                .ant-switch-checked {
-                    background-color: #34C759;
+            .user-status {
+                p {
+                    color: map-get($colors, text60);
                 }
+
+                .switch-button {
+                    .ant-switch-checked {
+                        background-color: #34C759;
+                    }
+                }
+            }
+
+            .edit-remove {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                gap: 24px;
             }
         }
     }
+
 }
+
+.modal-font-select {
+    fieldset {
+        border: none;
+    }
+
+    svg {
+        display: none;
+    }
+}
+
+.ant-modal-content {
+    border-radius: 16px !important;
+
+    .ant-modal-close:hover {
+        background-color: transparent !important;
+    }
+
+    .customize-container {
+        border: 1px solid map-get($colors, lightGray50);
+        border-radius: 16px;
+        padding: 20px 15px;
+
+        .font-controller {
+            padding: 16px 28px;
+            border-radius: 8px;
+            background-color: map-get($colors, lightGray60);
+            width: fit-content;
+        }
+
+        .ant-checkbox-inner {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .customize-box {
+        border: 1px solid map-get($colors, lightGray50);
+        border-radius: 12px;
+        padding: 15px 20px;
+        width: fit-content;
+
+        .color-picker {
+            min-width: 120px;
+            min-height: 47px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+                color: map-get($colors, natural);
+                font-size: 30px;
+            }
+        }
+
+        .font-case {
+            min-width: 54px;
+            min-height: 54px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: map-get($colors, primary60);
+            color: map-get($colors, text30);
+            font-size: 18px;
+            cursor: pointer;
+            user-select: none;
+
+            &.selected {
+                background-color: map-get($colors, primary);
+                color: map-get($colors, natural)
+            }
+        }
+    }
+
+    .color-customize {
+        height: 307px;
+
+        .colors-pallete {
+            gap: 16px;
+
+            .ant-color-picker-trigger {
+                position: relative;
+                width: 40px;
+                height: 40px;
+                background-image: url("../../../../public/color_wheel.png");
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 130%;
+                display: inline-block;
+                border-radius: 50%;
+
+                .ant-color-picker-clear {
+                    visibility: hidden;
+                }
+
+                .ant-color-picker-color-block-inner {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-40%, -40%);
+
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+            }
+
+            .color {
+                cursor: pointer;
+                border: 1px solid map-get($colors, light10);
+                user-select: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                background-color: map-get($colors, primary);
+            }
+        }
+    }
+
+}
+
+
 
 @keyframes fadeInSlideUp {
     0% {

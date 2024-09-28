@@ -24,23 +24,21 @@ const AccountMember = () => {
 
             <div className="account_del mt-9">
               <button className="bg-primaryFAQ font-size-20 font-weight-400 text-text">
-              <Link to={"/accountmember"}> Account</Link>
+                <Link to={"/accountmember"}> Account</Link>
               </button>
               <button className="bg-natural font-size-20 font-weight-400 text-text">
-              <Link to={"/accountmembersetting"}> Settings</Link>
+                <Link to={"/accountmembersetting"}> Settings</Link>
               </button>
             </div>
           </div>
 
-          <div
-            className="row account_upgrade_head gap-4"
-          >
+          <div className="row account_upgrade_head gap-4">
             <div className="col-12 col-md-6 account_upgrade">
               <div>
                 <h2 className="font-size-18 font-weight-500 text-text10 ">
                   Account Details
                 </h2>
-                <div className="py-4 row gap-10" >
+                <div className="py-4 row gap-10">
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Customer ID:
                   </h4>
@@ -49,7 +47,7 @@ const AccountMember = () => {
                   </p>
                 </div>
 
-                <div className="pb-4 row gap-10" >
+                <div className="pb-4 row gap-10">
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Signup date:
                   </h4>
@@ -58,7 +56,7 @@ const AccountMember = () => {
                   </p>
                 </div>
 
-                <div className="pb-4 row gap-10" >
+                <div className="pb-4 row gap-10">
                   <h4 className="font-size-16 font-weight-500 text-text60">
                     Account plan:
                   </h4>
@@ -81,9 +79,7 @@ const AccountMember = () => {
                   Account Storage
                 </h2>
 
-                <div
-                  className="row gap-10 flex-align-center mb-3"
-                >
+                <div className="row gap-10 flex-align-center mb-3">
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Template:
                   </p>
@@ -108,9 +104,7 @@ const AccountMember = () => {
                     <span className="pl-4">0 / 10</span>
                   </div>
                 </div>
-                <div
-                  className="row pb-7 flex-justify-space-between gap-10"
-                >
+                <div className="row pb-7 flex-justify-space-between gap-10">
                   <p className="font-size-16 font-weight-500 text-text60 template">
                     Members:
                   </p>
@@ -153,7 +147,7 @@ const AccountMember = () => {
             <h3 className="font-size-16 font-weight-500 text-text60 pb-2">
               Login Email:
             </h3>
-            <div className="row gap-10"  >
+            <div className="row gap-10">
               <input
                 type="text"
                 placeholder="kenantagiyev010@gmail.com"
@@ -169,7 +163,7 @@ const AccountMember = () => {
             <h3 className="font-size-16 font-weight-500 text-text60 pb-2 pt-4">
               Password:
             </h3>
-            <div className="row gap-10"  >
+            <div className="row gap-10">
               <input type="password" placeholder="---------" />
               <Link
                 to={""}
