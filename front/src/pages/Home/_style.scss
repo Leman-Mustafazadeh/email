@@ -1,6 +1,21 @@
-.home-page{
+.home-page {
     @extend .flex-container;
     @extend .flex-column;
     gap: 120px;
     overflow: hidden;
+    position: relative;
+
+    .scroll-up {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: map-get($colors, primary90);
+        color: map-get($colors, natural);
+        cursor: pointer;
+    }
 }

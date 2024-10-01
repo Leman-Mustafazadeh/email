@@ -74,7 +74,7 @@ function DashboardDesign() {
         fontColor: "#3C3C3C",
         fontCase: "capitalize",
         fontWeight: "500",
-        backgroundColor: "#ffffff",
+        backgroundColor: "#fff",
         emails: [],
         searchText: "",
       },
@@ -98,7 +98,8 @@ function DashboardDesign() {
   const [emails, setEmails] = useState(getValues("emails") || []);
   const [error, setError] = useState("");
 
-  const handleAddEmail = () => {
+  const handleAddEmail = (event) => {
+    event?.preventDefault();
     const currentEmails = getValues("emails");
 
     if (tags.length === 0) {
@@ -124,6 +125,8 @@ function DashboardDesign() {
   };
 
   const handleAddTag = (event) => {
+    const invalidChars = /[^a-zA-Z0-9@.]/;
+
     if ((event.keyCode === 32 || event.keyCode === 13) && tagValue.trim()) {
       event.preventDefault();
       setError("");
@@ -134,6 +137,7 @@ function DashboardDesign() {
       newTags.forEach((tag) => {
         const emailExists = currentEmails.includes(tag) || tags.includes(tag);
         const isValidEmail = tag.endsWith("@gmail.com");
+        const containsInvalidChar = invalidChars.test(tag);
         const withinUserLimit =
           tags.length < userLimit &&
           currentEmails.length + newTags.length <= userLimit;
@@ -141,6 +145,12 @@ function DashboardDesign() {
         switch (true) {
           case emailExists:
             setError(`User "${tag}" has already been added.`);
+            break;
+
+          case containsInvalidChar:
+            setError(
+              `"${tag}" contains special characters that are not allowed in email addresses.`
+            );
             break;
 
           case !isValidEmail:
@@ -160,6 +170,8 @@ function DashboardDesign() {
             break;
         }
       });
+    } else if (event.keyCode === 13 && tagValue === "") {
+      handleAddEmail(event);
     }
   };
 
@@ -520,7 +532,7 @@ function DashboardDesign() {
         );
       case "template":
         return (
-          <div className="template row gap-5 ">
+          <div className="template row `">
             <div className="banner col-12 col-md-6">
               <div className="generator_banner_right">
                 <div
@@ -979,6 +991,7 @@ function DashboardDesign() {
                                 formValues.fontWeight === "700" ? "500" : "700"
                               )
                             }
+                            className="font-weight-chechbox"
                             style={{
                               display: "flex",
                               alignItems: "center",
@@ -1129,16 +1142,19 @@ function DashboardDesign() {
                           className="form-control"
                           placeholder="Full Name"
                           {...register("fullName")}
+                          maxLength={20}
                         />
                         <input
                           className="form-control"
                           placeholder="Position"
                           {...register("position")}
+                          maxLength={20}
                         />
                         <input
                           className="form-control"
                           placeholder="Email"
                           {...register("email")}
+                          maxLength={30}
                         />
                       </div>
                     </div>
@@ -1148,6 +1164,7 @@ function DashboardDesign() {
                           className="form-control"
                           placeholder="Company"
                           {...register("company")}
+                          maxLength={40}
                         />
                         <PhoneInput
                           country={"us"}
@@ -1159,6 +1176,7 @@ function DashboardDesign() {
                           className="form-control"
                           placeholder="Address"
                           {...register("address")}
+                          maxLength={30}
                         />
                       </div>
                     </div>
@@ -1276,12 +1294,20 @@ function DashboardDesign() {
                       className="form-control"
                       placeholder="Banner links"
                       value={socialUrl.banner}
-                      onChange={(e) =>
-                        setSocialUrl((prev) => ({
-                          ...prev,
-                          banner: e.target.value,
-                        }))
-                      }
+                      onChange={(e) => {
+                        const inputValue = e.target.value.trim();
+                        if (inputValue && !inputValue.startsWith("https://")) {
+                          setSocialUrl((prev) => ({
+                            ...prev,
+                            banner: `https://${inputValue}`,
+                          }));
+                        } else {
+                          setSocialUrl((prev) => ({
+                            ...prev,
+                            banner: inputValue,
+                          }));
+                        }
+                      }}
                     />
                   </div>
                 </form>
