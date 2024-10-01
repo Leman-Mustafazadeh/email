@@ -205,16 +205,19 @@ const EmailSign = () => {
                       className="form-control"
                       placeholder="Full Name"
                       {...register("fullName")}
+                      maxLength={20}
                     />
                     <input
                       className="form-control"
                       placeholder="Company"
                       {...register("company")}
+                      maxLength={40}
                     />
                     <input
                       className="form-control"
                       placeholder="Position"
                       {...register("position")}
+                      maxLength={20}
                     />
                     <PhoneInput
                       country={"us"}
@@ -226,11 +229,13 @@ const EmailSign = () => {
                       className="form-control"
                       placeholder="Email"
                       {...register("email")}
+                      maxLength={30}
                     />
                     <input
                       className="form-control"
                       placeholder="Address"
                       {...register("address")}
+                      maxLength={30}
                     />
                   </div>
 

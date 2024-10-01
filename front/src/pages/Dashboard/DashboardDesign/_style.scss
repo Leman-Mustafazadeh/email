@@ -653,9 +653,18 @@
             width: fit-content;
         }
 
-        .ant-checkbox-inner {
-            width: 30px;
-            height: 30px;
+        .font-weight-chechbox {
+            .ant-checkbox-inner {
+                width: 30px;
+                height: 30px;
+
+                &::after {
+                    width: 9px;
+                    height: 19px;
+                }
+            }
+
+
         }
     }
 
