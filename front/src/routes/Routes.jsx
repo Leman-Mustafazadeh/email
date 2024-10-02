@@ -7,6 +7,7 @@ import MyAccountBilling from "../pages/Account/MyAccountBilling";
 import MyAccountSetting from "../pages/Account/MyAccountSetting";
 import ContactUs from "../pages/ContactUs";
 import CookiePopUp from "../pages/CookiePopUp/CookiePopUp";
+import CookiesPolicy from "../pages/CookiesPolicy/CookiesPolicy";
 import DashboardDesign from "../pages/Dashboard/DashboardDesign";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ForgotPassword from "../pages/ForgotPassword";
@@ -22,6 +23,7 @@ import MyAccountDeleteAccount from "../pages/MyAccount-DeleteAccount";
 import NonProfit from "../pages/NonProfit";
 import Passwords from "../pages/Password";
 import Pricing from "../pages/Pricing";
+import Privacy from "../pages/Privacy/Privacy";
 import ResetPassword from "../pages/ResetPassword";
 import Business from "../pages/SignaturePages/Business";
 import Freelancer from "../pages/SignaturePages/Freelancer";
@@ -65,6 +67,7 @@ import Template6 from "../pages/Template/Template6/Template6";
 import Template7 from "../pages/Template/Template7/Template7";
 import Template8 from "../pages/Template/Template8/Template8";
 import Template9 from "../pages/Template/Template9/Template9";
+import TermsAndPolicy from "../pages/TermsAndPolicy/TermsAndPolicy";
 import UserRouter from "../pages/UserRouter";
 import PATH from "./constant";
 
@@ -346,6 +349,18 @@ export const Routes = [
         path: "dashboard",
         element: <DashboardDesign />,
       },
+      {
+        path: "privacy",
+        element: <Privacy />,
+      },
+      {
+        path:"terms",
+        element:<TermsAndPolicy/>
+      },
+      {
+        path:"cookiepolicy",
+        element:<CookiesPolicy/>
+      }
     ],
   },
 ];

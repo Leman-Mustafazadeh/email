@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./_style.scss";
 import logo from "../../../assets/images/logo/logo.png"
 const Navbar = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   return (
     <>
      <header>
