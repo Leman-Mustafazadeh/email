@@ -1,27 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { create } from 'zustand';
 
-const initialState = JSON.parse(localStorage.getItem("user")) || {
-  id: null,
-  role: "",
-};
+if (!JSON.parse(localStorage.getItem('user'))) {
+  localStorage.setItem('user', JSON.stringify({ id: null, role: '' }));
+}
 
-const userSlice = createSlice({
-  name: "user",
-  initialState,
-  reducers: {
-    login: (state, action) => {
-      const { id, role } = action.payload;
-      state.id = id;
-      state.role = role;
-      localStorage.setItem("user", JSON.stringify({ id, role }));
-    },
-    logout: (state) => {
-      state.id = null;
-      state.role = "";
-      localStorage.setItem("user", JSON.stringify({ id: null, role: "" }));
-    },
+const authInitialState = JSON.parse(localStorage.getItem('user'));
+
+const useUserStore = create((set) => ({
+  id: authInitialState.id,
+  role: authInitialState.role,
+  
+  login: (user) => {
+    set({ id: user._id, role: user.role });
+    localStorage.setItem('user', JSON.stringify({ id: user._id, role: user.role }));
   },
-});
 
-export const { login, logout } = userSlice.actions;
-export default userSlice.reducer;
+  logout: () => {
+    set({ id: null, role: '' });
+    localStorage.setItem('user', JSON.stringify({ id: null, role: '' }));
+  },
+}));
+
+export default useUserStore;

@@ -1,19 +1,37 @@
+
 import axios from "axios";
-import { BASE_URL } from "./authConstants.js";
-import { AUTH_KEY } from "./authConstants";
+import create from "zustand";
+import { BASE_URL, AUTH_KEY } from "./authConstants";
 
-// ============================================================================
-
-export const authApi = {
-  async register(payload) {
-    const { data } = await axios.post(BASE_URL + AUTH_KEY.register, payload);
-    return data;
+const authApi = create((set) => ({
+  isLoading: false,
+  error: null,
+  
+  register: async (payload) => {
+    set({ isLoading: true, error: null });
+    try {
+      const { data } = await axios.post(BASE_URL + AUTH_KEY.register, payload);
+      return data; 
+    } catch (error) {
+      set({ error: error.message });
+      throw error; 
+    } finally {
+      set({ isLoading: false });
+    }
   },
-  async login(payload) {
-    const { data } = await axios.post(BASE_URL + AUTH_KEY.login, payload);
-    return data;
+
+  login: async (payload) => {
+    set({ isLoading: true, error: null });
+    try {
+      const { data } = await axios.post(BASE_URL + AUTH_KEY.login, payload);
+      return data; 
+    } catch (error) {
+      set({ error: error.message });
+      throw error; 
+    } finally {
+      set({ isLoading: false });
+    }
   },
-};
+}));
 
-// ============================================================================
-
+export default authApi;

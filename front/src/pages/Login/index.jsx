@@ -1,30 +1,20 @@
 import { useFormik } from "formik";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import useAuth from "../../service/Auth/useAuth";
 import "./_style.scss";
 import logo from "../../assets/images/logo/logo.png";
+import useAuthStore from "../../service/Auth/useAuth";
 
 const Login = () => {
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
-
-  const { useLogin } = useAuth();
-  const loginin = useLogin();
+  const loginMutation = useAuthStore((state) => state.login(navigate));
 
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
-
-  useEffect(() => {
-    if (user.id) {
-      navigate("/faq");
-    }
-  }, [navigate, user.id]);
 
   const formik = useFormik({
     initialValues: {
@@ -34,7 +24,8 @@ const Login = () => {
     },
 
     onSubmit: async (values, actions) => {
-      loginin.mutate(values, actions);
+      loginMutation.mutate(values); 
+      actions.setSubmitting(false);
     },
   });
 
@@ -102,6 +93,9 @@ const Login = () => {
                     }`}
                     required
                   />
+                  <div onClick={togglePasswordVisibility}>
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </div>
                 </div>
                 {formik.touched.password && formik.errors.password && (
                   <div className="error-message">{formik.errors.password}</div>

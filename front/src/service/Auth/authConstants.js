@@ -1,12 +1,13 @@
-export const BASE_URL = 'https://signature.redmark.az';
+import create from "zustand";
+const useAuthConstantsStore = create((set) => ({
+  BASE_URL: 'https://signature.redmark.az',
+  AUTH_KEY: {
+    register: '/Account/Register',
+    login: '/Account/Login',
+  },
+  CACHE_KEY: {
+    userInfo: 'userInfo',
+  },
+}));
 
-export const AUTH_KEY = {
-  register: '/Account/Register',
-  login: '/Account/Login',
-};
-
-export const CACHE_KEY = {
-  userInfo: 'userInfo',
-};
-
-
+export default useAuthConstantsStore;
