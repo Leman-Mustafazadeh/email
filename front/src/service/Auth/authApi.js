@@ -1,20 +1,21 @@
-
 import axios from "axios";
-import create from "zustand";
-import { BASE_URL, AUTH_KEY } from "./authConstants";
+import { create } from "zustand";
+import useAuthConstantsStore from "./authConstants";
+
+const { BASE_URL, AUTH_KEY } = useAuthConstantsStore.getState();
 
 const authApi = create((set) => ({
   isLoading: false,
   error: null,
-  
+
   register: async (payload) => {
     set({ isLoading: true, error: null });
     try {
       const { data } = await axios.post(BASE_URL + AUTH_KEY.register, payload);
-      return data; 
+      return data;
     } catch (error) {
       set({ error: error.message });
-      throw error; 
+      throw error;
     } finally {
       set({ isLoading: false });
     }
@@ -24,10 +25,10 @@ const authApi = create((set) => ({
     set({ isLoading: true, error: null });
     try {
       const { data } = await axios.post(BASE_URL + AUTH_KEY.login, payload);
-      return data; 
+      return data;
     } catch (error) {
       set({ error: error.message });
-      throw error; 
+      throw error;
     } finally {
       set({ isLoading: false });
     }
