@@ -1,136 +1,150 @@
-import { useFormik } from "formik";
-import { Link } from "react-router-dom";
-import useAuth from "../../service/Auth/useAuth";
-import { IconButton, InputAdornment } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import "./_style.scss";
+import { IconButton, InputAdornment } from "@mui/material";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import logo from "../../assets/images/logo/logo.png";
-const SignUp = () => {
-  const { useRegister } = useAuth();
-  const register = useRegister();
+import { useRegisterMutation } from "../../service/Auth/useAuth";
+import "./_style.scss";
 
+const SignUp = () => {
+  const navigate = useNavigate();
+  const registerMutation = useRegisterMutation(navigate);
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
+    setShowPassword((prev) => !prev);
   };
 
-  const formik = useFormik({
-    initialValues: {
-      email: "",
-      password: "",
-    },
-    validate: (values) => {
-      const errors = {};
-      if (!values.email) {
-        errors.email = "Email is required";
-      } else if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(values.email)) {
-        errors.email = "Invalid Gmail address";
-      }
-      if (!values.password) {
-        errors.password = "Password is required";
-      }
-      return errors;
-    },
-    onSubmit: async (values, actions) => {
-      register.mutate(values, actions);
-    },
-  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    try {
+      await registerMutation.mutateAsync(data);
+      toast.success("Registration successful!", { autoClose: 1000 });
+      navigate("/login");
+    } catch (error) {
+      toast.error(error.response?.data?.message || "Registration failed.", {
+        autoClose: 2000,
+      });
+    }
+  };
 
   return (
-    <section>
-      <div className="sign-up">
-        <div className="sign-up-container">
-          <div className="sigh-up-header">
-            <img src={logo} alt="" />
-          </div>
-          <div className="sing-up-content">
-            <h4>Let's Get Started</h4>
-            <form onSubmit={formik.handleSubmit}>
-              <div className="form-group">
-                <label htmlFor="email" className="form-label font-size-18 font-weight-500 text-text10 pb-2">E-mail Address</label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="example@mail.com"
-                  value={formik.values.email}
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  className={`form-input ${formik.touched.email && formik.errors.email ? 'input-error' : ''}`}
-                  required
-                />
-                {formik.touched.email && formik.errors.email && (
-                  <div className="error-message">{formik.errors.email}</div>
-                )}
-              </div>
+    <section className="sign-up">
+      <div className="sign-up-container">
+        <div className="sign-up-header">
+          <img src={logo} alt="Logo" />
+        </div>
+        <div className="sign-up-content">
+          <h4 className="font-size-24 font-weight-700 text-primary">
+            Let&apos;s Get Started
+          </h4>
 
-              <div className="form-group">
-                <label htmlFor="password" className="form-label font-size-18 font-weight-500 text-text10 pb-2">Password</label>
-                <div className="password-field">
-                  <input
-                    id="password"
-                    name="password"
-                    type={showPassword ? "text" : "password"}
-                    placeholder="min. 6 characters"
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    className={`form-input ${formik.touched.password && formik.errors.password ? 'input-error' : ''}`}
-                    required
-                  />
-                  {/* <InputAdornment position="end">
-                    <IconButton
-                      onClick={togglePasswordVisibility}
-                      edge="end"
-                    >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
-                    </IconButton>
-                  </InputAdornment> */}
-                </div>
-                {formik.touched.password && formik.errors.password && (
-                  <div className="error-message">{formik.errors.password}</div>
-                )}
-              </div>
-              <button
-                type="submit"
-                className={`btn btn-primary text-natural ${formik.isSubmitting ? "btn-disabled" : ""}`}
-                disabled={formik.isSubmitting}
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="form-group">
+              <label
+                htmlFor="email"
+                className="form-label font-size-18 font-weight-500 text-text10 pb-2"
               >
-                {formik.isSubmitting ? "Registering..." : "Sign Up"}
-              </button>
-            </form>
-
-            <span className="line">or</span>
-
-            <button className="google btn-google">
-              <img
-                width="50px"
-                height="50px"
-                src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg"
-                alt="Google Sign Up"
+                E-mail Address
+              </label>
+              <input
+                id="email"
+                type="email"
+                placeholder="example@gmail.com"
+                {...register("email", {
+                  required: "Email is required",
+                })}
+                className={`${errors.email ? "error" : ""}`}
               />
-              Sign up with Google
-            </button>
-
-            <div className="login">
-              <span>Already have an account? - </span>
-              <Link to="/login">Login</Link>
+              {errors.email && (
+                <div className="error-message">{errors.email.message}</div>
+              )}
             </div>
 
-            <div className="free-trial">
-              <span>Try our services free for 7 days!</span>
-              <div className="privacy-policy">
-                <p>
-                  By signing up, you agree to the
-                  <Link to="/"> Terms And Condition</Link>
-                </p>
-                <p>
-                  and
-                  <Link to="/"> Privacy Policy</Link>
-                </p>
+            <div className="form-group">
+              <label
+                htmlFor="password"
+                className="form-label font-size-18 font-weight-500 text-text10 pb-2"
+              >
+                Password
+              </label>
+              <div className="password-field relative">
+                <input
+                  id="password"
+                  type={showPassword ? "text" : "password"}
+                  placeholder="min. 6 characters"
+                  {...register("password", {
+                    required: "Password is required",
+                    minLength: {
+                      value: 6,
+                      message: "Password must be at least 6 characters",
+                    },
+                  })}
+                  className={`${errors.password ? "error" : ""}`}
+                />
+                <InputAdornment position="end">
+                  <IconButton
+                    onClick={togglePasswordVisibility}
+                    edge="end"
+                    aria-label="toggle password visibility"
+                    className="password-toggle-icon"
+                  >
+                    {showPassword ? <VisibilityOff /> : <Visibility />}
+                  </IconButton>
+                </InputAdornment>
               </div>
+              {errors.password && (
+                <div className="error-message">{errors.password.message}</div>
+              )}
+            </div>
+
+            <button
+              type="submit"
+              className={`btn btn-primary text-natural ${
+                isSubmitting ? "btn-disabled" : ""
+              }`}
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Registering..." : "Sign Up"}
+            </button>
+          </form>
+
+          <span className="line">or</span>
+
+          <button className="google btn-google">
+            <img
+              width="50"
+              height="50"
+              src="https://t4.ftcdn.net/jpg/03/08/54/37/360_F_308543787_DmPo1IELtKY9hG8E8GlW8KHEsRC7JiDN.jpg"
+              alt="Google Sign Up"
+            />
+            Sign up with Google
+          </button>
+
+          <div className="login">
+            <span>Already have an account? - </span>
+            <Link to="/login">Login</Link>
+          </div>
+
+          <div className="free-trial">
+            <span>Try our services free for 7 days!</span>
+            <div className="privacy-policy">
+              <p>
+                By signing up, you agree to the
+                <Link to="/terms"> Terms and Conditions</Link>
+              </p>
+              <p>
+                and
+                <Link to="/privacy"> Privacy Policy</Link>
+              </p>
             </div>
           </div>
         </div>

@@ -20,7 +20,8 @@
             // color: map-get($colors, primary);
             width: 50% !important;
             margin: 0 auto;
-            img{
+
+            img {
                 width: 100%;
             }
         }
@@ -37,8 +38,8 @@
             gap: 20px;
             border-radius: 12px;
             box-shadow: 0px 0px 8px 0px rgba(177, 177, 177, 0.5);
-background-color: #FFFFFF
-;
+            background-color: #FFFFFF;
+
             form {
                 width: 100%;
             }
@@ -91,15 +92,29 @@ background-color: #FFFFFF
                     color: map-get($colors, primary);
                 }
             }
-            .form-group{
-                input{
+
+            .form-group {
+                input {
                     padding: 15px;
                     font-size: 16px;
                     font-weight: 400;
                     border-radius: 8px;
                     width: 100%;
-                    border:1px solid #B1B1B1;
+                    border: 1px solid #B1B1B1;
+
+                    &.error {
+                        border: 1px solid map-get($colors, danger);
+                        color: map-get($colors, danger);
+                        text-align: start;
+                    }
                 }
+            }
+
+            .password-toggle-icon {
+                position: absolute;
+                top: 50%;
+                right: 5%;
+                transform: translateY(-50%);
             }
 
             .free-trial {
@@ -130,18 +145,3 @@ background-color: #FFFFFF
 
     }
 }
-// .form-group {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//   }
-  
-//   .forgot-password-link {
-//     color: #007bff;
-//     text-decoration: none;
-//   }
-  
-//   .forgot-password-link:hover {
-//     text-decoration: underline;
-//   }
-  
