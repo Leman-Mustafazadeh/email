@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import banner1 from "../../../../assets/images/use/Line 17.png";
 import banner2 from "../../../../assets/images/use/Line1.png";
 import banner3 from "../../../../assets/images/use/Line2.png";
-import banner4 from "../../../../assets/images/use/banner3.gif";
-import banner6 from "../../../../assets/images/use/banner4.gif";
+// import banner4 from "../../../../assets/images/use/banner3.gif";
 import banner5 from "../../../../assets/images/use/banner1.gif";
+import banner6 from "../../../../assets/images/use/banner4.gif";
 import SectionHeader from "../../../../components/common/SectionHeader";
 import "./_style.scss";
 
@@ -131,7 +131,7 @@ const CreateSign = () => {
               </div> 
 
               <div className="gif gif3">
-                <img src={banner4} alt="" />
+                {/* <img src={banner4} alt="" /> */}
               </div>
             </div>
             </div>

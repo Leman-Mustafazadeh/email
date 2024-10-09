@@ -1,15 +1,22 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../../assets/images/logo/logo.png";
-import { useLoginMutation } from "../../service/Auth/useAuth";
-import "./_style.scss";
 import { IconButton, InputAdornment } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import logo from "../../assets/images/logo/logo.png";
+// import { useLoginMutation } from "../../service/Auth/useAuth";
+import "./_style.scss";
+
+import { useMutation } from "@tanstack/react-query";
+import { toast } from "react-hot-toast";
+import { loginServices } from "../../service/Account";
+import { useUserStore } from "../../store/user";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const loginMutation = useLoginMutation(navigate);
+  const { login, id, role, token } = useUserStore();
+
+  // const navigate = useNavigate();
+  // const loginMutation = useLoginMutation(navigate);
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -23,10 +30,22 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  const onSubmit = async (data) => {
-    console.log("Submitting form data:", data);
-    await loginMutation.mutate(data);
-  };
+  const mutation = useMutation({
+    mutationFn: (data) => loginServices(data),
+    onSuccess: (data) => {
+      console.log("[INDEX LOG]:", data);
+      toast.success("Login successfully", { icon: "🚀" });
+      localStorage.setItem("token", data.data.token);
+      login(data.data.user);
+    },
+    onError: () => toast("Somthing went wrong"),
+  });
+
+  useEffect(() => {
+    console.log("[INDEX LOG]:", token);
+    console.log("[INDEX LOG]:", id);
+    console.log("[INDEX LOG]:", role);
+  });
 
   return (
     <section>
@@ -48,7 +67,7 @@ const Login = () => {
               <Link to="/sign-up">Sign Up</Link>
             </div>
 
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit((data) => mutation.mutate(data))}>
               <div className="form-group">
                 <label className="font-size-18 font-weight-500 text-text10 pb-2">
                   E-mail address

@@ -38,14 +38,14 @@
 
     @if $breakpoint ==xs {
       #{$offset-class-name} {
-        margin-left: percentage($value / 12);
+        margin-left: 50px;
       }
     }
 
     @else {
       @media (min-width: $min-width) {
         #{$offset-class-name} {
-          margin-left: percentage($value / 12);
+          margin-left: 50px;
         }
       }
     }
