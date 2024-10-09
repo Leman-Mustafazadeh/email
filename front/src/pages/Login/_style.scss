@@ -108,6 +108,11 @@
                         text-align: start;
                     }
                 }
+
+                .error-message {
+                    @extend .font-size-12;
+                    color: map-get($colors, danger);
+                }
             }
 
             .password-toggle-icon {

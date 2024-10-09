@@ -2,8 +2,7 @@ import { create } from "zustand";
 import { useMutation } from "@tanstack/react-query";
 import { toast } from "react-toastify";
 import authApi from "./authApi";
-import "react-toastify/dist/ReactToastify.css"; 
-
+import "react-toastify/dist/ReactToastify.css";
 
 const useAuthStore = create((set) => ({
   user: null,
@@ -27,7 +26,7 @@ export const useLoginMutation = (navigate) => {
       const { setUser } = useAuthStore.getState();
       setUser(response.user);
       toast.success(response.message, { autoClose: 1000 });
-      navigate("/contact-us");
+      navigate("/dashboard");
     },
     onError: (error) => {
       toast.error(error.message || "An error occurred during login.", {
@@ -45,9 +44,14 @@ export const useRegisterMutation = (navigate) => {
       navigate("/login");
     },
     onError: (error) => {
-      toast.error(error.message || "An error occurred during registration.", {
-        autoClose: 2000,
-      });
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "An error occurred during registration.",
+        {
+          autoClose: 2000,
+        }
+      );
     },
   });
 };

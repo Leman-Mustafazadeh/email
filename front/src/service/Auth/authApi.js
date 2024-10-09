@@ -7,7 +7,6 @@ const { BASE_URL, AUTH_KEY } = useAuthConstantsStore.getState();
 const authApi = create((set) => ({
   isLoading: false,
   error: null,
-
   register: async (payload) => {
     set({ isLoading: true, error: null });
     try {

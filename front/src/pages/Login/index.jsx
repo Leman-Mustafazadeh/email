@@ -57,7 +57,9 @@ const Login = () => {
                   id="email"
                   type="email"
                   placeholder="example@mail.com"
-                  {...register("email")}
+                  {...register("email", {
+                    required: "Email is required",
+                  })}
                   className={`${errors.email ? "error" : ""}`}
                 />
                 {errors.email && (
