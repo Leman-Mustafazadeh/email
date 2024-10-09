@@ -1,0 +1,22 @@
+.rates{
+    .rates_head{
+        height: 432px;
+        border: 1px solid #1A73E8;
+        border-radius: 12px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .rates_left{
+            h1{
+                width: 70%;
+            }
+        }
+        .rates_right{
+            p{
+                color: #A1A1A1;
+                text-align: end;
+            }
+        }
+    }
+}

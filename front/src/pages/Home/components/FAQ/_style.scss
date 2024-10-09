@@ -1,10 +1,19 @@
 .support {
-
+    margin-bottom: 100px;
+.faq_left{
+    width: 38%;
+    .faq_hero{
+       
+    }
+}
+.faq_right{
+    width:62%;
+}
     .faqs {
         @extend .flex-container;
         @extend .flex-column;
         gap: 20px;
-
+       
         .faq-container {
             @extend .flex-container;
             @extend .flex-column;

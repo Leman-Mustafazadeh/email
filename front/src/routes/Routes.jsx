@@ -12,12 +12,15 @@ import DashboardDesign from "../pages/Dashboard/DashboardDesign";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import ForgotPassword from "../pages/ForgotPassword";
 import Home from "../pages/Home";
+import Advantage from "../pages/Home/components/Advantage/Advante";
 import Brands from "../pages/Home/components/Brands";
 import CreateSign from "../pages/Home/components/CreateSign";
 import Disclaimers from "../pages/Home/components/Disclaimers";
 import EmailSign from "../pages/Home/components/EmailSign";
 import Explore from "../pages/Home/components/Explore";
 import FAQs from "../pages/Home/components/FAQ";
+import Rates from "../pages/Home/components/Rates/Rates";
+import WorldWide from "../pages/Home/components/WorldWide/WorldWide";
 import Login from "../pages/Login";
 import MyAccountDeleteAccount from "../pages/MyAccount-DeleteAccount";
 import NonProfit from "../pages/NonProfit";
@@ -83,6 +86,18 @@ export const Routes = [
       {
         path: "brand",
         element: <Brands />,
+      },
+      {
+        path: "rates",
+        element: <Rates />,
+      },
+      {
+        path: "advantage",
+        element: <Advantage />,
+      },
+      {
+        path: "worldwide",
+        element: <WorldWide />,
       },
       {
         path: "createsign",

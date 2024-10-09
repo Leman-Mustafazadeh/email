@@ -6,21 +6,27 @@ import Explore from "./components/Explore";
 import FAQs from "./components/FAQ";
 import FreeTrial from "./components/FreeTrial";
 import "./_style.scss";
+import Rates from "./components/Rates/Rates";
+import Advantage from "./components/Advantage/Advante";
+import WorldWide from "./components/WorldWide/WorldWide";
 
 const Home = () => {
   return (
     <div className="home-page">
-      <EmailSign />
       <Brands />
+      <EmailSign />
+      <Rates/>
       <CreateSign />
       <Explore />
+      <Advantage/>
+      <WorldWide/>
       <FAQs />
-      <div className="mt-2">
+      {/* <div className="mt-2">
         <FreeTrial />
       </div>
       <div className="mt-10">
         <Disclaimers />
-      </div>
+      </div> */}
     </div>
   );
 };

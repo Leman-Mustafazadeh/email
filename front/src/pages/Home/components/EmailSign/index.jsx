@@ -190,11 +190,7 @@ const EmailSign = () => {
   return (
     <section className="signature-generator">
       <div className="container">
-        <PageHeader header="Free online Email Signature Generator" />
-        <p className="font-size-20 font-weight-400 py-3 text-align-center">
-          Measure, track and maximize your Email signature
-        </p>
-
+<p className="font-size-28 font-weight-600 text-primary ">Generator </p>
         <div className="generator">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="generator_banner row gap-4 mt-3">

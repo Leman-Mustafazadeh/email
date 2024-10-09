@@ -1,4 +1,5 @@
 .brands {
+    margin-top: 72px;
     .brands-logo {   @extend .flex-container;
         @extend .flex-align-center;
         @extend .flex-justify-center;
@@ -11,8 +12,18 @@
             img {
                 max-width: 100px;
                 object-fit: cover;
+                color: black;
             }
         }
+    }
+    .btn_now {
+        width: 35%;
+        margin-bottom: 35px;
+    }
+    .left_brand{
+       h1{
+        width: 80%;
+       }
     }
 }
 

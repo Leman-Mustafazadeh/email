@@ -39,8 +39,12 @@ const FAQs = () => {
   };
   return (
     <section className="support FAQ">
-      <SectionHeader header="FAQ" />
       <div className="container">
+       <div className="row">
+        <div className="faq_left">
+          <h1 className='faq_hero font-size-28 font-weight-600 text-primary pb-7  '>Frequently Asked Questions about Email Signature Generator</h1>
+        </div>
+        <div className="faq_right">
         <div className="mx-4">
           <div className="container col-12 faqs">
             {faqs.map((faq, index) => (
@@ -66,6 +70,9 @@ const FAQs = () => {
             ))}
           </div>
         </div>
+        </div>
+        
+       </div>
       </div>
     </section>
   );

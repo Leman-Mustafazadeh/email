@@ -11,19 +11,19 @@ import "./_style.scss";
 const CreateSign = () => {
   return (
     <div className="create-signature">
-      <div className="create-banners">
+      <div className="create-banners container">
         <SectionHeader header="How to use" />
 
         <div className="banners_items">
-          <div className="banners_wrap container">
+          <div className="banners_wrap    ">
             <div className="row flex-justify-start flex-justify-md-center">
               <Link to="#">
                 <button>1.Design</button>
               </Link>
             </div>
             <div className="row banners_title">
-              <div className="col-12 col-lg-6">
-                <div className="col-12 col-lg-9">
+              <div className="col-12 col-lg-6 banner_title_design">
+                <div className="col-12 col-lg-9 ">
                   <h2 className="mb-4">
                     Design your signatures effortlessly with the easiest tool
                   </h2>
@@ -34,27 +34,22 @@ const CreateSign = () => {
                   </p>
                 </div>
               </div>
-              <div className="col-12 col-lg-6">
+              <div className="col-12 col-lg-6 banner_right">
                 <img src={banner2} alt="" />
               </div>
             </div>
           </div>
 
-          <div className="banner_line">
-            <img src={banner1} alt="" />
-          </div>
+        
 
           <div className="banners_wrap container">
-            <div className="row flex-justify-end flex-justify-md-center">
+            <div className="row ">
               <Link to="#">
                 <button>2.Integrate</button>
               </Link>
             </div>
-            <div className="row flex-justify-space-evenly banners_title">
-              <div className="col-12 col-lg-4">
-                <img src={banner3} alt="" />
-              </div>
-              <div className="col-12 col-lg-4">
+            <div className="row flex-justify-space-between  banners_title">
+            <div className="col-12 col-lg-6 banner_title_integrate banner_integrate">
                 <h2 className="mb-4 ">
                   Integrate and Manage Your Email Signatures
                 </h2>
@@ -65,12 +60,15 @@ const CreateSign = () => {
                   as needed. Simplify your workflow with our intuitive tools!
                 </p>
               </div>
+
+              <div className="col-12 col-lg-6 banner_title_integrate banner_integrate_image">
+                <img src={banner3} alt="" />
+              </div>
+            
             </div>
           </div>
 
-          <div className="banner_line">
-            <img src={banner1} alt="" />
-          </div>
+       
 
           <div className="banners_wrap container">
             <div className="row flex-justify-start flex-justify-md-center">
@@ -79,7 +77,7 @@ const CreateSign = () => {
               </Link>
             </div>
             <div className="row banners_title ">
-              <div className="col-12 col-lg-6">
+              <div className="col-12 col-lg-6 banner_title_integrate banner_integrate">
                 <h2 className="mb-10 ">
                   Elevate Your Marketing Campaigns Using Signature Banners
                 </h2>
@@ -91,7 +89,7 @@ const CreateSign = () => {
                   marketing results improve
                 </p>
               </div>
-            <div className="col-12 col-lg-6">
+            <div className="col-12 col-lg-6 banner_title_integrate banner_integrate_image">
             <div className="gif">
                 <img src={banner5} alt="" />
             </div>

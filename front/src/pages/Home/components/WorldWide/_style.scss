@@ -1,0 +1,37 @@
+.world{
+    .world_hero{
+        width: 60%;
+        margin: 0 auto
+    }
+    .world_head{
+        gap: 12px;
+        flex-wrap: nowrap;
+        background-color:#F1F1F1;
+        padding: 56px;
+        .world_title{
+            padding: 18px;
+            width:25%;
+            border-radius: 12px;
+            h1{
+                width: 70%;
+            }
+            p{
+             
+            }
+        }
+        .world_item{
+            background-color: #FFFFFF;
+            display: flex;
+            flex-direction: column;
+            padding:0 30px;
+            align-items: center;
+            justify-content: center;
+            width: 25%;
+            border-radius: 12px;
+            h2{
+                color: #313131 ;
+            }
+        }
+    }
+  
+}
