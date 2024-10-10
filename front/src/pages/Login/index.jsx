@@ -1,16 +1,13 @@
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { IconButton, InputAdornment } from "@mui/material";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo/logo.png";
-import { useLoginMutation } from "../../service/Auth/useAuth";
 import "./_style.scss";
-import { IconButton, InputAdornment } from "@mui/material";
+import { useLogin } from "../../service/Auth/Login/useLogin";
 
 const Login = () => {
-  const navigate = useNavigate();
-  const loginMutation = useLoginMutation(navigate);
-
   const [showPassword, setShowPassword] = useState(false);
 
   const {
@@ -23,9 +20,11 @@ const Login = () => {
     setShowPassword(!showPassword);
   };
 
-  const onSubmit = async (data) => {
+  const loginMutation = useLogin();
+
+  const onSubmit = (data) => {
     console.log("Submitting form data:", data);
-    await loginMutation.mutate(data);
+    loginMutation.mutate(data);
   };
 
   return (

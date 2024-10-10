@@ -2,15 +2,12 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { IconButton, InputAdornment } from "@mui/material";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo/logo.png";
-import { useRegisterMutation } from "../../service/Auth/useAuth";
 import "./_style.scss";
+import { useRegister } from "../../service/Auth/Register/useRegister";
 
 const SignUp = () => {
-  const navigate = useNavigate();
-  const registerMutation = useRegisterMutation(navigate);
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -23,17 +20,11 @@ const SignUp = () => {
     formState: { errors, isSubmitting },
   } = useForm();
 
+  const registrationMutate = useRegister();
+
   const onSubmit = async (data) => {
     console.log(data);
-    try {
-      await registerMutation.mutateAsync(data);
-      toast.success("Registration successful!", { autoClose: 1000 });
-      navigate("/login");
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Registration failed.", {
-        autoClose: 2000,
-      });
-    }
+    registrationMutate.mutate(data);
   };
 
   return (
