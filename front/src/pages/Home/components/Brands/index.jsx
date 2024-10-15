@@ -5,6 +5,7 @@ import ibm from "../../../../assets/images/brands/ibm.png";
 import oracle from "../../../../assets/images/brands/oracle.png";
 import "./style.scss";
 import element from "../../../../assets/images/brands/element.png"
+import { Link } from "react-router-dom";
 const Brands = () => {
   return (
     <div className="brands">
