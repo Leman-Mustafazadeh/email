@@ -83,6 +83,7 @@ const CreateSign = () => {
                 <h2 className="mb-10 ">
                   Elevate Your Marketing Campaigns Using Signature Banners
                 </h2>
+
                 <p>
                   Increase the impact of your emails by adding eye-catching
                   banners to your email signatures. These banners not only make
@@ -90,6 +91,7 @@ const CreateSign = () => {
                   conversions. Customize them to fit your campaigns and see your
                   marketing results improve
                 </p>
+                
               </div>
             <div className="col-12 col-lg-6 banner_title_integrate banner_integrate_image">
             <div className="gif">
