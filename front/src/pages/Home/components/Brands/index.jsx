@@ -20,7 +20,7 @@ const Brands = () => {
                 Elevate Your Emails with Custom Designs and Integrated Features.
               </p>
              <div className="btn_now">
-             <button className=" btn btn btn-primary mb-3 font-size-20 font-weight-700 text-natural">Start now</button>
+           <Link to={'/sign-up'}>  <button className=" btn btn btn-primary mb-3 font-size-20 font-weight-700 text-natural">Start now</button></Link>
              </div>
               <p className="font-size-18 font-weight-500 text-text60 pb-1">Brands that use:</p>
               <div className="brands-logo row justify-content-center">
