@@ -15,7 +15,9 @@ const CreateSign = () => {
         <SectionHeader header="How to use" />
 
         <div className="banners_items">
-          <div className="banners_wrap    ">
+         <p className="font-weight-500 font-size-24 bn_wrap text-primary ">1</p>
+
+          <div className="banners_wrap">
             <div className="row flex-justify-start flex-justify-md-center">
               <Link to="#">
                 <button>1.Design</button>
@@ -40,7 +42,7 @@ const CreateSign = () => {
             </div>
           </div>
 
-        
+          <p className="font-weight-500 font-size-24 bns_wrap text-primary bn_wrap ">2</p>
 
           <div className="banners_wrap container">
             <div className="row ">
@@ -67,10 +69,10 @@ const CreateSign = () => {
             
             </div>
           </div>
-
+          <p className="font-weight-500 font-size-24  bns_wrap bn_wrap text-primary ">3</p>
        
 
-          <div className="banners_wrap container">
+          <div className="banners_wrap container btn_wrap">
             <div className="row flex-justify-start flex-justify-md-center">
               <Link to="#">
                 <button>3.Boost email campaigns</button>

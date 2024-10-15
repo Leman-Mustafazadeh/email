@@ -3,7 +3,7 @@ import { CiCircleChevDown } from "react-icons/ci";
 
 import "./_style.scss";
 import SectionHeader from "../../../../components/common/SectionHeader";
-
+import faq from "../../../../assets/images/faq/FAQ 1.png";
 const FAQs = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const faqs = [
@@ -42,7 +42,10 @@ const FAQs = () => {
       <div className="container">
        <div className="row">
         <div className="faq_left">
-          <h1 className='faq_hero font-size-28 font-weight-600 text-primary pb-7  '>Frequently Asked Questions about Email Signature Generator</h1>
+          <h1 className='faq_hero font-size-28 font-weight-600 text-primary pb-7 '>Frequently Asked Questions about Email Signature Generator</h1>
+          <div>
+            <img src={faq} alt="" />
+          </div>
         </div>
         <div className="faq_right">
         <div className="mx-4">
