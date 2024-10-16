@@ -1,17 +1,19 @@
-.advantage{
-    p{
+.advantage {
+    p {
         width: 50%;
         margin: 0 auto;
         padding-bottom: 40px;
     }
-    .advantage_title{
-gap: 20px;
-flex-wrap: nowrap;
+
+    .advantage_title {
+        gap: 20px;
+        flex-wrap: nowrap;
     }
-    .advantage_items{
+
+    .advantage_items {
         display: flex;
         flex-direction: column;
         gap: 20px;
-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     }
 }

@@ -43,7 +43,7 @@ const Brands = () => {
 
           {/* Right Image Section */}
           <div className="col-12 col-md-6 text-align-end my-4">
-       <img src={element} alt="" />
+            <img src={element} alt="" />
           </div>
         </div>
       </div>

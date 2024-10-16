@@ -28,6 +28,7 @@ import Passwords from "../pages/Password";
 import Pricing from "../pages/Pricing";
 import Privacy from "../pages/Privacy/Privacy";
 import ResetPassword from "../pages/ResetPassword";
+import ResetMessage from "../pages/ResetPassword/message";
 import Business from "../pages/SignaturePages/Business";
 import Freelancer from "../pages/SignaturePages/Freelancer";
 import SignUp from "../pages/SignUp";
@@ -133,8 +134,12 @@ export const Routes = [
         element: <ForgotPassword />,
       },
       {
-        path: "resetpassword",
+        path: "Account/reset-password",
         element: <ResetPassword />,
+      },
+      {
+        path: "reset-password-message",
+        element: <ResetMessage />,
       },
       {
         path: "passwords",
