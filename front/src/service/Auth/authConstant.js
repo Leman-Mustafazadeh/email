@@ -11,4 +11,5 @@ export const GET_KEY = {
   pricing:"/api/Pricing/Get-all-pricings",
   purchase:"/api/Purchases/GetUserPurchases",
   signature:"/api/Signature/user-signatures",
+  addsignature:"/api/Signature/Create"
 };

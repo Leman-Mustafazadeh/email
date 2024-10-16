@@ -18,7 +18,7 @@ const Advantage = () => {
         </p>
 
         <div className="row advantage_content">
-          <div className="col-lg-6 col-md-12 mb-4">
+          <div className="col-lg-6 col-md-12 ">
 
             <div className="row advantage_head">
               <div className="col-6">
@@ -34,7 +34,7 @@ const Advantage = () => {
             </div>
           </div>
 
-          <div className="col-lg-6 col-md-12 mb-4">
+          <div className="col-lg-6 col-md-12 ">
             <div className="mb-4">
               <img src={advantage3} alt="Advantage 3" className="img-fluid" />
             </div>
