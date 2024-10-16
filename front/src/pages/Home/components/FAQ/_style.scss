@@ -1,129 +1,165 @@
 .support {
     margin-bottom: 100px;
-.faq_left{
-    width: 38%;
-    .faq_hero{
-       width: 90%;
+  
+    .faq_left {
+      width: 38%;
+      
+      .faq_hero {
+        width: 90%;
+      }
     }
-}
-.faq_right{
-    width:62%;
-}
+  
+    .faq_right {
+      width: 62%;
+    }
+  
     .faqs {
+      @extend .flex-container;
+      @extend .flex-column;
+      gap: 20px;
+  
+      .faq-container {
         @extend .flex-container;
         @extend .flex-column;
         gap: 20px;
-       
-        .faq-container {
+  
+        .faq-question {
+          @extend .p-6;
+          @extend .flex-container;
+          @extend .flex-column;
+          background-color: map-get($colors, light10);
+          border-radius: 16px;
+          position: relative;
+          cursor: pointer;
+  
+          &-header {
             @extend .flex-container;
-            @extend .flex-column;
-            gap: 20px;
-
-            .faq-question {
-                @extend .p-6;
-                @extend .flex-container;
-                @extend .flex-column;
-                background-color: map-get($colors, light10);
-                border-radius: 16px;
-                position: relative;
-                cursor: pointer;
-
-                &-header {
-                    @extend .flex-container;
-                    @extend .flex-justify-space-between;
-
-                    h5 {
-                        @extend .font-size-16;
-                        color: map-get($colors, text);
-                        line-height: 22px;
-                    }
-
-                    svg {
-                        width: 27px;
-                        height: 27px;
-                    }
-                }
-
-                h5,
-                svg {
-                    transition: all 0.3s;
-                }
-
-                &.active-question {
-                    color: map-get($colors, primary);
-                }
-
-                &:hover {
-
-                    h5,
-                    svg {
-                        color: map-get($colors, bg-primary60);
-                    }
-                }
+            @extend .flex-justify-space-between;
+  
+            h5 {
+              @extend .font-size-16;
+              color: map-get($colors, text);
+              line-height: 22px;
             }
-
-            .faq-answer {
-                background-color: map-get($colors, primaryFAQ);
-                border-radius: 16px;
-                max-height: 0;
-                overflow: hidden;
-                clip-path: inset(0 0 100% 0);
-                transition: clip-path 5s ease;
-
-                p {
-                    @extend .px-6;
-                    @extend .py-4;
-                    @extend .font-size-16;
-                    color: map-get($colors, text10);
-                    line-height: 28px;
-                }
+  
+            svg {
+              width: 27px;
+              height: 27px;
             }
-
-            &.faq-active {
-                .faq-question {
-                    background-color: map-get($colors, primaryFAQ);
-
-                    &.active-question {
-                        color: map-get($colors, primary);
-                    }
-
-                    .faq-answer {
-                        max-height: 500px;
-                        clip-path: inset(0 0 0 0);
-                        // animation: fade 1s ease-in-out;
-                    }
-
-                    svg {
-                        transform: rotate(180deg);
-                    }
-                }
-            }
-        }
-    }
-
-    .support-question {
-        color: map-get($colors, text);
-
-        a {
-            @extend .font-weight-bolder;
+          }
+  
+          h5,
+          svg {
+            transition: all 0.3s;
+          }
+  
+          &.active-question {
             color: map-get($colors, primary);
-            transition: all 0.3s ease;
-
-            &:hover {
-                color: map-get($colors, inky);
+          }
+  
+          &:hover {
+            h5,
+            svg {
+              color: map-get($colors, bg-primary60);
             }
+          }
         }
+  
+        .faq-answer {
+          background-color: map-get($colors, primaryFAQ);
+          border-radius: 16px;
+          max-height: 0;
+          overflow: hidden;
+          clip-path: inset(0 0 100% 0);
+          transition: clip-path 5s ease;
+  
+          p {
+            @extend .px-6;
+            @extend .py-4;
+            @extend .font-size-16;
+            color: map-get($colors, text10);
+            line-height: 28px;
+          }
+        }
+  
+        &.faq-active {
+          .faq-question {
+            background-color: map-get($colors, primaryFAQ);
+  
+            &.active-question {
+              color: map-get($colors, primary);
+            }
+  
+            .faq-answer {
+              max-height: 500px;
+              clip-path: inset(0 0 0 0);
+            }
+  
+            svg {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
     }
-
+  
+    .support-question {
+      color: map-get($colors, text);
+  
+      a {
+        @extend .font-weight-bolder;
+        color: map-get($colors, primary);
+        transition: all 0.3s ease;
+  
+        &:hover {
+          color: map-get($colors, inky);
+        }
+      }
+    }
+  
     @keyframes fade {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+  
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-}
+  
+    @media (max-width: 992px) {
+      .faq_left,
+      .faq_right {
+        width: 100%;
+      }
+  
+      .faq_hero {
+        text-align: center;
+      }
+  
+      .faqs {
+        gap: 10px;
+      }
+  
+      .faq-container {
+        padding: 15px;
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .faq_hero {
+        font-size: 24px;
+      }
+  
+      .faq-question h5 {
+        font-size: 14px;
+      }
+  
+      .faq-answer p {
+        font-size: 14px;
+      }
+    }
+  }
+  
