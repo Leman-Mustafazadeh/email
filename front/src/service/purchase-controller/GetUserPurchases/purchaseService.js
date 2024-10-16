@@ -1,5 +1,5 @@
-import {  GET_KEY } from "../authConstant";
-import { instance } from "../instance";
+import {  GET_KEY } from "../../Auth/authConstant";
+import { instance } from "../../Auth/instance";
 
 export const purchaseService = async (data) => {
   const responce = await instance.getAll(GET_KEY.purchase, data);
