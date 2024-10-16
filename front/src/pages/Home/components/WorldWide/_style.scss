@@ -1,46 +1,78 @@
-.world{
-    .world_hero{
-        width: 60%;
-        margin: 0 auto
-    }
-    .world_head{
-        gap: 12px;
-        flex-wrap: nowrap;
-        background-color:#F1F1F1;
-        padding: 56px;
-        .world_title{
-            padding: 18px;
-            width:25%;
-            height: 230px;
-            display: flex;
-            flex-direction: column;
-            border-radius: 12px;
-            justify-content: space-between;
-            h1{
-                width: 70%;
-            }
-            p{
-             
-            }
-            button{
-                padding: 13px 25px;
-                border-radius: 100%;
-                cursor: pointer;
-            }
-        }
-        .world_item{
-            background-color: #FFFFFF;
-            display: flex;
-            flex-direction: column;
-            padding:0 30px;
-            align-items: center;
-            justify-content: center;
-            width: 25%;
-            border-radius: 12px;
-            h2{
-                color: #313131 ;
-            }
-        }
+.world {
+    .world_hero {
+      width: 60%;
+      margin: 0 auto;
     }
   
+    .world_head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      background-color: #F1F1F1;
+      padding: 56px;
+  
+      .world_title {
+        padding: 18px;
+        width: 29%;
+        height: 230px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 12px;
+        justify-content: space-between;
+  
+        h1 {
+          width: 70%;
+        }
+  
+        button {
+          padding: 13px 25px;
+          border-radius: 100%;
+          cursor: pointer;
+        }
+  
+        p {
+        }
+      }
+  
+      .world_item {
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 25px;
+        align-items: center;
+        justify-content: center;
+        width: 22%;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+        h2 {
+          color: #313131;
+          margin: 0;
+        }
+  
+        p {
+          margin: 5px 0 0;
+        }
+      }
+    }
+  
+    @media (max-width: 1024px) {
+      .world_head {
+        .world_title,
+        .world_item {
+          width: 48%;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .world_head {
+        .world_title,
+        .world_item {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      }
+    }
 }

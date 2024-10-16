@@ -1,12 +1,19 @@
 .rates {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
-    flex-wrap: nowrap !important;
+    margin: -10px;
+    padding: 10px;
 
     .rates_item {
+        flex: 1 1 calc(33.333% - 20px);
+        min-width: 250px;
+        margin-bottom: 20px;
+
         :hover {
             background-color: #1A73E8 !important;
             cursor: pointer;
+            transition: background-color 0.5s ease; 
 
             .rates_left {
                 h1 {
@@ -29,10 +36,14 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-
+            :hover{
+                background-color: transparent !important;
+            }
             .rates_left {
                 h1 {
                     width: 70%;
+                    font-size: 24px;
+                    margin-bottom: 10px;
                 }
             }
 
@@ -40,11 +51,21 @@
                 p {
                     color: #A1A1A1;
                     text-align: end;
+                    font-size: 16px;
                 }
             }
         }
     }
 
+    @media (max-width: 768px) {
+        .rates_item {
+            flex: 1 1 calc(50% - 20px);
+        }
+    }
 
-
+    @media (max-width: 576px) {
+        .rates_item {
+            flex: 1 1 100%;
+        }
+    }
 }

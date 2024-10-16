@@ -1,12 +1,14 @@
 .create-banners {
   @extend .flex-container;
   @extend .flex-column;
+
   .banners_items {
     @extend .flex-container;
     @extend .flex-column;
     gap: 72px;
     padding: 0 40px;
     overflow: hidden;
+
     .bn_wrap {
       background-color: #adcbf2;
       padding: 13px 22px;
@@ -14,17 +16,19 @@
       border-radius: 122px;
       position: relative;
       margin: 0 auto;
+
       &::after {
         content: "";
         position: absolute;
         top: 100%;
-        left: 48%;
+        left: 50%;
         width: 2px;
         height: 72px;
         background-color: #1a73e8;
         transform: translateX(-50%);
       }
     }
+
     .bns_wrap {
       position: relative;
       margin: 0 auto;
@@ -42,6 +46,7 @@
         transform: translateX(-50%);
       }
     }
+
     .banners_wrap {
       @extend .flex-container;
       @extend .flex-column;
@@ -51,6 +56,7 @@
       padding: 40px 32px;
       position: relative;
       border: 2px solid #1a73e875;
+
       button {
         @extend .font-size-22;
         @extend .font-weight-500;
@@ -61,13 +67,23 @@
         color: map-get($colors, primary);
         min-height: 55px;
         padding: 13px 34px;
+
+        // Hover etkisi için geçiş ekleme
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: map-get($colors, primary);
+          color: #ffffff; // Hoverda metin rengi beyaz
+        }
       }
+
       .banners_title {
         position: relative;
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap; // Flex-wrap özelliği eklenerek kutuların taşmasını önler
         gap: 20px;
-        align-items: center;
+        align-items: flex-start; // Başlangıç hizalaması
+
         .banner_title_design {
           background-color: #fafafa;
           height: 336px;
@@ -77,10 +93,13 @@
           justify-content: center;
           padding: 32px;
           border-radius: 9px;
+          flex: 1 1 300px; // Her bir banner'ın en az 300px genişliğinde olmasını sağlar
         }
+
         .banner_title_integrate {
           background-color: #fafafa;
           position: relative;
+          flex: 1 1 300px; // Her bir banner'ın en az 300px genişliğinde olmasını sağlar
         }
 
         .banner_integrate {
@@ -95,6 +114,7 @@
           background-color: #fafafa;
           padding: 51px 31px;
           border-radius: 9px;
+          flex: 1 1 300px; // Her bir banner'ın en az 300px genişliğinde olmasını sağlar
         }
 
         h2 {
@@ -112,6 +132,7 @@
 
         img {
           width: 100%;
+          height: auto; // Resim yüksekliğini orantılı yapma
         }
 
         .gif {
@@ -119,6 +140,7 @@
 
           img {
             width: 341px;
+            height: auto; // Orantılı yükseklik
           }
         }
 
@@ -126,6 +148,7 @@
           position: absolute;
           left: 50%;
           top: 50%;
+          transform: translate(-50%, -50%); // Merkezde hizalama
         }
 
         .gif2 {
@@ -165,6 +188,12 @@
     .banners_title {
       text-align: center;
       gap: 40px;
+
+      .banner_title_design,
+      .banner_title_integrate,
+      .banner_right {
+        flex: 1 1 100%; // Mobilde tüm kutuları tam genişlikte yapar
+      }
     }
 
     &:last-child {

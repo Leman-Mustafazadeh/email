@@ -63,6 +63,10 @@ const EmailSign = () => {
       phone: "",
       email: "",
       address: "",
+      instagramUrl: "",
+      facebookUrl: "",
+      linkedinUrl: "",
+      qrCoreBase64: "",
       font: "Montserrat",
       fontColor: "#000000",
       backgroundColor: "#ffffff",
@@ -176,6 +180,8 @@ const EmailSign = () => {
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
   };
+  const postSignature = useStore((state) => state.postSignature);
+  const setSignature = useStore((state) => state.setSignature);
 
   return (
     <section className="signature-generator">
