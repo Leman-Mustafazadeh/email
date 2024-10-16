@@ -180,8 +180,6 @@ const EmailSign = () => {
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
   };
-  const postSignature = useStore((state) => state.postSignature);
-  const setSignature = useStore((state) => state.setSignature);
 
   return (
     <section className="signature-generator">
