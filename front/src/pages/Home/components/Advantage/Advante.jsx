@@ -16,7 +16,7 @@ const Advantage = () => {
         
         <div>
           <div className='row advantage_title'>
-            <div >
+            <div className='advantage_items'>
               <div className='row advantage_title'>
                 <div>
                   <img src={advantage1} alt="" />
@@ -31,7 +31,7 @@ const Advantage = () => {
             </div>
 
 
-            <div>
+            <div  className='advantage_items'>
             
               <div>
                 <img src={advantage3} alt="" />

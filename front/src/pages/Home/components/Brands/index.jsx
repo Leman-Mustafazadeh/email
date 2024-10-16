@@ -4,8 +4,8 @@ import amazon from "../../../../assets/images/brands/amazon.png";
 import ibm from "../../../../assets/images/brands/ibm.png";
 import oracle from "../../../../assets/images/brands/oracle.png";
 import "./style.scss";
-import element from "../../../../assets/images/brands/element.png";
-
+import element from "../../../../assets/images/brands/element.png"
+import { Link } from "react-router-dom";
 const Brands = () => {
   return (
     <div className="brands">
@@ -20,14 +20,10 @@ const Brands = () => {
               <p className="font-size-18 font-weight-500 pb-4">
                 Elevate Your Emails with Custom Designs and Integrated Features.
               </p>
-              <div className="btn_now">
-                <button className=" btn btn btn-primary mb-3 font-size-20 font-weight-700 text-natural">
-                  Start now
-                </button>
-              </div>
-              <p className="font-size-18 font-weight-500 text-text60 pb-1">
-                Brands that use:
-              </p>
+             <div className="btn_now">
+           <Link to={'/sign-up'}>  <button className=" btn btn btn-primary mb-3 font-size-20 font-weight-700 text-natural">Start now</button></Link>
+             </div>
+              <p className="font-size-18 font-weight-500 text-text60 pb-1">Brands that use:</p>
               <div className="brands-logo row justify-content-center">
                 <div className="col-6 col-md-3 logo amazon ">
                   <img src={amazon} alt="Amazon" className="img-fluid" />

@@ -5,7 +5,6 @@ import toast from "react-hot-toast";
 
 export const useRegister = () => {
   const navigate = useNavigate();
-
   return useMutation({
     mutationFn: (payload) => registerService(payload),
     onSuccess: (responce) => {

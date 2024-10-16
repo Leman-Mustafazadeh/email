@@ -5,8 +5,9 @@ const Rates = () => {
     <section>
       <div className="container">
         <div className="rates row">
-          <div className="col-lg-4 rates_head pr-4">
-            <div className="rates_left">
+          <div className="col-lg-4  rates_item col-md-6 col-sm-12">
+          <div className="rates_head pr-4">
+          <div className="rates_left">
               <div className="pb-3">
                 <svg
                   width="56"
@@ -70,9 +71,11 @@ const Rates = () => {
               </p>
             </div>
           </div>
+          </div>
 
-          <div className="col-lg-4 rates_head pr-4">
-            <div className="rates_left">
+          <div className="col-lg-4  rates_item col-md-6 col-sm-12">
+          <div className="rates_head pr-4">
+          <div className="rates_left">
               <div className="pb-3">
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_2681_13912)">
@@ -112,11 +115,11 @@ const Rates = () => {
               </p>
             </div>
           </div>
+          </div>
 
-
-
-          <div className="col-lg-4 rates_head">
-            <div className="rates_left">
+          <div className="col-lg-4  rates_item col-md-6 col-sm-12">
+          <div className="rates_head">
+          <div className="rates_left">
               <div className="pb-3">
               <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect width="56" height="56" rx="7" fill="#1A73E8"/>
@@ -149,6 +152,7 @@ const Rates = () => {
               By integrating call-to-action elements (like promotions, contact buttons, or links), email signatures contribute to higher conversion rates from recipients.
               </p>
             </div>
+          </div>
           </div>
         </div>
       </div>

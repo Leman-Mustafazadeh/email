@@ -804,7 +804,7 @@ a {
   margin-right: auto;
   margin-left: auto;
   max-width: 100%;
-  padding: 0 20px;
+  padding: 0 70px;
 }
 
 .row {
@@ -2737,5 +2737,3 @@ form {
 .form-control:focus {
   border: 1px solid #1A73E8;
 }
-
-/*# sourceMappingURL=style.css.map */

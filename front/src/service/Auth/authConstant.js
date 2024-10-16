@@ -5,3 +5,10 @@ export const AUTH_KEY = {
   "forget-password": "Account/forget-password",
   logout: "Account/Logout",
 };
+
+export const GET_KEY = {
+  invite: "/api/Invites/GetInvitations",
+  pricing:"/api/Pricing/Get-all-pricings",
+  purchase:"/api/Purchases/GetUserPurchases",
+  signature:"/api/Signature/user-signatures",
+};

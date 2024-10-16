@@ -11,12 +11,21 @@
         .world_title{
             padding: 18px;
             width:25%;
+            height: 230px;
+            display: flex;
+            flex-direction: column;
             border-radius: 12px;
+            justify-content: space-between;
             h1{
                 width: 70%;
             }
             p{
              
+            }
+            button{
+                padding: 13px 25px;
+                border-radius: 100%;
+                cursor: pointer;
             }
         }
         .world_item{

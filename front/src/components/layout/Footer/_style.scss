@@ -3,6 +3,15 @@ footer {
 
     .footer-group {
         flex-wrap: wrap;
+        .footer_hero{
+            width: 30%;
+            background-color: #5E9DEF;
+            border-radius: 4px;
+            padding: 12px;
+            p{
+                color: map-get($colors, natural);
+            }
+        }
     }
 
     ul {

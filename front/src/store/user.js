@@ -21,7 +21,6 @@ export const useUserStore = create((set) => ({
       JSON.stringify({ id: user.id, role: user.email, token })
     );
   },
-
   logout: () => {
     set({ id: null, role: "", token: null });
     localStorage.setItem(
