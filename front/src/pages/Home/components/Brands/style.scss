@@ -2,13 +2,11 @@
     margin-top: 33px;
     margin-bottom: 70px ;
     .brands-logo {   @extend .flex-container;
-        @extend .flex-align-center;
-        @extend .flex-justify-center;
+        margin-top: 25px;
         .logo {
             // @extend .my-3;
             @extend .flex-container;
             @extend .flex-align-center;
-            @extend .flex-justify-center;
 
             img {
                 max-width: 100px;
