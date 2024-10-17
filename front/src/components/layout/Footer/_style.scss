@@ -4,7 +4,7 @@ footer {
     .footer-group {
         flex-wrap: wrap;
         .footer_hero{
-            width: 30%;
+            width: 47%;
             background-color: #5E9DEF;
             border-radius: 4px;
             padding: 12px;
@@ -36,7 +36,7 @@ footer {
 
 @media screen and (max-width: 992px) {
     .footer-group {
-        gap: 30px;
+        // gap: 30px;
 
         .footer-group-item {
             min-width: 40%;

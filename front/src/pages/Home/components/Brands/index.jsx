@@ -4,14 +4,13 @@ import amazon from "../../../../assets/images/brands/amazon.png";
 import ibm from "../../../../assets/images/brands/ibm.png";
 import oracle from "../../../../assets/images/brands/oracle.png";
 import "./style.scss";
-import element from "../../../../assets/images/brands/element.png"
+import element from "../../../../assets/images/brands/6.gif"
 import { Link } from "react-router-dom";
 const Brands = () => {
   return (
     <div className="brands">
       <div className="container">
         <div className="row align-items-center flex-justify-space-between">
-          {/* Left Content Section */}
           <div className="col-12 col-md-6 left_brand">
             <div className="my-5 text-center">
               <h1 className="font-size-36 font-weight-700 text-primary pb-3">
@@ -41,8 +40,7 @@ const Brands = () => {
             </div>
           </div>
 
-          {/* Right Image Section */}
-          <div className="col-12 col-md-6 text-align-end my-4">
+          <div className="col-12 col-md-6 text-align-end my-4 right_brands">
             <img src={element} alt="" />
           </div>
         </div>

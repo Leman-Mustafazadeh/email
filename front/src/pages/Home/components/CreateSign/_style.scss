@@ -1,7 +1,7 @@
 .create-banners {
   @extend .flex-container;
   @extend .flex-column;
-
+margin-bottom: 130px;
   .banners_items {
     @extend .flex-container;
     @extend .flex-column;

@@ -11,19 +11,19 @@ const Footer = () => {
           </div>
 
           <ul className="form-group footer-group-item">
-            <li className="mb-2 font-size-18 font-weight-500">Solutions</li>
+            {/* <li className="mb-2 font-size-18 font-weight-500">Solutions</li>
             <li>
               <Link to={""}>Email signature template</Link>
             </li>
             <li>
               <Link to={""}>Professional Email signature</Link>
-            </li>
+            </li> */}
             <li>
               <Link to={"/pricing"}>Pricing</Link>
             </li>
           </ul>
 
-          <ul className="form-group footer-group-item">
+          {/* <ul className="form-group footer-group-item">
             <li className="mb-2 font-size-18 font-weight-500">
               Email signature genarator
             </li>
@@ -36,31 +36,46 @@ const Footer = () => {
             <li>
               <Link to={"/business"}>Signature for business</Link>
             </li>
+          </ul> */}
+
+         
+
+          <ul className="form-group footer-group-item">
+            {/* <li className="mb-2 font-size-18 font-weight-500">Company</li> */}
+            <li>
+              <Link to={"/aboutus"}>About us</Link>
+            </li>
+            {/* <li>
+              <Link to={"/contact-us"}>Contact us</Link>
+            </li>
+            <li>
+              <Link to={"/dashboard"}>Dashboard</Link>
+            </li> */}
           </ul>
 
           <ul className="form-group footer-group-item">
-            <li className="mb-2 font-size-18 font-weight-500">Support</li>
+            {/* <li className="mb-2 font-size-18 font-weight-500">Support</li>
+            <li>
+              <Link to={""}>Help center</Link>
+            </li> */}
+            <li>
+              <Link to={""}>Terms & Conditions</Link>
+            </li>
+            {/* <li>
+              <Link to={""}>Privacy Policy </Link>
+            </li> */}
+          </ul>
+
+          <ul className="form-group footer-group-item">
+            {/* <li className="mb-2 font-size-18 font-weight-500">Support</li>
             <li>
               <Link to={""}>Help center</Link>
             </li>
             <li>
               <Link to={""}>Terms & Conditions</Link>
-            </li>
+            </li> */}
             <li>
               <Link to={""}>Privacy Policy </Link>
-            </li>
-          </ul>
-
-          <ul className="form-group footer-group-item">
-            <li className="mb-2 font-size-18 font-weight-500">Company</li>
-            <li>
-              <Link to={"/aboutus"}>About us</Link>
-            </li>
-            <li>
-              <Link to={"/contact-us"}>Contact us</Link>
-            </li>
-            <li>
-              <Link to={"/dashboard"}>Dashboard</Link>
             </li>
           </ul>
         </div>
