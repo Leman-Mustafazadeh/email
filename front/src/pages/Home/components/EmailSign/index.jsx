@@ -1,5 +1,5 @@
 import { MenuItem, Select } from "@mui/material";
-import { Button, Upload } from "antd";
+import { Upload } from "antd";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaFacebookSquare, FaLinkedin } from "react-icons/fa";
@@ -10,6 +10,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
+import { useSignatureCreate } from "../../../../service/signature-controller/Create/useSignatureCreate";
 import "./_style.scss";
 import SignUpModal from "./signUpModal";
 
@@ -54,6 +55,7 @@ const EmailSign = () => {
 
   const [fileList, setFileList] = useState([]);
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
+  const signatureMutation = useSignatureCreate();
 
   const { register, handleSubmit, setValue, watch } = useForm({
     defaultValues: {
@@ -179,6 +181,26 @@ const EmailSign = () => {
 
   const onSubmit = (data) => {
     console.log("Form Submitted:", data);
+    const payload = {
+      name: data.fullName,
+      signature: "test",
+      fullName: data.fullName,
+      position: data.position,
+      email: data.email,
+      company: data.company,
+      phone: data.phone,
+      adress: data.address,
+      instagramUrl: data.instagramUrl,
+      facebookUrl: data.facebookUrl,
+      linkedinUrl: data.linkedinUrl,
+      qrCoreBase64: data.qrCoreBase64,
+      signatureFiles: [
+        {
+          fileContent: "test",
+        },
+      ],
+    };
+    signatureMutation.mutate(payload);
   };
 
   return (
@@ -393,17 +415,13 @@ const EmailSign = () => {
               <div className="col-12 col-lg-6 flex-container flex-column">
                 <div className="generator_banner_right">
                   <div className="generator-header">
-                    <div className="message">
-                      <div className="container">
-                        <span>New Messages</span>
-                      </div>
+                    <div className="message px-5">
+                      <span>New Messages</span>
                     </div>
-                    <div className="container">
+                    <div className="px-5">
                       <div className="mail-forms">
                         <span>To</span>
                       </div>
-                    </div>
-                    <div className="container">
                       <div className="mail-forms">
                         <span>Subject</span>
                       </div>
@@ -504,13 +522,13 @@ const EmailSign = () => {
                   </div>
                 </div>
 
-                <Button
-                  type="primary"
+                <button
+                  type="submit"
                   onClick={showModal}
-                  className="btn_email bg-secondary p-5 mt-4 font-size-24 text-natural font-weight-500"
+                  className="btn_email p-3 bg-secondary mt-4 font-size-24 text-natural font-weight-500"
                 >
                   Integrate to your email
-                </Button>
+                </button>
               </div>
             </div>
 
