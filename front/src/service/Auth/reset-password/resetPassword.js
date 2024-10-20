@@ -1,5 +1,5 @@
-import { AUTH_KEY } from "../authConstant";
-import { instance } from "../instance";
+import { instance } from "../../instance";
+import { AUTH_KEY } from "../../constant";
 
 export const resetPassword = async (data) => {
   try {
