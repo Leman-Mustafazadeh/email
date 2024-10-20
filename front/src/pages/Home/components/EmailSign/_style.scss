@@ -1,275 +1,279 @@
-.generator {
-    &_banner {
-        &_left {
-            border-radius: 12px;
-
-            .react-tel-input {
-                position: relative;
-
-                .form-control {
-                    border: 1px solid map-get($colors, text30);
-                    border-radius: 4px;
-                    padding: 12px 50px;
-                    transition: all 0.2s ease;
-                    height: 100%;
-
-                    &:focus {
-                        border: 1px solid map-get($colors, primary);
-                    }
-                }
-
-                .flag-dropdown {
-                    border: 1px solid map-get($colors, text30);
-                    background-color: map-get($colors, natural);
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    height: 100%;
-
-                    &:focus {
-                        border: 1px solid map-get($colors, primary);
-
-                    }
-                }
-            }
-
-            .text {
-                background-color: map-get($colors, natural);
+.signature-generator{
+    margin-bottom: 168px;
+    .generator {
+        &_banner {
+            &_left {
                 border-radius: 12px;
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 15px 10px;
-            }
-
-            .templateX {
-                background-color: map-get($colors, natural);
-                border-radius: 12px;
-                min-height: 272px;
-
-                .uploader {
-
-                    .ant-upload-list {
-                        display: flex;
-                        justify-content: space-between;
-                        flex-direction: row-reverse;
-
-                        .ant-upload-select,
-                        .ant-upload-list-item-container {
-                            min-width: 160px;
-                            min-height: 160px;
+    
+                .react-tel-input {
+                    position: relative;
+    
+                    .form-control {
+                        border: 1px solid map-get($colors, text30);
+                        border-radius: 4px;
+                        padding: 12px 50px;
+                        transition: all 0.2s ease;
+                        height: 100%;
+    
+                        &:focus {
+                            border: 1px solid map-get($colors, primary);
                         }
-
-                        &-item {
+                    }
+    
+                    .flag-dropdown {
+                        border: 1px solid map-get($colors, text30);
+                        background-color: map-get($colors, natural);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        height: 100%;
+    
+                        &:focus {
+                            border: 1px solid map-get($colors, primary);
+    
+                        }
+                    }
+                }
+    
+                .text {
+                    background-color: map-get($colors, natural);
+                    border-radius: 12px;
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 15px 10px;
+                }
+    
+                .templateX {
+                    background-color: map-get($colors, natural);
+                    border-radius: 12px;
+                    min-height: 272px;
+    
+                    .uploader {
+    
+                        .ant-upload-list {
                             display: flex;
-                            align-items: end;
-                            padding: 0;
-
-                            &::before {
-                                width: 100% !important;
-                                height: 100% !important;
-                                border-radius: 6px;
-
+                            justify-content: space-between;
+                            flex-direction: row-reverse;
+    
+                            .ant-upload-select,
+                            .ant-upload-list-item-container {
+                                min-width: 160px;
+                                min-height: 160px;
                             }
-
-                            &-actions {
+    
+                            &-item {
                                 display: flex;
-                                justify-content: end;
-                                padding: 15px 10px;
-
-                                a {
-                                    display: none;
+                                align-items: end;
+                                padding: 0;
+    
+                                &::before {
+                                    width: 100% !important;
+                                    height: 100% !important;
+                                    border-radius: 6px;
+    
+                                }
+    
+                                &-actions {
+                                    display: flex;
+                                    justify-content: end;
+                                    padding: 15px 10px;
+    
+                                    a {
+                                        display: none;
+                                    }
                                 }
                             }
                         }
-                    }
-
-
-
-                    .upload-button {
-                        svg {
-                            color: map-get($colors, primary);
-                            width: 36px;
-                            height: 36px;
+    
+    
+    
+                        .upload-button {
+                            svg {
+                                color: map-get($colors, primary);
+                                width: 36px;
+                                height: 36px;
+                            }
+    
+                            p {
+                                @extend .font-size-10;
+                                color: map-get($colors, text);
+                                line-height: 1.5;
+                            }
                         }
-
-                        p {
-                            @extend .font-size-10;
-                            color: map-get($colors, text);
-                            line-height: 1.5;
+                    }
+    
+                    &-headers {
+                        gap: 50px;
+    
+                        li {
+                            cursor: pointer;
+                            user-select: none;
+                        }
+    
+                        .active-category {
+                            transition: all 0.2s ease;
+                            color: map-get($colors, secondary);
                         }
                     }
-                }
-
-                &-headers {
-                    gap: 50px;
-
-                    li {
-                        cursor: pointer;
-                        user-select: none;
+    
+                    &-banners {
+                        .url-container {
+                            .url-sosial {
+                                @extend .flex-container;
+                                @extend .flex-column;
+                                gap: 10px;
+                            }
+                        }
+    
+    
                     }
-
-                    .active-category {
-                        transition: all 0.2s ease;
-                        color: map-get($colors, secondary);
-                    }
-                }
-
-                &-banners {
-                    .url-container {
-                        .url-sosial {
-                            @extend .flex-container;
-                            @extend .flex-column;
+    
+                    .design-container {
+                        gap: 10px;
+                        width: 100%;
+    
+    
+                        img {
+                            width: 25px;
+                            height: 25px;
+                            cursor: pointer;
+                            user-select: none;
+                        }
+    
+                        .font-color,
+                        .background-color {
                             gap: 10px;
                         }
-                    }
-
-
-                }
-
-                .design-container {
-                    gap: 10px;
-                    width: 100%;
-
-
-                    img {
-                        width: 25px;
-                        height: 25px;
-                        cursor: pointer;
-                        user-select: none;
-                    }
-
-                    .font-color,
-                    .background-color {
-                        gap: 10px;
-                    }
-
-                    .colors-pallete {
-                        @extend .flex-container;
-                        gap: 10px;
-
-                        .color {
-                            cursor: pointer;
-                            border: 1px solid map-get($colors, light10);
-                            user-select: none;
-                            border-radius: 50%;
-                            width: 24px;
-                            height: 24px;
-                            background-color: map-get($colors, primary);
+    
+                        .colors-pallete {
+                            @extend .flex-container;
+                            gap: 10px;
+    
+                            .color {
+                                cursor: pointer;
+                                border: 1px solid map-get($colors, light10);
+                                user-select: none;
+                                border-radius: 50%;
+                                width: 24px;
+                                height: 24px;
+                                background-color: map-get($colors, primary);
+                            }
                         }
                     }
                 }
-            }
-
-            .temp_wrap {
-                width: 47%;
-                border-radius: 25px;
-                height: 30px;
-            }
-        }
-
-        &_right {
-            @extend .p-5;
-            background-color: map-get($colors, natural);
-            border-radius: 12px;
-            flex-grow: 1;
-
-            .generator-header {
-                @extend .font-size-14;
-
-                .message {
-                    @extend .py-2;
-                    background-color: map-get($colors, light10);
-                    color: map-get($colors, text);
-                    font-weight: 400;
-                    border-radius: 8px 8px 0px 0px;
-                }
-
-                .mail-forms {
-                    @extend .py-2;
-                    color: map-get($colors, light30);
-                    font-weight: 400;
-                    border-bottom: 1px solid map-get($colors, light30)
+    
+                .temp_wrap {
+                    width: 47%;
+                    border-radius: 25px;
+                    height: 30px;
                 }
             }
-
-            .right-regard {
-                @extend .mt-4;
-                @extend .p-3;
-                border-radius: 8px;
-
-                &-img {
-                    img {
-                        width: 100%;
-                        border-radius: 5px
+    
+            &_right {
+                @extend .p-5;
+                background-color: map-get($colors, natural);
+                border-radius: 12px;
+                flex-grow: 1;
+    
+                .generator-header {
+                    @extend .font-size-14;
+    
+                    .message {
+                        @extend .py-2;
+                        background-color: map-get($colors, light10);
+                        color: map-get($colors, text);
+                        font-weight: 400;
+                        border-radius: 8px 8px 0px 0px;
+                    }
+    
+                    .mail-forms {
+                        @extend .py-2;
+                        color: map-get($colors, light30);
+                        font-weight: 400;
+                        border-bottom: 1px solid map-get($colors, light30)
                     }
                 }
-
-                &-container {
-                    @extend .flex-container;
-                    @extend .flex-column;
-                    @extend .flex-justify-space-between;
-                    @extend .px-5;
-                    line-height: 1.75;
-
-                    h2 {
-                        @extend .font-size-18;
-                        text-transform: capitalize;
-                    }
-
-                    p {
-                        @extend .font-size-14;
-                        text-transform: capitalize;
-                    }
-                }
-
-                &-qr {
-                    @extend .flex-container;
-                    @extend .flex-column;
-                    @extend .flex-align-end;
-                    gap: 15px;
-
-                    .sosial-icons {
-                        @extend .flex-container;
-                        gap: 10px;
-
-                        svg {
-                            color: map-get($colors, primary30d);
-                            height: 20px;
-                            width: 20px;
+    
+                .right-regard {
+                    @extend .mt-4;
+                    @extend .p-3;
+                    border-radius: 8px;
+    
+                    &-img {
+                        img {
+                            width: 100%;
+                            border-radius: 5px
                         }
                     }
-                }
-
-                &-contacts {
-                    &-item {
+    
+                    &-container {
                         @extend .flex-container;
-                        @extend .flex-align-center;
-
+                        @extend .flex-column;
+                        @extend .flex-justify-space-between;
+                        @extend .px-5;
+                        line-height: 1.75;
+    
+                        h2 {
+                            @extend .font-size-18;
+                            text-transform: capitalize;
+                        }
+    
                         p {
-                            @extend .mx-2;
+                            @extend .font-size-14;
+                            text-transform: capitalize;
+                        }
+                    }
+    
+                    &-qr {
+                        @extend .flex-container;
+                        @extend .flex-column;
+                        @extend .flex-align-end;
+                        gap: 15px;
+    
+                        .sosial-icons {
+                            @extend .flex-container;
+                            gap: 10px;
+    
+                            svg {
+                                color: map-get($colors, primary30d);
+                                height: 20px;
+                                width: 20px;
+                            }
+                        }
+                    }
+    
+                    &-contacts {
+                        &-item {
+                            @extend .flex-container;
+                            @extend .flex-align-center;
+    
+                            p {
+                                @extend .mx-2;
+                            }
                         }
                     }
                 }
             }
-        }
-
-        .btn_email {
-            border-radius: 8px;
-        }
-
-        .url-container {
-            width: 100%;
-
-            .url-sosial {
-                gap: 10px;
-
-                input {
-                    width: 100%;
-                    border-radius: 4px;
+    
+            .btn_email {
+                border-radius: 8px;
+            }
+    
+            .url-container {
+                width: 100%;
+    
+                .url-sosial {
+                    gap: 10px;
+    
+                    input {
+                        width: 100%;
+                        border-radius: 4px;
+                    }
                 }
             }
         }
     }
+
 }
 
 .login {
@@ -316,8 +320,6 @@
     }
 }
 
-
-// Modal style 
 .sign-up-modal {
     min-width: 70vw !important;
     width: 100%;
