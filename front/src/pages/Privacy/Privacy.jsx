@@ -12,15 +12,63 @@ const Privacy = () => {
         </div>
         <div className="container">
           <div className="terms_title">
-            <h2 className="font-size-32 font-weight-700 text-text">Preamble</h2>
-            <p>Last updated: __ / __ / {currentYear}</p>
-            <p>
-              Welcome to the Privacy Policy of Email Signature Generator,
-              operated by Elevating LTD ("Company," "Owner," "we," "us," or
-              "our"). Your privacy is of utmost importance to us.
-            </p>
+          <h2 className="font-size-32 font-weight-700 text-text">Preamble</h2>
+<p>Last Updated: 01.10.{currentYear}</p>
+<p>
+    Welcome to Email Signature Generator! By using our service at 
+    <a className="priv_link" href="http://www.emailsignaturegenerator.ai">
+        http://www.emailsignaturegenerator.ai
+    </a> ("Service", "Platform"), you agree to be bound by these Terms and Conditions ("Terms"). 
+    If you do not agree to these Terms, you may not use the Service.
+</p>
 
-            <p>
+<h3 className="pt-5">1. Description of Service</h3>
+<p>Our platform allows users to create professional email signatures. The Service is provided on a subscription basis, with annual, automatically renewable payments.</p>
+
+<h3  className="pt-5">2. Eligibility</h3>
+<p>By using the Service, you confirm that you are at least 18 years old and legally capable of entering into binding contracts.</p>
+
+<h3  className="pt-5">3. Accounts and Registration</h3>
+<p>To access certain features of our Service, you must create an account. You are responsible for keeping your account information confidential and agree to notify us immediately if you suspect any unauthorized use of your account.</p>
+
+<h3  className="pt-5">4. Subscription and Payments</h3>
+<p>Our Service is provided on a paid subscription basis, billed annually. By subscribing, you authorize us to charge your provided payment method on a recurring basis until you cancel. Renewal charges will be at the then-current subscription rate.</p>
+<ul className="privacy_ul">
+    <li>14-Day Refund Policy:We offer a 14-day refund window for new subscribers. If you are not satisfied with the Service within the first 14 days of your subscription, you may request a full refund by contacting us at info@emailsignaturegenerator.io.</li>
+</ul>
+
+<h3  className="pt-5">5. Automatic Renewal</h3>
+<p>Your subscription will automatically renew at the end of each billing cycle unless canceled at least 24 hours before the renewal date. You will be notified before the renewal and may cancel at any time from your account settings.</p>
+
+<h3  className="pt-5">6. User Responsibilities</h3>
+<p>By using the Service, you agree to:</p>
+<ul className="privacy_ul">
+    <li>Not use the Service for any illegal or unauthorized purposes.</li>
+    <li>Provide accurate and up-to-date information during registration.</li>
+    <li>Be responsible for any activity that occurs through your account.</li>
+</ul>
+
+<h3  className="pt-5">7. Modifications to Service</h3>
+<p>We reserve the right to modify or discontinue any part of the Service at any time without notice. We will not be liable if for any reason any part of the Service is unavailable.</p>
+
+<h3  className="pt-5">8. Termination</h3>
+<p>You may cancel your subscription at any time from your account settings. If you cancel your subscription, you will still have access to the Service until the end of your billing cycle. We reserve the right to terminate or suspend access to the Service for any reason, without notice or liability, including violation of these Terms.</p>
+
+<h3  className="pt-5">9. Intellectual Property</h3>
+<p>All content and materials available on our platform, including but not limited to text, graphics, logos, and software, are the property of <strong>Email Signature Generator</strong> and are protected by applicable intellectual property laws.</p>
+
+<h3  className="pt-5">10. Limitation of Liability</h3>
+<p>To the fullest extent permitted by law, <strong>Email Signature Generator</strong> will not be liable for any damages of any kind arising from the use of the Service or from any information provided by the Service, including, but not limited to, direct, indirect, incidental, punitive, and consequential damages.</p>
+
+<h3  className="pt-5">11. Changes to Terms</h3>
+<p>We reserve the right to update these Terms from time to time. We will notify you of any significant changes by posting the new Terms on our website.</p>
+
+<h3  className="pt-5">12. Contact Information</h3>
+<p>If you have any questions about these Terms, please contact us at:</p>
+<p><strong>Email:</strong> <a href="info@emailsignaturegenerator.io">info@emailsignaturegenerator.io</a></p>
+
+            
+            {/* <p>
               This Privacy Policy explains how we collect, use, store, and share
               ("process") your information when you use our services (the
               "Services"), including but not limited to:
@@ -47,7 +95,7 @@ const Privacy = () => {
               , this information may include usage data, log information,
               account or billing information, payment details, and contact
               information. Below, we outline how we handle each type of data.
-            </p>
+            </p> */}
            
           
 
