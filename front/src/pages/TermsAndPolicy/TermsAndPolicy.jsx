@@ -8,7 +8,7 @@ const TermsAndPolicy = () => {
       <div className="">
         <div className="terms_head">
           <h1 className="font-size-40 font-weight-700 text-primary">
-          Privacy Policy
+          Terms & Conditions
           </h1>
         </div>
         <div className="container">
@@ -84,13 +84,13 @@ const TermsAndPolicy = () => {
 
             <div className="scope">
               <h2>2. Conclusion of the Agreement</h2>
-              <p>
+              <p className="pb-5">
                 Our service offerings on
                 [www.emailsignaturegenerator.ai](http://www.emailsignaturegenerator.ai/)
                 do not represent a binding offer, but an invitation for the User
                 to make an offer.
               </p>
-              <p>
+              <p className="pb-5">
                 Please review these terms carefully. By creating an account and
                 clicking "Sign Up" or similar, or by using our Site, you make an
                 offer and agree to these terms electronically. Upon receiving
@@ -110,7 +110,7 @@ const TermsAndPolicy = () => {
             <div className="scope">
               <h2>3. Services</h2>
               <p>**3.1 General**</p>
-              <p>
+              <p className="pb-5">
                 Our services can be used for personal or business purposes
                 unless specified otherwise within the service. We strive to
                 provide continuous and error-free services but may limit or shut
@@ -118,21 +118,8 @@ const TermsAndPolicy = () => {
                 performance improvements. We reserve the right to end all
                 services with a month's notice unless specified otherwise.
               </p>
-              <p>
-                Please review these terms carefully. By creating an account and
-                clicking "Sign Up" or similar, or by using our Site, you make an
-                offer and agree to these terms electronically. Upon receiving
-                your offer, we send a confirmation email, which serves as our
-                acceptance unless otherwise stated. By agreeing to these terms,
-                you confirm that you have read, understood, and agree to be
-                legally bound by them. If you do not agree to all terms, you may
-                not use the Site or any Services.
-              </p>
-
-              <p>
-                The User is responsible for providing an accurate email address
-                and ensuring emails from us are received and not blocked.
-              </p>
+           
+             
               <p>**3.2 Account / Profile**</p>
               <p>
                 You can create and use an account in line with the Acceptable
@@ -146,7 +133,7 @@ const TermsAndPolicy = () => {
                 others and must notify us immediately of any suspected security
                 breaches.
               </p>
-              <p>
+              <p className="pb-5">
                 We are not liable for any losses due to unauthorized account
                 use.
               </p>
@@ -164,13 +151,13 @@ const TermsAndPolicy = () => {
                 factors are beyond our control and that services may be altered
                 or discontinued as necessary.
               </p>
-              <p>
+              <p className="pb-5">
                 We use programs to infer user behavior to improve security and
                 optimize services, handled confidentially per our Privacy
                 Policy.
               </p>
               <p>**3.4 Tools/Features in Testing**</p>
-              <p>
+              <p className="pb-5">
                 We may release tools or features in the testing phase, labeled
                 as "test," "evaluation," "alpha," "beta," or "preview." These
                 may not be as reliable as other services and are provided to
@@ -178,13 +165,13 @@ const TermsAndPolicy = () => {
                 launched.
               </p>
               <p>**3.5 Other Services**</p>
-              <p>
+              <p className="pb-5">
                 We are continually developing new services. Users will be
                 notified of new services, and the terms in Section 2 regarding
                 the Conclusion of an Agreement apply.
               </p>
               <p>**3.6 Disclaimer**</p>
-              <p>
+              <p className="pb-5">
                 We strive to deliver services, but cannot guarantee all aspects.
                 To the fullest extent permitted by law, we disclaim any implied
                 warranties, including merchantability and fitness for a
@@ -435,7 +422,7 @@ const TermsAndPolicy = () => {
               </p>
               <p>15.6 _______ law governs this Agreement.**</p>
 
-              <h6>*Changes to the Terms of Service**</h6>
+              <p className="pb-5">*Changes to the Terms of Service**</p>
               <p>
                 New features or tools are subject to the Terms of Service. We
                 reserve the right to update or change these Terms; significant
@@ -466,7 +453,6 @@ const TermsAndPolicy = () => {
               <p>- Not disrupting network, host, or service operations</p>
 
               <p>- Not misusing or creating multiple accounts</p>
-              <p>Changes to the Site**</p>
               <p>
                 - Not sending unsolicited communications, spam, or harmful
                 software
@@ -481,7 +467,7 @@ const TermsAndPolicy = () => {
 
               <p>- Not collecting or storing others' data</p>
               <p>- Not using services beyond normal usage</p>
-              <p>- Not uploading or promoting illegal content</p>
+              <p className="pb-5">- Not uploading or promoting illegal content</p>
               <p>
                 **16.3 Violation of these guidelines may result in account
                 suspension or termination.**
