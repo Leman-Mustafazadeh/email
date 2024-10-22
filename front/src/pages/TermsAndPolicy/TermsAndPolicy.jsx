@@ -14,6 +14,9 @@ const TermsAndPolicy = () => {
         <div className="container">
           <div className="terms_title">
             <h2 className="font-size-32 font-weight-700 text-text">Preamble</h2>
+
+
+            
             <p className="font-size-20 font-weight-400 text-text pb-5">
               This website (
               <a href="http://www.emailsignaturegenerator.ai">
