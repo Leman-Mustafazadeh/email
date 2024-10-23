@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import banner2 from "../../../../assets/images/templates/Frame-2095584531.png";
 import banner1 from "../../../../assets/images/templates/Frame-2095584541.png";
 import { colors, fonts } from "../instance";
+import "../../DashboardDesign/_style.scss"
 
 export const DesignCustomize = ({
   handleSubmit,
@@ -168,7 +169,7 @@ export const DesignCustomize = ({
     setColorModalOpen(false);
   };
 
-  const handleColorMOdalCancel = () => {
+  const handleColorModalCancel = () => {
     setColorModalOpen(false);
   };
 
@@ -365,7 +366,7 @@ export const DesignCustomize = ({
                         }}
                         open={colorModalOpen}
                         onOk={handleColorModalOk}
-                        onCancel={handleColorMOdalCancel}
+                        onCancel={handleColorModalCancel}
                         okText="Apply"
                         okButtonProps={{
                           className: "btn bg-primary text-natural p-5",
@@ -724,7 +725,7 @@ export const DesignCustomize = ({
           </div>
 
           <div
-            className="right-regard row"
+            className="right-regard row gap-3"
             style={{ backgroundColor: formValues.backgroundColor }}
           >
             <div className="col-md-3 right-regard-img">
@@ -802,7 +803,7 @@ export const DesignCustomize = ({
                     {formValues.phone || "Your Phone"}
                   </p>
                 </div>
-                <div className="sosial-icons">
+                <div className="sosial-icons mt-1">
                   <Link
                     to={formValues.instagramUrl}
                     onClick={(e) => {

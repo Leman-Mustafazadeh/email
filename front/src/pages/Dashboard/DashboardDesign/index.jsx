@@ -106,8 +106,8 @@ function DashboardDesign() {
   const iconColor = "#1251A3";
   const setIconColor = () => {
     if (
-      formValues.backgroundColor === "#ffffff" &&
-      formValues.fontColor === "#000000"
+      formValues.backgroundColor === "#fff" &&
+      formValues.fontColor === "#3C3C3C"
     ) {
       return iconColor;
     }
@@ -124,7 +124,7 @@ function DashboardDesign() {
     return { fgColor, bgColor: formValues.backgroundColor };
   };
 
-  // ===== Render dashboard pages =====
+  // ====== Render dashboard pages ======
   // ==== select ulitls category ====
   const [selectedItem, setSelectedItem] = useState("design");
 

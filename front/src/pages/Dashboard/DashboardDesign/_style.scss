@@ -320,41 +320,87 @@
         animation: fadeInSlideUp 0.2s ease forwards;
 
         .generator_banner_right {
-            @extend .p-0;
+            @extend .p-5;
+            background-color: map-get($colors, natural);
+            border-radius: 12px;
+            flex-grow: 1;
 
-            .right-regard-container {
-                .right-regard-name {
+            .generator-header {
+                @extend .font-size-14;
 
-                    h2 {
-                        @extend .font-size-12;
-                    }
-
-                    p {
-                        @extend .font-size-10;
-                    }
+                .message {
+                    @extend .py-2;
+                    background-color: map-get($colors, light10);
+                    color: map-get($colors, text);
+                    font-weight: 400;
+                    border-radius: 8px 8px 0px 0px;
                 }
 
-                .right-regard-contacts {
-                    p {
-                        @extend .font-size-10;
-                    }
-
-                    .sosial-icons {
-                        @extend .flex-container;
-                        gap: 4px;
-
-                        svg {
-                            height: 14px;
-                            width: 14px;
-                        }
-                    }
+                .mail-forms {
+                    @extend .py-2;
+                    color: map-get($colors, light30);
+                    font-weight: 400;
+                    border-bottom: 1px solid map-get($colors, light30)
                 }
             }
 
-            .banner-img {
-                img {
-                    width: 100%;
-                    border-radius: 4.47px;
+            .right-regard {
+                @extend .mt-4;
+                @extend .p-3;
+                border-radius: 8px;
+
+                &-img {
+                    img {
+                        width: 100%;
+                        border-radius: 5px
+                    }
+                }
+
+                &-container {
+                    @extend .flex-container;
+                    @extend .flex-column;
+                    @extend .flex-justify-space-between;
+                    @extend .px-5;
+                    line-height: 1.5;
+
+                    h2 {
+                        @extend .font-size-16;
+                        text-transform: capitalize;
+                    }
+
+                    p {
+                        @extend .font-size-12;
+                        text-transform: capitalize;
+                    }
+                }
+
+                &-qr {
+                    @extend .flex-container;
+                    @extend .flex-column;
+                    @extend .flex-align-end;
+                    gap: 15px;
+                }
+
+                .sosial-icons {
+                    @extend .flex-container;
+                    gap: 4px;
+
+                    svg {
+                        color: map-get($colors, text);
+                        height: 18px;
+                        width: 18px;
+                    }
+                }
+
+                &-contacts {
+                    &-item {
+                        @extend .flex-container;
+                        @extend .flex-align-center;
+
+                        p {
+                            @extend .mx-2;
+                        }
+                    }
                 }
             }
         }

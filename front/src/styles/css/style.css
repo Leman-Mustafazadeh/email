@@ -2656,7 +2656,7 @@ a {
 
 @media screen and (min-width: 1440px) {
   .container {
-    max-width: 1336px !important;
+    max-width: 1436px !important;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -2737,3 +2737,5 @@ form {
 .form-control:focus {
   border: 1px solid #1A73E8;
 }
+
+/*# sourceMappingURL=style.css.map */

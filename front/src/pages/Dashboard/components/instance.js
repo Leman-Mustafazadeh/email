@@ -15,7 +15,7 @@ export const fonts = [
 
   // ==== colors ====
   export const colors = [
-    { color: "000000" },
+    { color: "3C3C3C" },
     { color: "ffffff" },
     { color: "21548F" },
     { color: "1A73E8" },
