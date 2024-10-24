@@ -28,13 +28,13 @@ const UserRouter = () => {
   const [showCookiePopup, setShowCookiePopup] = useState(false);
 
   const handleClosePopup = () => {
-    localStorage.setItem("cookieConsent", "true");
+    localStorage.setItem("cookie", "true");
     setShowCookiePopup(false);
   };
 
   useEffect(() => {
-    const cookieConsent = localStorage.getItem("cookieConsent");
-    if (!cookieConsent) {
+    const cookieLoc = localStorage.getItem("cookie");
+    if (!cookieLoc) {
       setShowCookiePopup(true);
     }
   }, []);
