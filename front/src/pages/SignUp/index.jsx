@@ -30,7 +30,7 @@ const SignUp = () => {
   return (
     <section className="sign-up">
       <div className="sign-up-container">
-        <div className="sign-up-header">
+        <div className="sigh-up-header">
           <img src={logo} alt="Logo" />
         </div>
         <div className="sign-up-content">
