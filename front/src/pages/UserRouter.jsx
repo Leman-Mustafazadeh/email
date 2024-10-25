@@ -21,7 +21,7 @@ const UserRouter = () => {
     location.pathname === "/cookiepopup" ||
     location.pathname === "/myaccount" ||
     location.pathname === "/accountpassword" ||
-    location.pathname === "/templatefirst";;
+    location.pathname === "/templatefirst";
 
   return (
     <div>

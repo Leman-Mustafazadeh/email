@@ -1,4 +1,4 @@
-import { Checkbox, ColorPicker, Modal, Upload } from "antd";
+import { Button, Checkbox, ColorPicker, Modal, Upload } from "antd";
 import ImgCrop from "antd-img-crop";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
@@ -8,13 +8,15 @@ import { IoIosAddCircle } from "react-icons/io";
 import { LuMail, LuPhone } from "react-icons/lu";
 import { MdDone } from "react-icons/md";
 import { RiSettingsLine } from "react-icons/ri";
+import ReactCrop from "react-image-crop";
+import "react-image-crop/dist/ReactCrop.css";
 import PhoneInput from "react-phone-input-2";
 import QRCode from "react-qr-code";
 import { Link } from "react-router-dom";
 import banner2 from "../../../../assets/images/templates/Frame-2095584531.png";
 import banner1 from "../../../../assets/images/templates/Frame-2095584541.png";
+import "../../DashboardDesign/_style.scss";
 import { colors, fonts } from "../instance";
-import "../../DashboardDesign/_style.scss"
 
 export const DesignCustomize = ({
   handleSubmit,
@@ -44,7 +46,19 @@ export const DesignCustomize = ({
     setIsModalOpen(false);
   };
 
-  // === Image Upload logic ===
+  // ===== Image Upload logic =====
+  // === custom Image modal ===
+
+  const [imageModal, setImageModal] = useState(false);
+
+  const showImageModal = () => {
+    setImageModal(true);
+  };
+  const handleImageOk = () => {
+    setImageModal(false);
+  };
+
+  // === image upload ===
   const [profileFileList, setProfileFileList] = useState([]);
 
   const handleProfileChange = ({ fileList: newFileList }) => {
@@ -71,8 +85,105 @@ export const DesignCustomize = ({
     }
   };
 
-  // === Baneer Upload logic ===
+  // ===== Banner Upload logic =====
+  // === custom Modal Banner ===
+  const [bannerModal, setBannerModal] = useState(false);
 
+  const showBannerModal = () => {
+    setBannerModal(true);
+  };
+  const handleBannerOk = () => {
+    setBannerModal(false);
+  };
+
+  // === modal image configuration ===
+  const [isResizing, setIsResizing] = useState(false);
+  const [cropImg, setCropImg] = useState({ unit: "%", width: 30, aspect: 1 });
+  const [completedCrop, setCompletedCrop] = useState(null);
+  const [imageRef, setImageRef] = useState(null);
+
+  const handleRemoveImage = () => {
+    setProfileFileList([]);
+    setProfileImageUrl(null);
+  };
+
+  const handleResizeToggle = () => {
+    setIsResizing(true);
+  };
+
+  const onImageLoaded = (img) => {
+    setImageRef(img);
+    return false;
+  };
+
+  const onCropChange = (newCrop) => {
+    setCropImg(newCrop);
+  };
+
+  const onCropComplete = (crop) => {
+    setCompletedCrop(crop);
+  };
+
+  const handleCropApply = async () => {
+    if (!imageRef || !completedCrop?.width || !completedCrop?.height) {
+      console.error("Invalid crop data or image reference");
+      return;
+    }
+
+    const canvas = document.createElement("canvas");
+    const scaleX = imageRef.naturalWidth / imageRef.width;
+    const scaleY = imageRef.naturalHeight / imageRef.height;
+
+    canvas.width = completedCrop.width;
+    canvas.height = completedCrop.height;
+
+    const ctx = canvas.getContext("2d");
+
+    if (!ctx) {
+      console.error("No 2d context");
+      return;
+    }
+
+    ctx.drawImage(
+      imageRef,
+      completedCrop.x * scaleX,
+      completedCrop.y * scaleY,
+      completedCrop.width * scaleX,
+      completedCrop.height * scaleY,
+      0,
+      0,
+      completedCrop.width,
+      completedCrop.height
+    );
+
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        console.error("Canvas toBlob failed");
+        return;
+      }
+
+      const newFile = new File([blob], "croppedImage.png", {
+        type: "image/png",
+      });
+      const croppedImageUrl = URL.createObjectURL(blob);
+
+      setProfileFileList([
+        {
+          uid: "-1",
+          name: "croppedImage.png",
+          status: "done",
+          url: croppedImageUrl,
+          originFileObj: newFile,
+        },
+      ]);
+
+      setProfileImageUrl(croppedImageUrl);
+
+      setIsResizing(false);
+    }, "image/png");
+  };
+
+  // === Banner Upload ===
   const [bannerFileList, setBannerFileList] = useState([]);
   const [bannerImageUrl, setBannerImageUrl] = useState(banner1);
 
@@ -90,7 +201,7 @@ export const DesignCustomize = ({
     if (newFileList.length > 0) {
       const file = newFileList[0].originFileObj;
 
-      const croppedImage = await getCroppedImage(file);
+      const croppedImage = await getCroppedBanner(file);
       const imageURL = URL.createObjectURL(croppedImage);
 
       setBannerImageUrl(imageURL);
@@ -99,7 +210,7 @@ export const DesignCustomize = ({
     }
   };
 
-  const getCroppedImage = (file) => {
+  const getCroppedBanner = (file) => {
     return new Promise((resolve) => {
       const reader = new FileReader();
       reader.onloadend = () => {
@@ -517,6 +628,7 @@ export const DesignCustomize = ({
             </div>
           </form>
         </div>
+
         <div className="links p-5">
           <div className="title">
             <h3>Links</h3>
@@ -548,6 +660,7 @@ export const DesignCustomize = ({
             </div>
           </form>
         </div>
+
         <div className="qr p-5">
           <div className="title">
             <h3>QR code links </h3>
@@ -564,11 +677,190 @@ export const DesignCustomize = ({
             </div>
           </form>
         </div>
-        <div className="photo row p-5">
-          <div className="upload-container">
-            <div className="title">
-              <h3> Profile Image or Logo </h3>
-            </div>
+
+        <div className="photo p-5">
+          <div className="title">
+            <h3> Profile Image or Logo </h3>
+            <button onClick={showImageModal}>
+              <RiSettingsLine />
+              <span>Customize</span>
+            </button>
+            <Modal
+              title={
+                <div className="text-align-center">
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      color: "#3C3C3C",
+                      fontWeight: "700",
+                    }}
+                  >
+                    Customize Image
+                  </span>
+                  <div className="container"></div>
+                </div>
+              }
+              style={{
+                maxWidth: "658px",
+              }}
+              open={imageModal}
+              onOk={handleImageOk}
+              onCancel={handleImageOk}
+              okText="Apply"
+              okButtonProps={{
+                className: "btn bg-primary text-natural p-5",
+              }}
+              cancelButtonProps={{
+                style: { display: "none" },
+              }}
+              closeIcon={
+                <span
+                  style={{
+                    backgroundColor: "#0A2E5D",
+                    color: "#fff",
+                    padding: "0px 25px",
+                    borderRadius: "33px",
+                    transform: "translateX(-30px)",
+                    fontSize: "22px",
+                  }}
+                >
+                  &#10005;
+                </span>
+              }
+            >
+              <div className="container flex-container flex-column gap-7">
+                <div className="font-customize flex-container flex-column gap-2">
+                  <h4>Image / Logo</h4>
+                  <div className="photo-modal gap-5">
+                    <div className="uploader my-5">
+                      {profileFileList.length > 0 ? (
+                        <div>
+                          <img
+                            src={
+                              profileFileList[0].url ||
+                              URL.createObjectURL(
+                                profileFileList[0].originFileObj
+                              )
+                            }
+                            alt="Uploaded"
+                            style={{
+                              maxWidth: "400px",
+                              width: "100%",
+                              height: "300px",
+                            }}
+                          />
+                        </div>
+                      ) : (
+                        <Upload
+                          listType="picture-card"
+                          fileList={profileFileList}
+                          // onPreview={onPreview}
+                          onChange={handleProfileChange}
+                          beforeUpload={() => false}
+                          action={null}
+                          maxCount={1}
+                          showUploadList={{
+                            showRemoveIcon: profileFileList.length > 0,
+                          }}
+                        >
+                          <div className="upload-button">
+                            <IoIosAddCircle />
+                            <p>Format .png .jpg</p>
+                            <p>Size (Px): 800 x 300</p>
+                          </div>
+                        </Upload>
+                      )}
+                    </div>
+                    <div className="btn-store">
+                      <button
+                        className="btn bg-primary90"
+                        onClick={handleResizeToggle}
+                      >
+                        {isResizing ? "Hide Resize" : "Resize"}
+                      </button>
+                      <button
+                        className="btn bg-primary90"
+                        onClick={handleRemoveImage}
+                      >
+                        Remove
+                      </button>
+                    </div>
+                    <Modal
+                      title={
+                        <div className="text-align-center">
+                          <span
+                            style={{
+                              fontSize: "20px",
+                              color: "#3C3C3C",
+                              fontWeight: "700",
+                            }}
+                          >
+                            Resize Image
+                          </span>
+                        </div>
+                      }
+                      closeIcon={
+                        <span
+                          style={{
+                            backgroundColor: "#0A2E5D",
+                            color: "#fff",
+                            padding: "0px 25px",
+                            borderRadius: "33px",
+                            transform: "translateX(-30px)",
+                            fontSize: "22px",
+                          }}
+                        >
+                          &#10005;
+                        </span>
+                      }
+                      open={isResizing}
+                      onOk={handleCropApply}
+                      onCancel={() => setIsResizing(false)}
+                      footer={[
+                        <Button
+                          key="cancel"
+                          onClick={() => setIsResizing(false)}
+                          className="bg-natural text-text p-4 px-8"
+                        >
+                          Cancel
+                        </Button>,
+                        <Button
+                          key="ok"
+                          type="primary"
+                          onClick={handleCropApply}
+                          className="bg-primary text-natural p-4 px-8"
+                        >
+                          Apply
+                        </Button>,
+                      ]}
+                    >
+                      {profileFileList.length > 0 && (
+                        <ReactCrop
+                          crop={cropImg}
+                          onChange={onCropChange}
+                          onComplete={onCropComplete}
+                          aspect={1}
+                        >
+                          <img
+                            ref={onImageLoaded}
+                            src={
+                              profileFileList[0].url ||
+                              URL.createObjectURL(
+                                profileFileList[0].originFileObj
+                              )
+                            }
+                            alt="Crop"
+                            style={{ maxWidth: "100%", height: "auto" }}
+                          />
+                        </ReactCrop>
+                      )}
+                    </Modal>
+                  </div>
+                </div>
+              </div>
+            </Modal>
+          </div>
+          <div className="upload-container row">
             <div className="uploader">
               <Upload
                 listType="picture-card"
@@ -593,13 +885,63 @@ export const DesignCustomize = ({
             </div>
           </div>
         </div>
+
         <div className="banner-upload p-5">
           <div className="title">
             <h3>Banner Image</h3>
-            <button>
+            <button onClick={showBannerModal}>
               <RiSettingsLine />
               <span>Customize</span>
             </button>
+            <Modal
+              title={
+                <div className="text-align-center">
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      color: "#3C3C3C",
+                      fontWeight: "700",
+                    }}
+                  >
+                    Customize Banner
+                  </span>
+                </div>
+              }
+              style={{
+                maxWidth: "658px",
+              }}
+              open={bannerModal}
+              onOk={handleBannerOk}
+              onCancel={handleBannerOk}
+              okText="Apply"
+              okButtonProps={{
+                className: "btn bg-primary text-natural p-5",
+              }}
+              cancelButtonProps={{
+                style: { display: "none" },
+              }}
+              closeIcon={
+                <span
+                  style={{
+                    backgroundColor: "#0A2E5D",
+                    color: "#fff",
+                    padding: "0px 25px",
+                    borderRadius: "33px",
+                    transform: "translateX(-30px)",
+                    fontSize: "22px",
+                  }}
+                >
+                  &#10005;
+                </span>
+              }
+            >
+              <div className="container flex-container flex-column gap-7">
+                <div className="font-customize flex-container flex-column gap-2">
+                  <h4>Banner</h4>
+                  <div className="banner-container row flex-align-center gap-5"></div>
+                </div>
+              </div>
+            </Modal>
           </div>
           <form className="url-container mb-5">
             <div className="url-sosial form-group">

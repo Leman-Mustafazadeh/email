@@ -10,7 +10,12 @@ import banner1 from "../../../../assets/images/templates/Frame-2095584541.png";
 import { Delete, Edit } from "../../../../utils/icons";
 import { Icon } from "../../../../utils/icons/icons";
 
-export const SignatureBoard = ({ watch, profileImageUrl, setIconColor, getQRCodeColors }) => {
+export const SignatureBoard = ({
+  watch,
+  profileImageUrl,
+  setIconColor,
+  getQRCodeColors,
+}) => {
   const formValues = watch();
 
   // ==== switch button antd ====
@@ -20,8 +25,6 @@ export const SignatureBoard = ({ watch, profileImageUrl, setIconColor, getQRCode
     setChecked(checkedValue);
   };
 
- 
-
   return (
     <div className="signature">
       <div className="signature-template">
@@ -29,7 +32,7 @@ export const SignatureBoard = ({ watch, profileImageUrl, setIconColor, getQRCode
           <div className="banner col-md-8">
             <div className="generator_banner_right">
               <div
-                className="right-regard row"
+                className="right-regard row gap-3"
                 style={{ backgroundColor: formValues.backgroundColor }}
               >
                 <div className="col-md-3 right-regard-img">
@@ -165,5 +168,5 @@ SignatureBoard.propTypes = {
   watch: PropTypes.func,
   profileImageUrl: PropTypes.string,
   setIconColor: PropTypes.func,
-  getQRCodeColors: PropTypes.func
+  getQRCodeColors: PropTypes.func,
 };
