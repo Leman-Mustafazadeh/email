@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import logo from "../../../../assets/images/logo/logo.png";
+import { useLogoutService } from "../../../../service/Auth/Logout/useLogoutService";
 
 function DashboardNavBar() {
+  const logout = useLogoutService();
   return (
     <div className="container dashboard-nav-bar mb-6">
       <div className="delete row flex-align-center flex-justify-space-between">
@@ -14,12 +16,16 @@ function DashboardNavBar() {
         </div>
 
         <h4>New design</h4>
-
-        <Link>
-          <button className="btn bg-primary text-natural">
-            Invite members
-          </button>
-        </Link>
+        <div className="flex-container">
+          <Link onClick={() => logout.mutate()}>
+            <button className="btn text-text30">Log Out</button>
+          </Link>
+          <Link>
+            <button className="btn bg-primary text-natural">
+              Invite members
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
