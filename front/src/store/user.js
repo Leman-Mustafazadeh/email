@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-if (!JSON.parse(localStorage.getItem("user"))) {
+if (!localStorage.getItem("user")) {
   localStorage.setItem(
     "user",
     JSON.stringify({ id: null, role: "", token: null })
@@ -15,12 +15,13 @@ export const useUserStore = create((set) => ({
   token: authInitialState.token,
 
   login: (user, token) => {
-    set({ id: user.id, role: user.email, token });
+    set({ id: user.id, role: user.email || "", token });
     localStorage.setItem(
       "user",
       JSON.stringify({ id: user.id, role: user.email, token })
     );
   },
+
   logout: () => {
     set({ id: null, role: "", token: null });
     localStorage.setItem(
