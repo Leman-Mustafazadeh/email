@@ -4,20 +4,13 @@ import toast from "react-hot-toast";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSignatureUpdate } from "../../../service/signature-controller/CreateUpdate/useSignatureUpdate";
-import {
-  ContactUs,
-  Customize,
-  Question,
-  Signature,
-  Team,
-  Template,
-} from "../../../utils/icons";
+import { ContactUs, Customize, Signature } from "../../../utils/icons";
 import { Icon } from "../../../utils/icons/icons";
-import { AddMember } from "../components/AddMember/AddMember";
+// import { AddMember } from "../components/AddMember/AddMember";
 import DashboardNavBar from "../components/DashboardNavBar/DashboardNavBar";
 import { DesignCustomize } from "../components/DesignCustomize/DesignCustomize";
 import { SignatureBoard } from "../components/SignatureBoard/SignatureBoard";
-import { TemplateBoard } from "../components/TemplateBoard/TemplateBoard";
+// import { TemplateBoard } from "../components/TemplateBoard/TemplateBoard";
 import "./_style.scss";
 
 function DashboardDesign() {
@@ -43,29 +36,28 @@ function DashboardDesign() {
   const [profileImageUrl, setProfileImageUrl] = useState(null);
 
   // ==== Form Values ====
-  const { control, getValues, register, handleSubmit, setValue, watch } =
-    useForm({
-      defaultValues: {
-        fullName: "",
-        company: "",
-        position: "",
-        phone: "",
-        email: "",
-        address: "",
-        instagramUrl: "",
-        facebookUrl: "",
-        linkedinUrl: "",
-        qrCoreBase64: "",
-        banner: "",
-        font: "Montserrat",
-        fontColor: "#3C3C3C",
-        fontCase: "capitalize",
-        fontWeight: "500",
-        backgroundColor: "#fff",
-        emails: [],
-        searchText: "",
-      },
-    });
+  const { register, handleSubmit, setValue, watch } = useForm({
+    defaultValues: {
+      fullName: "",
+      company: "",
+      position: "",
+      phone: "",
+      email: "",
+      address: "",
+      instagramUrl: "",
+      facebookUrl: "",
+      linkedinUrl: "",
+      qrCoreBase64: "",
+      banner: "",
+      font: "Montserrat",
+      fontColor: "#3C3C3C",
+      fontCase: "capitalize",
+      fontWeight: "500",
+      backgroundColor: "#fff",
+      emails: [],
+      searchText: "",
+    },
+  });
 
   const formValues = watch();
 
@@ -145,18 +137,18 @@ function DashboardDesign() {
       ),
       icon: Signature,
     },
-    template: {
-      name: "Template",
-      content: (
-        <TemplateBoard
-          watch={watch}
-          profileImageUrl={profileImageUrl}
-          setIconColor={setIconColor}
-          getQRCodeColors={getQRCodeColors}
-        />
-      ),
-      icon: Template,
-    },
+    // template: {
+    //   name: "Template",
+    //   content: (
+    //     <TemplateBoard
+    //       watch={watch}
+    //       profileImageUrl={profileImageUrl}
+    //       setIconColor={setIconColor}
+    //       getQRCodeColors={getQRCodeColors}
+    //     />
+    //   ),
+    //   icon: Template,
+    // },
     design: {
       name: "Design",
       content: (
@@ -173,17 +165,17 @@ function DashboardDesign() {
       ),
       icon: Customize,
     },
-    member: {
-      name: "Member",
-      content: (
-        <AddMember
-          control={control}
-          getValues={getValues}
-          setValue={setValue}
-        />
-      ),
-      icon: Team,
-    },
+    // member: {
+    //   name: "Member",
+    //   content: (
+    //     <AddMember
+    //       control={control}
+    //       getValues={getValues}
+    //       setValue={setValue}
+    //     />
+    //   ),
+    //   icon: Team,
+    // },
   };
 
   return (
@@ -233,13 +225,7 @@ function DashboardDesign() {
             </div>
             <div className="utils-icons utils-custom-icons utils-border pt-5 pb-6">
               {selectedItem === "signature" ? <span>Support</span> : null}
-              <Link
-                onClick={() => handleCategoryClick("help")}
-                className="icon"
-              >
-                <Icon icon={Question} />
-                <span>Help center</span>
-              </Link>
+
               <Link
                 onClick={() => handleCategoryClick("contact")}
                 className="icon"
@@ -260,7 +246,7 @@ function DashboardDesign() {
             )}
           </div>
         </div>
-        <div>{renderComponents[selectedItem]?.content}</div>
+        {renderComponents[selectedItem]?.content}
       </div>
     </section>
   );
