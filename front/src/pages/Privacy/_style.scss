@@ -1,6 +1,6 @@
 
 .privacy_ul{
-    padding: 0;
+    padding: 0 20px;
         margin: 0;
     li{
         font-size: 20px;
@@ -12,11 +12,12 @@
     }
     
     }
-    .privacy{
+    .privacy{ 
         .privacy_head{
+            margin-top: 69px;
             width: 100%;
             height: 250px;
-            background-image: url("../../assets/images/terms/terms1.png");
+            background-image: url("../../assets/images/terms.png");
             background-size: cover;
            display: flex;
            align-items: center;
@@ -52,6 +53,7 @@
         }
         .terms_title{
             margin-bottom: 170px;
+            padding: 0 50px;
         }
     
     }

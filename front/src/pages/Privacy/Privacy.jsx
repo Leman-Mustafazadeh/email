@@ -7,20 +7,23 @@ const Privacy = () => {
       <div className="">
         <div className="privacy_head">
           <h1 className="font-size-40 font-weight-700 text-primary">
-            Terms & Conditions
+          Privacy Policy
           </h1>
         </div>
         <div className="container">
           <div className="terms_title">
             <h2 className="font-size-32 font-weight-700 text-text">Preamble</h2>
-            <p>Last updated: __ / __ / {currentYear}</p>
+            <p>Last Updated: 01.10.{currentYear}</p>
             <p>
-              Welcome to the Privacy Policy of Email Signature Generator,
-              operated by Elevating LTD ("Company," "Owner," "we," "us," or
-              "our"). Your privacy is of utmost importance to us.
+            Welcome to Email Signature Generator! By using our service
+             at <a className="priv_link" href="http://www.emailsignaturegenerator.ai">
+             http://www.emailsignaturegenerator.ai
+                </a> ("Service", "Platform"),
+              you agree to be bound by these Terms and Conditions ("Terms").
+               If you do not agree to these Terms, you may not use the Service.
             </p>
-
-            <p>
+            
+            {/* <p>
               This Privacy Policy explains how we collect, use, store, and share
               ("process") your information when you use our services (the
               "Services"), including but not limited to:
@@ -47,7 +50,7 @@ const Privacy = () => {
               , this information may include usage data, log information,
               account or billing information, payment details, and contact
               information. Below, we outline how we handle each type of data.
-            </p>
+            </p> */}
            
           
 
@@ -157,7 +160,7 @@ const Privacy = () => {
             <div className="scope">
               <h2>4. Sharing Your Information</h2>
               <p>**3.1 General**</p>
-              <p>
+              <p className="pb-5">
                 Our services can be used for personal or business purposes
                 unless specified otherwise within the service. We strive to
                 provide continuous and error-free services but may limit or shut
@@ -179,7 +182,7 @@ const Privacy = () => {
                 others and must notify us immediately of any suspected security
                 breaches.
               </p>
-              <p>
+              <p className="pb-5">
                 We are not liable for any losses due to unauthorized account
                 use.
               </p>
@@ -197,13 +200,13 @@ const Privacy = () => {
                 factors are beyond our control and that services may be altered
                 or discontinued as necessary.
               </p>
-              <p>
+              <p className="pb-5">
                 We use programs to infer user behavior to improve security and
                 optimize services, handled confidentially per our Privacy
                 Policy.
               </p>
               <p>**3.4 Tools/Features in Testing**</p>
-              <p>
+              <p className="pb-5">
                 We may release tools or features in the testing phase, labeled
                 as "test," "evaluation," "alpha," "beta," or "preview." These
                 may not be as reliable as other services and are provided to
@@ -211,13 +214,13 @@ const Privacy = () => {
                 launched.
               </p>
               <p>**3.5 Other Services**</p>
-              <p>
+              <p className="pb-5">
                 We are continually developing new services. Users will be
                 notified of new services, and the terms in Section 2 regarding
                 the Conclusion of an Agreement apply.
               </p>
               <p>**3.6 Disclaimer**</p>
-              <p>
+              <p className="pb-5">
                 We strive to deliver services, but cannot guarantee all aspects.
                 To the fullest extent permitted by law, we disclaim any implied
                 warranties, including merchantability and fitness for a
@@ -237,7 +240,7 @@ const Privacy = () => {
               </ul>
             </div>
 
-            <div className="scope">
+            <div className="scope ">
               <h2>5. Your Privacy Rights</h2>
               <p>Users have the following rights concerning their Data:</p>
 

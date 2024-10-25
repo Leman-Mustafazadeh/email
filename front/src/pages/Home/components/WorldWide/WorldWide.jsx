@@ -16,7 +16,7 @@ const WorldWide = () => {
             <div className="row gap-5">
               <h1 className="font-size-32 font-weight-700 text-natural">Get started free</h1>
               <Link to={'/sign-up'}>
-                <button>
+                <button className="btn_world">
                   <svg
                     width="20"
                     height="20"

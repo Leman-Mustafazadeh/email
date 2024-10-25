@@ -13,8 +13,9 @@ const CookiesPolicy = () => {
         <div className="container">
           <div className="cookie_title">
             <h2 className="font-size-32 font-weight-700 text-text">Cookies Policy</h2>
-            <p>**Last updated and effective, 2024**
-            {currentYear}</p>
+            <p className='pb-5'>**Last updated and effective date:  [ Month ], 
+
+            {currentYear}**</p>
             <p>
             This Cookies Policy explains how emailsignaturegenerator.ai ("we," "us," or "our") uses cookies and similar technologies to recognize you when you visit our website at emailsignaturegenerator.ai ("Website"). It explains what these technologies are, why we use them, and your rights to control our use of them.
             </p>
@@ -34,7 +35,7 @@ const CookiesPolicy = () => {
 
             <div className="scope">
               <h2>How We Use Cookies</h2>
-              <p>
+              <p className="pb-5">
               We use cookies for various purposes, including:
               </p>
               <p>
