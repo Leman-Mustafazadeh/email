@@ -1,3 +1,4 @@
+import toast from "react-hot-toast";
 import { create } from "zustand";
 
 if (!localStorage.getItem("user")) {
@@ -23,6 +24,10 @@ export const useUserStore = create((set) => ({
   },
 
   logout: () => {
+    toast.success(
+      "You have logged out successfully. Please log in to continue."
+    );
+
     set({ id: null, role: "", token: null });
     localStorage.setItem(
       "user",

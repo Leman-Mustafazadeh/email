@@ -17,22 +17,61 @@ import banner2 from "../../../../assets/images/templates/Frame-2095584531.png";
 import banner1 from "../../../../assets/images/templates/Frame-2095584541.png";
 import "../../DashboardDesign/_style.scss";
 import { colors, fonts } from "../instance";
+import { useProfileImgStore } from "../../../../store/profileImg";
+import { useSignatureStore } from "../../../../store/signatureStore";
+import {
+  useIconColor,
+  useQRCodeColors,
+} from "../../../../utils/hooks/colorHooks";
+// import { useFormStore } from "../../../../store/formData";
 
 export const DesignCustomize = ({
   handleSubmit,
   setValue,
   register,
   watch,
-  setProfileImageUrl,
-  profileImageUrl,
-  setIconColor,
-  getQRCodeColors,
+  signatureId,
+  onSave,
 }) => {
+  const { signatures, updateFormValue } = useSignatureStore();
+  const currentSignature = signatures.find((item) => item.id === signatureId);
+  const formValues = currentSignature?.formValues || watch();
+
+  useEffect(() => {
+    if (currentSignature) {
+      Object.entries(currentSignature.formValues).forEach(([key, value]) => {
+        setValue(key, value);
+      });
+    }
+  }, [currentSignature, setValue]);
+
+  // const { setFormValues } = useFormStore();
+
   const onSubmit = (data) => {
-    console.log(data);
+    updateFormValue(signatureId, data);
   };
 
-  const formValues = watch();
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValue(name, value);
+    updateFormValue(signatureId, { [name]: value });
+  };
+
+  const handlePhoneChange = (phone) => {
+    setValue("phone", phone);
+    updateFormValue(signatureId, { phone });
+  };
+
+  // ===== add signature =====
+  // const addSignature = useSignatureStore((state) => state.addSignature);
+
+  const handleSaveSignature = () => {
+    onSave();
+  };
+
+  // ==== set colors ====
+  const setIconColor = useIconColor();
+  const getQRCodeColors = useQRCodeColors();
 
   // ==== modal popup ====
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,6 +98,7 @@ export const DesignCustomize = ({
   };
 
   // === image upload ===
+  const { profileImageUrl, setProfileImageUrl } = useProfileImgStore();
   const [profileFileList, setProfileFileList] = useState([]);
 
   const handleProfileChange = ({ fileList: newFileList }) => {
@@ -249,10 +289,6 @@ export const DesignCustomize = ({
     image.src = src;
     const imgWindow = window.open(src);
     imgWindow.document.write(image.outerHTML);
-  };
-
-  const handlePhoneChange = (phone) => {
-    setValue("phone", phone);
   };
 
   // ==== font customize ====
@@ -587,18 +623,21 @@ export const DesignCustomize = ({
                     className="form-control"
                     placeholder="Full Name"
                     {...register("fullName")}
+                    onChange={handleInputChange}
                     maxLength={20}
                   />
                   <input
                     className="form-control"
                     placeholder="Position"
                     {...register("position")}
+                    onChange={handleInputChange}
                     maxLength={20}
                   />
                   <input
                     className="form-control"
                     placeholder="Email"
                     {...register("email")}
+                    onChange={handleInputChange}
                     maxLength={30}
                   />
                 </div>
@@ -609,6 +648,7 @@ export const DesignCustomize = ({
                     className="form-control"
                     placeholder="Company"
                     {...register("company")}
+                    onChange={handleInputChange}
                     maxLength={40}
                   />
                   <PhoneInput
@@ -621,6 +661,7 @@ export const DesignCustomize = ({
                     className="form-control"
                     placeholder="Address"
                     {...register("address")}
+                    onChange={handleInputChange}
                     maxLength={30}
                   />
                 </div>
@@ -1224,7 +1265,9 @@ export const DesignCustomize = ({
           </button>
         </Link>
         <Link to="/">
-          <button className="btn border-primary">Save and draft</button>
+          <button className="btn border-primary" onClick={handleSaveSignature}>
+            Save and draft
+          </button>
         </Link>
       </div>
     </div>
@@ -1232,12 +1275,10 @@ export const DesignCustomize = ({
 };
 
 DesignCustomize.propTypes = {
+  signatureId: PropTypes.number,
+  onSave: PropTypes.func,
   handleSubmit: PropTypes.func,
   setValue: PropTypes.func,
   register: PropTypes.func,
   watch: PropTypes.func,
-  setProfileImageUrl: PropTypes.func,
-  profileImageUrl: PropTypes.string,
-  setIconColor: PropTypes.func,
-  getQRCodeColors: PropTypes.func,
 };
