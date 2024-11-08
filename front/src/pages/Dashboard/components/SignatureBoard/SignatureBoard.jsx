@@ -9,14 +9,16 @@ import { Link } from "react-router-dom";
 import banner1 from "../../../../assets/images/templates/Frame-2095584541.png";
 import { Delete, Edit } from "../../../../utils/icons";
 import { Icon } from "../../../../utils/icons/icons";
+import { useProfileImgStore } from "../../../../store/profileImg";
+import { useSignatureStore } from "../../../../store/signatureStore";
+import {
+  useIconColor,
+  useQRCodeColors,
+} from "../../../../utils/hooks/colorHooks";
 
-export const SignatureBoard = ({
-  watch,
-  profileImageUrl,
-  setIconColor,
-  getQRCodeColors,
-}) => {
-  const formValues = watch();
+export const SignatureBoard = ({ selectedSignatureId }) => {
+  const { signatures, deleteSignature } = useSignatureStore();
+  const { profileImageUrl } = useProfileImgStore();
 
   // ==== switch button antd ====
   const [checked, setChecked] = useState(false);
@@ -25,15 +27,26 @@ export const SignatureBoard = ({
     setChecked(checkedValue);
   };
 
+  // ==== set colors ====
+  const setIconColor = useIconColor();
+  const getQRCodeColors = useQRCodeColors();
+
+  // Find the selected signature
+  const selectedSignature = signatures.find((signature) => signature.id === selectedSignatureId);
+
+  if (!selectedSignature || !selectedSignature.formValues) return null;
+
   return (
     <div className="signature">
-      <div className="signature-template">
+      <div className="signature-template mb-5">
         <div className="row gap-4">
           <div className="banner col-md-8">
             <div className="generator_banner_right">
               <div
                 className="right-regard row gap-3"
-                style={{ backgroundColor: formValues.backgroundColor }}
+                style={{
+                  backgroundColor: selectedSignature.formValues.backgroundColor,
+                }}
               >
                 <div className="col-md-3 right-regard-img">
                   <img
@@ -51,19 +64,19 @@ export const SignatureBoard = ({
                   <div className="right-regard-name">
                     <h2
                       style={{
-                        color: formValues.fontColor,
-                        fontFamily: formValues.font,
+                        color: selectedSignature.formValues.fontColor,
+                        fontFamily: selectedSignature.formValues.font,
                       }}
                     >
-                      {formValues.fullName || "Your Name"}
+                      {selectedSignature.formValues.fullName || "Your Name"}
                     </h2>
                     <p
                       style={{
-                        color: formValues.fontColor,
-                        fontFamily: formValues.font,
+                        color: selectedSignature.formValues.fontColor,
+                        fontFamily: selectedSignature.formValues.font,
                       }}
                     >
-                      {formValues.position || "Your Position"}
+                      {selectedSignature.formValues.position || "Your Position"}
                     </p>
                   </div>
 
@@ -72,44 +85,43 @@ export const SignatureBoard = ({
                       <LuMail style={{ color: setIconColor() }} />
                       <p
                         style={{
-                          color: formValues.fontColor,
-                          fontFamily: formValues.font,
+                          color: selectedSignature.formValues.fontColor,
+                          fontFamily: selectedSignature.formValues.font,
                         }}
                       >
-                        {formValues.email || "Your Email"}
+                        {selectedSignature.formValues.email || "Your Email"}
                       </p>
                     </div>
                     <div className="right-regard-contacts-item">
                       <FiMapPin style={{ color: setIconColor() }} />
-
                       <p
                         style={{
-                          color: formValues.fontColor,
-                          fontFamily: formValues.font,
+                          color: selectedSignature.formValues.fontColor,
+                          fontFamily: selectedSignature.formValues.font,
                         }}
                       >
-                        {formValues.address || "Your Address"}
+                        {selectedSignature.formValues.address || "Your Address"}
                       </p>
                     </div>
                     <div className="right-regard-contacts-item">
                       <LuPhone style={{ color: setIconColor() }} />
                       <p
                         style={{
-                          color: formValues.fontColor,
-                          fontFamily: formValues.font,
+                          color: selectedSignature.formValues.fontColor,
+                          fontFamily: selectedSignature.formValues.font,
                         }}
                       >
-                        {formValues.phone || "Your Phone"}
+                        {selectedSignature.formValues.phone || "Your Phone"}
                       </p>
                     </div>
                     <div className="sosial-icons">
-                      <Link to={formValues.instagramUrl}>
+                      <Link to={selectedSignature.formValues.instagramUrl}>
                         <FaInstagram style={{ color: setIconColor() }} />
                       </Link>
-                      <Link to={formValues.facebookUrl}>
+                      <Link to={selectedSignature.formValues.facebookUrl}>
                         <FaFacebookSquare style={{ color: setIconColor() }} />
                       </Link>
-                      <Link to={formValues.linkedinUrl}>
+                      <Link to={selectedSignature.formValues.linkedinUrl}>
                         <FaLinkedin style={{ color: setIconColor() }} />
                       </Link>
                     </div>
@@ -118,7 +130,7 @@ export const SignatureBoard = ({
 
                 <div className="col-md-3 right-regard-qr px-2">
                   <QRCode
-                    value={formValues.qrCoreBase64 || " "}
+                    value={selectedSignature.formValues.qrCoreBase64 || " "}
                     style={{ height: "107px", width: "107px" }}
                     {...getQRCodeColors()}
                   />
@@ -131,12 +143,12 @@ export const SignatureBoard = ({
             </div>
           </div>
           <div className="signature-info col-md-4">
-            <h3>Template name</h3>
+            <h3>{selectedSignature.formValues.header || "Template name"}</h3>
             <div className="user-data">
               <p>Admin</p>
               <div className="email mt-2">
                 <img src="" alt="" />
-                {formValues.email}
+                {selectedSignature.formValues.email}
               </div>
             </div>
             <div className="clock">
@@ -151,8 +163,15 @@ export const SignatureBoard = ({
               <span>Integrated</span>
             </div>
             <div className="edit-remove flex-container">
-              <Icon icon={Edit} color={"#B1B1B1"} />
-              <Icon icon={Delete} color={"#B1B1B1"} />
+              <button style={{ background: "transparent" }}>
+                <Icon icon={Edit} color={"#B1B1B1"} />
+              </button>
+              <button
+                onClick={() => deleteSignature(selectedSignature.id)}
+                style={{ background: "transparent" }}
+              >
+                <Icon icon={Delete} color={"#B1B1B1"} style={{ cursor: "pointer" }} />
+              </button>
             </div>
           </div>
         </div>
@@ -162,11 +181,5 @@ export const SignatureBoard = ({
 };
 
 SignatureBoard.propTypes = {
-  handleSubmit: PropTypes.func,
-  setValue: PropTypes.func,
-  register: PropTypes.func,
-  watch: PropTypes.func,
-  profileImageUrl: PropTypes.string,
-  setIconColor: PropTypes.func,
-  getQRCodeColors: PropTypes.func,
+  selectedSignatureId: PropTypes.string,
 };

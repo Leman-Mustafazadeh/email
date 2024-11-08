@@ -4,14 +4,16 @@ import toast from "react-hot-toast";
 import { FaChevronRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useSignatureUpdate } from "../../../service/signature-controller/CreateUpdate/useSignatureUpdate";
+import { useSignatureStore } from "../../../store/signatureStore";
 import { ContactUs, Customize, Signature } from "../../../utils/icons";
 import { Icon } from "../../../utils/icons/icons";
-// import { AddMember } from "../components/AddMember/AddMember";
 import DashboardNavBar from "../components/DashboardNavBar/DashboardNavBar";
 import { DesignCustomize } from "../components/DesignCustomize/DesignCustomize";
 import { SignatureBoard } from "../components/SignatureBoard/SignatureBoard";
-// import { TemplateBoard } from "../components/TemplateBoard/TemplateBoard";
 import "./_style.scss";
+
+// import { AddMember } from "../components/AddMember/AddMember";
+// import { TemplateBoard } from "../components/TemplateBoard/TemplateBoard";
 
 function DashboardDesign() {
   // ==== Fix utils on scroll ====
@@ -32,34 +34,53 @@ function DashboardDesign() {
     };
   }, []);
 
-  // ==== User Progile Img state
-  const [profileImageUrl, setProfileImageUrl] = useState(null);
+  // ==== Signature Store Integration ====
+  const {
+    signature,
+    addSignature,
+    updateFormValue,
+    selectedSignatureId,
+    setSelectedSignatureId,
+    resetSelectedSignature,
+  } = useSignatureStore();
 
-  // ==== Form Values ====
-  const { register, handleSubmit, setValue, watch } = useForm({
-    defaultValues: {
-      fullName: "",
-      company: "",
-      position: "",
-      phone: "",
-      email: "",
-      address: "",
-      instagramUrl: "",
-      facebookUrl: "",
-      linkedinUrl: "",
-      qrCoreBase64: "",
-      banner: "",
-      font: "Montserrat",
-      fontColor: "#3C3C3C",
-      fontCase: "capitalize",
-      fontWeight: "500",
-      backgroundColor: "#fff",
-      emails: [],
-      searchText: "",
-    },
+  useEffect(() => {
+    if (signature?.length === 0) {
+      const newId = Date.now().toString();
+      addSignature(newId);
+      setSelectedSignatureId(newId);
+    } else if (signature && signature.length > 0) {
+      setSelectedSignatureId(signature[0].id);
+    }
+  }, [signature, addSignature]);
+
+  const currentSignature = signature?.find(
+    (item) => item.id === selectedSignatureId
+  );
+  const currentFormValues = currentSignature?.formValues || {};
+
+  // ==== Form Setup ====
+  const { handleSubmit, register, setValue, watch } = useForm({
+    defaultValues: currentFormValues,
   });
 
-  const formValues = watch();
+  // Update form when selected signature changes
+  useEffect(() => {
+    if (currentFormValues) {
+      Object.entries(currentFormValues).forEach(([key, value]) => {
+        setValue(key, value);
+      });
+    }
+  }, [selectedSignatureId, setValue, currentFormValues]);
+
+  // ==== submit and reset form ====
+  const onSubmit = (data) => {
+
+    updateFormValue(selectedSignatureId, data);
+    if (selectedSignatureId) {
+      resetSelectedSignature();
+    }
+  };
 
   // ==== get data from API ====
   const signatureMutation = useSignatureUpdate();
@@ -93,29 +114,6 @@ function DashboardDesign() {
     getData();
   }, []);
 
-  // ==== customize icons & qr code ====
-
-  const iconColor = "#1251A3";
-  const setIconColor = () => {
-    if (
-      formValues.backgroundColor === "#fff" &&
-      formValues.fontColor === "#3C3C3C"
-    ) {
-      return iconColor;
-    }
-    return formValues.fontColor;
-  };
-
-  const getQRCodeColors = () => {
-    const fgColor = !formValues.qrCoreBase64
-      ? "#D3D3D3"
-      : formValues.backgroundColor === "#000000"
-      ? "#ffffff"
-      : "#000000";
-
-    return { fgColor, bgColor: formValues.backgroundColor };
-  };
-
   // ====== Render dashboard pages ======
   // ==== select ulitls category ====
   const [selectedItem, setSelectedItem] = useState("design");
@@ -127,14 +125,7 @@ function DashboardDesign() {
   const renderComponents = {
     signature: {
       name: "Signature",
-      content: (
-        <SignatureBoard
-          watch={watch}
-          profileImageUrl={profileImageUrl}
-          setIconColor={setIconColor}
-          getQRCodeColors={getQRCodeColors}
-        />
-      ),
+      content: <SignatureBoard selectedSignatureId={selectedSignatureId} />,
       icon: Signature,
     },
     // template: {
@@ -153,18 +144,17 @@ function DashboardDesign() {
       name: "Design",
       content: (
         <DesignCustomize
+          handleSubmit={handleSubmit}
           setValue={setValue}
           register={register}
-          handleSubmit={handleSubmit}
           watch={watch}
-          profileImageUrl={profileImageUrl}
-          setProfileImageUrl={setProfileImageUrl}
-          setIconColor={setIconColor}
-          getQRCodeColors={getQRCodeColors}
+          signatureId={selectedSignatureId}
+          onSave={onSubmit}
         />
       ),
       icon: Customize,
     },
+    
     // member: {
     //   name: "Member",
     //   content: (
@@ -182,7 +172,7 @@ function DashboardDesign() {
     <section
       className={`dashboard-design mb-5 ${isScrolled ? "onscroll" : ""}`}
     >
-      <DashboardNavBar />
+      <DashboardNavBar activeComponent={selectedItem} />
       <div className="container row gap-5 relative">
         <div
           className={`utils ${
@@ -195,7 +185,7 @@ function DashboardDesign() {
               <div className="account">
                 <div className="account-info">
                   <h4>My account</h4>
-                  <p>{formValues.email}</p>
+                  <p>use@gmail.com</p>
                 </div>
                 <FaChevronRight />
               </div>
