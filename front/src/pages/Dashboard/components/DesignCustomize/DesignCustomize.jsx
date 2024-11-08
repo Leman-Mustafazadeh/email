@@ -26,7 +26,6 @@ import {
 // import { useFormStore } from "../../../../store/formData";
 
 export const DesignCustomize = ({
-  handleSubmit,
   setValue,
   register,
   watch,
@@ -47,10 +46,6 @@ export const DesignCustomize = ({
 
   // const { setFormValues } = useFormStore();
 
-  const onSubmit = (data) => {
-    updateFormValue(signatureId, data);
-  };
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValue(name, value);
@@ -67,6 +62,8 @@ export const DesignCustomize = ({
 
   const handleSaveSignature = () => {
     onSave();
+    updateFormValue(signatureId, formValues);
+    console.log(formValues);
   };
 
   // ==== set colors ====
@@ -615,7 +612,8 @@ export const DesignCustomize = ({
               </div>
             </Modal>
           </div>
-          <form onSubmit={handleSubmit(onSubmit)}>
+
+          <form className="user-data">
             <div className="row gap-5">
               <div className="col-12 col-md-6">
                 <div className="form-group">

@@ -154,7 +154,6 @@ function DashboardDesign() {
       ),
       icon: Customize,
     },
-    
     // member: {
     //   name: "Member",
     //   content: (
