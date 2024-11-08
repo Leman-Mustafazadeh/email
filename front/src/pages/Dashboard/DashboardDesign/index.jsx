@@ -75,7 +75,6 @@ function DashboardDesign() {
 
   // ==== submit and reset form ====
   const onSubmit = (data) => {
-
     updateFormValue(selectedSignatureId, data);
     if (selectedSignatureId) {
       resetSelectedSignature();
@@ -125,7 +124,7 @@ function DashboardDesign() {
   const renderComponents = {
     signature: {
       name: "Signature",
-      content: <SignatureBoard selectedSignatureId={selectedSignatureId} />,
+      content: <SignatureBoard />,
       icon: Signature,
     },
     // template: {

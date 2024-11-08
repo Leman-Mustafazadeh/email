@@ -1,6 +1,6 @@
 import { Switch } from "antd";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FiMapPin } from "react-icons/fi";
 import { LuClock4, LuMail, LuPhone } from "react-icons/lu";
@@ -16,8 +16,8 @@ import {
   useQRCodeColors,
 } from "../../../../utils/hooks/colorHooks";
 
-export const SignatureBoard = ({ selectedSignatureId }) => {
-  const { signatures, deleteSignature } = useSignatureStore();
+export const SignatureBoard = () => {
+  const { signatures, selectedSignatureId, deleteSignature } = useSignatureStore();
   const { profileImageUrl } = useProfileImgStore();
 
   // ==== switch button antd ====
@@ -32,9 +32,13 @@ export const SignatureBoard = ({ selectedSignatureId }) => {
   const getQRCodeColors = useQRCodeColors();
 
   // Find the selected signature
-  const selectedSignature = signatures.find((signature) => signature.id === selectedSignatureId);
+  const selectedSignature = signatures.find(
+    (signature) => signature.id === selectedSignatureId
+  );
+  // useEffect(() => {
 
-  if (!selectedSignature || !selectedSignature.formValues) return null;
+  //   if (!selectedSignature || !selectedSignature.formValues) return null;
+  // }, [signatures, selectedSignatureId]);
 
   return (
     <div className="signature">
@@ -170,7 +174,11 @@ export const SignatureBoard = ({ selectedSignatureId }) => {
                 onClick={() => deleteSignature(selectedSignature.id)}
                 style={{ background: "transparent" }}
               >
-                <Icon icon={Delete} color={"#B1B1B1"} style={{ cursor: "pointer" }} />
+                <Icon
+                  icon={Delete}
+                  color={"#B1B1B1"}
+                  style={{ cursor: "pointer" }}
+                />
               </button>
             </div>
           </div>
