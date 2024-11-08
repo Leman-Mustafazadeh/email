@@ -45,7 +45,7 @@ export const SignatureBoard = ({ selectedSignatureId }) => {
               <div
                 className="right-regard row gap-3"
                 style={{
-                  backgroundColor: selectedSignature.formValues.backgroundColor,
+                  backgroundColor: selectedSignature.backgroundColor,
                 }}
               >
                 <div className="col-md-3 right-regard-img">
@@ -64,19 +64,19 @@ export const SignatureBoard = ({ selectedSignatureId }) => {
                   <div className="right-regard-name">
                     <h2
                       style={{
-                        color: selectedSignature.formValues.fontColor,
-                        fontFamily: selectedSignature.formValues.font,
+                        color: selectedSignature.fontColor,
+                        fontFamily: selectedSignature.font,
                       }}
                     >
-                      {selectedSignature.formValues.fullName || "Your Name"}
+                      {selectedSignature.fullName || "Your Name"}
                     </h2>
                     <p
                       style={{
-                        color: selectedSignature.formValues.fontColor,
-                        fontFamily: selectedSignature.formValues.font,
+                        color: selectedSignature.fontColor,
+                        fontFamily: selectedSignature.font,
                       }}
                     >
-                      {selectedSignature.formValues.position || "Your Position"}
+                      {selectedSignature.position || "Your Position"}
                     </p>
                   </div>
 
@@ -85,43 +85,43 @@ export const SignatureBoard = ({ selectedSignatureId }) => {
                       <LuMail style={{ color: setIconColor() }} />
                       <p
                         style={{
-                          color: selectedSignature.formValues.fontColor,
-                          fontFamily: selectedSignature.formValues.font,
+                          color: selectedSignature.fontColor,
+                          fontFamily: selectedSignature.font,
                         }}
                       >
-                        {selectedSignature.formValues.email || "Your Email"}
+                        {selectedSignature.email || "Your Email"}
                       </p>
                     </div>
                     <div className="right-regard-contacts-item">
                       <FiMapPin style={{ color: setIconColor() }} />
                       <p
                         style={{
-                          color: selectedSignature.formValues.fontColor,
-                          fontFamily: selectedSignature.formValues.font,
+                          color: selectedSignature.fontColor,
+                          fontFamily: selectedSignature.font,
                         }}
                       >
-                        {selectedSignature.formValues.address || "Your Address"}
+                        {selectedSignature.address || "Your Address"}
                       </p>
                     </div>
                     <div className="right-regard-contacts-item">
                       <LuPhone style={{ color: setIconColor() }} />
                       <p
                         style={{
-                          color: selectedSignature.formValues.fontColor,
-                          fontFamily: selectedSignature.formValues.font,
+                          color: selectedSignature.fontColor,
+                          fontFamily: selectedSignature.font,
                         }}
                       >
-                        {selectedSignature.formValues.phone || "Your Phone"}
+                        {selectedSignature.phone || "Your Phone"}
                       </p>
                     </div>
                     <div className="sosial-icons">
-                      <Link to={selectedSignature.formValues.instagramUrl}>
+                      <Link to={selectedSignature.instagramUrl}>
                         <FaInstagram style={{ color: setIconColor() }} />
                       </Link>
-                      <Link to={selectedSignature.formValues.facebookUrl}>
+                      <Link to={selectedSignature.facebookUrl}>
                         <FaFacebookSquare style={{ color: setIconColor() }} />
                       </Link>
-                      <Link to={selectedSignature.formValues.linkedinUrl}>
+                      <Link to={selectedSignature.linkedinUrl}>
                         <FaLinkedin style={{ color: setIconColor() }} />
                       </Link>
                     </div>
@@ -130,7 +130,7 @@ export const SignatureBoard = ({ selectedSignatureId }) => {
 
                 <div className="col-md-3 right-regard-qr px-2">
                   <QRCode
-                    value={selectedSignature.formValues.qrCoreBase64 || " "}
+                    value={selectedSignature.qrCoreBase64 || " "}
                     style={{ height: "107px", width: "107px" }}
                     {...getQRCodeColors()}
                   />
@@ -143,12 +143,12 @@ export const SignatureBoard = ({ selectedSignatureId }) => {
             </div>
           </div>
           <div className="signature-info col-md-4">
-            <h3>{selectedSignature.formValues.header || "Template name"}</h3>
+            <h3>{selectedSignature.header || "Template name"}</h3>
             <div className="user-data">
               <p>Admin</p>
               <div className="email mt-2">
                 <img src="" alt="" />
-                {selectedSignature.formValues.email}
+                {selectedSignature.email}
               </div>
             </div>
             <div className="clock">
